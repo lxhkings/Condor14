@@ -1,6 +1,5 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "",
   "outputDirectory": "public",
   "ignoreCommand": "git log -1 --pretty=format:%s | grep -qE '^chore\\(data\\):' && echo skip || echo build",
   "framework": null,
