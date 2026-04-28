@@ -19,7 +19,7 @@ the full design.
 
 ## Math Engine Open-Source Mirror
 
-`stock/math_engine/` is mirrored to a public read-only repository as the
+`math_engine/` is mirrored to a public read-only repository as the
 E-E-A-T transparency anchor for this site (per spec §7.5):
 
   https://github.com/lxhkings/iron-condor-math-engine
@@ -28,7 +28,7 @@ E-E-A-T transparency anchor for this site (per spec §7.5):
 
 ```bash
 # In a fresh clone of this repo:
-git subtree split --prefix=stock/math_engine -b math-engine-only
+git subtree split --prefix=math_engine -b math-engine-only
 git remote add mirror git@github.com:lxhkings/iron-condor-math-engine.git
 git push --force mirror math-engine-only:main
 
