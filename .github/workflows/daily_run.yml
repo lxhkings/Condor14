@@ -2,22 +2,22 @@ name: Daily Iron Condor Run
 
 on:
   schedule:
-    # UTC 22:00 = ET 17:00 (EDT) / 18:00 (EST)
-    # Mon-Fri only; trading_calendar.py guards against US holidays inside the script.
     - cron: "0 22 * * 1-5"
   workflow_dispatch: {}
 
-# Prevent overlapping runs (a slow run must finish before the next one starts)
 concurrency:
   group: daily-run
   cancel-in-progress: false
 
 permissions:
-  contents: write   # needed to push ledger updates back to main
+  contents: write
 
 jobs:
   daily:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: stock
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -44,22 +44,29 @@ jobs:
           echo "Non-trading day, exiting cleanly."
           exit 0
 
-      - name: Run daily pipeline
+      - name: Run daily pipeline (data)
         if: steps.cal.outcome == 'success'
         env:
           MARKETDATA_API_KEY: ${{ secrets.MARKETDATA_API_KEY }}
         run: uv run python daily_run.py
 
-      - name: Commit and push ledger updates
+      - name: Build static site
         if: steps.cal.outcome == 'success'
+        env:
+          SITE_HOST: iron-condor-tracker.vercel.app
+        run: uv run python build_site.py
+
+      - name: Commit and push data + site updates
+        if: steps.cal.outcome == 'success'
+        working-directory: ${{ github.workspace }}
         run: |
-          if [[ -z "$(git status --porcelain data/)" ]]; then
-            echo "No data changes to commit."
+          if [[ -z "$(git status --porcelain stock/data/ stock/public/)" ]]; then
+            echo "No changes to commit."
             exit 0
           fi
           git config user.name  "iron-condor-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add data/ledger.json data/cache.sqlite
+          git add stock/data/ledger.json stock/data/cache.sqlite stock/data/last_indexed.json stock/public/
           DATE=$(TZ=America/New_York date +%Y-%m-%d)
           git commit -m "chore(data): ${DATE} run [skip ci]"
           git push origin HEAD:main
