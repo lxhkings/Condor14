@@ -15,9 +15,6 @@ permissions:
 jobs:
   daily:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: stock
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -58,15 +55,14 @@ jobs:
 
       - name: Commit and push data + site updates
         if: steps.cal.outcome == 'success'
-        working-directory: ${{ github.workspace }}
         run: |
-          if [[ -z "$(git status --porcelain stock/data/ stock/public/)" ]]; then
+          if [[ -z "$(git status --porcelain data/ public/)" ]]; then
             echo "No changes to commit."
             exit 0
           fi
           git config user.name  "iron-condor-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add stock/data/ledger.json stock/data/cache.sqlite stock/data/last_indexed.json stock/public/
+          git add data/ledger.json data/cache.sqlite data/last_indexed.json public/
           DATE=$(TZ=America/New_York date +%Y-%m-%d)
           git commit -m "chore(data): ${DATE} run [skip ci]"
           git push origin HEAD:main

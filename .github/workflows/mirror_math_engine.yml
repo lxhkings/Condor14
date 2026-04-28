@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'stock/math_engine/**'
+      - 'math_engine/**'
   workflow_dispatch: {}
 
 concurrency:
@@ -32,6 +32,6 @@ jobs:
         run: |
           git config user.name  "iron-condor-bot"
           git config user.email "bot@users.noreply.github.com"
-          git subtree split --prefix=stock/math_engine -b math-engine-mirror
+          git subtree split --prefix=math_engine -b math-engine-mirror
           git remote add mirror git@github.com:lxhkings/iron-condor-math-engine.git
           git push --force mirror math-engine-mirror:main
