@@ -1,0 +1,6 @@
+{# stock/content_engine/templates/_base.md.j2 — top-of-page slot for Markdown title.
+   The HTML <head>/<body> wrapper is added by site_builder.render. This template
+   only emits Markdown content; child templates override the body block.
+#}
+{% block body %}{% endblock %}
+{% include "_disclaimer.md.j2" %}

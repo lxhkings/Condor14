@@ -1,0 +1,78 @@
+{# stock/content_engine/templates/methodology.md.j2 #}
+{% extends "_base.md.j2" %}
+{% block body %}
+# Methodology
+
+This page documents every formula, threshold, and rule used to compute the setups published on this site. Source code is open: [{{ source_repo_url }}]({{ source_repo_url }}).
+
+## Strategy
+
+A 14-day Iron Condor: sell one out-of-the-money call spread and one out-of-the-money put spread on the same ticker, both expiring within a target window of 13–16 calendar days from the open date. The structure profits when the underlying closes inside the short strikes at expiration; max loss is bounded by wing width minus net credit.
+
+## Strike Selection (ATR-anchored)
+
+For an underlying spot price `S` and its 14-day Wilder's ATR `ATR14`:
+
+- Short call anchor: `S + 1.5 * ATR14`
+- Short put anchor: `S - 1.5 * ATR14`
+- Each anchor snaps to the nearest **listed** strike on the chosen expiration.
+- Wing width: `max(0.5 * ATR14, one strike spacing increment)`, snapped to listed strikes outside each short.
+
+## ATR14 Formula (Wilder's Smoothing)
+
+```
+TR_t = max(High_t - Low_t,  |High_t - Close_{t-1}|,  |Low_t - Close_{t-1}|)
+Seed ATR = mean of first 14 TRs
+ATR_t = (ATR_{t-1} * 13 + TR_t) / 14
+```
+
+## Net Credit (Conservative Quoting)
+
+Short legs are priced at the **bid** (worst realistic fill received). Long legs are priced at the **ask** (worst realistic fill paid).
+
+```
+Net Credit       = (short_call.bid + short_put.bid) - (long_call.ask + long_put.ask)
+Wing Width       = long_call.strike - short_call.strike  (= short_put.strike - long_put.strike)
+Max Profit       = Net Credit
+Max Loss         = Wing Width - Net Credit
+Upper Break-even = short_call.strike + Net Credit
+Lower Break-even = short_put.strike  - Net Credit
+```
+
+If the computed Net Credit ≤ 0, no setup is published for that ticker that day; the ticker is logged as `skipped` in the public ledger.
+
+## Win Condition (Hold-to-Expiration)
+
+A setup is recorded as `won` if and only if the underlying closing price on the target exit date satisfies:
+
+```
+short_put_strike <= underlying_close <= short_call_strike
+```
+
+Otherwise it is recorded as `lost`. Mid-cycle short-strike breaches are tracked but do not trigger early settlement — this is a strictly passive backtest harness, consistent with the disclaimer language in the site footer.
+
+## Liquidity Filter
+
+A leg is excluded (and therefore the entire setup is skipped) if any of the following hold:
+
+- `bid <= 0`
+- `(ask - bid) / mid > 0.30`
+- `open_interest < 100`
+
+## Settlement Edge Cases
+
+- Boundary close: an underlying close exactly equal to a short strike counts as `won` (inclusive on both sides).
+- Holiday-shifted exit: if the target exit date falls on a market holiday, settlement is recorded on the next valid trading day using that day's close.
+
+## Trend & Volatility Tags
+
+The headline paragraph on each ticker page is selected from a 9-cell matrix indexed by:
+
+- **Trend bias:** `bullish` if close > SMA20 × 1.005, `bearish` if close < SMA20 × 0.995, otherwise `neutral`
+- **IV percentile:** `high` if >70, `low` if <30, otherwise `medium`
+- **Vol regime:** `expanding` if ATR14 > ATR60 × 1.2, `contracting` if < ATR60 × 0.8 (rendered as a 1-sentence inline modifier)
+
+## Author
+
+QuantOptions Data Lab. Data source: OPRA via MarketData.app. Source code (math engine only): [{{ source_repo_url }}]({{ source_repo_url }}).
+{% endblock %}

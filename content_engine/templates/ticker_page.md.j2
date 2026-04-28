@@ -1,0 +1,55 @@
+{# stock/content_engine/templates/ticker_page.md.j2 #}
+{% extends "_base.md.j2" %}
+{% block body %}
+# {{ ticker }} 14-Day Iron Condor Tracker — {{ today.strftime("%B %d, %Y") }}
+
+{{ prelude_md | safe }}
+
+## Today's Setup
+
+| Parameter | Value |
+| :--- | ---: |
+| Underlying close | ${{ "%.2f"|format(setup.underlying_at_open) }} |
+| 20-day SMA | ${{ "%.2f"|format(setup.sma20_at_open) }} |
+| 14-day ATR | ${{ "%.2f"|format(setup.atr14_at_open) }} |
+| Trend bias | {{ setup.trend_bias|capitalize }} |
+| Target exit date | {{ setup.target_exit_date.isoformat() }} |
+| Expiry used | {{ setup.expiry_used.isoformat() }} |
+| Short call strike | ${{ "%.2f"|format(setup.short_call_strike) }} |
+| Long call strike | ${{ "%.2f"|format(setup.long_call_strike) }} |
+| Short put strike | ${{ "%.2f"|format(setup.short_put_strike) }} |
+| Long put strike | ${{ "%.2f"|format(setup.long_put_strike) }} |
+| Net credit | ${{ "%.2f"|format(setup.net_credit_at_open) }} |
+| Max profit | ${{ "%.2f"|format(setup.max_profit) }} |
+| Max loss | ${{ "%.2f"|format(setup.max_loss) }} |
+| Upper break-even | ${{ "%.2f"|format(setup.break_even_upper) }} |
+| Lower break-even | ${{ "%.2f"|format(setup.break_even_lower) }} |
+
+## Risk Profile
+
+- **Max Profit:** ${{ "%.2f"|format(setup.max_profit) }} per spread
+- **Max Loss:** ${{ "%.2f"|format(setup.max_loss) }} per spread
+- **Risk-Reward:** 1 : {{ "%.2f"|format(setup.max_loss / setup.max_profit) }}
+
+## Methodology Snapshot
+
+- Strike selection: ATR14-based anchors snapped to listed strikes
+- Pricing: real-time bid-ask from OPRA via MarketData.app
+- Win condition: closing price within short strikes at expiration (passive hold-to-expiration)
+- [Full methodology →](/methodology/) · [Source code on GitHub →]({{ source_repo_url }})
+
+## Historical Tracking Log
+
+{% if tracking_rows %}
+| Week Ending | Open Price | Setup Status | Movement Note |
+| :--- | ---: | :--- | :--- |
+{% for row in tracking_rows %}| {{ row.week_ending.isoformat() }} | ${{ "%.2f"|format(row.open_price) }} | {{ row.status_label }} | {{ row.note }} |
+{% endfor %}{% else %}
+*No completed weeks yet — first row appears next Friday after market close.*
+{% endif %}
+
+## Related {{ setup.sector }} Tickers
+
+{% for peer in peers %}- [{{ peer }}](/{{ peer|lower }}/)
+{% endfor %}
+{% endblock %}

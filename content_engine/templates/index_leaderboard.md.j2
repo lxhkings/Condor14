@@ -1,0 +1,37 @@
+{# stock/content_engine/templates/index_leaderboard.md.j2 #}
+{% extends "_base.md.j2" %}
+{% block body %}
+# Live 30-Day Hold-to-Expiration Performance
+
+Each row reflects realized outcomes for the listed ticker over the past 30 days, computed under a strictly passive hold-to-expiration assumption. Sample size shown for transparency; tickers with fewer than 5 settled setups are listed but flagged as low-confidence.
+
+## Performance Leaderboard
+
+{% if leaderboard_rows %}
+| Ticker | Win Rate | Setups Tracked | Max Drawdown | Worst Single Loss | Last Settlement |
+| :--- | ---: | ---: | ---: | ---: | :--- |
+{% for r in leaderboard_rows %}| [{{ r.ticker }}](/{{ r.ticker|lower }}/) | {{ "%.0f"|format(r.win_rate * 100) }}% | {{ r.setups_tracked }} | ${{ "%.0f"|format(r.max_drawdown) }} | ${{ "%.0f"|format(r.worst_single_loss) }} | {{ r.last_settlement.isoformat() if r.last_settlement else "—" }} |
+{% endfor %}{% else %}
+*No settled setups in the last 30 days.*
+{% endif %}
+
+## Today's Highest Premium Setups
+
+{% if highest_premium_setups %}
+| Ticker | Sector | Net Credit | Max Loss |
+| :--- | :--- | ---: | ---: |
+{% for s in highest_premium_setups %}| [{{ s.ticker }}](/{{ s.ticker|lower }}/) | {{ s.sector }} | ${{ "%.2f"|format(s.net_credit_at_open) }} | ${{ "%.2f"|format(s.max_loss) }} |
+{% endfor %}{% endif %}
+
+## Sector Volatility Heatmap
+
+{% if sector_heatmap %}
+| Sector | Avg IV Percentile | Open Setups |
+| :--- | ---: | ---: |
+{% for h in sector_heatmap %}| {{ h.sector }} | {{ h.avg_iv_percentile }} | {{ h.count_open }} |
+{% endfor %}{% endif %}
+
+## Methodology
+
+[Read the full methodology →](/methodology/)
+{% endblock %}

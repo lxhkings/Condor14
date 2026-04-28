@@ -1,0 +1,39 @@
+{# stock/content_engine/templates/index_screener.md.j2 #}
+{% extends "_base.md.j2" %}
+{% block body %}
+# Daily Iron Condor Volatility Screener
+
+Live tracking initiated on **{{ site_launch_date.isoformat() }}**. Realized 30-day win-rate leaderboard unlocks once 200 settled setups accumulate (~44 trading days). Until then, the screener below shows today's setups ranked by premium structure and a per-sector volatility view.
+
+## Today's Highest Premium Setups
+
+{% if highest_premium_setups %}
+| Ticker | Sector | Net Credit | Max Loss | Reward / Risk |
+| :--- | :--- | ---: | ---: | ---: |
+{% for s in highest_premium_setups %}| [{{ s.ticker }}](/{{ s.ticker|lower }}/) | {{ s.sector }} | ${{ "%.2f"|format(s.net_credit_at_open) }} | ${{ "%.2f"|format(s.max_loss) }} | {{ "%.2f"|format(s.net_credit_at_open / s.max_loss) }} |
+{% endfor %}{% else %}
+*No open setups for today. Check back after the next market close.*
+{% endif %}
+
+## Sector Volatility Heatmap
+
+{% if sector_heatmap %}
+| Sector | Avg IV Percentile | Open Setups |
+| :--- | ---: | ---: |
+{% for h in sector_heatmap %}| {{ h.sector }} | {{ h.avg_iv_percentile }} | {{ h.count_open }} |
+{% endfor %}{% else %}
+*No active sectors yet.*
+{% endif %}
+
+## Newest Tracked Setups (Today)
+
+{% if newest_setups %}
+{% for s in newest_setups %}- [{{ s.ticker }}](/{{ s.ticker|lower }}/) — opened at ${{ "%.2f"|format(s.underlying_at_open) }} ({{ s.trend_bias }})
+{% endfor %}{% else %}
+*No new setups initiated today.*
+{% endif %}
+
+## Methodology
+
+Every setup is computed from real OPRA bid-ask quotes and tracked live to expiration. [Read the full methodology →](/methodology/)
+{% endblock %}
