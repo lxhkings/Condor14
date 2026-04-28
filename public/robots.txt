@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://iron-condor-tracker.vercel.app/sitemap.xml
