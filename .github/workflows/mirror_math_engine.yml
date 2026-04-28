@@ -1,0 +1,37 @@
+name: Mirror math_engine to public repo
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'stock/math_engine/**'
+  workflow_dispatch: {}
+
+concurrency:
+  group: mirror-math-engine
+  cancel-in-progress: false
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure SSH for mirror push
+        env:
+          MIRROR_DEPLOY_KEY: ${{ secrets.MIRROR_DEPLOY_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "$MIRROR_DEPLOY_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan github.com >> ~/.ssh/known_hosts 2>/dev/null
+
+      - name: Subtree split and push
+        run: |
+          git config user.name  "iron-condor-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git subtree split --prefix=stock/math_engine -b math-engine-mirror
+          git remote add mirror git@github.com:lxhkings/iron-condor-math-engine.git
+          git push --force mirror math-engine-mirror:main
