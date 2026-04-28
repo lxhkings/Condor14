@@ -124,8 +124,9 @@ def _render_ticker_placeholder(
     )
     for peer in same_sector_peers(ticker):
         md += f"- [{peer}](/{peer.lower()}/)\n"
-    md += "\n---\n\n"
-    md += "**DISCLAIMER:** Educational purposes only. Not financial advice.\n"
+    md += env.get_template("_disclaimer.md.j2").render(
+        source_repo_url=SOURCE_REPO_URL,
+    )
     return render_html_page(
         markdown_source=md,
         page_title=f"{ticker} 14-Day Iron Condor Tracker",
@@ -157,6 +158,7 @@ def _render_index(
             leaderboard_rows=leaderboard,
             highest_premium_setups=screener["highest_premium_setups"],
             sector_heatmap=screener["sector_heatmap"],
+            source_repo_url=SOURCE_REPO_URL,
         )
         return md, "Live 30-Day Hold-to-Expiration Performance - Iron Condor Tracker"
     else:
@@ -166,6 +168,7 @@ def _render_index(
             highest_premium_setups=screener["highest_premium_setups"],
             sector_heatmap=screener["sector_heatmap"],
             newest_setups=screener["newest_setups"],
+            source_repo_url=SOURCE_REPO_URL,
         )
         return md, "Daily Iron Condor Volatility Screener"
 

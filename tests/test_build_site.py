@@ -80,8 +80,8 @@ def test_build_renders_setup_data_into_ticker_page(tmp_path):
     assert "216.61" in nvda_html
     assert "NVDA 14-Day Iron Condor" in nvda_html
     assert '<script type="application/ld+json">' in nvda_html
-    # Disclaimer is hardcoded (per spec §7.2)
-    assert "Educational purposes only" in nvda_html
+    # Disclaimer is rendered at the bottom of every page
+    assert "educational purposes only" in nvda_html.lower()
 
 
 def test_build_returns_nonzero_on_compliance_violation(tmp_path, monkeypatch):

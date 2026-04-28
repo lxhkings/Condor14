@@ -70,5 +70,29 @@ def test_table_in_markdown_renders():
     html = render_html_page(
         markdown_source=md, page_title="t", canonical_url="x", json_ld_blocks=[],
     )
+    assert '<div class="table-wrap">' in html
     assert "<table>" in html
     assert "<th>A</th>" in html
+
+
+def test_css_style_is_injected():
+    html = render_html_page(
+        markdown_source="# x", page_title="t", canonical_url="x", json_ld_blocks=[],
+    )
+    assert "--bg-main: #0d1117" in html
+    assert "--accent-green: #00ff9d" in html
+    assert "--font-mono" in html
+
+
+def test_card_wrapping():
+    md = "## Today's Setup\n\n| A | B |\n| - | - |\n| 1 | 2 |\n\n## Risk Profile\n\n- **Max Profit:** $1.00\n\n## Other Section\n\nPlain text."
+    html = render_html_page(
+        markdown_source=md, page_title="t", canonical_url="x", json_ld_blocks=[],
+    )
+    assert '<div class="card">' in html
+    assert html.count('<div class="card">') == 2
+    # Card wraps h2 through next h2
+    assert '<div class="card">\n<h2>Today\'s Setup</h2>' in html
+    assert '<div class="card">\n<h2>Risk Profile</h2>' in html
+    # Other Section should NOT be in a card
+    assert '<h2>Other Section</h2>' in html

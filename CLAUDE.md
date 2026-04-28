@@ -54,7 +54,7 @@ SITE_HOST=example.com uv run python build_site.py     # 手动构建静态站点
 ### 合规红线
 
 - 所有用户可见文案中**禁止**出现 "hypothetical" 一词，除非精确匹配 `HYPOTHETICAL_ALLOWLIST`（MVP 中为空）。
-- 免责声明文字为规范原文（`_disclaimer.md.j2`），不可修改。
+- 免责声明文字为规范原文（`_disclaimer.md.j2`），结构性/格式性修改（如分段、HTML 包裹）是允许的，但法律实质内容不可更改。
 - 禁止使用的语言："must close"、"guaranteed"、"trading signal"、祈使式推荐。
 
 ## 测试
