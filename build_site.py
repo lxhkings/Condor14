@@ -54,7 +54,7 @@ logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s %(message
 
 REPO_ROOT = Path(__file__).parent
 TEMPLATE_DIR = REPO_ROOT / "content_engine" / "templates"
-SOURCE_REPO_URL = "https://github.com/lxhkings/iron-condor-math-engine"
+SOURCE_REPO_URL = "https://github.com/lxhkings/Condor14"
 
 
 def _env() -> Environment:
