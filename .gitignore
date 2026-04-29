@@ -3,7 +3,7 @@ __pycache__/
 *.pyc
 .pytest_cache/
 .coverage
-
+CLAUDE.md
 *.tmp
 data/ledger.json.tmp
 .env
