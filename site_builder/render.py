@@ -2,6 +2,7 @@
 
 import json
 import re
+from html import escape as _esc
 
 from markdown_it import MarkdownIt
 
@@ -169,6 +170,11 @@ def render_html_page(
     page_title: str,
     canonical_url: str,
     json_ld_blocks: list[dict],
+    description: str | None = None,
+    og_image_url: str | None = None,
+    theme_color: str | None = None,
+    favicon_url: str | None = None,
+    apple_touch_icon_url: str | None = None,
 ) -> str:
     body_html = _md.render(markdown_source)
     body_html = _wrap_tables(body_html)
@@ -177,14 +183,48 @@ def render_html_page(
         f'<script type="application/ld+json">{json.dumps(b, separators=(",", ":"))}</script>'
         for b in json_ld_blocks
     )
+
+    meta_lines: list[str] = []
+    if description:
+        meta_lines.append(
+            f'<meta name="description" content="{_esc(description, quote=True)}">'
+        )
+    if favicon_url:
+        meta_lines.append(
+            f'<link rel="icon" type="image/svg+xml" href="{_esc(favicon_url, quote=True)}">'
+        )
+    if apple_touch_icon_url:
+        meta_lines.append(
+            f'<link rel="apple-touch-icon" href="{_esc(apple_touch_icon_url, quote=True)}">'
+        )
+    if theme_color:
+        meta_lines.append(
+            f'<meta name="theme-color" content="{_esc(theme_color, quote=True)}">'
+        )
+    if og_image_url:
+        meta_lines.extend([
+            f'<meta property="og:type" content="website">',
+            f'<meta property="og:title" content="{_esc(page_title, quote=True)}">',
+            f'<meta property="og:url" content="{_esc(canonical_url, quote=True)}">',
+            f'<meta property="og:image" content="{_esc(og_image_url, quote=True)}">',
+            f'<meta name="twitter:card" content="summary_large_image">',
+            f'<meta name="twitter:image" content="{_esc(og_image_url, quote=True)}">',
+        ])
+        if description:
+            meta_lines.append(
+                f'<meta property="og:description" content="{_esc(description, quote=True)}">'
+            )
+    extra_meta = ("\n".join(meta_lines) + "\n") if meta_lines else ""
+
     return (
         '<!DOCTYPE html>\n'
         '<html lang="en">\n'
         '<head>\n'
         '<meta charset="utf-8">\n'
         '<meta name="viewport" content="width=device-width,initial-scale=1">\n'
-        f'<title>{page_title}</title>\n'
-        f'<link rel="canonical" href="{canonical_url}">\n'
+        f'<title>{_esc(page_title)}</title>\n'
+        f'<link rel="canonical" href="{_esc(canonical_url, quote=True)}">\n'
+        f'{extra_meta}'
         f'{CSS_STYLE}\n'
         f'{head_blocks}\n'
         '</head>\n'
