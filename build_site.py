@@ -158,6 +158,7 @@ def _render_index(
             leaderboard_rows=leaderboard,
             highest_premium_setups=screener["highest_premium_setups"],
             sector_heatmap=screener["sector_heatmap"],
+            hero=screener["hero"],
             source_repo_url=SOURCE_REPO_URL,
         )
         return md, "Live 30-Day Hold-to-Expiration Performance - Iron Condor Tracker"
@@ -168,6 +169,7 @@ def _render_index(
             highest_premium_setups=screener["highest_premium_setups"],
             sector_heatmap=screener["sector_heatmap"],
             newest_setups=screener["newest_setups"],
+            hero=screener["hero"],
             source_repo_url=SOURCE_REPO_URL,
         )
         return md, "Daily Iron Condor Volatility Screener"

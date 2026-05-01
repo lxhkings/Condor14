@@ -45,6 +45,7 @@ def _newest(ledger: Ledger, today: date) -> list[Setup]:
 
 
 def build_screener_data(ledger: Ledger, *, today: date) -> dict:
+    from site_builder.hero import compute_hero_metrics  # local import avoids circular
     if ledger.site_launch_date is None:
         days_since = 0
     else:
@@ -55,4 +56,5 @@ def build_screener_data(ledger: Ledger, *, today: date) -> dict:
         "newest_setups": _newest(ledger, today),
         "site_launch_date": ledger.site_launch_date,
         "days_since_launch": days_since,
+        "hero": compute_hero_metrics(ledger, today=today),
     }
