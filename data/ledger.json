@@ -2,7 +2,7 @@
   "schema_version": 1,
   "site_launch_date": "2026-05-01",
   "first_settlement_date": null,
-  "last_run": "2026-05-01T13:31:07.525499+00:00",
+  "last_run": "2026-05-01T14:00:07.706720+00:00",
   "setups": [
     {
       "id": "NVDA-2026-04-29",
@@ -41,6 +41,11 @@
         {
           "date": "2026-05-01",
           "underlying_close": 201.51,
+          "breached_short": true
+        },
+        {
+          "date": "2026-05-01",
+          "underlying_close": 200.6,
           "breached_short": true
         }
       ],
@@ -84,6 +89,11 @@
           "date": "2026-05-01",
           "underlying_close": 385.1715,
           "breached_short": false
+        },
+        {
+          "date": "2026-05-01",
+          "underlying_close": 383.02,
+          "breached_short": false
         }
       ],
       "settlement": null
@@ -125,6 +135,11 @@
         {
           "date": "2026-05-01",
           "underlying_close": 281.73,
+          "breached_short": true
+        },
+        {
+          "date": "2026-05-01",
+          "underlying_close": 283.93,
           "breached_short": true
         }
       ],
@@ -168,6 +183,11 @@
           "date": "2026-05-01",
           "underlying_close": 263.7999,
           "breached_short": false
+        },
+        {
+          "date": "2026-05-01",
+          "underlying_close": 268.93,
+          "breached_short": false
         }
       ],
       "settlement": null
@@ -209,6 +229,11 @@
         {
           "date": "2026-05-01",
           "underlying_close": 413.5782,
+          "breached_short": true
+        },
+        {
+          "date": "2026-05-01",
+          "underlying_close": 412.32,
           "breached_short": true
         }
       ],
@@ -252,6 +277,11 @@
           "date": "2026-05-01",
           "underlying_close": 617.795,
           "breached_short": true
+        },
+        {
+          "date": "2026-05-01",
+          "underlying_close": 613.1,
+          "breached_short": true
         }
       ],
       "settlement": null
@@ -293,6 +323,11 @@
         {
           "date": "2026-05-01",
           "underlying_close": 380.46,
+          "breached_short": true
+        },
+        {
+          "date": "2026-05-01",
+          "underlying_close": 384.145,
           "breached_short": true
         }
       ],
@@ -336,6 +371,11 @@
           "date": "2026-05-01",
           "underlying_close": 721.18,
           "breached_short": false
+        },
+        {
+          "date": "2026-05-01",
+          "underlying_close": 724.12,
+          "breached_short": false
         }
       ],
       "settlement": null
@@ -372,6 +412,11 @@
         {
           "date": "2026-05-01",
           "underlying_close": 263.72,
+          "breached_short": false
+        },
+        {
+          "date": "2026-05-01",
+          "underlying_close": 268.93,
           "breached_short": false
         }
       ],
@@ -410,6 +455,11 @@
           "date": "2026-05-01",
           "underlying_close": 617.795,
           "breached_short": true
+        },
+        {
+          "date": "2026-05-01",
+          "underlying_close": 613.1,
+          "breached_short": true
         }
       ],
       "settlement": null
@@ -446,6 +496,11 @@
         {
           "date": "2026-05-01",
           "underlying_close": 380.7799,
+          "breached_short": true
+        },
+        {
+          "date": "2026-05-01",
+          "underlying_close": 384.23,
           "breached_short": true
         }
       ],
@@ -484,6 +539,11 @@
           "date": "2026-05-01",
           "underlying_close": 721.34,
           "breached_short": false
+        },
+        {
+          "date": "2026-05-01",
+          "underlying_close": 724.12,
+          "breached_short": false
         }
       ],
       "settlement": null
@@ -521,6 +581,11 @@
           "date": "2026-05-01",
           "underlying_close": 670.01,
           "breached_short": false
+        },
+        {
+          "date": "2026-05-01",
+          "underlying_close": 675.01,
+          "breached_short": true
         }
       ],
       "settlement": null
@@ -558,6 +623,11 @@
           "date": "2026-05-01",
           "underlying_close": 277.72,
           "breached_short": false
+        },
+        {
+          "date": "2026-05-01",
+          "underlying_close": 278.31,
+          "breached_short": false
         }
       ],
       "settlement": null
@@ -590,6 +660,11 @@
           "date": "2026-05-01",
           "underlying_close": 502.77,
           "breached_short": false
+        },
+        {
+          "date": "2026-05-01",
+          "underlying_close": 510.21,
+          "breached_short": false
         }
       ],
       "settlement": null
@@ -617,7 +692,13 @@
       "break_even_upper": 734.76,
       "break_even_lower": 708.24,
       "status": "open",
-      "daily_marks": [],
+      "daily_marks": [
+        {
+          "date": "2026-05-01",
+          "underlying_close": 724.0856,
+          "breached_short": false
+        }
+      ],
       "settlement": null
     },
     {
@@ -643,7 +724,13 @@
       "break_even_upper": 686.3,
       "break_even_lower": 653.7,
       "status": "open",
-      "daily_marks": [],
+      "daily_marks": [
+        {
+          "date": "2026-05-01",
+          "underlying_close": 674.9001,
+          "breached_short": false
+        }
+      ],
       "settlement": null
     },
     {
@@ -669,7 +756,13 @@
       "break_even_upper": 286.23,
       "break_even_lower": 269.77,
       "status": "open",
-      "daily_marks": [],
+      "daily_marks": [
+        {
+          "date": "2026-05-01",
+          "underlying_close": 278.34,
+          "breached_short": false
+        }
+      ],
       "settlement": null
     },
     {
@@ -695,7 +788,13 @@
       "break_even_upper": 522.6,
       "break_even_lower": 482.4,
       "status": "open",
-      "daily_marks": [],
+      "daily_marks": [
+        {
+          "date": "2026-05-01",
+          "underlying_close": 510.21,
+          "breached_short": false
+        }
+      ],
       "settlement": null
     },
     {
@@ -721,7 +820,13 @@
       "break_even_upper": 80.58,
       "break_even_lower": 71.42,
       "status": "open",
-      "daily_marks": [],
+      "daily_marks": [
+        {
+          "date": "2026-05-01",
+          "underlying_close": 76.09,
+          "breached_short": false
+        }
+      ],
       "settlement": null
     },
     {
@@ -747,7 +852,13 @@
       "break_even_upper": 211.96,
       "break_even_lower": 190.54,
       "status": "open",
-      "daily_marks": [],
+      "daily_marks": [
+        {
+          "date": "2026-05-01",
+          "underlying_close": 200.545,
+          "breached_short": false
+        }
+      ],
       "settlement": null
     },
     {
@@ -773,7 +884,13 @@
       "break_even_upper": 437.15,
       "break_even_lower": 392.85,
       "status": "open",
-      "daily_marks": [],
+      "daily_marks": [
+        {
+          "date": "2026-05-01",
+          "underlying_close": 421.17,
+          "breached_short": false
+        }
+      ],
       "settlement": null
     },
     {
@@ -798,6 +915,246 @@
       "max_loss": 8.85,
       "break_even_upper": 411.15,
       "break_even_lower": 373.85,
+      "status": "open",
+      "daily_marks": [
+        {
+          "date": "2026-05-01",
+          "underlying_close": 402.64,
+          "breached_short": false
+        }
+      ],
+      "settlement": null
+    },
+    {
+      "id": "AMD-2026-05-01",
+      "ticker": "AMD",
+      "sector": "Semiconductors",
+      "start_date": "2026-05-01",
+      "target_exit_date": "2026-05-15",
+      "expiry_used": "2026-05-15",
+      "underlying_at_open": 356.595,
+      "atr14_at_open": 15.3862,
+      "sma20_at_open": 270.529,
+      "iv_percentile_at_open": 50,
+      "trend_bias": "bullish",
+      "short_call_strike": 380.0,
+      "long_call_strike": 390.0,
+      "short_put_strike": 332.5,
+      "long_put_strike": 322.5,
+      "net_credit_at_open": 4.3,
+      "wing_width": 10.0,
+      "max_profit": 4.3,
+      "max_loss": 5.7,
+      "break_even_upper": 384.3,
+      "break_even_lower": 328.2,
+      "status": "open",
+      "daily_marks": [],
+      "settlement": null
+    },
+    {
+      "id": "AAPL-2026-05-01",
+      "ticker": "AAPL",
+      "sector": "Mega-Cap Tech",
+      "start_date": "2026-05-01",
+      "target_exit_date": "2026-05-15",
+      "expiry_used": "2026-05-15",
+      "underlying_at_open": 283.9899,
+      "atr14_at_open": 6.1735,
+      "sma20_at_open": 266.4357,
+      "iv_percentile_at_open": 50,
+      "trend_bias": "bullish",
+      "short_call_strike": 292.5,
+      "long_call_strike": 300.0,
+      "short_put_strike": 275.0,
+      "long_put_strike": 270.0,
+      "net_credit_at_open": 2.11,
+      "wing_width": 7.5,
+      "max_profit": 2.11,
+      "max_loss": 5.39,
+      "break_even_upper": 294.61,
+      "break_even_lower": 272.89,
+      "status": "open",
+      "daily_marks": [],
+      "settlement": null
+    },
+    {
+      "id": "MSFT-2026-05-01",
+      "ticker": "MSFT",
+      "sector": "Mega-Cap Tech",
+      "start_date": "2026-05-01",
+      "target_exit_date": "2026-05-15",
+      "expiry_used": "2026-05-15",
+      "underlying_at_open": 412.34,
+      "atr14_at_open": 10.8536,
+      "sma20_at_open": 405.5185,
+      "iv_percentile_at_open": 50,
+      "trend_bias": "bullish",
+      "short_call_strike": 427.5,
+      "long_call_strike": 435.0,
+      "short_put_strike": 395.0,
+      "long_put_strike": 385.0,
+      "net_credit_at_open": 2.32,
+      "wing_width": 10.0,
+      "max_profit": 2.32,
+      "max_loss": 7.68,
+      "break_even_upper": 429.82,
+      "break_even_lower": 392.68,
+      "status": "open",
+      "daily_marks": [],
+      "settlement": null
+    },
+    {
+      "id": "GOOGL-2026-05-01",
+      "ticker": "GOOGL",
+      "sector": "Mega-Cap Tech",
+      "start_date": "2026-05-01",
+      "target_exit_date": "2026-05-15",
+      "expiry_used": "2026-05-15",
+      "underlying_at_open": 384.33,
+      "atr14_at_open": 9.7525,
+      "sma20_at_open": 336.7357,
+      "iv_percentile_at_open": 50,
+      "trend_bias": "bullish",
+      "short_call_strike": 400.0,
+      "long_call_strike": 405.0,
+      "short_put_strike": 370.0,
+      "long_put_strike": 365.0,
+      "net_credit_at_open": 1.24,
+      "wing_width": 5.0,
+      "max_profit": 1.24,
+      "max_loss": 3.76,
+      "break_even_upper": 401.24,
+      "break_even_lower": 368.76,
+      "status": "open",
+      "daily_marks": [],
+      "settlement": null
+    },
+    {
+      "id": "META-2026-05-01",
+      "ticker": "META",
+      "sector": "Mega-Cap Tech",
+      "start_date": "2026-05-01",
+      "target_exit_date": "2026-05-15",
+      "expiry_used": "2026-05-15",
+      "underlying_at_open": 613.12,
+      "atr14_at_open": 20.4577,
+      "sma20_at_open": 647.47,
+      "iv_percentile_at_open": 50,
+      "trend_bias": "bearish",
+      "short_call_strike": 645.0,
+      "long_call_strike": 660.0,
+      "short_put_strike": 580.0,
+      "long_put_strike": 565.0,
+      "net_credit_at_open": 3.58,
+      "wing_width": 15.0,
+      "max_profit": 3.58,
+      "max_loss": 11.42,
+      "break_even_upper": 648.58,
+      "break_even_lower": 576.42,
+      "status": "open",
+      "daily_marks": [],
+      "settlement": null
+    },
+    {
+      "id": "AMZN-2026-05-01",
+      "ticker": "AMZN",
+      "sector": "Mega-Cap Tech",
+      "start_date": "2026-05-01",
+      "target_exit_date": "2026-05-15",
+      "expiry_used": "2026-05-15",
+      "underlying_at_open": 268.79,
+      "atr14_at_open": 6.8941,
+      "sma20_at_open": 247.1285,
+      "iv_percentile_at_open": 50,
+      "trend_bias": "bullish",
+      "short_call_strike": 280.0,
+      "long_call_strike": 285.0,
+      "short_put_strike": 257.5,
+      "long_put_strike": 252.5,
+      "net_credit_at_open": 1.34,
+      "wing_width": 5.0,
+      "max_profit": 1.34,
+      "max_loss": 3.66,
+      "break_even_upper": 281.34,
+      "break_even_lower": 256.16,
+      "status": "open",
+      "daily_marks": [],
+      "settlement": null
+    },
+    {
+      "id": "TSLA-2026-05-01",
+      "ticker": "TSLA",
+      "sector": "Mega-Cap Tech",
+      "start_date": "2026-05-01",
+      "target_exit_date": "2026-05-15",
+      "expiry_used": "2026-05-15",
+      "underlying_at_open": 382.9899,
+      "atr14_at_open": 13.5335,
+      "sma20_at_open": 372.306,
+      "iv_percentile_at_open": 50,
+      "trend_bias": "bullish",
+      "short_call_strike": 402.5,
+      "long_call_strike": 410.0,
+      "short_put_strike": 365.0,
+      "long_put_strike": 355.0,
+      "net_credit_at_open": 3.39,
+      "wing_width": 10.0,
+      "max_profit": 3.39,
+      "max_loss": 6.61,
+      "break_even_upper": 405.89,
+      "break_even_lower": 361.61,
+      "status": "open",
+      "daily_marks": [],
+      "settlement": null
+    },
+    {
+      "id": "NFLX-2026-05-01",
+      "ticker": "NFLX",
+      "sector": "Mega-Cap Tech",
+      "start_date": "2026-05-01",
+      "target_exit_date": "2026-05-15",
+      "expiry_used": "2026-05-15",
+      "underlying_at_open": 93.82,
+      "atr14_at_open": 2.8327,
+      "sma20_at_open": 98.0165,
+      "iv_percentile_at_open": 50,
+      "trend_bias": "bearish",
+      "short_call_strike": 98.0,
+      "long_call_strike": 100.0,
+      "short_put_strike": 90.0,
+      "long_put_strike": 88.0,
+      "net_credit_at_open": 0.54,
+      "wing_width": 2.0,
+      "max_profit": 0.54,
+      "max_loss": 1.46,
+      "break_even_upper": 98.54,
+      "break_even_lower": 89.46,
+      "status": "open",
+      "daily_marks": [],
+      "settlement": null
+    },
+    {
+      "id": "COIN-2026-05-01",
+      "ticker": "COIN",
+      "sector": "High-Beta / Crypto",
+      "start_date": "2026-05-01",
+      "target_exit_date": "2026-05-15",
+      "expiry_used": "2026-05-15",
+      "underlying_at_open": 192.865,
+      "atr14_at_open": 11.9312,
+      "sma20_at_open": 187.5703,
+      "iv_percentile_at_open": 50,
+      "trend_bias": "bullish",
+      "short_call_strike": 210.0,
+      "long_call_strike": 217.5,
+      "short_put_strike": 175.0,
+      "long_put_strike": 165.0,
+      "net_credit_at_open": 2.93,
+      "wing_width": 10.0,
+      "max_profit": 2.93,
+      "max_loss": 7.07,
+      "break_even_upper": 212.93,
+      "break_even_lower": 172.07,
       "status": "open",
       "daily_marks": [],
       "settlement": null
@@ -1003,6 +1360,71 @@
       "ticker": "COIN",
       "date": "2026-05-01",
       "reason": "empty_chain_all_window_expirations"
+    },
+    {
+      "ticker": "MSTR",
+      "date": "2026-05-01",
+      "reason": "empty_chain_all_window_expirations"
+    },
+    {
+      "ticker": "MARA",
+      "date": "2026-05-01",
+      "reason": "empty_chain_all_window_expirations"
+    },
+    {
+      "ticker": "PLTR",
+      "date": "2026-05-01",
+      "reason": "empty_chain_all_window_expirations"
+    },
+    {
+      "ticker": "ARM",
+      "date": "2026-05-01",
+      "reason": "empty_chain_all_window_expirations"
+    },
+    {
+      "ticker": "UBER",
+      "date": "2026-05-01",
+      "reason": "empty_chain_all_window_expirations"
+    },
+    {
+      "ticker": "CRWD",
+      "date": "2026-05-01",
+      "reason": "empty_chain_all_window_expirations"
+    },
+    {
+      "ticker": "GLD",
+      "date": "2026-05-01",
+      "reason": "empty_chain_all_window_expirations"
+    },
+    {
+      "ticker": "SLV",
+      "date": "2026-05-01",
+      "reason": "empty_chain_all_window_expirations"
+    },
+    {
+      "ticker": "TLT",
+      "date": "2026-05-01",
+      "reason": "empty_chain_all_window_expirations"
+    },
+    {
+      "ticker": "JPM",
+      "date": "2026-05-01",
+      "reason": "empty_chain_all_window_expirations"
+    },
+    {
+      "ticker": "DIS",
+      "date": "2026-05-01",
+      "reason": "empty_chain_all_window_expirations"
+    },
+    {
+      "ticker": "XLE",
+      "date": "2026-05-01",
+      "reason": "empty_chain_all_window_expirations"
+    },
+    {
+      "ticker": "MU",
+      "date": "2026-05-01",
+      "reason": "illiquid:short_put:low_oi"
     },
     {
       "ticker": "MSTR",
