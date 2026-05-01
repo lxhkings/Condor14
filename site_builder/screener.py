@@ -18,9 +18,9 @@ def _ratio(s: Setup) -> float:
     return s.net_credit_at_open / s.max_loss if s.max_loss > 0 else 0.0
 
 
-def _highest_premium(ledger: Ledger, top: int = 10) -> list[Setup]:
-    open_setups = [s for s in ledger.setups if s.status == "open"]
-    return sorted(open_setups, key=_ratio, reverse=True)[:top]
+def _highest_premium(ledger: Ledger, today: date, top: int = 10) -> list[Setup]:
+    today_setups = [s for s in ledger.setups if s.status == "open" and s.start_date == today]
+    return sorted(today_setups, key=_ratio, reverse=True)[:top]
 
 
 def _sector_heatmap(ledger: Ledger) -> list[dict]:
@@ -51,7 +51,7 @@ def build_screener_data(ledger: Ledger, *, today: date) -> dict:
     else:
         days_since = max(0, (today - ledger.site_launch_date).days)
     return {
-        "highest_premium_setups": _highest_premium(ledger),
+        "highest_premium_setups": _highest_premium(ledger, today),
         "sector_heatmap": _sector_heatmap(ledger),
         "newest_setups": _newest(ledger, today),
         "site_launch_date": ledger.site_launch_date,

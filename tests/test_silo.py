@@ -2,13 +2,13 @@
 from content_engine.silo import same_sector_peers
 
 
-def test_nvda_returns_4_alphabetically_sorted_semiconductor_peers():
+def test_nvda_returns_3_semiconductor_peers():
     peers = same_sector_peers("NVDA")
-    assert len(peers) == 4
+    assert len(peers) == 3
     assert peers == sorted(peers)
     assert "NVDA" not in peers
-    # Semiconductors per config.SECTORS: NVDA, AMD, AVGO, MU, TSM
-    expected_pool = {"AMD", "AVGO", "MU", "TSM"}
+    # Semiconductors per config.SECTORS: NVDA, AMD, AVGO, TSM
+    expected_pool = {"AMD", "AVGO", "TSM"}
     assert set(peers) == expected_pool
 
 
@@ -16,10 +16,9 @@ def test_amd_returns_peers_that_exclude_amd():
     assert "AMD" not in same_sector_peers("AMD")
 
 
-def test_smaller_sector_returns_what_is_available():
-    # "Sector ETF" contains only SMH + ARKK. Asking for n=4 peers of SMH
-    # returns only ["ARKK"].
-    assert same_sector_peers("SMH") == ["ARKK"]
+def test_sector_etf_has_no_peers():
+    # "Sector ETF" contains only SMH now (ARKK removed)
+    assert same_sector_peers("SMH") == []
 
 
 def test_unknown_ticker_returns_empty():
