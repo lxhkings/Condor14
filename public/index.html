@@ -5,6 +5,17 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Daily Iron Condor Volatility Screener</title>
 <link rel="canonical" href="https://iron-condor-tracker.vercel.app/">
+<meta name="description" content="Daily iron condor setups computed from real OPRA quotes and tracked live to expiration across 30+ liquid US equities and ETFs. Open source, educational.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0d1117">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Daily Iron Condor Volatility Screener">
+<meta property="og:url" content="https://iron-condor-tracker.vercel.app/">
+<meta property="og:image" content="https://iron-condor-tracker.vercel.app/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://iron-condor-tracker.vercel.app/og-image.png">
+<meta property="og:description" content="Daily iron condor setups computed from real OPRA quotes and tracked live to expiration across 30+ liquid US equities and ETFs. Open source, educational.">
 <style>
   :root {
     --bg-main: #0d1117;
@@ -130,12 +141,103 @@
     h1 { font-size: 1.35rem; }
     .card { padding: 1rem; }
   }
-</style>
 
+  /* ---- Top nav ---- */
+
+  .topnav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.75rem 0; border-bottom: 1px solid var(--border);
+    margin-bottom: 1.5rem; font-family: var(--font-mono);
+    font-size: 0.85rem;
+  }
+  .topnav a { color: var(--text-muted); margin-left: 1.25rem; }
+  .topnav a:hover { color: var(--accent-green); text-decoration: none; }
+  .topnav .brand { color: var(--accent-green); font-weight: 700; letter-spacing: 0.04em; }
+
+  /* ---- Hero region ---- */
+
+  .hero { padding: 1.5rem 0 2rem; border-bottom: 1px solid var(--border); }
+  .hero .wordmark {
+    font-family: var(--font-mono); color: var(--accent-green);
+    font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase;
+    margin: 0 0 0.5rem;
+  }
+  .hero h1 { margin: 0 0 0.5rem; font-size: 1.9rem; }
+  .hero .tagline { color: var(--text-muted); margin: 0 0 1.5rem; font-size: 0.95rem; }
+
+  .hero-stats {
+    display: grid; grid-template-columns: 1fr 1fr 2fr; gap: 0.75rem;
+    margin-top: 1rem;
+  }
+  .stat {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 4px; padding: 0.85rem 1rem;
+    font-family: var(--font-mono);
+  }
+  .stat .num { font-size: 1.5rem; color: var(--text-primary); font-weight: 600; }
+  .stat .lbl {
+    font-size: 0.7rem; color: var(--text-muted);
+    text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.25rem;
+  }
+  .stat--progress .bar {
+    height: 6px; background: var(--bg-main); border-radius: 3px;
+    overflow: hidden; margin-top: 0.5rem;
+  }
+  .stat--progress .bar > span {
+    display: block; height: 100%; background: var(--accent-green);
+  }
+  @media (max-width: 640px) {
+    .hero-stats { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 1.4rem; }
+  }
+
+  /* ---- Sector pills + dots ---- */
+
+  .pill {
+    display: inline-block; padding: 2px 8px; border-radius: 999px;
+    font-size: 0.72rem; font-family: var(--font-mono);
+    background: var(--bg-card); border: 1px solid var(--border);
+    color: var(--text-muted); white-space: nowrap;
+  }
+  .dot {
+    display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+    margin-right: 6px; vertical-align: middle;
+  }
+  .dot--mega   { background: #b48cff; }
+  .dot--semi   { background: #4d9aff; }
+  .dot--broad  { background: #8b949e; }
+  .dot--sector { background: #ffa657; }
+
+  /* ---- Table zebra ---- */
+
+  tbody tr:nth-child(even) { background: rgba(255,255,255,0.015); }
+  /* hover rule defined once in the Tables section above */
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Iron Condor Tracker","url":"https://iron-condor-tracker.vercel.app/","description":"Daily iron condor setups computed from real OPRA quotes and tracked live to expiration across 30+ liquid US equities and ETFs. Open source, educational.","publisher":{"@type":"Organization","name":"QuantOptions Data Lab"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","numberOfItems":7,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://iron-condor-tracker.vercel.app/meta/","name":"META 14-Day Iron Condor Tracker"},{"@type":"ListItem","position":2,"url":"https://iron-condor-tracker.vercel.app/amzn/","name":"AMZN 14-Day Iron Condor Tracker"},{"@type":"ListItem","position":3,"url":"https://iron-condor-tracker.vercel.app/smh/","name":"SMH 14-Day Iron Condor Tracker"},{"@type":"ListItem","position":4,"url":"https://iron-condor-tracker.vercel.app/qqq/","name":"QQQ 14-Day Iron Condor Tracker"},{"@type":"ListItem","position":5,"url":"https://iron-condor-tracker.vercel.app/spy/","name":"SPY 14-Day Iron Condor Tracker"},{"@type":"ListItem","position":6,"url":"https://iron-condor-tracker.vercel.app/iwm/","name":"IWM 14-Day Iron Condor Tracker"},{"@type":"ListItem","position":7,"url":"https://iron-condor-tracker.vercel.app/nvda/","name":"NVDA 14-Day Iron Condor Tracker"}]}</script>
 </head>
 <body>
-<h1>Daily Iron Condor Volatility Screener</h1>
-<p>Live tracking initiated on <strong>2026-04-29</strong>. Realized 30-day win-rate leaderboard unlocks once 200 settled setups accumulate (~44 trading days). Until then, the screener below shows today's setups ranked by premium structure and a per-sector volatility view.</p>
+<div class="hero">
+  <p class="wordmark">CONDOR14 · QuantOptions Data Lab</p>
+  <h1>Daily Iron Condor Volatility Screener</h1>
+  <p class="tagline">Real OPRA quotes · Held to expiration · Open source</p>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="num">0</div>
+      <div class="lbl">days tracking</div>
+    </div>
+    <div class="stat">
+      <div class="num">23</div>
+      <div class="lbl">setups tracked</div>
+    </div>
+    <div class="stat stat--progress">
+      <div class="num">0 / 200</div>
+      <div class="lbl">toward leaderboard unlock</div>
+      <div class="bar"><span style="width: 0%"></span></div>
+    </div>
+  </div>
+</div>
+<p>Live tracking initiated on <strong>2026-05-01</strong>. Realized 30-day win-rate leaderboard unlocks once 200 settled setups accumulate (~44 trading days). Until then, the screener below shows today's setups ranked by premium structure and a per-sector volatility view.</p>
 <h2>Today's Highest Premium Setups</h2>
 <div class="table-wrap"><table>
 <thead>
@@ -170,10 +272,24 @@
 <td style="text-align:right">0.97</td>
 </tr>
 <tr>
+<td style="text-align:left"><a href="/qqq/">QQQ</a></td>
+<td style="text-align:left">Broad ETF</td>
+<td style="text-align:right">$2.30</td>
+<td style="text-align:right">$2.70</td>
+<td style="text-align:right">0.85</td>
+</tr>
+<tr>
 <td style="text-align:left"><a href="/spy/">SPY</a></td>
 <td style="text-align:left">Broad ETF</td>
 <td style="text-align:right">$2.21</td>
 <td style="text-align:right">$2.79</td>
+<td style="text-align:right">0.79</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="/spy/">SPY</a></td>
+<td style="text-align:left">Broad ETF</td>
+<td style="text-align:right">$1.76</td>
+<td style="text-align:right">$2.24</td>
 <td style="text-align:right">0.79</td>
 </tr>
 <tr>
@@ -184,39 +300,25 @@
 <td style="text-align:right">0.70</td>
 </tr>
 <tr>
+<td style="text-align:left"><a href="/iwm/">IWM</a></td>
+<td style="text-align:left">Broad ETF</td>
+<td style="text-align:right">$1.23</td>
+<td style="text-align:right">$1.77</td>
+<td style="text-align:right">0.69</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="/nvda/">NVDA</a></td>
+<td style="text-align:left">Semiconductors</td>
+<td style="text-align:right">$1.96</td>
+<td style="text-align:right">$3.04</td>
+<td style="text-align:right">0.64</td>
+</tr>
+<tr>
 <td style="text-align:left"><a href="/meta/">META</a></td>
 <td style="text-align:left">Mega-Cap Tech</td>
 <td style="text-align:right">$3.76</td>
 <td style="text-align:right">$6.24</td>
 <td style="text-align:right">0.60</td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="/qqq/">QQQ</a></td>
-<td style="text-align:left">Broad ETF</td>
-<td style="text-align:right">$3.75</td>
-<td style="text-align:right">$6.25</td>
-<td style="text-align:right">0.60</td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="/aapl/">AAPL</a></td>
-<td style="text-align:left">Mega-Cap Tech</td>
-<td style="text-align:right">$1.85</td>
-<td style="text-align:right">$3.15</td>
-<td style="text-align:right">0.59</td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="/nvda/">NVDA</a></td>
-<td style="text-align:left">Semiconductors</td>
-<td style="text-align:right">$1.74</td>
-<td style="text-align:right">$3.26</td>
-<td style="text-align:right">0.53</td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="/googl/">GOOGL</a></td>
-<td style="text-align:left">Mega-Cap Tech</td>
-<td style="text-align:right">$1.63</td>
-<td style="text-align:right">$3.37</td>
-<td style="text-align:right">0.48</td>
 </tr>
 </tbody>
 </table></div>
@@ -238,22 +340,31 @@
 <tr>
 <td style="text-align:left">Broad ETF</td>
 <td style="text-align:right">50</td>
+<td style="text-align:right">7</td>
+</tr>
+<tr>
+<td style="text-align:left">Semiconductors</td>
+<td style="text-align:right">50</td>
 <td style="text-align:right">4</td>
 </tr>
 <tr>
 <td style="text-align:left">Sector ETF</td>
 <td style="text-align:right">50</td>
-<td style="text-align:right">1</td>
-</tr>
-<tr>
-<td style="text-align:left">Semiconductors</td>
-<td style="text-align:right">50</td>
-<td style="text-align:right">1</td>
+<td style="text-align:right">3</td>
 </tr>
 </tbody>
 </table></div>
 <h2>Newest Tracked Setups (Today)</h2>
-<p><em>No new setups initiated today.</em></p>
+<ul>
+<li><a href="/spy/">SPY</a> — opened at $721.27 (bullish)</li>
+<li><a href="/qqq/">QQQ</a> — opened at $669.96 (bullish)</li>
+<li><a href="/iwm/">IWM</a> — opened at $277.75 (bullish)</li>
+<li><a href="/smh/">SMH</a> — opened at $502.75 (bullish)</li>
+<li><a href="/arkk/">ARKK</a> — opened at $75.89 (bullish)</li>
+<li><a href="/nvda/">NVDA</a> — opened at $201.56 (bullish)</li>
+<li><a href="/avgo/">AVGO</a> — opened at $413.76 (bullish)</li>
+<li><a href="/tsm/">TSM</a> — opened at $393.15 (bullish)</li>
+</ul>
 <h2>Methodology</h2>
 <p>Every setup is computed from real OPRA bid-ask quotes and tracked live to expiration. <a href="/methodology/">Read the full methodology →</a></p>
 <div class="disclaimer">

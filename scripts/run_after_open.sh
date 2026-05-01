@@ -3,6 +3,7 @@
 # US market opens at 9:30 AM ET
 # Summer (DST): 9:30 AM ET = 21:30 Beijing -> run at 22:00 Beijing
 # Winter (EST): 9:30 AM ET = 22:30 Beijing -> run at 23:00 Beijing
+# After pipeline: build site and push to git (triggers Vercel deploy)
 
 set -e
 cd /Users/xiaohongliang/projects/condor14
@@ -35,6 +36,14 @@ if [ "$DST" = "yes" ]; then
     if [ "$BEIJING_HOUR" -ge 22 ] && [ "$BEIJING_HOUR" -lt 23 ]; then
         echo "Running pipeline (DST, 22:xx Beijing = 10:xx AM ET)"
         /opt/homebrew/bin/uv run python daily_run.py
+
+        echo "Building site..."
+        SITE_HOST=iron-condor-tracker.vercel.app /opt/homebrew/bin/uv run python build_site.py
+
+        echo "Committing and pushing to git..."
+        git add data/ledger.json public/
+        git commit -m "data: $(date +%Y-%m-%d) setups [skip ci]" || echo "No changes to commit"
+        git push origin main
     else
         echo "Skipping: not in DST window (need 22:xx Beijing, got ${BEIJING_HOUR}:xx)"
     fi
@@ -43,6 +52,14 @@ else
     if [ "$BEIJING_HOUR" -ge 23 ]; then
         echo "Running pipeline (EST, 23:xx Beijing = 10:xx AM ET)"
         /opt/homebrew/bin/uv run python daily_run.py
+
+        echo "Building site..."
+        SITE_HOST=iron-condor-tracker.vercel.app /opt/homebrew/bin/uv run python build_site.py
+
+        echo "Committing and pushing to git..."
+        git add data/ledger.json public/
+        git commit -m "data: $(date +%Y-%m-%d) setups [skip ci]" || echo "No changes to commit"
+        git push origin main
     else
         echo "Skipping: not in EST window (need 23:xx Beijing, got ${BEIJING_HOUR}:xx)"
     fi

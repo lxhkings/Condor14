@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>TSM 14-Day Iron Condor Tracker</title>
 <link rel="canonical" href="https://iron-condor-tracker.vercel.app/tsm/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0d1117">
 <style>
   :root {
     --bg-main: #0d1117;
@@ -130,13 +133,195 @@
     h1 { font-size: 1.35rem; }
     .card { padding: 1rem; }
   }
-</style>
 
+  /* ---- Top nav ---- */
+
+  .topnav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.75rem 0; border-bottom: 1px solid var(--border);
+    margin-bottom: 1.5rem; font-family: var(--font-mono);
+    font-size: 0.85rem;
+  }
+  .topnav a { color: var(--text-muted); margin-left: 1.25rem; }
+  .topnav a:hover { color: var(--accent-green); text-decoration: none; }
+  .topnav .brand { color: var(--accent-green); font-weight: 700; letter-spacing: 0.04em; }
+
+  /* ---- Hero region ---- */
+
+  .hero { padding: 1.5rem 0 2rem; border-bottom: 1px solid var(--border); }
+  .hero .wordmark {
+    font-family: var(--font-mono); color: var(--accent-green);
+    font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase;
+    margin: 0 0 0.5rem;
+  }
+  .hero h1 { margin: 0 0 0.5rem; font-size: 1.9rem; }
+  .hero .tagline { color: var(--text-muted); margin: 0 0 1.5rem; font-size: 0.95rem; }
+
+  .hero-stats {
+    display: grid; grid-template-columns: 1fr 1fr 2fr; gap: 0.75rem;
+    margin-top: 1rem;
+  }
+  .stat {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 4px; padding: 0.85rem 1rem;
+    font-family: var(--font-mono);
+  }
+  .stat .num { font-size: 1.5rem; color: var(--text-primary); font-weight: 600; }
+  .stat .lbl {
+    font-size: 0.7rem; color: var(--text-muted);
+    text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.25rem;
+  }
+  .stat--progress .bar {
+    height: 6px; background: var(--bg-main); border-radius: 3px;
+    overflow: hidden; margin-top: 0.5rem;
+  }
+  .stat--progress .bar > span {
+    display: block; height: 100%; background: var(--accent-green);
+  }
+  @media (max-width: 640px) {
+    .hero-stats { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 1.4rem; }
+  }
+
+  /* ---- Sector pills + dots ---- */
+
+  .pill {
+    display: inline-block; padding: 2px 8px; border-radius: 999px;
+    font-size: 0.72rem; font-family: var(--font-mono);
+    background: var(--bg-card); border: 1px solid var(--border);
+    color: var(--text-muted); white-space: nowrap;
+  }
+  .dot {
+    display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+    margin-right: 6px; vertical-align: middle;
+  }
+  .dot--mega   { background: #b48cff; }
+  .dot--semi   { background: #4d9aff; }
+  .dot--broad  { background: #8b949e; }
+  .dot--sector { background: #ffa657; }
+
+  /* ---- Table zebra ---- */
+
+  tbody tr:nth-child(even) { background: rgba(255,255,255,0.015); }
+  /* hover rule defined once in the Tables section above */
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FinancialProduct","name":"TSM 14-Day Iron Condor Educational Tracker","category":"Options Strategy Educational Tool","additionalProperty":[{"@type":"PropertyValue","name":"Net Credit","value":1.15,"unitText":"USD"},{"@type":"PropertyValue","name":"Max Profit","value":1.15,"unitText":"USD"},{"@type":"PropertyValue","name":"Max Loss","value":8.85,"unitText":"USD"},{"@type":"PropertyValue","name":"Upper Break-even","value":411.15,"unitText":"USD"},{"@type":"PropertyValue","name":"Lower Break-even","value":373.85,"unitText":"USD"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://iron-condor-tracker.vercel.app/"},{"@type":"ListItem","position":2,"name":"Semiconductors"},{"@type":"ListItem","position":3,"name":"TSM"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"TSM 14-Day Iron Condor Tracker","author":{"@type":"Organization","name":"QuantOptions Data Lab"},"publisher":{"@type":"Organization","name":"QuantOptions Data Lab"},"datePublished":"2026-05-01","dateModified":"2026-05-01"}</script>
 </head>
 <body>
-<h1>TSM 14-Day Iron Condor Tracker -- May 01, 2026</h1>
-<p>No setup published for TSM today. The most common reasons are insufficient liquidity on the listed strikes, no expiration in the 13-16 day target window, or a non-positive net credit. Live tracking resumes the next trading day.</p>
-<h2>Related Tickers</h2>
+<h1>TSM 14-Day Iron Condor Tracker — May 01, 2026</h1>
+<p>TSM is trading at $393.15, maintaining a position above the 20-day simple moving average of $376.74. The intermediate-term price trajectory has been favorable, with the daily chart displaying a sequence of higher lows over recent sessions. Implied volatility registers at the 50th percentile of the trailing 52-week range, placing options in a moderately priced zone where neither cheap nor expensive extremes dominate the landscape. This middle ground often produces the most consistent risk-reward outcomes for theta-based strategies.</p>
+<p>For a short Iron Condor with a 14-day horizon, this volatility tier presents a proportionate risk-reward profile. The time decay contribution is steady but not outsized, meaning the breakeven envelope fairly reflects the statistical probability of the underlying staying inside the chosen strikes. Profit accrues through theta accumulation as long as price action remains within the short-leg boundaries defined at entry.</p>
+<p>The 14-day ATR of $12.75 establishes the reference distance for strike placement. Setting the short call approximately 1.5 ATRs above the current level and the short put an equivalent distance below creates a containment zone that historically captures the bulk of two-week price excursions. The wings are dimensioned to cap the theoretical loss while maintaining a credit-to-risk ratio appropriate for this volatility regime.</p>
+<div class="card">
+<h2>Today's Setup</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Underlying close</td>
+<td style="text-align:right">$393.15</td>
+</tr>
+<tr>
+<td style="text-align:left">20-day SMA</td>
+<td style="text-align:right">$376.74</td>
+</tr>
+<tr>
+<td style="text-align:left">14-day ATR</td>
+<td style="text-align:right">$12.75</td>
+</tr>
+<tr>
+<td style="text-align:left">Trend bias</td>
+<td style="text-align:right">Bullish</td>
+</tr>
+<tr>
+<td style="text-align:left">Target exit date</td>
+<td style="text-align:right">2026-05-15</td>
+</tr>
+<tr>
+<td style="text-align:left">Expiry used</td>
+<td style="text-align:right">2026-05-15</td>
+</tr>
+<tr>
+<td style="text-align:left">Short call strike</td>
+<td style="text-align:right">$410.00</td>
+</tr>
+<tr>
+<td style="text-align:left">Long call strike</td>
+<td style="text-align:right">$420.00</td>
+</tr>
+<tr>
+<td style="text-align:left">Short put strike</td>
+<td style="text-align:right">$375.00</td>
+</tr>
+<tr>
+<td style="text-align:left">Long put strike</td>
+<td style="text-align:right">$367.50</td>
+</tr>
+<tr>
+<td style="text-align:left">Net credit</td>
+<td style="text-align:right">$1.15</td>
+</tr>
+<tr>
+<td style="text-align:left">Max profit</td>
+<td style="text-align:right">$1.15</td>
+</tr>
+<tr>
+<td style="text-align:left">Max loss</td>
+<td style="text-align:right">$8.85</td>
+</tr>
+<tr>
+<td style="text-align:left">Upper break-even</td>
+<td style="text-align:right">$411.15</td>
+</tr>
+<tr>
+<td style="text-align:left">Lower break-even</td>
+<td style="text-align:right">$373.85</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="card">
+<h2>Risk Profile</h2>
+<ul>
+<li><strong>Max Profit:</strong> $1.15 per spread</li>
+<li><strong>Max Loss:</strong> $8.85 per spread</li>
+<li><strong>Risk-Reward:</strong> 1 : 7.70</li>
+</ul>
+</div>
+<h2>Methodology Snapshot</h2>
+<ul>
+<li>Strike selection: ATR14-based anchors snapped to listed strikes</li>
+<li>Pricing: real-time bid-ask from OPRA via MarketData.app</li>
+<li>Win condition: closing price within short strikes at expiration (passive hold-to-expiration)</li>
+<li><a href="/methodology/">Full methodology →</a> · <a href="https://github.com/lxhkings/Condor14">Source code on GitHub →</a></li>
+</ul>
+<h2>Historical Tracking Log</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Week Ending</th>
+<th style="text-align:right">Open Price</th>
+<th style="text-align:left">Setup Status</th>
+<th style="text-align:left">Movement Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">2026-05-01</td>
+<td style="text-align:right">$393.15</td>
+<td style="text-align:left">Open (Day 0)</td>
+<td style="text-align:left">In-flight, hold-to-expiration</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Related Semiconductors Tickers</h2>
 <ul>
 <li><a href="/amd/">AMD</a></li>
 <li><a href="/avgo/">AVGO</a></li>

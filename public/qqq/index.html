@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>QQQ 14-Day Iron Condor Tracker</title>
 <link rel="canonical" href="https://iron-condor-tracker.vercel.app/qqq/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0d1117">
 <style>
   :root {
     --bg-main: #0d1117;
@@ -130,16 +133,87 @@
     h1 { font-size: 1.35rem; }
     .card { padding: 1rem; }
   }
+
+  /* ---- Top nav ---- */
+
+  .topnav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.75rem 0; border-bottom: 1px solid var(--border);
+    margin-bottom: 1.5rem; font-family: var(--font-mono);
+    font-size: 0.85rem;
+  }
+  .topnav a { color: var(--text-muted); margin-left: 1.25rem; }
+  .topnav a:hover { color: var(--accent-green); text-decoration: none; }
+  .topnav .brand { color: var(--accent-green); font-weight: 700; letter-spacing: 0.04em; }
+
+  /* ---- Hero region ---- */
+
+  .hero { padding: 1.5rem 0 2rem; border-bottom: 1px solid var(--border); }
+  .hero .wordmark {
+    font-family: var(--font-mono); color: var(--accent-green);
+    font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase;
+    margin: 0 0 0.5rem;
+  }
+  .hero h1 { margin: 0 0 0.5rem; font-size: 1.9rem; }
+  .hero .tagline { color: var(--text-muted); margin: 0 0 1.5rem; font-size: 0.95rem; }
+
+  .hero-stats {
+    display: grid; grid-template-columns: 1fr 1fr 2fr; gap: 0.75rem;
+    margin-top: 1rem;
+  }
+  .stat {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 4px; padding: 0.85rem 1rem;
+    font-family: var(--font-mono);
+  }
+  .stat .num { font-size: 1.5rem; color: var(--text-primary); font-weight: 600; }
+  .stat .lbl {
+    font-size: 0.7rem; color: var(--text-muted);
+    text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.25rem;
+  }
+  .stat--progress .bar {
+    height: 6px; background: var(--bg-main); border-radius: 3px;
+    overflow: hidden; margin-top: 0.5rem;
+  }
+  .stat--progress .bar > span {
+    display: block; height: 100%; background: var(--accent-green);
+  }
+  @media (max-width: 640px) {
+    .hero-stats { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 1.4rem; }
+  }
+
+  /* ---- Sector pills + dots ---- */
+
+  .pill {
+    display: inline-block; padding: 2px 8px; border-radius: 999px;
+    font-size: 0.72rem; font-family: var(--font-mono);
+    background: var(--bg-card); border: 1px solid var(--border);
+    color: var(--text-muted); white-space: nowrap;
+  }
+  .dot {
+    display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+    margin-right: 6px; vertical-align: middle;
+  }
+  .dot--mega   { background: #b48cff; }
+  .dot--semi   { background: #4d9aff; }
+  .dot--broad  { background: #8b949e; }
+  .dot--sector { background: #ffa657; }
+
+  /* ---- Table zebra ---- */
+
+  tbody tr:nth-child(even) { background: rgba(255,255,255,0.015); }
+  /* hover rule defined once in the Tables section above */
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FinancialProduct","name":"QQQ 14-Day Iron Condor Educational Tracker","category":"Options Strategy Educational Tool","additionalProperty":[{"@type":"PropertyValue","name":"Net Credit","value":3.75,"unitText":"USD"},{"@type":"PropertyValue","name":"Max Profit","value":3.75,"unitText":"USD"},{"@type":"PropertyValue","name":"Max Loss","value":6.25,"unitText":"USD"},{"@type":"PropertyValue","name":"Upper Break-even","value":678.75,"unitText":"USD"},{"@type":"PropertyValue","name":"Lower Break-even","value":641.25,"unitText":"USD"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FinancialProduct","name":"QQQ 14-Day Iron Condor Educational Tracker","category":"Options Strategy Educational Tool","additionalProperty":[{"@type":"PropertyValue","name":"Net Credit","value":2.3,"unitText":"USD"},{"@type":"PropertyValue","name":"Max Profit","value":2.3,"unitText":"USD"},{"@type":"PropertyValue","name":"Max Loss","value":2.7,"unitText":"USD"},{"@type":"PropertyValue","name":"Upper Break-even","value":686.3,"unitText":"USD"},{"@type":"PropertyValue","name":"Lower Break-even","value":653.7,"unitText":"USD"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://iron-condor-tracker.vercel.app/"},{"@type":"ListItem","position":2,"name":"Broad ETF"},{"@type":"ListItem","position":3,"name":"QQQ"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"QQQ 14-Day Iron Condor Tracker","author":{"@type":"Organization","name":"QuantOptions Data Lab"},"publisher":{"@type":"Organization","name":"QuantOptions Data Lab"},"datePublished":"2026-04-30","dateModified":"2026-05-01"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"QQQ 14-Day Iron Condor Tracker","author":{"@type":"Organization","name":"QuantOptions Data Lab"},"publisher":{"@type":"Organization","name":"QuantOptions Data Lab"},"datePublished":"2026-05-01","dateModified":"2026-05-01"}</script>
 </head>
 <body>
 <h1>QQQ 14-Day Iron Condor Tracker — May 01, 2026</h1>
-<p>QQQ is trading at $661.57, maintaining a position above the 20-day simple moving average of $625.35. The intermediate-term price trajectory has been favorable, with the daily chart displaying a sequence of higher lows over recent sessions. Implied volatility registers at the 50th percentile of the trailing 52-week range, placing options in a moderately priced zone where neither cheap nor expensive extremes dominate the landscape. This middle ground often produces the most consistent risk-reward outcomes for theta-based strategies.</p>
+<p>QQQ is trading at $669.96, maintaining a position above the 20-day simple moving average of $637.99. The intermediate-term price trajectory has been favorable, with the daily chart displaying a sequence of higher lows over recent sessions. Implied volatility registers at the 50th percentile of the trailing 52-week range, placing options in a moderately priced zone where neither cheap nor expensive extremes dominate the landscape. This middle ground often produces the most consistent risk-reward outcomes for theta-based strategies.</p>
 <p>For a short Iron Condor with a 14-day horizon, this volatility tier presents a proportionate risk-reward profile. The time decay contribution is steady but not outsized, meaning the breakeven envelope fairly reflects the statistical probability of the underlying staying inside the chosen strikes. Profit accrues through theta accumulation as long as price action remains within the short-leg boundaries defined at entry.</p>
-<p>The 14-day ATR of $10.28 establishes the reference distance for strike placement. Setting the short call approximately 1.5 ATRs above the current level and the short put an equivalent distance below creates a containment zone that historically captures the bulk of two-week price excursions. The wings are dimensioned to cap the theoretical loss while maintaining a credit-to-risk ratio appropriate for this volatility regime.</p>
+<p>The 14-day ATR of $9.46 establishes the reference distance for strike placement. Setting the short call approximately 1.5 ATRs above the current level and the short put an equivalent distance below creates a containment zone that historically captures the bulk of two-week price excursions. The wings are dimensioned to cap the theoretical loss while maintaining a credit-to-risk ratio appropriate for this volatility regime.</p>
 <div class="card">
 <h2>Today's Setup</h2>
 <div class="table-wrap"><table>
@@ -152,15 +226,15 @@
 <tbody>
 <tr>
 <td style="text-align:left">Underlying close</td>
-<td style="text-align:right">$661.57</td>
+<td style="text-align:right">$669.96</td>
 </tr>
 <tr>
 <td style="text-align:left">20-day SMA</td>
-<td style="text-align:right">$625.35</td>
+<td style="text-align:right">$637.99</td>
 </tr>
 <tr>
 <td style="text-align:left">14-day ATR</td>
-<td style="text-align:right">$10.28</td>
+<td style="text-align:right">$9.46</td>
 </tr>
 <tr>
 <td style="text-align:left">Trend bias</td>
@@ -168,47 +242,47 @@
 </tr>
 <tr>
 <td style="text-align:left">Target exit date</td>
-<td style="text-align:right">2026-05-14</td>
+<td style="text-align:right">2026-05-15</td>
 </tr>
 <tr>
 <td style="text-align:left">Expiry used</td>
-<td style="text-align:right">2026-05-13</td>
+<td style="text-align:right">2026-05-15</td>
 </tr>
 <tr>
 <td style="text-align:left">Short call strike</td>
-<td style="text-align:right">$675.00</td>
+<td style="text-align:right">$684.00</td>
 </tr>
 <tr>
 <td style="text-align:left">Long call strike</td>
-<td style="text-align:right">$685.00</td>
+<td style="text-align:right">$689.00</td>
 </tr>
 <tr>
 <td style="text-align:left">Short put strike</td>
-<td style="text-align:right">$645.00</td>
+<td style="text-align:right">$656.00</td>
 </tr>
 <tr>
 <td style="text-align:left">Long put strike</td>
-<td style="text-align:right">$635.00</td>
+<td style="text-align:right">$651.00</td>
 </tr>
 <tr>
 <td style="text-align:left">Net credit</td>
-<td style="text-align:right">$3.75</td>
+<td style="text-align:right">$2.30</td>
 </tr>
 <tr>
 <td style="text-align:left">Max profit</td>
-<td style="text-align:right">$3.75</td>
+<td style="text-align:right">$2.30</td>
 </tr>
 <tr>
 <td style="text-align:left">Max loss</td>
-<td style="text-align:right">$6.25</td>
+<td style="text-align:right">$2.70</td>
 </tr>
 <tr>
 <td style="text-align:left">Upper break-even</td>
-<td style="text-align:right">$678.75</td>
+<td style="text-align:right">$686.30</td>
 </tr>
 <tr>
 <td style="text-align:left">Lower break-even</td>
-<td style="text-align:right">$641.25</td>
+<td style="text-align:right">$653.70</td>
 </tr>
 </tbody>
 </table></div>
@@ -216,9 +290,9 @@
 <div class="card">
 <h2>Risk Profile</h2>
 <ul>
-<li><strong>Max Profit:</strong> $3.75 per spread</li>
-<li><strong>Max Loss:</strong> $6.25 per spread</li>
-<li><strong>Risk-Reward:</strong> 1 : 1.67</li>
+<li><strong>Max Profit:</strong> $2.30 per spread</li>
+<li><strong>Max Loss:</strong> $2.70 per spread</li>
+<li><strong>Risk-Reward:</strong> 1 : 1.17</li>
 </ul>
 </div>
 <h2>Methodology Snapshot</h2>
