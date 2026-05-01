@@ -134,6 +134,77 @@ CSS_STYLE = """\
     h1 { font-size: 1.35rem; }
     .card { padding: 1rem; }
   }
+
+  /* ---- Top nav ---- */
+
+  .topnav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.75rem 0; border-bottom: 1px solid var(--border);
+    margin-bottom: 1.5rem; font-family: var(--font-mono);
+    font-size: 0.85rem;
+  }
+  .topnav a { color: var(--text-muted); margin-left: 1.25rem; }
+  .topnav a:hover { color: var(--accent-green); text-decoration: none; }
+  .topnav .brand { color: var(--accent-green); font-weight: 700; letter-spacing: 0.04em; }
+
+  /* ---- Hero region ---- */
+
+  .hero { padding: 1.5rem 0 2rem; border-bottom: 1px solid var(--border); }
+  .hero .wordmark {
+    font-family: var(--font-mono); color: var(--accent-green);
+    font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase;
+    margin: 0 0 0.5rem;
+  }
+  .hero h1 { margin: 0 0 0.5rem; font-size: 1.9rem; }
+  .hero .tagline { color: var(--text-muted); margin: 0 0 1.5rem; font-size: 0.95rem; }
+
+  .hero-stats {
+    display: grid; grid-template-columns: 1fr 1fr 2fr; gap: 0.75rem;
+    margin-top: 1rem;
+  }
+  .stat {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 4px; padding: 0.85rem 1rem;
+    font-family: var(--font-mono);
+  }
+  .stat .num { font-size: 1.5rem; color: var(--text-primary); font-weight: 600; }
+  .stat .lbl {
+    font-size: 0.7rem; color: var(--text-muted);
+    text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.25rem;
+  }
+  .stat--progress .bar {
+    height: 6px; background: var(--bg-main); border-radius: 3px;
+    overflow: hidden; margin-top: 0.5rem;
+  }
+  .stat--progress .bar > span {
+    display: block; height: 100%; background: var(--accent-green);
+  }
+  @media (max-width: 640px) {
+    .hero-stats { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 1.4rem; }
+  }
+
+  /* ---- Sector pills + dots ---- */
+
+  .pill {
+    display: inline-block; padding: 2px 8px; border-radius: 999px;
+    font-size: 0.72rem; font-family: var(--font-mono);
+    background: var(--bg-card); border: 1px solid var(--border);
+    color: var(--text-muted); white-space: nowrap;
+  }
+  .dot {
+    display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+    margin-right: 6px; vertical-align: middle;
+  }
+  .dot--mega   { background: #b48cff; }
+  .dot--semi   { background: #4d9aff; }
+  .dot--broad  { background: #8b949e; }
+  .dot--sector { background: #ffa657; }
+
+  /* ---- Table zebra ---- */
+
+  tbody tr:nth-child(even) { background: rgba(255,255,255,0.015); }
+  tbody tr:hover { background: var(--bg-card); }
 </style>"""
 
 _CARD_SECTIONS = [
