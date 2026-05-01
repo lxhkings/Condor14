@@ -201,6 +201,19 @@ def check_hypothetical_allowlist(
     return _impl(public_dir)
 
 
+def _unique_by_ticker(setups: list[Setup]) -> list[Setup]:
+    """Dedup setups by ticker, preserving first occurrence order.
+    Same ticker can appear multiple times in highest_premium_setups (one open
+    setup per trading day); ItemList JSON-LD requires unique URLs."""
+    seen: set[str] = set()
+    unique: list[Setup] = []
+    for s in setups:
+        if s.ticker not in seen:
+            seen.add(s.ticker)
+            unique.append(s)
+    return unique
+
+
 def _copy_static_assets(public_dir: Path) -> None:
     """Copy committed assets (favicon, OG, apple-touch-icon) into public/.
     Missing files are skipped so this is safe to call even before OG image
@@ -239,7 +252,9 @@ def build(
             description=HOMEPAGE_DESCRIPTION,
         ),
         item_list_schema(
-            build_screener_data(ledger, today=today)["highest_premium_setups"],
+            _unique_by_ticker(
+                build_screener_data(ledger, today=today)["highest_premium_setups"]
+            ),
             base_url=base_url,
         ),
     ]

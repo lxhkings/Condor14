@@ -59,3 +59,19 @@ def test_item_list_empty_setups():
     s = item_list_schema([], base_url="https://example.com")
     assert s["numberOfItems"] == 0
     assert s["itemListElement"] == []
+
+
+def test_unique_by_ticker_preserves_first_occurrence_order():
+    # Regression: same ticker can appear multiple times in highest_premium_setups
+    # (one open setup per trading day). ItemList JSON-LD must dedupe by URL or
+    # Google may discard the schema for low quality.
+    from build_site import _unique_by_ticker
+    setups = [_setup("AAPL"), _setup("META"), _setup("AAPL"),
+              _setup("NVDA"), _setup("META")]
+    unique = _unique_by_ticker(setups)
+    assert [s.ticker for s in unique] == ["AAPL", "META", "NVDA"]
+
+
+def test_unique_by_ticker_empty():
+    from build_site import _unique_by_ticker
+    assert _unique_by_ticker([]) == []
