@@ -7,8 +7,8 @@ def test_nvda_returns_4_alphabetically_sorted_semiconductor_peers():
     assert len(peers) == 4
     assert peers == sorted(peers)
     assert "NVDA" not in peers
-    # All in Semiconductors per config.SECTORS: NVDA, AMD, AVGO, INTC, MU
-    expected_pool = {"AMD", "AVGO", "INTC", "MU"}
+    # Semiconductors per config.SECTORS: NVDA, AMD, AVGO, MU, TSM
+    expected_pool = {"AMD", "AVGO", "MU", "TSM"}
     assert set(peers) == expected_pool
 
 
@@ -17,9 +17,9 @@ def test_amd_returns_peers_that_exclude_amd():
 
 
 def test_smaller_sector_returns_what_is_available():
-    # "Intl & High-Beta" sector contains only BABA + COIN. Asking for n=4 peers of BABA
-    # returns only ["COIN"].
-    assert same_sector_peers("BABA") == ["COIN"]
+    # "Sector ETF" contains only SMH + ARKK. Asking for n=4 peers of SMH
+    # returns only ["ARKK"].
+    assert same_sector_peers("SMH") == ["ARKK"]
 
 
 def test_unknown_ticker_returns_empty():
