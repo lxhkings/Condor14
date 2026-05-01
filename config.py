@@ -1,25 +1,43 @@
 """Pipeline configuration: tickers, sector map, env-var names.
 
-The 20-ticker MVP list is intentionally biased toward names with deep
-weekly-options liquidity. Expansion to 100 happens in V2 only after the
-4--6-week SEO observation gate (see spec §8.2) clears.
+30-ticker monitoring list covering broad ETFs, mega-cap tech, semis,
+high-beta/crypto, growth, metals/bonds, and financial/cyclical sectors.
 """
 
 TICKERS: list[str] = [
-    "NVDA", "TSLA", "AAPL", "SPY",  "QQQ",
-    "MSFT", "AMD",  "GOOGL", "META", "AMZN",
-    "NFLX", "BABA", "AVGO",  "ORCL", "CRM",
-    "ADBE", "INTC", "MU",    "COIN", "PLTR",
+    # Broad ETFs (大盘宽基)
+    "SPY", "QQQ", "IWM",
+    # Sector ETFs (行业风向标)
+    "SMH", "ARKK",
+    # Semiconductors (高波动半导体)
+    "NVDA", "AMD", "AVGO", "MU", "TSM",
+    # Mega-Cap Tech (核心科技权重)
+    "AAPL", "MSFT", "GOOGL", "META", "AMZN", "TSLA", "NFLX",
+    # High-Beta / Crypto (高贝塔与加密概念)
+    "COIN", "MSTR", "MARA",
+    # Growth / Software (高波动成长股)
+    "PLTR", "ARM", "UBER", "CRWD",
+    # Metals / Bonds (避险与对冲)
+    "GLD", "SLV", "TLT",
+    # Financial / Cyclical (金融与周期基石)
+    "JPM", "DIS", "XLE",
 ]
 
 SECTORS: dict[str, str] = {
-    # Semiconductors (5)
+    # Broad ETFs (大盘宽基)
+    "SPY":  "Broad ETF",
+    "QQQ":  "Broad ETF",
+    "IWM":  "Broad ETF",
+    # Sector ETFs (行业风向标)
+    "SMH":  "Sector ETF",
+    "ARKK": "Sector ETF",
+    # Semiconductors (高波动半导体)
     "NVDA": "Semiconductors",
     "AMD":  "Semiconductors",
     "AVGO": "Semiconductors",
-    "INTC": "Semiconductors",
     "MU":   "Semiconductors",
-    # Mega-Cap Tech (7)
+    "TSM":  "Semiconductors",
+    # Mega-Cap Tech (核心科技权重)
     "AAPL":  "Mega-Cap Tech",
     "MSFT":  "Mega-Cap Tech",
     "GOOGL": "Mega-Cap Tech",
@@ -27,15 +45,21 @@ SECTORS: dict[str, str] = {
     "AMZN":  "Mega-Cap Tech",
     "TSLA":  "Mega-Cap Tech",
     "NFLX":  "Mega-Cap Tech",
-    # Software (4)
-    "ORCL": "Software",
-    "CRM":  "Software",
-    "ADBE": "Software",
-    "PLTR": "Software",
-    # Index ETFs (2)
-    "SPY": "Index ETFs",
-    "QQQ": "Index ETFs",
-    # International / High-Beta (2)
-    "BABA": "Intl & High-Beta",
-    "COIN": "Intl & High-Beta",
+    # High-Beta / Crypto (高贝塔与加密概念)
+    "COIN": "High-Beta / Crypto",
+    "MSTR": "High-Beta / Crypto",
+    "MARA": "High-Beta / Crypto",
+    # Growth / Software (高波动成长股)
+    "PLTR": "Growth",
+    "ARM":  "Growth",
+    "UBER": "Growth",
+    "CRWD": "Growth",
+    # Metals / Bonds (避险与对冲)
+    "GLD": "Metals / Bonds",
+    "SLV": "Metals / Bonds",
+    "TLT": "Metals / Bonds",
+    # Financial / Cyclical (金融与周期基石)
+    "JPM": "Financial / Cyclical",
+    "DIS": "Financial / Cyclical",
+    "XLE": "Financial / Cyclical",
 }

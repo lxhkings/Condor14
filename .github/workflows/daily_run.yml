@@ -30,39 +30,19 @@ jobs:
       - name: Install dependencies
         run: uv sync
 
-      - name: Trading-day guard
-        id: cal
-        run: uv run python -m data_source.trading_calendar
-        continue-on-error: true
-
-      - name: Skip on non-trading day
-        if: steps.cal.outcome != 'success'
-        run: |
-          echo "Non-trading day, exiting cleanly."
-          exit 0
-
-      - name: Run daily pipeline (data)
-        if: steps.cal.outcome == 'success'
-        env:
-          MARKETDATA_API_KEY: ${{ secrets.MARKETDATA_API_KEY }}
-        run: uv run python daily_run.py
-
       - name: Build static site
-        if: steps.cal.outcome == 'success'
         env:
           SITE_HOST: iron-condor-tracker.vercel.app
         run: uv run python build_site.py
 
-      - name: Commit and push data + site updates
-        if: steps.cal.outcome == 'success'
+      - name: Commit and push site updates
         run: |
-          if [[ -z "$(git status --porcelain data/ public/)" ]]; then
+          if [[ -z "$(git status --porcelain public/)" ]]; then
             echo "No changes to commit."
             exit 0
           fi
           git config user.name  "iron-condor-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add data/ledger.json data/cache.sqlite data/last_indexed.json public/
-          DATE=$(TZ=America/New_York date +%Y-%m-%d)
-          git commit -m "chore(data): ${DATE} run [skip ci]"
+          git add public/
+          git commit -m "chore(site): rebuild static site [skip ci]"
           git push origin HEAD:main

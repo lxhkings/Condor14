@@ -1,6 +1,6 @@
 import pytest
 
-from data_source.marketdata import OptionLeg
+from data_source.futu_client import OptionLeg
 from math_engine.iron_condor import build_condor, ZeroOrNegativeCreditError
 
 from datetime import date
@@ -48,14 +48,16 @@ def test_zero_or_negative_credit_raises():
         )
 
 
-def test_call_and_put_wings_must_match_in_width():
-    with pytest.raises(ValueError, match="wing widths"):
-        build_condor(
-            short_call=_leg("call", 230.0, bid=2.10, ask=2.20),
-            long_call =_leg("call", 235.0, bid=1.20, ask=1.30),  # wing 5
-            short_put =_leg("put",  200.0, bid=1.85, ask=1.95),
-            long_put  =_leg("put",  192.5, bid=1.05, ask=1.15),  # wing 7.5
-        )
+def test_asymmetric_wings_use_max_for_risk():
+    # call wing 5, put wing 7.5 — allowed, wing_width = max(5, 7.5) = 7.5
+    ic = build_condor(
+        short_call=_leg("call", 230.0, bid=2.10, ask=2.20),
+        long_call =_leg("call", 235.0, bid=1.20, ask=1.30),  # wing 5
+        short_put =_leg("put",  200.0, bid=1.85, ask=1.95),
+        long_put  =_leg("put",  192.5, bid=1.05, ask=1.15),  # wing 7.5
+    )
+    assert ic.wing_width == pytest.approx(7.5)
+    assert ic.max_loss == pytest.approx(6.0)
 
 
 def test_short_legs_must_be_correct_sides():

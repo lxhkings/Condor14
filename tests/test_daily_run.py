@@ -4,7 +4,7 @@ from unittest.mock import MagicMock
 import pytest
 
 from data_source.cache import BarRow
-from data_source.marketdata import OptionLeg, Quote
+from data_source.futu_client import OptionLeg, Quote
 from ledger.schema import Settlement, Setup
 from ledger.store import LedgerStore
 

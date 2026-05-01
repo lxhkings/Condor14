@@ -5,8 +5,7 @@ Convention (per design spec §4.6):
     Long  legs priced at ASK  (worst realistic fill paid)
 
     net_credit  = (short_call.bid + short_put.bid) - (long_call.ask + long_put.ask)
-    wing_width  = long_call.strike - short_call.strike
-                = short_put.strike - long_put.strike   (must match)
+    wing_width  = max(call_wing, put_wing)  (conservative)
     max_profit  = net_credit
     max_loss    = wing_width - net_credit
     BE_upper    = short_call.strike + net_credit
@@ -15,7 +14,7 @@ Convention (per design spec §4.6):
 
 from dataclasses import dataclass
 
-from data_source.marketdata import OptionLeg
+from data_source.futu_client import OptionLeg
 
 
 class ZeroOrNegativeCreditError(Exception):
@@ -57,11 +56,8 @@ def build_condor(
 
     call_wing = long_call.strike - short_call.strike
     put_wing = short_put.strike - long_put.strike
-    if abs(call_wing - put_wing) > 1e-9:
-        raise ValueError(
-            f"call and put wing widths must match ({call_wing} vs {put_wing})"
-        )
-    wing_width = call_wing
+    # Use the wider wing for risk calculation (conservative)
+    wing_width = max(call_wing, put_wing)
 
     net_credit = (
         short_call.bid + short_put.bid - long_call.ask - long_put.ask
