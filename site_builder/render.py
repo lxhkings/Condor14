@@ -204,7 +204,7 @@ CSS_STYLE = """\
   /* ---- Table zebra ---- */
 
   tbody tr:nth-child(even) { background: rgba(255,255,255,0.015); }
-  tbody tr:hover { background: var(--bg-card); }
+  /* hover rule defined once in the Tables section above */
 </style>"""
 
 _CARD_SECTIONS = [
