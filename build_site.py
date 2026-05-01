@@ -30,6 +30,8 @@ from content_engine.json_ld import (
     article_schema,
     breadcrumb_list,
     financial_product_jsonld,
+    item_list_schema,
+    website_schema,
 )
 from content_engine.silo import same_sector_peers
 from content_engine.spintax import render_prelude
@@ -56,6 +58,12 @@ REPO_ROOT = Path(__file__).parent
 TEMPLATE_DIR = REPO_ROOT / "content_engine" / "templates"
 ASSETS_DIR = REPO_ROOT / "assets"
 SOURCE_REPO_URL = "https://github.com/lxhkings/Condor14"
+
+HOMEPAGE_DESCRIPTION = (
+    "Daily iron condor setups computed from real OPRA quotes and tracked live "
+    "to expiration across 30+ liquid US equities and ETFs. Open source, educational."
+)
+THEME_COLOR = "#0d1117"
 
 
 def _env() -> Environment:
@@ -108,6 +116,9 @@ def _render_ticker(
         page_title=f"{setup.ticker} 14-Day Iron Condor Tracker",
         canonical_url=f"{base_url}/{setup.ticker.lower()}/",
         json_ld_blocks=blocks,
+        favicon_url="/favicon.svg",
+        apple_touch_icon_url="/apple-touch-icon.png",
+        theme_color=THEME_COLOR,
     )
 
 
@@ -133,6 +144,9 @@ def _render_ticker_placeholder(
         page_title=f"{ticker} 14-Day Iron Condor Tracker",
         canonical_url=f"{base_url}/{ticker.lower()}/",
         json_ld_blocks=[],
+        favicon_url="/favicon.svg",
+        apple_touch_icon_url="/apple-touch-icon.png",
+        theme_color=THEME_COLOR,
     )
 
 
@@ -219,11 +233,26 @@ def build(
     index_md, index_title = _render_index(
         ledger=ledger, today=today, env=env, base_url=base_url,
     )
+    homepage_blocks = [
+        website_schema(
+            canonical_url=f"{base_url}/",
+            description=HOMEPAGE_DESCRIPTION,
+        ),
+        item_list_schema(
+            build_screener_data(ledger, today=today)["highest_premium_setups"],
+            base_url=base_url,
+        ),
+    ]
     index_html = render_html_page(
         markdown_source=index_md,
         page_title=index_title,
         canonical_url=f"{base_url}/",
-        json_ld_blocks=[],
+        json_ld_blocks=homepage_blocks,
+        description=HOMEPAGE_DESCRIPTION,
+        og_image_url=f"{base_url}/og-image.png",
+        favicon_url="/favicon.svg",
+        apple_touch_icon_url="/apple-touch-icon.png",
+        theme_color=THEME_COLOR,
     )
     _write(public_dir / "index.html", index_html)
 
@@ -236,6 +265,9 @@ def build(
         page_title="Methodology -- Iron Condor Tracker",
         canonical_url=f"{base_url}/methodology/",
         json_ld_blocks=[],
+        favicon_url="/favicon.svg",
+        apple_touch_icon_url="/apple-touch-icon.png",
+        theme_color=THEME_COLOR,
     )
     _write(public_dir / "methodology" / "index.html", methodology_html)
 
