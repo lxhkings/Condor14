@@ -1,10 +1,13 @@
-"""JSON-LD schema emitters for ticker pages.
+"""JSON-LD schema emitters for ticker and homepage pages.
 
-Three schemas per spec §5.3 / §7.4:
+Ticker-page schemas (spec §5.3 / §7.4):
     - FinancialProduct: educational tool product with additionalProperty[]
-      (NOT offers.price -- semantically wrong; the prototype bug)
     - BreadcrumbList: site-wide nav schema
     - Article: per-ticker page article schema, author = QuantOptions Data Lab
+
+Homepage schemas:
+    - WebSite: site-level schema for Google sitelinks
+    - ItemList: top-N setups for internal page surfacing
 """
 
 from __future__ import annotations
