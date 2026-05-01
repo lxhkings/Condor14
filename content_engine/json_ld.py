@@ -60,3 +60,32 @@ def article_schema(
         "datePublished": date_published.isoformat(),
         "dateModified": modified.isoformat(),
     }
+
+
+def website_schema(*, canonical_url: str, description: str) -> dict:
+    return {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Iron Condor Tracker",
+        "url": canonical_url,
+        "description": description,
+        "publisher": {"@type": "Organization", "name": "QuantOptions Data Lab"},
+    }
+
+
+def item_list_schema(setups: list[Setup], *, base_url: str) -> dict:
+    items = [
+        {
+            "@type": "ListItem",
+            "position": i + 1,
+            "url": f"{base_url}/{s.ticker.lower()}/",
+            "name": f"{s.ticker} 14-Day Iron Condor Tracker",
+        }
+        for i, s in enumerate(setups)
+    ]
+    return {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "numberOfItems": len(items),
+        "itemListElement": items,
+    }
