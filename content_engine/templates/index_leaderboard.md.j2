@@ -1,7 +1,26 @@
 {# stock/content_engine/templates/index_leaderboard.md.j2 #}
 {% extends "_base.md.j2" %}
 {% block body %}
-# Live 30-Day Hold-to-Expiration Performance
+<div class="hero">
+  <p class="wordmark">CONDOR14 · QuantOptions Data Lab</p>
+  <h1>Live 30-Day Hold-to-Expiration Performance</h1>
+  <p class="tagline">Real OPRA quotes · Held to expiration · Open source</p>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="num">{{ hero.days_running }}</div>
+      <div class="lbl">days tracking</div>
+    </div>
+    <div class="stat">
+      <div class="num">{{ hero.setups_tracked }}</div>
+      <div class="lbl">setups tracked</div>
+    </div>
+    <div class="stat stat--progress">
+      <div class="num">{{ hero.progress_label }}</div>
+      <div class="lbl">leaderboard live</div>
+      <div class="bar"><span style="width: 100%"></span></div>
+    </div>
+  </div>
+</div>
 
 Each row reflects realized outcomes for the listed ticker over the past 30 days, computed under a strictly passive hold-to-expiration assumption. Sample size shown for transparency; tickers with fewer than 5 settled setups are listed but flagged as low-confidence.
 

@@ -1,7 +1,26 @@
 {# stock/content_engine/templates/index_screener.md.j2 #}
 {% extends "_base.md.j2" %}
 {% block body %}
-# Daily Iron Condor Volatility Screener
+<div class="hero">
+  <p class="wordmark">CONDOR14 · QuantOptions Data Lab</p>
+  <h1>Daily Iron Condor Volatility Screener</h1>
+  <p class="tagline">Real OPRA quotes · Held to expiration · Open source</p>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="num">{{ hero.days_running }}</div>
+      <div class="lbl">days tracking</div>
+    </div>
+    <div class="stat">
+      <div class="num">{{ hero.setups_tracked }}</div>
+      <div class="lbl">setups tracked</div>
+    </div>
+    <div class="stat stat--progress">
+      <div class="num">{{ hero.progress_label }}</div>
+      <div class="lbl">{% if hero.cutover_reached %}leaderboard live{% else %}toward leaderboard unlock{% endif %}</div>
+      <div class="bar"><span style="width: {{ hero.progress_pct }}%"></span></div>
+    </div>
+  </div>
+</div>
 
 Live tracking initiated on **{{ site_launch_date.isoformat() }}**. Realized 30-day win-rate leaderboard unlocks once 200 settled setups accumulate (~44 trading days). Until then, the screener below shows today's setups ranked by premium structure and a per-sector volatility view.
 
