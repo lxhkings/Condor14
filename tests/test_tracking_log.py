@@ -3,7 +3,7 @@ from datetime import date
 
 import pytest
 
-from content_engine.tracking_log import TrackingRow, build_tracking_log
+from content_engine.tracking_log import ActiveRow, SettledRow, build_tracking_log
 from ledger.schema import Ledger, Settlement, Setup
 
 
@@ -23,7 +23,7 @@ def _setup(ticker, start, target_exit, *, status="open", final_underlying=None,
         underlying_at_open=200.0, atr14_at_open=4.0, sma20_at_open=200.0,
         iv_percentile_at_open=50, trend_bias="neutral",
         short_call_strike=210.0, long_call_strike=215.0,
-        short_put_strike=190.0,  long_put_strike=185.0,
+        short_put_strike=190.0, long_put_strike=185.0,
         net_credit_at_open=1.5, wing_width=5.0,
         max_profit=1.5, max_loss=3.5,
         break_even_upper=211.5, break_even_lower=188.5,
@@ -31,63 +31,70 @@ def _setup(ticker, start, target_exit, *, status="open", final_underlying=None,
     )
 
 
-def test_empty_ledger_returns_empty():
-    assert build_tracking_log(ticker="NVDA", ledger=Ledger(), today=date(2026, 5, 1)) == []
+def test_empty_ledger_returns_empty_lists():
+    active, settled = build_tracking_log(ticker="NVDA", ledger=Ledger(), today=date(2026, 5, 1))
+    assert active == []
+    assert settled == []
 
 
-def test_settled_won_row_carries_status_and_week_ending_friday():
-    # Settled on Mon May 12 2026 — week ends Fri May 15 2026
+def test_open_setup_in_active_list():
+    ledger = Ledger(setups=[
+        _setup("NVDA", date(2026, 5, 1), date(2026, 5, 15), status="open"),
+    ])
+    active, settled = build_tracking_log(ticker="NVDA", ledger=ledger, today=date(2026, 5, 6))
+    assert len(active) == 1
+    assert len(settled) == 0
+    assert active[0].open_date == date(2026, 5, 1)
+    assert active[0].open_price == 200.0
+    assert active[0].target_date == date(2026, 5, 15)
+    assert active[0].days_in == 5
+    assert active[0].status == "Open (Day 5)"
+
+
+def test_settled_setup_in_settled_list():
     ledger = Ledger(setups=[
         _setup("NVDA", date(2026, 4, 28), date(2026, 5, 12), status="won",
                final_underlying=205.0, pnl=150.0, side=None),
     ])
-    rows = build_tracking_log(ticker="NVDA", ledger=ledger, today=date(2026, 5, 16))
-    assert len(rows) == 1
-    assert rows[0].week_ending == date(2026, 5, 15)
-    assert rows[0].status_label.startswith("Won")
-    assert rows[0].open_price == 200.0
+    active, settled = build_tracking_log(ticker="NVDA", ledger=ledger, today=date(2026, 5, 16))
+    assert len(active) == 0
+    assert len(settled) == 1
+    assert settled[0].open_date == date(2026, 4, 28)
+    assert settled[0].settled_date == date(2026, 5, 12)
+    assert settled[0].status == "Won"
+    assert settled[0].pnl == 150.0
 
 
-def test_settlement_already_on_friday_uses_that_friday():
-    # Settled Fri May 15 2026 — week_ending is the same day
+def test_lost_setup_shows_status():
     ledger = Ledger(setups=[
         _setup("NVDA", date(2026, 5, 1), date(2026, 5, 15), status="lost",
                final_underlying=170.0, pnl=-350.0, side="lower"),
     ])
-    rows = build_tracking_log(ticker="NVDA", ledger=ledger, today=date(2026, 5, 16))
-    assert rows[0].week_ending == date(2026, 5, 15)
-    assert rows[0].status_label.startswith("Lost")
+    active, settled = build_tracking_log(ticker="NVDA", ledger=ledger, today=date(2026, 5, 16))
+    assert settled[0].status == "Lost"
+    assert settled[0].pnl == -350.0
 
 
-def test_open_setup_mid_cycle_emits_open_row_for_current_week():
-    # Setup opened Mon Apr 27, target exit May 11. Today is Wed May 6 — week_ending Fri May 8
+def test_multiple_setups_sorted_correctly():
     ledger = Ledger(setups=[
-        _setup("NVDA", date(2026, 4, 27), date(2026, 5, 11), status="open"),
+        _setup("NVDA", date(2026, 5, 5), date(2026, 5, 19), status="open"),
+        _setup("NVDA", date(2026, 5, 1), date(2026, 5, 15), status="open"),
+        _setup("NVDA", date(2026, 4, 28), date(2026, 5, 12), status="won",
+               final_underlying=205.0, pnl=150.0, side=None),
+        _setup("NVDA", date(2026, 4, 25), date(2026, 5, 9), status="lost",
+               final_underlying=170.0, pnl=-350.0, side="lower"),
     ])
-    rows = build_tracking_log(ticker="NVDA", ledger=ledger, today=date(2026, 5, 6))
-    weeks = {r.week_ending for r in rows}
-    assert date(2026, 5, 8) in weeks
-    open_row = next(r for r in rows if r.week_ending == date(2026, 5, 8))
-    assert open_row.status_label.startswith("Open")
+    active, settled = build_tracking_log(ticker="NVDA", ledger=ledger, today=date(2026, 5, 6))
 
+    # Active sorted by open_date desc
+    assert len(active) == 2
+    assert active[0].open_date == date(2026, 5, 5)
+    assert active[1].open_date == date(2026, 5, 1)
 
-def test_only_recent_12_weeks_returned_newest_first():
-    setups = []
-    # 13 weekly settled setups starting from 2026-01-02 (Friday)
-    for i in range(13):
-        start = date(2026, 1, 2)
-        # offset each setup 14 days
-        from datetime import timedelta
-        s = start + timedelta(days=i * 14)
-        target = s + timedelta(days=14)
-        setups.append(_setup("NVDA", s, target, status="won",
-                             final_underlying=200.0, pnl=150.0, side=None))
-    ledger = Ledger(setups=setups)
-    today = date(2026, 7, 31)
-    rows = build_tracking_log(ticker="NVDA", ledger=ledger, today=today, weeks=12)
-    assert len(rows) <= 12
-    # Newest first
-    assert rows[0].week_ending >= rows[-1].week_ending
+    # Settled sorted by settled_date desc
+    assert len(settled) == 2
+    assert settled[0].settled_date == date(2026, 5, 12)
+    assert settled[1].settled_date == date(2026, 5, 9)
 
 
 def test_other_ticker_setups_filtered_out():
@@ -97,6 +104,6 @@ def test_other_ticker_setups_filtered_out():
         _setup("TSLA", date(2026, 4, 28), date(2026, 5, 12), status="won",
                final_underlying=205.0, pnl=150.0, side=None),
     ])
-    nvda = build_tracking_log(ticker="NVDA", ledger=ledger, today=date(2026, 5, 16))
-    assert all(True for _ in nvda)  # only NVDA-derived rows
-    assert len(nvda) == 1
+    active, settled = build_tracking_log(ticker="NVDA", ledger=ledger, today=date(2026, 5, 16))
+    assert len(settled) == 1
+    assert settled[0].ticker == "NVDA"

@@ -86,7 +86,7 @@ def _render_ticker(
     prelude_md = render_prelude(
         setup=setup, atr60=setup.atr14_at_open, jinja_env=env,
     )
-    tracking = build_tracking_log(ticker=setup.ticker, ledger=ledger, today=today)
+    active_rows, settled_rows = build_tracking_log(ticker=setup.ticker, ledger=ledger, today=today)
     peers = same_sector_peers(setup.ticker)
 
     md = env.get_template("ticker_page.md.j2").render(
@@ -94,7 +94,8 @@ def _render_ticker(
         today=today,
         setup=setup,
         prelude_md=prelude_md,
-        tracking_rows=tracking,
+        active_rows=active_rows,
+        settled_rows=settled_rows,
         peers=peers,
         source_repo_url=SOURCE_REPO_URL,
     )

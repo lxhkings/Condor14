@@ -38,15 +38,23 @@
 - Win condition: closing price within short strikes at expiration (passive hold-to-expiration)
 - [Full methodology →](/methodology/) · [Source code on GitHub →]({{ source_repo_url }})
 
-## Historical Tracking Log
+## Active Setups
 
-{% if tracking_rows %}
-| Week Ending | Open Price | Setup Status | Movement Note |
-| :--- | ---: | :--- | :--- |
-{% for row in tracking_rows %}| {{ row.week_ending.isoformat() }} | ${{ "%.2f"|format(row.open_price) }} | {{ row.status_label }} | {{ row.note }} |
+{% if active_rows %}
+| Open Date | Open Price | Target Date | Days In | Status |
+| :--- | ---: | :--- | ---: | :--- |
+{% for row in active_rows %}| {{ row.open_date.isoformat() }} | ${{ "%.2f"|format(row.open_price) }} | {{ row.target_date.isoformat() }} | {{ row.days_in }} | {{ row.status }} |
 {% endfor %}{% else %}
-*No completed weeks yet — first row appears next Friday after market close.*
+*No active setups for this ticker.*
 {% endif %}
+
+{% if settled_rows %}
+## Settlement History
+
+| Open Date | Open Price | Settled Date | Result | P&L |
+| :--- | ---: | :--- | :--- | ---: |
+{% for row in settled_rows %}| {{ row.open_date.isoformat() }} | ${{ "%.2f"|format(row.open_price) }} | {{ row.settled_date.isoformat() }} | {{ row.status }} | ${{ "%.2f"|format(row.pnl) }} |
+{% endfor %}{% endif %}
 
 ## Related {{ setup.sector }} Tickers
 

@@ -1,64 +1,41 @@
-"""Weekly tracking-log row builder per spec §5.4.
+"""Tracking log for each ticker's setups.
 
-For a given ticker and ``today`` ET, produce one row per Friday in the past
-``weeks * 7`` days. Each row reflects either a settlement that occurred during
-that week or the open status of an in-flight setup whose lifecycle includes
-that Friday. Rows are returned newest-first.
+Returns two separate lists:
+- active_setups: setups that are still open (not yet reached target_exit_date)
+- settled_setups: setups that have been settled (won or lost)
 """
 
 from dataclasses import dataclass
-from datetime import date, timedelta
+from datetime import date
 from typing import Iterable
 
 from ledger.schema import Ledger, Setup
 
 
 @dataclass(frozen=True)
-class TrackingRow:
-    week_ending: date
+class ActiveRow:
+    """A setup that is still in progress."""
+    ticker: str
+    open_date: date
     open_price: float
-    status_label: str
-    note: str
+    target_date: date
+    days_in: int
+    status: str  # "Open (Day X)"
 
 
-def _friday_of_week_containing(d: date) -> date:
-    """Friday of the ISO week that contains *d* (Monday-based week)."""
-    # Monday=0, Friday=4
-    weekday = d.weekday()
-    if weekday <= 4:
-        return d + timedelta(days=4 - weekday)
-    # Saturday or Sunday: next Friday
-    return d + timedelta(days=(11 - weekday))
+@dataclass(frozen=True)
+class SettledRow:
+    """A setup that has been settled."""
+    ticker: str
+    open_date: date
+    open_price: float
+    settled_date: date
+    status: str  # "Won" or "Lost"
+    pnl: float
 
 
 def _setups_for_ticker(ledger: Ledger, ticker: str) -> Iterable[Setup]:
     return (s for s in ledger.setups if s.ticker == ticker)
-
-
-def _row_for_settled(setup: Setup) -> TrackingRow:
-    fri = _friday_of_week_containing(setup.settlement.settled_on)
-    label = "Won (Day 14)" if setup.status == "won" else "Lost (Day 14)"
-    if setup.status == "lost":
-        side = setup.settlement.breached_side or "boundary"
-        note = f"Closed at ${setup.settlement.final_underlying:.2f} — {side} breach"
-    else:
-        note = f"Closed at ${setup.settlement.final_underlying:.2f} — within range"
-    return TrackingRow(
-        week_ending=fri,
-        open_price=setup.underlying_at_open,
-        status_label=label,
-        note=note,
-    )
-
-
-def _row_for_open(setup: Setup, fri: date) -> TrackingRow:
-    days_into = (fri - setup.start_date).days
-    return TrackingRow(
-        week_ending=fri,
-        open_price=setup.underlying_at_open,
-        status_label=f"Open (Day {days_into})",
-        note="In-flight, hold-to-expiration",
-    )
 
 
 def build_tracking_log(
@@ -66,23 +43,40 @@ def build_tracking_log(
     ticker: str,
     ledger: Ledger,
     today: date,
-    weeks: int = 12,
-) -> list[TrackingRow]:
-    cutoff = today - timedelta(days=weeks * 7)
-    today_fri = _friday_of_week_containing(today)
-    rows_by_friday: dict[date, TrackingRow] = {}
+) -> tuple[list[ActiveRow], list[SettledRow]]:
+    """Return (active_setups, settled_setups) for the given ticker.
+
+    Active setups are sorted by open_date descending.
+    Settled setups are sorted by settled_date descending.
+    """
+    active: list[ActiveRow] = []
+    settled: list[SettledRow] = []
 
     for setup in _setups_for_ticker(ledger, ticker):
-        if setup.settlement is not None:
-            fri = _friday_of_week_containing(setup.settlement.settled_on)
-            if cutoff <= fri <= today:
-                rows_by_friday[fri] = _row_for_settled(setup)
-        elif setup.status == "open":
-            cur = _friday_of_week_containing(setup.start_date)
-            end = _friday_of_week_containing(setup.target_exit_date)
-            while cur <= end:
-                if cutoff <= cur <= today_fri and cur not in rows_by_friday:
-                    rows_by_friday[cur] = _row_for_open(setup, cur)
-                cur = cur + timedelta(days=7)
+        if setup.status == "open":
+            # Still in progress
+            days_in = (today - setup.start_date).days
+            active.append(ActiveRow(
+                ticker=setup.ticker,
+                open_date=setup.start_date,
+                open_price=setup.underlying_at_open,
+                target_date=setup.target_exit_date,
+                days_in=days_in,
+                status=f"Open (Day {days_in})",
+            ))
+        elif setup.settlement is not None:
+            # Settled
+            settled.append(SettledRow(
+                ticker=setup.ticker,
+                open_date=setup.start_date,
+                open_price=setup.underlying_at_open,
+                settled_date=setup.settlement.settled_on,
+                status="Won" if setup.status == "won" else "Lost",
+                pnl=setup.settlement.final_pnl_per_spread,
+            ))
 
-    return sorted(rows_by_friday.values(), key=lambda r: r.week_ending, reverse=True)[:weeks]
+    # Sort: active by open_date desc, settled by settled_date desc
+    active.sort(key=lambda r: r.open_date, reverse=True)
+    settled.sort(key=lambda r: r.settled_date, reverse=True)
+
+    return active, settled
