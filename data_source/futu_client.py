@@ -50,7 +50,11 @@ _RATE_LIMIT_BACKOFF_SEC = 30.0
 
 def _is_rate_limit_msg(msg: object) -> bool:
     s = str(msg)
-    return any(k in s for k in _RATE_LIMIT_KEYWORDS)
+    s_lower = s.lower()
+    return any(
+        (k.lower() in s_lower if k.isascii() else k in s)
+        for k in _RATE_LIMIT_KEYWORDS
+    )
 
 
 def _to_code(ticker: str) -> str:
