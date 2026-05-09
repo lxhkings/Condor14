@@ -25,6 +25,8 @@ class TokenBucket:
         self._last = self.now()
 
     def acquire(self, n: float = 1.0) -> None:
+        if n > self.capacity:
+            raise ValueError(f"n={n} exceeds bucket capacity={self.capacity}")
         while True:
             t = self.now()
             self._tokens = min(self.capacity, self._tokens + (t - self._last) * self.rate_per_sec)

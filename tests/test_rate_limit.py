@@ -53,3 +53,10 @@ def test_capacity_caps_refill():
     bucket.acquire()
     assert len(clock.sleeps) == 1  # 第 10 次仍要等
     assert clock.sleeps[0] == pytest.approx(1 / 0.3, rel=1e-6)
+
+
+def test_acquire_raises_when_n_exceeds_capacity():
+    clock = FakeClock()
+    bucket = TokenBucket(rate_per_sec=0.3, capacity=9, now=clock.now, sleep=clock.sleep)
+    with pytest.raises(ValueError, match="exceeds bucket capacity"):
+        bucket.acquire(n=10.0)
