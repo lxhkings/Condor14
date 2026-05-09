@@ -23,7 +23,7 @@ def test_initial_capacity_allows_burst_without_sleep():
     assert clock.sleeps == []
 
 
-def test_eleventh_call_sleeps_until_token_refilled():
+def test_tenth_call_sleeps_until_token_refilled():
     clock = FakeClock()
     bucket = TokenBucket(rate_per_sec=0.3, capacity=9, now=clock.now, sleep=clock.sleep)
     for _ in range(9):
@@ -52,3 +52,4 @@ def test_capacity_caps_refill():
         bucket.acquire()
     bucket.acquire()
     assert len(clock.sleeps) == 1  # 第 10 次仍要等
+    assert clock.sleeps[0] == pytest.approx(1 / 0.3, rel=1e-6)

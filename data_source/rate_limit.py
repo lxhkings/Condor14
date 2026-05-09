@@ -12,6 +12,7 @@ from typing import Callable
 
 @dataclass
 class TokenBucket:
+    # NOT thread-safe. Intended for single-threaded use only.
     rate_per_sec: float
     capacity: float
     now: Callable[[], float] = field(default=time.monotonic)
