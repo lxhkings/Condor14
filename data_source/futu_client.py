@@ -5,6 +5,7 @@ Uses futu-api to fetch market data through FutuOpenD.
 
 from __future__ import annotations
 
+import logging
 from dataclasses import dataclass
 from datetime import date, datetime, timezone
 from typing import Literal
@@ -12,6 +13,9 @@ from typing import Literal
 from futu import KLType, RET_OK, OpenQuoteContext
 
 from data_source.cache import BarRow
+from data_source.rate_limit import TokenBucket
+
+log = logging.getLogger(__name__)
 
 
 @dataclass(frozen=True)
@@ -53,11 +57,17 @@ class FutuClient:
         host: str = "127.0.0.1",
         port: int = 11111,
         _ctx: OpenQuoteContext | None = None,
+        chain_limiter: TokenBucket | None = None,
+        exp_limiter: TokenBucket | None = None,
     ) -> None:
         if _ctx is not None:
             self._ctx = _ctx
         else:
             self._ctx = OpenQuoteContext(host=host, port=port)
+        # Futu 公开限频：Qot_GetOptionChain & Qot_GetOptionExpirationDate 均为 10/30s。
+        # 留 1 次安全余量 → 9/30s = 0.3 tok/s，capacity 9（允许冷启动突发 9 次）。
+        self._chain_limiter = chain_limiter or TokenBucket(rate_per_sec=0.3, capacity=9)
+        self._exp_limiter = exp_limiter or TokenBucket(rate_per_sec=0.3, capacity=9)
 
     def close(self) -> None:
         self._ctx.close()
@@ -119,8 +129,13 @@ class FutuClient:
         code = _to_code(ticker)
         exp_str = _exp_to_str(expiration)
 
+        self._chain_limiter.acquire()
         ret, chain = self._ctx.get_option_chain(code=code, start=exp_str, end=exp_str)
-        if ret != RET_OK or chain.empty:
+        if ret != RET_OK:
+            log.warning("get_option_chain(%s, %s) failed: ret=%s msg=%s", ticker, exp_str, ret, chain)
+            return []
+        if chain.empty:
+            log.warning("get_option_chain(%s, %s) returned empty DataFrame", ticker, exp_str)
             return []
 
         option_codes = chain["code"].tolist()
@@ -131,6 +146,10 @@ class FutuClient:
             batch = option_codes[i : i + 200]
             ret, snap = self._ctx.get_market_snapshot(batch)
             if ret != RET_OK:
+                log.warning(
+                    "get_market_snapshot batch %d/%d for %s failed: ret=%s msg=%s",
+                    i // 200 + 1, (len(option_codes) + 199) // 200, ticker, ret, snap,
+                )
                 continue
             all_snapshots.append(snap)
 
@@ -241,8 +260,13 @@ class FutuClient:
 
     def list_expirations(self, ticker: str) -> list[date]:
         code = _to_code(ticker)
+        self._exp_limiter.acquire()
         ret, data = self._ctx.get_option_expiration_date(code=code)
-        if ret != RET_OK or data.empty:
+        if ret != RET_OK:
+            log.warning("get_option_expiration_date(%s) failed: ret=%s msg=%s", ticker, ret, data)
+            return []
+        if data.empty:
+            log.warning("get_option_expiration_date(%s) returned empty DataFrame", ticker)
             return []
 
         date_col = "strike_time" if "strike_time" in data.columns else "expiry_date"
