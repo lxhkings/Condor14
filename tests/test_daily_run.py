@@ -206,7 +206,7 @@ def test_list_expirations_wrapper_does_not_cache_empty_result(tmp_path):
     assert client.list_expirations.call_count == 2
 
 
-def test_list_expirations_wrapper_backwards_compat_no_cache_arg(tmp_path):
+def test_list_expirations_wrapper_backwards_compat_no_cache_arg():
     """旧测试：不传 cache/today 时仍直接转发给 client。"""
     from daily_run import list_expirations as wrap
 

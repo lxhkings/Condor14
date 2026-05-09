@@ -252,6 +252,8 @@ def run(
         ledger.site_launch_date = today
 
     cache = DailyBarsCache(cache_path)
+
+    # Used in the ticker loop below (not in _evaluate_open_setups).
     exp_cache = ExpirationsCache(cache_path)
 
     _evaluate_open_setups(ledger=ledger, client=client, cache=cache, today=today)
