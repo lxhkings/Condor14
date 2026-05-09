@@ -29,12 +29,25 @@ BEIJING_HOUR=$(date +%H)
 DST=$(is_dst)
 
 # Only run if we're in the correct window:
-# - Summer (DST): Beijing 22:00-22:30
-# - Winter (EST): Beijing 23:00-23:30
+# - Summer (DST): Beijing 22:30-23:59 (run at 22:30)
+# - Winter (EST): Beijing 23:30-00:59 (run at 23:30)
+BEIJING_MINUTE=$(date +%M)
+
 if [ "$DST" = "yes" ]; then
-    # Summer: should run at 22:00 Beijing
-    if [ "$BEIJING_HOUR" -ge 22 ] && [ "$BEIJING_HOUR" -lt 23 ]; then
-        echo "Running pipeline (DST, 22:xx Beijing = 10:xx AM ET)"
+    # Summer: should run at 22:30 Beijing
+    if [ "$BEIJING_HOUR" -eq 22 ] && [ "$BEIJING_MINUTE" -ge 30 ]; then
+        echo "Running pipeline (DST, 22:30+ Beijing = 10:30+ AM ET)"
+        /opt/homebrew/bin/uv run python daily_run.py
+
+        echo "Building site..."
+        SITE_HOST=iron-condor-tracker.vercel.app /opt/homebrew/bin/uv run python build_site.py
+
+        echo "Committing and pushing to git..."
+        git add data/ledger.json public/
+        git commit -m "data: $(date +%Y-%m-%d) setups [skip ci]" || echo "No changes to commit"
+        git push origin main
+    elif [ "$BEIJING_HOUR" -ge 23 ]; then
+        echo "Running pipeline (DST, 23:xx Beijing = 11:xx AM ET)"
         /opt/homebrew/bin/uv run python daily_run.py
 
         echo "Building site..."
@@ -45,12 +58,23 @@ if [ "$DST" = "yes" ]; then
         git commit -m "data: $(date +%Y-%m-%d) setups [skip ci]" || echo "No changes to commit"
         git push origin main
     else
-        echo "Skipping: not in DST window (need 22:xx Beijing, got ${BEIJING_HOUR}:xx)"
+        echo "Skipping: not in DST window (need 22:30+ Beijing, got ${BEIJING_HOUR}:${BEIJING_MINUTE})"
     fi
 else
-    # Winter: should run at 23:00 Beijing
-    if [ "$BEIJING_HOUR" -ge 23 ]; then
-        echo "Running pipeline (EST, 23:xx Beijing = 10:xx AM ET)"
+    # Winter: should run at 23:30 Beijing
+    if [ "$BEIJING_HOUR" -eq 23 ] && [ "$BEIJING_MINUTE" -ge 30 ]; then
+        echo "Running pipeline (EST, 23:30+ Beijing = 10:30+ AM ET)"
+        /opt/homebrew/bin/uv run python daily_run.py
+
+        echo "Building site..."
+        SITE_HOST=iron-condor-tracker.vercel.app /opt/homebrew/bin/uv run python build_site.py
+
+        echo "Committing and pushing to git..."
+        git add data/ledger.json public/
+        git commit -m "data: $(date +%Y-%m-%d) setups [skip ci]" || echo "No changes to commit"
+        git push origin main
+    elif [ "$BEIJING_HOUR" -ge 0 ] && [ "$BEIJING_HOUR" -lt 1 ]; then
+        echo "Running pipeline (EST, 00:xx Beijing = 11:xx AM ET)"
         /opt/homebrew/bin/uv run python daily_run.py
 
         echo "Building site..."
@@ -61,6 +85,6 @@ else
         git commit -m "data: $(date +%Y-%m-%d) setups [skip ci]" || echo "No changes to commit"
         git push origin main
     else
-        echo "Skipping: not in EST window (need 23:xx Beijing, got ${BEIJING_HOUR}:xx)"
+        echo "Skipping: not in EST window (need 23:30+ Beijing, got ${BEIJING_HOUR}:${BEIJING_MINUTE})"
     fi
 fi
