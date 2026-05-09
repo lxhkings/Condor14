@@ -69,3 +69,52 @@ def test_list_expirations_calls_exp_limiter_acquire(fake_ctx):
     client.list_expirations("AAPL")
     exp_limiter.acquire.assert_called_once()
     chain_limiter.acquire.assert_not_called()
+
+
+def test_option_chain_retries_once_on_rate_limit_error(fake_ctx, monkeypatch):
+    sleeps: list[float] = []
+    monkeypatch.setattr("data_source.futu_client.time.sleep", lambda s: sleeps.append(s))
+
+    chain_df = pd.DataFrame({"code": []})
+    fake_ctx.get_option_chain.side_effect = [
+        (RET_ERROR, "请求频率超出限制，请稍后重试"),
+        (RET_OK, chain_df),
+    ]
+    client = _make_client(fake_ctx)
+    legs = client.option_chain("AAPL", expiration=date(2026, 5, 23), near_spot=200.0)
+    assert legs == []  # 链空但接口未失败
+    assert fake_ctx.get_option_chain.call_count == 2
+    assert sleeps == [30.0]
+
+
+def test_option_chain_does_not_retry_non_rate_limit_error(fake_ctx, monkeypatch):
+    sleeps: list[float] = []
+    monkeypatch.setattr("data_source.futu_client.time.sleep", lambda s: sleeps.append(s))
+    fake_ctx.get_option_chain.return_value = (RET_ERROR, "auth failed")
+    client = _make_client(fake_ctx)
+    legs = client.option_chain("AAPL", expiration=date(2026, 5, 23), near_spot=200.0)
+    assert legs == []
+    assert fake_ctx.get_option_chain.call_count == 1
+    assert sleeps == []
+
+
+def test_option_chain_gives_up_after_one_retry(fake_ctx, monkeypatch):
+    monkeypatch.setattr("data_source.futu_client.time.sleep", lambda s: None)
+    fake_ctx.get_option_chain.return_value = (RET_ERROR, "频率限制")
+    client = _make_client(fake_ctx)
+    legs = client.option_chain("AAPL", expiration=date(2026, 5, 23), near_spot=200.0)
+    assert legs == []
+    assert fake_ctx.get_option_chain.call_count == 2  # 1 次原始 + 1 次重试
+
+
+def test_list_expirations_retries_once_on_rate_limit(fake_ctx, monkeypatch):
+    sleeps: list[float] = []
+    monkeypatch.setattr("data_source.futu_client.time.sleep", lambda s: sleeps.append(s))
+    fake_ctx.get_option_expiration_date.side_effect = [
+        (RET_ERROR, "请求频率超出限制"),
+        (RET_OK, pd.DataFrame({"strike_time": ["2026-05-23 00:00:00"]})),
+    ]
+    client = _make_client(fake_ctx)
+    result = client.list_expirations("AAPL")
+    assert result == [date(2026, 5, 23)]
+    assert sleeps == [30.0]

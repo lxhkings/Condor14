@@ -6,6 +6,7 @@ Uses futu-api to fetch market data through FutuOpenD.
 from __future__ import annotations
 
 import logging
+import time
 from dataclasses import dataclass
 from datetime import date, datetime, timezone
 from typing import Literal
@@ -40,6 +41,16 @@ class OptionLeg:
     volume: int
     iv: float
     delta: float = 0.0
+
+
+# Futu 服务端限频提示常见关键字（中文/英文兜底）。
+_RATE_LIMIT_KEYWORDS = ("频率", "rate limit", "FREQ_LIMIT", "请求频率")
+_RATE_LIMIT_BACKOFF_SEC = 30.0
+
+
+def _is_rate_limit_msg(msg: object) -> bool:
+    s = str(msg)
+    return any(k in s for k in _RATE_LIMIT_KEYWORDS)
 
 
 def _to_code(ticker: str) -> str:
@@ -131,6 +142,12 @@ class FutuClient:
 
         self._chain_limiter.acquire()
         ret, chain = self._ctx.get_option_chain(code=code, start=exp_str, end=exp_str)
+        if ret != RET_OK and _is_rate_limit_msg(chain):
+            log.warning("rate-limited on get_option_chain(%s, %s); backing off %.0fs",
+                        ticker, exp_str, _RATE_LIMIT_BACKOFF_SEC)
+            time.sleep(_RATE_LIMIT_BACKOFF_SEC)
+            self._chain_limiter.acquire()
+            ret, chain = self._ctx.get_option_chain(code=code, start=exp_str, end=exp_str)
         if ret != RET_OK:
             log.warning("get_option_chain(%s, %s) failed: ret=%s msg=%s", ticker, exp_str, ret, chain)
             return []
@@ -262,6 +279,12 @@ class FutuClient:
         code = _to_code(ticker)
         self._exp_limiter.acquire()
         ret, data = self._ctx.get_option_expiration_date(code=code)
+        if ret != RET_OK and _is_rate_limit_msg(data):
+            log.warning("rate-limited on get_option_expiration_date(%s); backing off %.0fs",
+                        ticker, _RATE_LIMIT_BACKOFF_SEC)
+            time.sleep(_RATE_LIMIT_BACKOFF_SEC)
+            self._exp_limiter.acquire()
+            ret, data = self._ctx.get_option_expiration_date(code=code)
         if ret != RET_OK:
             log.warning("get_option_expiration_date(%s) failed: ret=%s msg=%s", ticker, ret, data)
             return []
