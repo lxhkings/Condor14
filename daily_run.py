@@ -18,7 +18,7 @@ from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 from config import SECTORS, TICKERS
-from data_source.cache import BarRow, DailyBarsCache
+from data_source.cache import BarRow, DailyBarsCache, ExpirationsCache
 from data_source.futu_client import FutuClient, OptionLeg
 from data_source.trading_calendar import is_trading_day
 from ledger.schema import (
@@ -45,9 +45,26 @@ log = logging.getLogger("daily_run")
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s %(message)s")
 
 
-def list_expirations(client: FutuClient, ticker: str) -> list[date]:
-    """Wrapper used by tests to monkeypatch expiration listing."""
-    return client.list_expirations(ticker)
+def list_expirations(
+    client: FutuClient,
+    ticker: str,
+    *,
+    cache: ExpirationsCache | None = None,
+    today: date | None = None,
+) -> list[date]:
+    """Wrapper used by tests to monkeypatch expiration listing.
+
+    When `cache` and `today` are provided, results are memoized per (ticker, today).
+    Empty results are NOT cached (they may indicate a transient error).
+    """
+    if cache is not None and today is not None:
+        cached = cache.get(ticker, fetched_on=today)
+        if cached is not None:
+            return cached
+    fresh = client.list_expirations(ticker)
+    if cache is not None and today is not None and fresh:
+        cache.put(ticker, fetched_on=today, expirations=fresh)
+    return fresh
 
 
 def _refresh_bars(
@@ -66,6 +83,7 @@ def _open_one_setup(
     *,
     client: FutuClient,
     cache: DailyBarsCache,
+    exp_cache: ExpirationsCache,
     ticker: str,
     today: date,
 ) -> Setup | SkippedEntry:
@@ -85,7 +103,7 @@ def _open_one_setup(
     spot = quote.last if quote.last > 0 else closes[-1]
     bias = classify_trend_bias(close=spot, sma=sma_value)
 
-    expirations = list_expirations(client, ticker)
+    expirations = list_expirations(client, ticker, cache=exp_cache, today=today)
     # Try all expirations in 13-16 day window, sorted by distance from 14 days
     window_exps = []
     for exp in expirations:
@@ -234,6 +252,7 @@ def run(
         ledger.site_launch_date = today
 
     cache = DailyBarsCache(cache_path)
+    exp_cache = ExpirationsCache(cache_path)
 
     _evaluate_open_setups(ledger=ledger, client=client, cache=cache, today=today)
 
@@ -241,7 +260,9 @@ def run(
         if any(s.ticker == ticker and s.start_date == today for s in ledger.setups):
             log.info("skipped %s: already have a setup for today", ticker)
             continue
-        result = _open_one_setup(client=client, cache=cache, ticker=ticker, today=today)
+        result = _open_one_setup(
+            client=client, cache=cache, exp_cache=exp_cache, ticker=ticker, today=today,
+        )
         if isinstance(result, Setup):
             ledger.setups.append(result)
             log.info("opened setup %s", result.id)

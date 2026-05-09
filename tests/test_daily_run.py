@@ -3,7 +3,7 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from data_source.cache import BarRow
+from data_source.cache import BarRow, ExpirationsCache
 from data_source.futu_client import OptionLeg, Quote
 from ledger.schema import Settlement, Setup
 from ledger.store import LedgerStore
@@ -60,7 +60,7 @@ def test_run_opens_a_setup_for_a_normal_ticker(tmp_path, fake_client, monkeypatc
     # Patch the trading-day guard so we always run
     monkeypatch.setattr("daily_run.is_trading_day", lambda d: True)
     monkeypatch.setattr("daily_run.list_expirations",
-                        lambda client, ticker: [date(2026, 5, 12)])
+                        lambda client, ticker, **kw: [date(2026, 5, 12)])
     monkeypatch.setattr("daily_run.TICKERS", ["NVDA"])
     monkeypatch.setattr("daily_run.SECTORS", {"NVDA": "Semiconductors"})
 
@@ -84,7 +84,7 @@ def test_run_settles_open_setup_at_expiry(tmp_path, fake_client, monkeypatch):
 
     monkeypatch.setattr("daily_run.is_trading_day", lambda d: True)
     monkeypatch.setattr("daily_run.list_expirations",
-                        lambda client, ticker: [date(2026, 5, 12)])
+                        lambda client, ticker, **kw: [date(2026, 5, 12)])
     monkeypatch.setattr("daily_run.TICKERS", [])  # don't open new setups
     monkeypatch.setattr("daily_run.SECTORS", {})
 
@@ -142,7 +142,7 @@ def test_run_skips_ticker_when_no_credit(tmp_path, fake_client, monkeypatch):
 
     monkeypatch.setattr("daily_run.is_trading_day", lambda d: True)
     monkeypatch.setattr("daily_run.list_expirations",
-                        lambda client, ticker: [date(2026, 5, 12)])
+                        lambda client, ticker, **kw: [date(2026, 5, 12)])
     monkeypatch.setattr("daily_run.TICKERS", ["NVDA"])
     monkeypatch.setattr("daily_run.SECTORS", {"NVDA": "Semiconductors"})
 
@@ -164,3 +164,52 @@ def test_run_exits_early_on_non_trading_day(tmp_path, fake_client, monkeypatch):
         cache_path=tmp_path / "cache.sqlite")
     assert not (tmp_path / "ledger.json").exists() or store.load().setups == []
     fake_client.quote.assert_not_called()
+
+
+def test_list_expirations_wrapper_returns_cached_value_without_calling_client(tmp_path):
+    from daily_run import list_expirations as wrap
+
+    cache = ExpirationsCache(tmp_path / "cache.sqlite")
+    cache.put("AAPL", fetched_on=date(2026, 5, 9),
+              expirations=[date(2026, 5, 23)])
+    client = MagicMock()
+    result = wrap(client, "AAPL", cache=cache, today=date(2026, 5, 9))
+    assert result == [date(2026, 5, 23)]
+    client.list_expirations.assert_not_called()
+
+
+def test_list_expirations_wrapper_fetches_and_caches_on_miss(tmp_path):
+    from daily_run import list_expirations as wrap
+
+    cache = ExpirationsCache(tmp_path / "cache.sqlite")
+    client = MagicMock()
+    client.list_expirations.return_value = [date(2026, 5, 23), date(2026, 5, 30)]
+    result = wrap(client, "AAPL", cache=cache, today=date(2026, 5, 9))
+    assert result == [date(2026, 5, 23), date(2026, 5, 30)]
+    client.list_expirations.assert_called_once_with("AAPL")
+    # 二次调用走缓存
+    client.list_expirations.reset_mock()
+    again = wrap(client, "AAPL", cache=cache, today=date(2026, 5, 9))
+    assert again == result
+    client.list_expirations.assert_not_called()
+
+
+def test_list_expirations_wrapper_does_not_cache_empty_result(tmp_path):
+    from daily_run import list_expirations as wrap
+
+    cache = ExpirationsCache(tmp_path / "cache.sqlite")
+    client = MagicMock()
+    client.list_expirations.return_value = []
+    wrap(client, "AAPL", cache=cache, today=date(2026, 5, 9))
+    # 第二次仍然要打 client，因为空结果不缓存（可能是 transient error）
+    wrap(client, "AAPL", cache=cache, today=date(2026, 5, 9))
+    assert client.list_expirations.call_count == 2
+
+
+def test_list_expirations_wrapper_backwards_compat_no_cache_arg(tmp_path):
+    """旧测试：不传 cache/today 时仍直接转发给 client。"""
+    from daily_run import list_expirations as wrap
+
+    client = MagicMock()
+    client.list_expirations.return_value = [date(2026, 5, 23)]
+    assert wrap(client, "AAPL") == [date(2026, 5, 23)]
