@@ -2,7 +2,7 @@ from datetime import date
 
 import pytest
 
-from data_source.cache import BarRow, DailyBarsCache
+from data_source.cache import BarRow, DailyBarsCache, ExpirationsCache
 
 
 @pytest.fixture
@@ -66,3 +66,49 @@ def test_latest_date_returns_max_date(cache):
         BarRow("NVDA", date(2025, 4, 26), 1, 1, 1, 1, 1),
     ])
     assert cache.latest_date("NVDA") == date(2025, 4, 28)
+
+
+@pytest.fixture
+def exp_cache(tmp_path):
+    return ExpirationsCache(tmp_path / "cache.sqlite")
+
+
+def test_get_returns_none_when_not_cached(exp_cache):
+    assert exp_cache.get("AAPL", fetched_on=date(2026, 5, 9)) is None
+
+
+def test_put_then_get_roundtrip(exp_cache):
+    exps = [date(2026, 5, 23), date(2026, 5, 30), date(2026, 6, 20)]
+    exp_cache.put("AAPL", fetched_on=date(2026, 5, 9), expirations=exps)
+    assert exp_cache.get("AAPL", fetched_on=date(2026, 5, 9)) == exps
+
+
+def test_get_misses_for_different_date(exp_cache):
+    exp_cache.put("AAPL", fetched_on=date(2026, 5, 9),
+                  expirations=[date(2026, 5, 23)])
+    assert exp_cache.get("AAPL", fetched_on=date(2026, 5, 10)) is None
+
+
+def test_put_empty_list_is_no_op(exp_cache):
+    exp_cache.put("AAPL", fetched_on=date(2026, 5, 9), expirations=[])
+    assert exp_cache.get("AAPL", fetched_on=date(2026, 5, 9)) is None
+
+
+def test_put_idempotent_replaces_existing(exp_cache):
+    exp_cache.put("AAPL", fetched_on=date(2026, 5, 9),
+                  expirations=[date(2026, 5, 23)])
+    exp_cache.put("AAPL", fetched_on=date(2026, 5, 9),
+                  expirations=[date(2026, 5, 23), date(2026, 5, 30)])
+    assert exp_cache.get("AAPL", fetched_on=date(2026, 5, 9)) == [
+        date(2026, 5, 23), date(2026, 5, 30),
+    ]
+
+
+def test_coexists_with_daily_bars_in_same_db(tmp_path):
+    p = tmp_path / "cache.sqlite"
+    bars = DailyBarsCache(p)
+    exps = ExpirationsCache(p)
+    bars.upsert([BarRow("AAPL", date(2026, 5, 8), 1.0, 2.0, 0.5, 1.5, 100)])
+    exps.put("AAPL", fetched_on=date(2026, 5, 9), expirations=[date(2026, 5, 23)])
+    assert bars.read("AAPL", start=date(2026, 5, 8), end=date(2026, 5, 8))
+    assert exps.get("AAPL", fetched_on=date(2026, 5, 9)) == [date(2026, 5, 23)]

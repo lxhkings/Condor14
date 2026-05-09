@@ -98,3 +98,58 @@ class DailyBarsCache:
             if row is None or row[0] is None:
                 return None
             return date.fromisoformat(row[0])
+
+
+_EXPIRATIONS_SCHEMA = """
+CREATE TABLE IF NOT EXISTS option_expirations (
+    ticker      TEXT NOT NULL,
+    fetched_on  TEXT NOT NULL,
+    expiration  TEXT NOT NULL,
+    PRIMARY KEY (ticker, fetched_on, expiration)
+);
+"""
+
+
+class ExpirationsCache:
+    """Per-day cache of option expiration dates, sharing the daily-bars SQLite file."""
+
+    def __init__(self, path: Path | str) -> None:
+        self.path = Path(path)
+        self.path.parent.mkdir(parents=True, exist_ok=True)
+        with self._connect() as conn:
+            conn.executescript(_EXPIRATIONS_SCHEMA)
+
+    @contextmanager
+    def _connect(self) -> Iterator[sqlite3.Connection]:
+        conn = sqlite3.connect(self.path)
+        try:
+            yield conn
+            conn.commit()
+        finally:
+            conn.close()
+
+    def get(self, ticker: str, *, fetched_on: date) -> list[date] | None:
+        with self._connect() as conn:
+            cur = conn.execute(
+                "SELECT expiration FROM option_expirations "
+                "WHERE ticker = ? AND fetched_on = ? ORDER BY expiration",
+                (ticker, fetched_on.isoformat()),
+            )
+            rows = cur.fetchall()
+        if not rows:
+            return None
+        return [date.fromisoformat(r[0]) for r in rows]
+
+    def put(self, ticker: str, *, fetched_on: date, expirations: list[date]) -> None:
+        if not expirations:
+            return
+        with self._connect() as conn:
+            # 先清空当日旧条目，再插新——保证 idempotent replace 语义。
+            conn.execute(
+                "DELETE FROM option_expirations WHERE ticker = ? AND fetched_on = ?",
+                (ticker, fetched_on.isoformat()),
+            )
+            conn.executemany(
+                "INSERT INTO option_expirations (ticker, fetched_on, expiration) VALUES (?, ?, ?)",
+                [(ticker, fetched_on.isoformat(), e.isoformat()) for e in expirations],
+            )
