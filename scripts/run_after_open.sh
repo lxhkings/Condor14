@@ -1,90 +1,45 @@
 #!/bin/bash
-# Run daily_run.py 30 minutes after US market open
-# US market opens at 9:30 AM ET
-# Summer (DST): 9:30 AM ET = 21:30 Beijing -> run at 22:00 Beijing
-# Winter (EST): 9:30 AM ET = 22:30 Beijing -> run at 23:00 Beijing
-# After pipeline: build site and push to git (triggers Vercel deploy)
+# Daily pipeline: fetch options data → build site → push → Vercel deploys.
+# Run at 15:30 UTC (11:30 AM ET DST / 10:30 AM ET EST) Mon-Fri via crontab.
+set -euo pipefail
 
-set -e
-cd /Users/xiaohongliang/projects/condor14
+REPO=/Users/xiaohongliang/projects/condor14
+LOG=$REPO/logs/daily.log
+mkdir -p "$REPO/logs"
+exec >> "$LOG" 2>&1
 
-# Check if we're in US daylight saving time
-# US DST: 2nd Sunday in March to 1st Sunday in November
-is_dst() {
-    /opt/homebrew/bin/uv run python -c "
-import datetime
-import pytz
+echo "=== $(date -u '+%Y-%m-%d %H:%M:%S UTC') start ==="
 
-et = pytz.timezone('America/New_York')
-now = datetime.datetime.now(et)
-# Check if currently in DST (et.dst() returns non-zero during DST)
-print('yes' if now.dst() else 'no')
-"
-}
+cd "$REPO"
 
-# Get current hour in Beijing time
-BEIJING_HOUR=$(date +%H)
+# Skip non-trading days
+/opt/homebrew/bin/uv run python - <<'EOF'
+from data_source.trading_calendar import is_trading_day
+from datetime import date, timezone, timedelta
+import sys
+# Use ET date (UTC-4 DST / UTC-5 EST): approximate with UTC-4
+et_today = (date.today())
+if not is_trading_day(et_today):
+    print(f"Not a trading day ({et_today}), skipping.")
+    sys.exit(1)
+EOF
+status=$?
+[ $status -ne 0 ] && echo "Skipped." && exit 0
 
-# Check DST
-DST=$(is_dst)
+echo "--- daily_run.py ---"
+/opt/homebrew/bin/uv run python daily_run.py
 
-# Only run if we're in the correct window:
-# - Summer (DST): Beijing 22:30-23:59 (run at 22:30)
-# - Winter (EST): Beijing 23:30-00:59 (run at 23:30)
-BEIJING_MINUTE=$(date +%M)
+echo "--- build_site.py ---"
+SITE_HOST=iron-condor-tracker.vercel.app /opt/homebrew/bin/uv run python build_site.py
 
-if [ "$DST" = "yes" ]; then
-    # Summer: should run at 22:30 Beijing
-    if [ "$BEIJING_HOUR" -eq 22 ] && [ "$BEIJING_MINUTE" -ge 30 ]; then
-        echo "Running pipeline (DST, 22:30+ Beijing = 10:30+ AM ET)"
-        /opt/homebrew/bin/uv run python daily_run.py
-
-        echo "Building site..."
-        SITE_HOST=iron-condor-tracker.vercel.app /opt/homebrew/bin/uv run python build_site.py
-
-        echo "Committing and pushing to git..."
-        git add data/ledger.json public/
-        git commit -m "data: $(date +%Y-%m-%d) setups [skip ci]" || echo "No changes to commit"
-        git push origin main
-    elif [ "$BEIJING_HOUR" -ge 23 ]; then
-        echo "Running pipeline (DST, 23:xx Beijing = 11:xx AM ET)"
-        /opt/homebrew/bin/uv run python daily_run.py
-
-        echo "Building site..."
-        SITE_HOST=iron-condor-tracker.vercel.app /opt/homebrew/bin/uv run python build_site.py
-
-        echo "Committing and pushing to git..."
-        git add data/ledger.json public/
-        git commit -m "data: $(date +%Y-%m-%d) setups [skip ci]" || echo "No changes to commit"
-        git push origin main
-    else
-        echo "Skipping: not in DST window (need 22:30+ Beijing, got ${BEIJING_HOUR}:${BEIJING_MINUTE})"
-    fi
+echo "--- git commit & push ---"
+git add data/ledger.json data/cache.sqlite public/
+if git diff --cached --quiet; then
+    echo "No changes to commit."
 else
-    # Winter: should run at 23:30 Beijing
-    if [ "$BEIJING_HOUR" -eq 23 ] && [ "$BEIJING_MINUTE" -ge 30 ]; then
-        echo "Running pipeline (EST, 23:30+ Beijing = 10:30+ AM ET)"
-        /opt/homebrew/bin/uv run python daily_run.py
-
-        echo "Building site..."
-        SITE_HOST=iron-condor-tracker.vercel.app /opt/homebrew/bin/uv run python build_site.py
-
-        echo "Committing and pushing to git..."
-        git add data/ledger.json public/
-        git commit -m "data: $(date +%Y-%m-%d) setups [skip ci]" || echo "No changes to commit"
-        git push origin main
-    elif [ "$BEIJING_HOUR" -ge 0 ] && [ "$BEIJING_HOUR" -lt 1 ]; then
-        echo "Running pipeline (EST, 00:xx Beijing = 11:xx AM ET)"
-        /opt/homebrew/bin/uv run python daily_run.py
-
-        echo "Building site..."
-        SITE_HOST=iron-condor-tracker.vercel.app /opt/homebrew/bin/uv run python build_site.py
-
-        echo "Committing and pushing to git..."
-        git add data/ledger.json public/
-        git commit -m "data: $(date +%Y-%m-%d) setups [skip ci]" || echo "No changes to commit"
-        git push origin main
-    else
-        echo "Skipping: not in EST window (need 23:30+ Beijing, got ${BEIJING_HOUR}:${BEIJING_MINUTE})"
-    fi
+    git commit -m "chore(site): daily update $(date -u +%Y-%m-%d)"
+    git push origin main
+    echo "Pushed. Vercel will deploy."
 fi
+
+echo "=== done ==="
