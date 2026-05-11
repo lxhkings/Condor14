@@ -209,7 +209,7 @@
 </head>
 <body>
 <h1>Methodology</h1>
-<p>This page documents every formula, threshold, and rule used to compute the setups published on this site. Source code is open: <a href="https://github.com/lxhkings/Condor14">https://github.com/lxhkings/Condor14</a>.</p>
+<p>This page documents every formula, threshold, and rule used to compute the setups published on this site.</p>
 <h2>Strategy</h2>
 <p>A 14-day Iron Condor: sell one out-of-the-money call spread and one out-of-the-money put spread on the same ticker, both expiring within a target window of 13–16 calendar days from the open date. The structure profits when the underlying closes inside the short strikes at expiration; max loss is bounded by wing width minus net credit.</p>
 <h2>Strike Selection (ATR-anchored)</h2>
@@ -260,13 +260,12 @@ Lower Break-even = short_put.strike  - Net Credit
 <li><strong>Vol regime:</strong> <code>expanding</code> if ATR14 &gt; ATR60 × 1.2, <code>contracting</code> if &lt; ATR60 × 0.8 (rendered as a 1-sentence inline modifier)</li>
 </ul>
 <h2>Author</h2>
-<p>QuantOptions Data Lab. Data source: OPRA via MarketData.app. Source code (math engine only): <a href="https://github.com/lxhkings/Condor14">https://github.com/lxhkings/Condor14</a>.</p>
+<p>QuantOptions Data Lab. Data source: OPRA via MarketData.app.</p>
 <div class="disclaimer">
 <p><strong>DISCLAIMER</strong></p>
 <p>This content is published for <strong>educational purposes only</strong> and does not constitute financial advice, a solicitation, or a recommendation to buy or sell any security. Options trading involves substantial risk and is not suitable for all investors. Past performance — including win rates, drawdowns, and cumulative P&amp;L figures displayed on this site — does not guarantee future results.</p>
 <p>All setups shown are generated algorithmically and tracked live from their initiation date. Realized outcomes reflect a strictly passive <strong>hold-to-expiration</strong> assumption. The following risks are not modeled: early assignment, liquidity gaps, slippage, active stop-loss management, margin calls, and transaction costs. Actual trading results may differ materially.</p>
 <p>Real-time options market data is provided by OPRA via MarketData.app. The site operator (QuantOptions Data Lab) is not a registered investment adviser, broker-dealer, or futures commission merchant.</p>
-<p><strong>Source code:</strong> The math engine and site generator are open-source and available at <a href="https://github.com/lxhkings/Condor14">https://github.com/lxhkings/Condor14</a>.</p>
 </div>
 </body>
 </html>
