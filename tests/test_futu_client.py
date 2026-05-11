@@ -118,3 +118,42 @@ def test_list_expirations_retries_once_on_rate_limit(fake_ctx, monkeypatch):
     result = client.list_expirations("AAPL")
     assert result == [date(2026, 5, 23)]
     assert sleeps == [30.0]
+
+
+def test_option_chain_retries_snapshot_on_rate_limit(fake_ctx, monkeypatch):
+    sleeps: list[float] = []
+    monkeypatch.setattr("data_source.futu_client.time.sleep", lambda s: sleeps.append(s))
+
+    chain_df = pd.DataFrame({"code": ["US.AAPL250523C00200000"]})
+    fake_ctx.get_option_chain.return_value = (RET_OK, chain_df)
+    snap_df = pd.DataFrame({
+        "option_type": ["CALL"], "option_strike_price": [200.0],
+        "bid_price": [1.0], "ask_price": [1.5], "last_price": [1.2],
+        "prev_close_price": [1.1], "option_implied_volatility": [30.0],
+        "option_delta": [0.5], "option_open_interest": [500], "volume": [100],
+    })
+    fake_ctx.get_market_snapshot.side_effect = [
+        (RET_ERROR, "获取市场快照频率太高，请求失败"),
+        (RET_OK, snap_df),
+    ]
+    client = _make_client(fake_ctx)
+    legs = client.option_chain("AAPL", expiration=date(2026, 5, 23))
+    assert len(legs) == 1
+    assert fake_ctx.get_market_snapshot.call_count == 2
+    assert sleeps == [30.0]
+
+
+def test_option_chain_calls_snapshot_limiter_acquire(fake_ctx):
+    chain_df = pd.DataFrame({"code": ["US.AAPL250523C00200000"]})
+    snap_df = pd.DataFrame({
+        "option_type": ["CALL"], "option_strike_price": [200.0],
+        "bid_price": [1.0], "ask_price": [1.5], "last_price": [1.2],
+        "prev_close_price": [1.1], "option_implied_volatility": [30.0],
+        "option_delta": [0.5], "option_open_interest": [500], "volume": [100],
+    })
+    fake_ctx.get_option_chain.return_value = (RET_OK, chain_df)
+    fake_ctx.get_market_snapshot.return_value = (RET_OK, snap_df)
+    snapshot_limiter = MagicMock(spec=TokenBucket)
+    client = _make_client(fake_ctx, snapshot_limiter=snapshot_limiter)
+    client.option_chain("AAPL", expiration=date(2026, 5, 23))
+    snapshot_limiter.acquire.assert_called_once()

@@ -74,6 +74,7 @@ class FutuClient:
         _ctx: OpenQuoteContext | None = None,
         chain_limiter: TokenBucket | None = None,
         exp_limiter: TokenBucket | None = None,
+        snapshot_limiter: TokenBucket | None = None,
     ) -> None:
         if _ctx is not None:
             self._ctx = _ctx
@@ -83,6 +84,9 @@ class FutuClient:
         # 留 1 次安全余量 → 9/30s = 0.3 tok/s，capacity 9（允许冷启动突发 9 次）。
         self._chain_limiter = chain_limiter or TokenBucket(rate_per_sec=0.3, capacity=9)
         self._exp_limiter = exp_limiter or TokenBucket(rate_per_sec=0.3, capacity=9)
+        # Futu 公开限频：Qot_GetMarketSnapshot 60/30s = 2/s。
+        # 留 10% 安全余量 → 1.8/s，capacity=54。
+        self._snapshot_limiter = snapshot_limiter or TokenBucket(rate_per_sec=1.8, capacity=54)
 
     def close(self) -> None:
         self._ctx.close()
@@ -120,6 +124,7 @@ class FutuClient:
 
     # ------------------------------------------------------------------
     def quote(self, ticker: str) -> Quote:
+        self._snapshot_limiter.acquire()
         ret, data = self._ctx.get_market_snapshot([_to_code(ticker)])
         if ret != RET_OK or data.empty:
             return Quote(
@@ -162,14 +167,25 @@ class FutuClient:
         option_codes = chain["code"].tolist()
 
         # Split into batches of 200 (Futu limit)
+        n_batches = (len(option_codes) + 199) // 200
         all_snapshots = []
         for i in range(0, len(option_codes), 200):
             batch = option_codes[i : i + 200]
+            batch_num = i // 200 + 1
+            self._snapshot_limiter.acquire()
             ret, snap = self._ctx.get_market_snapshot(batch)
+            if ret != RET_OK and _is_rate_limit_msg(snap):
+                log.warning(
+                    "rate-limited on get_market_snapshot batch %d/%d for %s; backing off %.0fs",
+                    batch_num, n_batches, ticker, _RATE_LIMIT_BACKOFF_SEC,
+                )
+                time.sleep(_RATE_LIMIT_BACKOFF_SEC)
+                self._snapshot_limiter.acquire()
+                ret, snap = self._ctx.get_market_snapshot(batch)
             if ret != RET_OK:
                 log.warning(
                     "get_market_snapshot batch %d/%d for %s failed: ret=%s msg=%s",
-                    i // 200 + 1, (len(option_codes) + 199) // 200, ticker, ret, snap,
+                    batch_num, n_batches, ticker, ret, snap,
                 )
                 continue
             all_snapshots.append(snap)

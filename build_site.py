@@ -57,11 +57,9 @@ logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s %(message
 REPO_ROOT = Path(__file__).parent
 TEMPLATE_DIR = REPO_ROOT / "content_engine" / "templates"
 ASSETS_DIR = REPO_ROOT / "assets"
-SOURCE_REPO_URL = "https://github.com/lxhkings/Condor14"
-
 HOMEPAGE_DESCRIPTION = (
     "Daily iron condor setups computed from real OPRA quotes and tracked live "
-    "to expiration across 30+ liquid US equities and ETFs. Open source, educational."
+    "to expiration across 30+ liquid US equities and ETFs."
 )
 THEME_COLOR = "#0d1117"
 
@@ -97,7 +95,6 @@ def _render_ticker(
         active_rows=active_rows,
         settled_rows=settled_rows,
         peers=peers,
-        source_repo_url=SOURCE_REPO_URL,
     )
     blocks = [
         financial_product_jsonld(setup),
@@ -138,7 +135,6 @@ def _render_ticker_placeholder(
     for peer in same_sector_peers(ticker):
         md += f"- [{peer}](/{peer.lower()}/)\n"
     md += env.get_template("_disclaimer.md.j2").render(
-        source_repo_url=SOURCE_REPO_URL,
     )
     return render_html_page(
         markdown_source=md,
@@ -177,8 +173,7 @@ def _render_index(
             highest_premium_setups=screener["highest_premium_setups"],
             sector_heatmap=screener["sector_heatmap"],
             hero=screener["hero"],
-            source_repo_url=SOURCE_REPO_URL,
-        )
+            )
         return md, "Live 30-Day Hold-to-Expiration Performance - Iron Condor Tracker", screener
     md = env.get_template("index_screener.md.j2").render(
         site_launch_date=screener["site_launch_date"] or today,
@@ -186,7 +181,6 @@ def _render_index(
         sector_heatmap=screener["sector_heatmap"],
         newest_setups=screener["newest_setups"],
         hero=screener["hero"],
-        source_repo_url=SOURCE_REPO_URL,
     )
     return md, "Daily Iron Condor Volatility Screener", screener
 
@@ -280,7 +274,6 @@ def build(
 
     # Methodology page
     methodology_md = env.get_template("methodology.md.j2").render(
-        source_repo_url=SOURCE_REPO_URL,
     )
     methodology_html = render_html_page(
         markdown_source=methodology_md,
