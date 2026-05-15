@@ -8,3 +8,4 @@ CLAUDE.md
 data/ledger.json.tmp
 .env
 .worktrees/
+.DS_Store
