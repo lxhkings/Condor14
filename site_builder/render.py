@@ -293,6 +293,7 @@ def render_html_page(
         '<head>\n'
         '<meta charset="utf-8">\n'
         '<meta name="viewport" content="width=device-width,initial-scale=1">\n'
+        '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6718270775160916" crossorigin="anonymous"></script>\n'
         f'<title>{_esc(page_title)}</title>\n'
         f'<link rel="canonical" href="{_esc(canonical_url, quote=True)}">\n'
         f'{extra_meta}'
