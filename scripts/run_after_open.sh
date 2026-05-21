@@ -38,6 +38,7 @@ if git diff --cached --quiet; then
     echo "No changes to commit."
 else
     git commit -m "chore(site): daily update $(date -u +%Y-%m-%d)"
+    git pull --rebase origin main
     git push origin main
     echo "Pushed. Vercel will deploy."
 fi
