@@ -8,6 +8,9 @@ LOG=$REPO/logs/daily.log
 mkdir -p "$REPO/logs"
 exec >> "$LOG" 2>&1
 
+export https_proxy=http://127.0.0.1:10808
+export http_proxy=http://127.0.0.1:10808
+
 echo "=== $(date -u '+%Y-%m-%d %H:%M:%S UTC') start ==="
 
 cd "$REPO"
