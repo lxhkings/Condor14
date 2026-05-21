@@ -32,7 +32,7 @@ jobs:
 
       - name: Build static site
         env:
-          SITE_HOST: iron-condor-tracker.vercel.app
+          SITE_HOST: condor14.vercel.app
         run: uv run python build_site.py
 
       - name: Commit and push public/
