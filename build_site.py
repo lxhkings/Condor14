@@ -349,7 +349,7 @@ def main() -> int:
     return build(
         ledger_path=REPO_ROOT / "data" / "ledger.json",
         public_dir=REPO_ROOT / "public",
-        host=os.environ.get("SITE_HOST", "iron-condor-tracker.vercel.app"),
+        host=os.environ.get("SITE_HOST", "condor14.com"),
         today=today,
         indexnow_key_path=REPO_ROOT / "data" / "indexnow_key.txt",
         last_indexed_path=REPO_ROOT / "data" / "last_indexed.json",

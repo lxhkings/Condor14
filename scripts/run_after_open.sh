@@ -33,7 +33,7 @@ echo "--- daily_run.py ---"
 /opt/homebrew/bin/uv run python daily_run.py
 
 echo "--- build_site.py ---"
-SITE_HOST=condor14.vercel.app /opt/homebrew/bin/uv run python build_site.py
+SITE_HOST=condor14.com /opt/homebrew/bin/uv run python build_site.py
 
 echo "--- git commit & push ---"
 git add data/ledger.json data/cache.sqlite public/
