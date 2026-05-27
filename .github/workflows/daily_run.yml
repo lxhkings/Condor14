@@ -42,4 +42,5 @@ jobs:
           git add public/
           git diff --cached --quiet && echo "No changes to commit" || \
             git commit -m "chore(site): rebuild static site $(date -u +%Y-%m-%d)" && \
+            git pull --rebase origin main && \
             git push origin main
