@@ -2,7 +2,7 @@
   "schema_version": 1,
   "site_launch_date": "2026-05-01",
   "first_settlement_date": "2026-05-14",
-  "last_run": "2026-05-28T01:42:07.649812+00:00",
+  "last_run": "2026-05-28T15:31:18.152947+00:00",
   "setups": [
     {
       "id": "NVDA-2026-04-29",
@@ -5533,7 +5533,7 @@
       "max_loss": 2.78,
       "break_even_upper": 740.22,
       "break_even_lower": 702.78,
-      "status": "open",
+      "status": "won",
       "daily_marks": [
         {
           "date": "2026-05-15",
@@ -5569,9 +5569,19 @@
           "date": "2026-05-27",
           "underlying_close": 729.45,
           "breached_short": false
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 734.69,
+          "breached_short": false
         }
       ],
-      "settlement": null
+      "settlement": {
+        "settled_on": "2026-05-28",
+        "final_underlying": 734.69,
+        "breached_side": null,
+        "final_pnl_per_spread": 322.0
+      }
     },
     {
       "id": "AMD-2026-05-14",
@@ -5595,7 +5605,7 @@
       "max_loss": 9.1,
       "break_even_upper": 490.9,
       "break_even_lower": 409.1,
-      "status": "open",
+      "status": "lost",
       "daily_marks": [
         {
           "date": "2026-05-15",
@@ -5631,9 +5641,19 @@
           "date": "2026-05-27",
           "underlying_close": 495.54,
           "breached_short": true
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 523.705,
+          "breached_short": true
         }
       ],
-      "settlement": null
+      "settlement": {
+        "settled_on": "2026-05-28",
+        "final_underlying": 523.705,
+        "breached_side": "upper",
+        "final_pnl_per_spread": -910.0
+      }
     },
     {
       "id": "TSM-2026-05-14",
@@ -5657,7 +5677,7 @@
       "max_loss": 6.95,
       "break_even_upper": 443.05,
       "break_even_lower": 391.95,
-      "status": "open",
+      "status": "won",
       "daily_marks": [
         {
           "date": "2026-05-15",
@@ -5693,9 +5713,19 @@
           "date": "2026-05-27",
           "underlying_close": 422.73,
           "breached_short": false
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 424.615,
+          "breached_short": false
         }
       ],
-      "settlement": null
+      "settlement": {
+        "settled_on": "2026-05-28",
+        "final_underlying": 424.615,
+        "breached_side": null,
+        "final_pnl_per_spread": 305.0
+      }
     },
     {
       "id": "NFLX-2026-05-14",
@@ -5719,7 +5749,7 @@
       "max_loss": 1.41,
       "break_even_upper": 92.59,
       "break_even_lower": 83.41,
-      "status": "open",
+      "status": "won",
       "daily_marks": [
         {
           "date": "2026-05-15",
@@ -5755,9 +5785,19 @@
           "date": "2026-05-27",
           "underlying_close": 87.35,
           "breached_short": false
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 85.71,
+          "breached_short": false
         }
       ],
-      "settlement": null
+      "settlement": {
+        "settled_on": "2026-05-28",
+        "final_underlying": 85.71,
+        "breached_side": null,
+        "final_pnl_per_spread": 59.0
+      }
     },
     {
       "id": "SPY-2026-05-15",
@@ -5812,6 +5852,11 @@
           "date": "2026-05-27",
           "underlying_close": 750.46,
           "breached_short": false
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 753.98,
+          "breached_short": true
         }
       ],
       "settlement": null
@@ -5868,6 +5913,11 @@
         {
           "date": "2026-05-27",
           "underlying_close": 290.37,
+          "breached_short": true
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 292.01,
           "breached_short": true
         }
       ],
@@ -5926,6 +5976,11 @@
           "date": "2026-05-27",
           "underlying_close": 212.6,
           "breached_short": true
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 212.645,
+          "breached_short": true
         }
       ],
       "settlement": null
@@ -5982,6 +6037,11 @@
         {
           "date": "2026-05-27",
           "underlying_close": 495.54,
+          "breached_short": true
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 523.63,
           "breached_short": true
         }
       ],
@@ -6040,6 +6100,11 @@
           "date": "2026-05-27",
           "underlying_close": 310.85,
           "breached_short": false
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 311.77,
+          "breached_short": false
         }
       ],
       "settlement": null
@@ -6096,6 +6161,11 @@
         {
           "date": "2026-05-27",
           "underlying_close": 412.67,
+          "breached_short": false
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 424.745,
           "breached_short": false
         }
       ],
@@ -6154,6 +6224,11 @@
           "date": "2026-05-27",
           "underlying_close": 635.255,
           "breached_short": false
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 633.69,
+          "breached_short": false
         }
       ],
       "settlement": null
@@ -6210,6 +6285,11 @@
         {
           "date": "2026-05-27",
           "underlying_close": 440.36,
+          "breached_short": false
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 441.1201,
           "breached_short": false
         }
       ],
@@ -6268,6 +6348,11 @@
           "date": "2026-05-27",
           "underlying_close": 87.35,
           "breached_short": false
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 85.715,
+          "breached_short": false
         }
       ],
       "settlement": null
@@ -6324,6 +6409,11 @@
         {
           "date": "2026-05-27",
           "underlying_close": 154.2,
+          "breached_short": true
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 146.9987,
           "breached_short": true
         }
       ],
@@ -6382,6 +6472,11 @@
           "date": "2026-05-27",
           "underlying_close": 14.33,
           "breached_short": true
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 13.9798,
+          "breached_short": true
         }
       ],
       "settlement": null
@@ -6433,6 +6528,11 @@
         {
           "date": "2026-05-27",
           "underlying_close": 750.46,
+          "breached_short": true
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 753.955,
           "breached_short": true
         }
       ],
@@ -6486,6 +6586,11 @@
           "date": "2026-05-27",
           "underlying_close": 729.45,
           "breached_short": true
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 734.7,
+          "breached_short": true
         }
       ],
       "settlement": null
@@ -6537,6 +6642,11 @@
         {
           "date": "2026-05-27",
           "underlying_close": 290.37,
+          "breached_short": true
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 292.01,
           "breached_short": true
         }
       ],
@@ -6590,6 +6700,11 @@
           "date": "2026-05-27",
           "underlying_close": 595.5,
           "breached_short": true
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 601.78,
+          "breached_short": true
         }
       ],
       "settlement": null
@@ -6641,6 +6756,11 @@
         {
           "date": "2026-05-27",
           "underlying_close": 212.6,
+          "breached_short": false
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 212.64,
           "breached_short": false
         }
       ],
@@ -6694,6 +6814,11 @@
           "date": "2026-05-27",
           "underlying_close": 495.54,
           "breached_short": true
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 523.71,
+          "breached_short": true
         }
       ],
       "settlement": null
@@ -6745,6 +6870,11 @@
         {
           "date": "2026-05-27",
           "underlying_close": 87.35,
+          "breached_short": false
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 85.715,
           "breached_short": false
         }
       ],
@@ -6798,6 +6928,11 @@
           "date": "2026-05-27",
           "underlying_close": 154.2,
           "breached_short": false
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 147.0,
+          "breached_short": true
         }
       ],
       "settlement": null
@@ -6850,6 +6985,11 @@
           "date": "2026-05-27",
           "underlying_close": 14.33,
           "breached_short": false
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 13.9798,
+          "breached_short": false
         }
       ],
       "settlement": null
@@ -6892,6 +7032,11 @@
           "date": "2026-05-27",
           "underlying_close": 422.73,
           "breached_short": false
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 424.595,
+          "breached_short": false
         }
       ],
       "settlement": null
@@ -6928,6 +7073,11 @@
         {
           "date": "2026-05-27",
           "underlying_close": 750.46,
+          "breached_short": false
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 753.955,
           "breached_short": false
         }
       ],
@@ -6966,6 +7116,11 @@
           "date": "2026-05-27",
           "underlying_close": 729.45,
           "breached_short": false
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 734.73,
+          "breached_short": false
         }
       ],
       "settlement": null
@@ -7002,6 +7157,11 @@
         {
           "date": "2026-05-27",
           "underlying_close": 290.37,
+          "breached_short": false
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 292.0,
           "breached_short": false
         }
       ],
@@ -7040,6 +7200,11 @@
           "date": "2026-05-27",
           "underlying_close": 212.6,
           "breached_short": false
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 212.65,
+          "breached_short": false
         }
       ],
       "settlement": null
@@ -7076,6 +7241,11 @@
         {
           "date": "2026-05-27",
           "underlying_close": 310.85,
+          "breached_short": false
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 311.78,
           "breached_short": false
         }
       ],
@@ -7114,6 +7284,11 @@
           "date": "2026-05-27",
           "underlying_close": 635.255,
           "breached_short": true
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 633.54,
+          "breached_short": false
         }
       ],
       "settlement": null
@@ -7150,6 +7325,11 @@
         {
           "date": "2026-05-27",
           "underlying_close": 271.85,
+          "breached_short": false
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 269.745,
           "breached_short": false
         }
       ],
@@ -7188,6 +7368,11 @@
           "date": "2026-05-27",
           "underlying_close": 87.35,
           "breached_short": false
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 85.715,
+          "breached_short": false
         }
       ],
       "settlement": null
@@ -7225,6 +7410,11 @@
           "date": "2026-05-27",
           "underlying_close": 14.33,
           "breached_short": false
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 13.9798,
+          "breached_short": false
         }
       ],
       "settlement": null
@@ -7256,6 +7446,11 @@
         {
           "date": "2026-05-27",
           "underlying_close": 212.6,
+          "breached_short": false
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 212.65,
           "breached_short": false
         }
       ],
@@ -7289,6 +7484,11 @@
           "date": "2026-05-27",
           "underlying_close": 421.86,
           "breached_short": false
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 423.4701,
+          "breached_short": false
         }
       ],
       "settlement": null
@@ -7320,6 +7520,11 @@
         {
           "date": "2026-05-27",
           "underlying_close": 310.85,
+          "breached_short": false
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 311.78,
           "breached_short": false
         }
       ],
@@ -7353,6 +7558,11 @@
           "date": "2026-05-27",
           "underlying_close": 412.67,
           "breached_short": false
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 424.5997,
+          "breached_short": false
         }
       ],
       "settlement": null
@@ -7384,6 +7594,11 @@
         {
           "date": "2026-05-27",
           "underlying_close": 388.83,
+          "breached_short": false
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 389.84,
           "breached_short": false
         }
       ],
@@ -7417,6 +7632,11 @@
           "date": "2026-05-27",
           "underlying_close": 635.255,
           "breached_short": true
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 633.54,
+          "breached_short": true
         }
       ],
       "settlement": null
@@ -7448,6 +7668,11 @@
         {
           "date": "2026-05-27",
           "underlying_close": 271.85,
+          "breached_short": false
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 269.75,
           "breached_short": false
         }
       ],
@@ -7481,6 +7706,11 @@
           "date": "2026-05-27",
           "underlying_close": 440.36,
           "breached_short": false
+        },
+        {
+          "date": "2026-05-28",
+          "underlying_close": 441.05,
+          "breached_short": false
         }
       ],
       "settlement": null
@@ -7508,7 +7738,13 @@
       "break_even_upper": 226.25,
       "break_even_lower": 198.75,
       "status": "open",
-      "daily_marks": [],
+      "daily_marks": [
+        {
+          "date": "2026-05-28",
+          "underlying_close": 212.6309,
+          "breached_short": false
+        }
+      ],
       "settlement": null
     },
     {
@@ -7534,7 +7770,13 @@
       "break_even_upper": 658.3,
       "break_even_lower": 611.7,
       "status": "open",
-      "daily_marks": [],
+      "daily_marks": [
+        {
+          "date": "2026-05-28",
+          "underlying_close": 633.54,
+          "breached_short": false
+        }
+      ],
       "settlement": null
     },
     {
@@ -7560,7 +7802,13 @@
       "break_even_upper": 284.18,
       "break_even_lower": 260.82,
       "status": "open",
-      "daily_marks": [],
+      "daily_marks": [
+        {
+          "date": "2026-05-28",
+          "underlying_close": 269.74,
+          "breached_short": false
+        }
+      ],
       "settlement": null
     },
     {
@@ -7586,7 +7834,13 @@
       "break_even_upper": 91.63,
       "break_even_lower": 83.37,
       "status": "open",
-      "daily_marks": [],
+      "daily_marks": [
+        {
+          "date": "2026-05-28",
+          "underlying_close": 85.72,
+          "breached_short": false
+        }
+      ],
       "settlement": null
     },
     {
@@ -7612,7 +7866,13 @@
       "break_even_upper": 170.76,
       "break_even_lower": 139.24,
       "status": "open",
-      "daily_marks": [],
+      "daily_marks": [
+        {
+          "date": "2026-05-28",
+          "underlying_close": 147.0,
+          "breached_short": false
+        }
+      ],
       "settlement": null
     },
     {
@@ -7637,6 +7897,116 @@
       "max_loss": 0.33,
       "break_even_upper": 15.67,
       "break_even_lower": 12.83,
+      "status": "open",
+      "daily_marks": [
+        {
+          "date": "2026-05-28",
+          "underlying_close": 13.9798,
+          "breached_short": false
+        }
+      ],
+      "settlement": null
+    },
+    {
+      "id": "NVDA-2026-05-28",
+      "ticker": "NVDA",
+      "sector": "Semiconductors",
+      "start_date": "2026-05-28",
+      "target_exit_date": "2026-06-11",
+      "expiry_used": "2026-06-10",
+      "underlying_at_open": 212.62,
+      "atr14_at_open": 7.3528,
+      "sma20_at_open": 214.64,
+      "iv_percentile_at_open": 50,
+      "trend_bias": "bearish",
+      "short_call_strike": 222.5,
+      "long_call_strike": 227.5,
+      "short_put_strike": 202.5,
+      "long_put_strike": 197.5,
+      "net_credit_at_open": 1.52,
+      "wing_width": 5.0,
+      "max_profit": 1.52,
+      "max_loss": 3.48,
+      "break_even_upper": 224.02,
+      "break_even_lower": 200.98,
+      "status": "open",
+      "daily_marks": [],
+      "settlement": null
+    },
+    {
+      "id": "NFLX-2026-05-28",
+      "ticker": "NFLX",
+      "sector": "Mega-Cap Tech",
+      "start_date": "2026-05-28",
+      "target_exit_date": "2026-06-11",
+      "expiry_used": "2026-06-12",
+      "underlying_at_open": 85.71,
+      "atr14_at_open": 2.4995,
+      "sma20_at_open": 89.0168,
+      "iv_percentile_at_open": 50,
+      "trend_bias": "bearish",
+      "short_call_strike": 89.0,
+      "long_call_strike": 91.0,
+      "short_put_strike": 82.0,
+      "long_put_strike": 80.0,
+      "net_credit_at_open": 0.66,
+      "wing_width": 2.0,
+      "max_profit": 0.66,
+      "max_loss": 1.34,
+      "break_even_upper": 89.66,
+      "break_even_lower": 81.34,
+      "status": "open",
+      "daily_marks": [],
+      "settlement": null
+    },
+    {
+      "id": "MSTR-2026-05-28",
+      "ticker": "MSTR",
+      "sector": "High-Beta / Crypto",
+      "start_date": "2026-05-28",
+      "target_exit_date": "2026-06-11",
+      "expiry_used": "2026-06-12",
+      "underlying_at_open": 147.03,
+      "atr14_at_open": 9.937,
+      "sma20_at_open": 174.9987,
+      "iv_percentile_at_open": 50,
+      "trend_bias": "bearish",
+      "short_call_strike": 162.5,
+      "long_call_strike": 167.5,
+      "short_put_strike": 130.0,
+      "long_put_strike": 125.0,
+      "net_credit_at_open": 0.65,
+      "wing_width": 5.0,
+      "max_profit": 0.65,
+      "max_loss": 4.35,
+      "break_even_upper": 163.15,
+      "break_even_lower": 129.35,
+      "status": "open",
+      "daily_marks": [],
+      "settlement": null
+    },
+    {
+      "id": "MARA-2026-05-28",
+      "ticker": "MARA",
+      "sector": "High-Beta / Crypto",
+      "start_date": "2026-05-28",
+      "target_exit_date": "2026-06-11",
+      "expiry_used": "2026-06-12",
+      "underlying_at_open": 13.955,
+      "atr14_at_open": 0.9203,
+      "sma20_at_open": 12.6122,
+      "iv_percentile_at_open": 50,
+      "trend_bias": "bullish",
+      "short_call_strike": 15.5,
+      "long_call_strike": 16.0,
+      "short_put_strike": 12.5,
+      "long_put_strike": 12.0,
+      "net_credit_at_open": 0.12,
+      "wing_width": 0.5,
+      "max_profit": 0.12,
+      "max_loss": 0.38,
+      "break_even_upper": 15.62,
+      "break_even_lower": 12.38,
       "status": "open",
       "daily_marks": [],
       "settlement": null
@@ -9021,6 +9391,76 @@
     {
       "ticker": "COIN",
       "date": "2026-05-27",
+      "reason": "illiquid:short_call:low_oi"
+    },
+    {
+      "ticker": "SPY",
+      "date": "2026-05-28",
+      "reason": "strike_pick_failed:no listed strike for long call wing above 763.7773332055186"
+    },
+    {
+      "ticker": "QQQ",
+      "date": "2026-05-28",
+      "reason": "strike_pick_failed:no listed strike for long call wing above 745.5004305612202"
+    },
+    {
+      "ticker": "IWM",
+      "date": "2026-05-28",
+      "reason": "strike_pick_failed:no listed strike for long call wing above 301.51563367598396"
+    },
+    {
+      "ticker": "SMH",
+      "date": "2026-05-28",
+      "reason": "illiquid:long_put:low_oi"
+    },
+    {
+      "ticker": "AMD",
+      "date": "2026-05-28",
+      "reason": "illiquid:short_call:low_oi"
+    },
+    {
+      "ticker": "AVGO",
+      "date": "2026-05-28",
+      "reason": "illiquid:long_call:low_oi"
+    },
+    {
+      "ticker": "TSM",
+      "date": "2026-05-28",
+      "reason": "illiquid:short_put:low_oi"
+    },
+    {
+      "ticker": "AAPL",
+      "date": "2026-05-28",
+      "reason": "illiquid:long_call:low_oi"
+    },
+    {
+      "ticker": "MSFT",
+      "date": "2026-05-28",
+      "reason": "illiquid:short_call:low_oi"
+    },
+    {
+      "ticker": "GOOGL",
+      "date": "2026-05-28",
+      "reason": "illiquid:short_call:low_oi"
+    },
+    {
+      "ticker": "META",
+      "date": "2026-05-28",
+      "reason": "illiquid:short_call:low_oi"
+    },
+    {
+      "ticker": "AMZN",
+      "date": "2026-05-28",
+      "reason": "illiquid:short_put:low_oi"
+    },
+    {
+      "ticker": "TSLA",
+      "date": "2026-05-28",
+      "reason": "illiquid:long_call:low_oi"
+    },
+    {
+      "ticker": "COIN",
+      "date": "2026-05-28",
       "reason": "illiquid:short_call:low_oi"
     }
   ]
