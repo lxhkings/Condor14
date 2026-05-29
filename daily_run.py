@@ -15,6 +15,7 @@ from __future__ import annotations
 import logging
 import sys
 from datetime import date, datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 from pathlib import Path
 
 from config import SECTORS, TICKERS
@@ -279,7 +280,7 @@ def run(
 
 def main() -> int:
     here = Path(__file__).parent
-    today = datetime.now().date()
+    today = datetime.now(ZoneInfo("America/New_York")).date()
     with FutuClient() as client:
         store = LedgerStore(here / "data" / "ledger.json")
         return run(today=today, client=client, store=store,

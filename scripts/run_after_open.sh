@@ -18,10 +18,10 @@ cd "$REPO"
 # Skip non-trading days
 /opt/homebrew/bin/uv run python - <<'EOF'
 from data_source.trading_calendar import is_trading_day
-from datetime import date, timezone, timedelta
+from datetime import datetime
+from zoneinfo import ZoneInfo
 import sys
-# Use ET date (UTC-4 DST / UTC-5 EST): approximate with UTC-4
-et_today = (date.today())
+et_today = datetime.now(ZoneInfo("America/New_York")).date()
 if not is_trading_day(et_today):
     print(f"Not a trading day ({et_today}), skipping.")
     sys.exit(1)
@@ -36,14 +36,14 @@ echo "--- build_site.py ---"
 SITE_HOST=condor14.com /opt/homebrew/bin/uv run python build_site.py
 
 echo "--- git commit & push ---"
-git add data/ledger.json data/cache.sqlite
+git add data/ledger.json data/cache.sqlite data/last_indexed.json public/
 if git diff --cached --quiet; then
     echo "No changes to commit."
 else
-    git commit -m "chore(data): daily update $(date -u +%Y-%m-%d)"
+    git commit -m "chore(site): daily update $(date -u +%Y-%m-%d)"
     git pull --rebase origin main
     git push origin main
-    echo "Pushed. CI will build site."
+    echo "Pushed. Vercel will deploy."
 fi
 
 echo "=== done ==="
