@@ -1,6 +1,6 @@
 #!/bin/bash
 # Daily pipeline: fetch options data → build site → push → Vercel deploys.
-# Run at 15:30 UTC (11:30 AM ET DST / 10:30 AM ET EST) Mon-Fri via crontab.
+# Run at 14:30 UTC (10:30 AM ET DST / 09:30 AM ET EST) Mon-Fri via crontab.
 set -euo pipefail
 
 REPO=/Users/xiaohongliang/projects/condor14
@@ -33,7 +33,7 @@ echo "--- daily_run.py ---"
 /opt/homebrew/bin/uv run python daily_run.py
 
 echo "--- build_site.py ---"
-SITE_HOST=condor14.com /opt/homebrew/bin/uv run python build_site.py
+SITE_HOST=www.condor14.com /opt/homebrew/bin/uv run python build_site.py
 
 echo "--- git commit & push ---"
 git add data/ledger.json data/cache.sqlite data/last_indexed.json public/

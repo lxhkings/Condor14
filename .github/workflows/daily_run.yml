@@ -35,7 +35,7 @@ jobs:
 
       - name: Build static site
         env:
-          SITE_HOST: condor14.com
+          SITE_HOST: www.condor14.com
         run: uv run python build_site.py
 
       - name: Commit and push public/
