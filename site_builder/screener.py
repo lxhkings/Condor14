@@ -1,10 +1,11 @@
 # stock/site_builder/screener.py
 """Mode A homepage data assembly (pre-cutover screener).
 
-Three panels per spec §7.1:
+Four panels per spec §7.1:
     - highest_premium_setups: open setups, top 10 by net_credit / max_loss desc
     - sector_heatmap: per-sector aggregation of avg IV percentile and open count
     - newest_setups: setups whose start_date == today
+    - top_realized: settled setups ranked by realized P&L
 """
 
 from collections import defaultdict
@@ -12,6 +13,7 @@ from dataclasses import dataclass
 from datetime import date
 
 from ledger.schema import Ledger, Setup
+from ledger.stats import per_ticker_alltime_stats
 
 
 def _ratio(s: Setup) -> float:
@@ -44,6 +46,30 @@ def _newest(ledger: Ledger, today: date) -> list[Setup]:
     return [s for s in ledger.setups if s.start_date == today]
 
 
+@dataclass(frozen=True)
+class RealizedRow:
+    ticker: str
+    realized_pnl: float
+    trades: int
+    win_rate: float
+
+
+def top_realized_pnl(ledger: Ledger, top: int = 10) -> list[RealizedRow]:
+    stats = per_ticker_alltime_stats(ledger)
+    rows = [
+        RealizedRow(
+            ticker=t,
+            realized_pnl=s["cumulative_pnl"],
+            trades=s["sample_size"],
+            win_rate=s["win_rate"] or 0.0,
+        )
+        for t, s in stats.items()
+        if s["sample_size"] > 0
+    ]
+    rows.sort(key=lambda r: (-r.realized_pnl, -r.trades, r.ticker))
+    return rows[:top]
+
+
 def build_screener_data(ledger: Ledger, *, today: date) -> dict:
     from site_builder.hero import compute_hero_metrics  # local import avoids circular
     if ledger.site_launch_date is None:
@@ -57,4 +83,5 @@ def build_screener_data(ledger: Ledger, *, today: date) -> dict:
         "site_launch_date": ledger.site_launch_date,
         "days_since_launch": days_since,
         "hero": compute_hero_metrics(ledger, today=today),
+        "top_realized": top_realized_pnl(ledger),
     }

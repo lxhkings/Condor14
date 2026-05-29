@@ -177,6 +177,7 @@ def _render_index(
         return md, "Live 30-Day Hold-to-Expiration Performance - Iron Condor Tracker", screener
     md = env.get_template("index_screener.md.j2").render(
         site_launch_date=screener["site_launch_date"] or today,
+        top_realized=screener["top_realized"],
         highest_premium_setups=screener["highest_premium_setups"],
         sector_heatmap=screener["sector_heatmap"],
         newest_setups=screener["newest_setups"],

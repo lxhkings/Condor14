@@ -24,6 +24,16 @@
 
 Live tracking initiated on **{{ site_launch_date.isoformat() }}**. Realized 30-day win-rate leaderboard unlocks once 200 settled setups accumulate (~44 trading days). Until then, the screener below shows today's setups ranked by premium structure and a per-sector volatility view.
 
+## Top Realized P&L by Ticker
+
+{% if top_realized %}
+| Ticker | Realized P&L | Trades | Win Rate |
+| :--- | ---: | ---: | ---: |
+{% for r in top_realized %}| [{{ r.ticker }}](/{{ r.ticker|lower }}/) | ${{ "%.2f"|format(r.realized_pnl) }} | {{ r.trades }} | {{ "%.0f"|format(r.win_rate * 100) }}% |
+{% endfor %}{% else %}
+*No settled setups yet. Live tracking in progress.*
+{% endif %}
+
 ## Today's Highest Premium Setups
 
 {% if highest_premium_setups %}
