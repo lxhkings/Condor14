@@ -157,3 +157,46 @@ def test_build_respects_cutover_for_homepage_choice(tmp_path):
     home = (public / "index.html").read_text()
     assert "Live 30-Day Hold-to-Expiration Performance" in home
     assert "Daily Iron Condor Volatility Screener" not in home
+
+
+def _seed_ledger_with_settled(path: Path) -> None:
+    settled = Setup(
+        id="NVDA-2026-04-20", ticker="NVDA", sector="Semiconductors",
+        start_date=date(2026, 4, 6), target_exit_date=date(2026, 4, 20),
+        expiry_used=date(2026, 4, 20),
+        underlying_at_open=210.0, atr14_at_open=4.0, sma20_at_open=200.0,
+        iv_percentile_at_open=55, trend_bias="neutral",
+        short_call_strike=230.0, long_call_strike=235.0,
+        short_put_strike=200.0,  long_put_strike=195.0,
+        net_credit_at_open=1.40, wing_width=5.0,
+        max_profit=1.40, max_loss=3.60,
+        break_even_upper=231.40, break_even_lower=198.60,
+        status="won", daily_marks=[],
+        settlement=Settlement(
+            settled_on=date(2026, 4, 20), final_underlying=215.0,
+            breached_side=None, final_pnl_per_spread=140.0,
+        ),
+    )
+    ledger = Ledger(setups=[settled], site_launch_date=date(2026, 4, 1))
+    LedgerStore(path).save(ledger)
+
+
+def test_homepage_renders_top_realized_board(tmp_path):
+    ledger_path = tmp_path / "ledger.json"
+    _seed_ledger_with_settled(ledger_path)
+    public = tmp_path / "public"
+    indexnow_key = tmp_path / "indexnow_key.txt"
+    indexnow_key.write_text("k" * 32)
+
+    build(
+        ledger_path=ledger_path, public_dir=public,
+        host="example.com", today=date(2026, 4, 28),
+        indexnow_key_path=indexnow_key,
+        last_indexed_path=tmp_path / "last_indexed.json",
+        skip_indexnow_ping=True,
+    )
+    home = (public / "index.html").read_text()
+    assert "Top Realized P" in home  # P&L is HTML-escaped to P&amp;L
+    assert 'href="/nvda/"' in home
+    # Mode A still (well under 200 settled)
+    assert "Daily Iron Condor Volatility Screener" in home
