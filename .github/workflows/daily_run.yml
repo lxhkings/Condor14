@@ -30,6 +30,9 @@ jobs:
       - name: Install dependencies
         run: uv sync
 
+      - name: Pull latest data
+        run: git pull --rebase origin main
+
       - name: Build static site
         env:
           SITE_HOST: condor14.com
