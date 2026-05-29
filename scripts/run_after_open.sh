@@ -36,14 +36,14 @@ echo "--- build_site.py ---"
 SITE_HOST=condor14.com /opt/homebrew/bin/uv run python build_site.py
 
 echo "--- git commit & push ---"
-git add data/ledger.json data/cache.sqlite public/
+git add data/ledger.json data/cache.sqlite
 if git diff --cached --quiet; then
     echo "No changes to commit."
 else
-    git commit -m "chore(site): daily update $(date -u +%Y-%m-%d)"
+    git commit -m "chore(data): daily update $(date -u +%Y-%m-%d)"
     git pull --rebase origin main
     git push origin main
-    echo "Pushed. Vercel will deploy."
+    echo "Pushed. CI will build site."
 fi
 
 echo "=== done ==="
