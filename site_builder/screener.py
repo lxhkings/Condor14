@@ -1,10 +1,11 @@
 # stock/site_builder/screener.py
 """Mode A homepage data assembly (pre-cutover screener).
 
-Three panels per spec §7.1:
+Four panels per spec §7.1:
     - highest_premium_setups: open setups, top 10 by net_credit / max_loss desc
     - sector_heatmap: per-sector aggregation of avg IV percentile and open count
     - newest_setups: setups whose start_date == today
+    - top_realized: settled setups ranked by realized P&L
 """
 
 from collections import defaultdict
