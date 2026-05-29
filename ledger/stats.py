@@ -70,3 +70,18 @@ def per_ticker_stats(ledger: Ledger, *, today: date) -> dict[str, dict]:
             continue
         by_ticker[s.ticker].append(s)
     return {ticker: _summarize(setups) for ticker, setups in by_ticker.items()}
+
+
+def per_ticker_alltime_stats(ledger: Ledger) -> dict[str, dict]:
+    """Per-ticker summary over ALL settled setups (no time window).
+
+    Distinct from per_ticker_stats, which restricts to a 30-day window for the
+    Mode B leaderboard. This un-windowed view powers the evergreen Mode A
+    Top Realized P&L board.
+    """
+    by_ticker: dict[str, list] = defaultdict(list)
+    for s in ledger.setups:
+        if s.settlement is None:
+            continue
+        by_ticker[s.ticker].append(s)
+    return {ticker: _summarize(setups) for ticker, setups in by_ticker.items()}
