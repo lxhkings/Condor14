@@ -213,3 +213,44 @@ def test_list_expirations_wrapper_backwards_compat_no_cache_arg():
     client = MagicMock()
     client.list_expirations.return_value = [date(2026, 5, 23)]
     assert wrap(client, "AAPL") == [date(2026, 5, 23)]
+
+
+def test_run_populates_vol_percentile_and_atr60(tmp_path, fake_client, monkeypatch):
+    from datetime import timedelta
+
+    from daily_run import run
+    from math_engine.atr import atr60
+    from math_engine.volatility import vol_percentile
+
+    # 280 calm bars ending 2026-04-28: gentle drift, constant 4.0 range.
+    end = date(2026, 4, 28)
+    n = 280
+    long_bars = []
+    price = 200.0
+    for i in range(n):
+        d = end - timedelta(days=(n - 1 - i))
+        long_bars.append(BarRow(
+            ticker="NVDA", bar_date=d,
+            open=price, high=price + 2.0, low=price - 2.0,
+            close=price + 0.5, volume=1_000_000,
+        ))
+        price += 0.05
+    fake_client.daily_bars.return_value = long_bars
+
+    monkeypatch.setattr("daily_run.is_trading_day", lambda d: True)
+    monkeypatch.setattr("daily_run.list_expirations",
+                        lambda client, ticker, **kw: [date(2026, 5, 12)])
+    monkeypatch.setattr("daily_run.TICKERS", ["NVDA"])
+    monkeypatch.setattr("daily_run.SECTORS", {"NVDA": "Semiconductors"})
+
+    store = LedgerStore(tmp_path / "ledger.json")
+    run(today=end, client=fake_client, store=store, cache_path=tmp_path / "cache.sqlite")
+
+    s = store.load().setups[0]
+
+    # Recompute expectations from the same bars.
+    hlc = [(b.high, b.low, b.close) for b in long_bars]
+    closes = [b.close for b in long_bars]
+    assert s.atr60_at_open == pytest.approx(round(atr60(hlc), 4))
+    assert s.atr60_at_open > 0.0
+    assert s.vol_percentile_at_open == vol_percentile(closes)

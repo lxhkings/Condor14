@@ -30,7 +30,8 @@ from ledger.schema import (
     SkippedEntry,
 )
 from ledger.store import LedgerStore
-from math_engine.atr import atr14
+from math_engine.atr import atr14, atr60
+from math_engine.volatility import vol_percentile
 from math_engine.expiration import NoSuitableExpirationError, pick_expiration
 from math_engine.iron_condor import (
     IronCondor,
@@ -71,13 +72,13 @@ def list_expirations(
 def _refresh_bars(
     client: FutuClient, cache: DailyBarsCache, ticker: str, today: date
 ) -> list[BarRow]:
-    """Ensure we have at least 30 bars ending today; refresh from MarketData if stale."""
+    """Ensure ~1y of bars ending today; refresh from MarketData if stale."""
     latest = cache.latest_date(ticker)
     if latest is None or latest < today - timedelta(days=2):
-        start = today - timedelta(days=60)
+        start = today - timedelta(days=400)
         bars = client.daily_bars(ticker, start=start, end=today)
         cache.upsert(bars)
-    return cache.read(ticker, start=today - timedelta(days=60), end=today)
+    return cache.read(ticker, start=today - timedelta(days=400), end=today)
 
 
 def _open_one_setup(
@@ -96,6 +97,8 @@ def _open_one_setup(
     closes = [b.close for b in bars]
 
     atr_value = atr14(high_low_close)
+    atr60_value = atr60(high_low_close) if len(high_low_close) >= 61 else 0.0
+    vol_pct = vol_percentile(closes)
     sma_value = sma(closes, period=20)
     quote = client.quote(ticker)
     # Fall back to latest bar close when live quote is unavailable (e.g. no
@@ -172,8 +175,9 @@ def _open_one_setup(
         expiry_used=chosen_expiry,
         underlying_at_open=spot,
         atr14_at_open=round(atr_value, 4),
+        atr60_at_open=round(atr60_value, 4),
         sma20_at_open=round(sma_value, 4),
-        vol_percentile_at_open=50,  # placeholder; full IV-rank in Plan B
+        vol_percentile_at_open=vol_pct,
         trend_bias=bias,
         short_call_strike=ic.short_call.strike,
         long_call_strike=ic.long_call.strike,
