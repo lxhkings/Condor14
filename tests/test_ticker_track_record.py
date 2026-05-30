@@ -66,3 +66,14 @@ def test_track_record_renders_with_settled_setups(tmp_path):
     assert "$-2.16" in html
     # worst single loss
     assert "$-3.58" in html
+
+
+def test_track_record_hidden_when_no_settled(tmp_path):
+    ledger_path = tmp_path / "ledger.json"
+    # Single OPEN setup, never settled -> sample_size 0 for NVDA
+    setup = _nvda_setup(id="NVDA-OPEN", start=date(2026, 5, 1))
+    LedgerStore(ledger_path).save(
+        Ledger(setups=[setup], site_launch_date=date(2026, 4, 28))
+    )
+    html = _build(tmp_path, ledger_path)
+    assert "Track Record" not in html
