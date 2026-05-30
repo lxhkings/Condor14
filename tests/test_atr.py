@@ -1,6 +1,6 @@
 import pytest
 
-from math_engine.atr import atr14
+from math_engine.atr import atr14, atr60
 
 
 def _bars(*tuples):
@@ -46,3 +46,15 @@ def test_atr14_uses_prev_close_for_gap():
     # After Wilder step: (1.0 * 13 + 4.5) / 14 = 17.5 / 14 = 1.25
     bars = [(11.0, 10.0, 10.5)] * 15 + [(15.0, 14.0, 14.5)]
     assert atr14(bars) == pytest.approx(17.5 / 14, rel=1e-9)
+
+
+def test_atr60_needs_at_least_61_bars():
+    bars = [(10.0, 9.0, 9.5)] * 60
+    with pytest.raises(ValueError):
+        atr60(bars)
+
+
+def test_atr60_constant_range_equals_range():
+    # 61 bars, each with a 1.0 high-low range and flat closes -> ATR == 1.0
+    bars = [(10.0, 9.0, 9.5)] * 61
+    assert atr60(bars) == pytest.approx(1.0)

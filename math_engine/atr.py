@@ -1,8 +1,8 @@
-"""ATR14 with Wilder's smoothing.
+"""ATR with Wilder's smoothing.
 
 Wilder's smoothing is the canonical ATR formula:
-    Seed ATR = mean of first 14 True Ranges.
-    Subsequent: ATR_t = (ATR_{t-1} * 13 + TR_t) / 14
+    Seed ATR = mean of first `period` True Ranges.
+    Subsequent: ATR_t = (ATR_{t-1} * (period-1) + TR_t) / period
 
 True Range for bar t (t >= 1) is the max of:
     high_t - low_t
@@ -10,20 +10,20 @@ True Range for bar t (t >= 1) is the max of:
     |low_t  - close_{t-1}|
 
 For bar 0 there is no previous close; we skip it (TRs start at index 1).
-We need 15 bars to compute 14 TRs, hence the minimum-length check.
+We need period+1 bars to compute period TRs, hence the minimum-length check.
 """
 
 from typing import Sequence
 
 
-def atr14(bars: Sequence[tuple[float, float, float]]) -> float:
-    """Compute ATR14 (Wilder's) at the latest bar.
+def _atr(bars: Sequence[tuple[float, float, float]], period: int) -> float:
+    """Wilder's ATR over `period` true ranges at the latest bar.
 
-    `bars` is a sequence of (high, low, close) tuples ordered oldest-to-newest.
-    Requires at least 15 bars (one anchor close + 14 TR observations).
+    `bars` = (high, low, close) tuples, oldest-to-newest. Needs `period + 1`
+    bars (one anchor close + `period` TR observations).
     """
-    if len(bars) < 15:
-        raise ValueError(f"atr14 needs at least 15 bars, got {len(bars)}")
+    if len(bars) < period + 1:
+        raise ValueError(f"atr{period} needs at least {period + 1} bars, got {len(bars)}")
 
     trs: list[float] = []
     for i in range(1, len(bars)):
@@ -36,9 +36,17 @@ def atr14(bars: Sequence[tuple[float, float, float]]) -> float:
         )
         trs.append(tr)
 
-    # Seed: simple mean of first 14 TRs.
-    atr = sum(trs[:14]) / 14
-    # Wilder smoothing for subsequent TRs (TRs 15..N-1 in TR list).
-    for tr in trs[14:]:
-        atr = (atr * 13 + tr) / 14
+    atr = sum(trs[:period]) / period
+    for tr in trs[period:]:
+        atr = (atr * (period - 1) + tr) / period
     return atr
+
+
+def atr14(bars: Sequence[tuple[float, float, float]]) -> float:
+    """Compute ATR14 (Wilder's) at the latest bar. Requires at least 15 bars."""
+    return _atr(bars, 14)
+
+
+def atr60(bars: Sequence[tuple[float, float, float]]) -> float:
+    """Compute ATR60 (Wilder's) at the latest bar. Requires at least 61 bars."""
+    return _atr(bars, 60)
