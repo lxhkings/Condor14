@@ -124,3 +124,14 @@ def test_render_prelude_uses_setup_variables():
     assert "NVDA" in out
     assert "216.61" in out
     assert "190.84" in out
+
+
+def test_prelude_says_realized_not_implied():
+    env = Environment(loader=FileSystemLoader(str(TEMPLATE_DIR)))
+    for bias in ("bullish", "bearish", "neutral"):
+        for vol in (10, 50, 85):
+            setup = _setup(trend_bias=bias, iv=vol)
+            text = render_prelude(setup=setup, atr60=setup.atr14_at_open, jinja_env=env)
+            assert "Realized volatility" in text, f"{bias}/{vol}: missing 'Realized volatility'"
+            assert "Implied volatility" not in text, f"{bias}/{vol}: still has 'Implied volatility'"
+            assert f"{vol}th percentile" in text, f"{bias}/{vol}: missing '{vol}th percentile'"
