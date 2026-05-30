@@ -173,7 +173,7 @@ def _open_one_setup(
         underlying_at_open=spot,
         atr14_at_open=round(atr_value, 4),
         sma20_at_open=round(sma_value, 4),
-        iv_percentile_at_open=50,  # placeholder; full IV-rank in Plan B
+        vol_percentile_at_open=50,  # placeholder; full IV-rank in Plan B
         trend_bias=bias,
         short_call_strike=ic.short_call.strike,
         long_call_strike=ic.long_call.strike,

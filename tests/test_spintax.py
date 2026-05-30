@@ -7,7 +7,7 @@ import pytest
 from jinja2 import Environment, FileSystemLoader
 
 from content_engine.spintax import (
-    classify_iv_percentile,
+    classify_vol_percentile,
     classify_vol_regime,
     render_prelude,
 )
@@ -23,7 +23,7 @@ def _setup(*, trend_bias="bullish", iv=80) -> Setup:
         start_date=date(2026, 4, 28), target_exit_date=date(2026, 5, 12),
         expiry_used=date(2026, 5, 16),
         underlying_at_open=216.61, atr14_at_open=4.85, sma20_at_open=190.84,
-        iv_percentile_at_open=iv, trend_bias=trend_bias,
+        vol_percentile_at_open=iv, trend_bias=trend_bias,
         short_call_strike=230.0, long_call_strike=235.0,
         short_put_strike=200.0,  long_put_strike=195.0,
         net_credit_at_open=1.42, wing_width=5.0,
@@ -35,12 +35,12 @@ def _setup(*, trend_bias="bullish", iv=80) -> Setup:
 
 def test_iv_percentile_boundaries():
     # Per spec §5.2: high if >70, low if <30, medium otherwise (inclusive of 30 and 70)
-    assert classify_iv_percentile(71) == "high"
-    assert classify_iv_percentile(70) == "medium"
-    assert classify_iv_percentile(30) == "medium"
-    assert classify_iv_percentile(29) == "low"
-    assert classify_iv_percentile(0)  == "low"
-    assert classify_iv_percentile(100) == "high"
+    assert classify_vol_percentile(71) == "high"
+    assert classify_vol_percentile(70) == "medium"
+    assert classify_vol_percentile(30) == "medium"
+    assert classify_vol_percentile(29) == "low"
+    assert classify_vol_percentile(0)  == "low"
+    assert classify_vol_percentile(100) == "high"
 
 
 def test_vol_regime_boundaries():

@@ -94,7 +94,7 @@ def test_run_settles_open_setup_at_expiry(tmp_path, fake_client, monkeypatch):
         start_date=date(2026, 4, 14), target_exit_date=date(2026, 4, 28),
         expiry_used=date(2026, 4, 30),
         underlying_at_open=210.0, atr14_at_open=4.0, sma20_at_open=200.0,
-        iv_percentile_at_open=50, trend_bias="bullish",
+        vol_percentile_at_open=50, trend_bias="bullish",
         short_call_strike=220.0, long_call_strike=225.0,
         short_put_strike=200.0, long_put_strike=195.0,
         net_credit_at_open=1.50, wing_width=5.0,

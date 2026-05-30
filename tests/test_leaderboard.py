@@ -12,7 +12,7 @@ def _settled(ticker, settled_on, pnl, status="won", side=None) -> Setup:
         start_date=settled_on - timedelta(days=14), target_exit_date=settled_on,
         expiry_used=settled_on,
         underlying_at_open=100.0, atr14_at_open=2.0, sma20_at_open=100.0,
-        iv_percentile_at_open=50, trend_bias="neutral",
+        vol_percentile_at_open=50, trend_bias="neutral",
         short_call_strike=105.0, long_call_strike=110.0,
         short_put_strike=95.0,  long_put_strike=90.0,
         net_credit_at_open=1.0, wing_width=5.0,

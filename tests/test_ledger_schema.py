@@ -22,7 +22,7 @@ def _setup() -> Setup:
         underlying_at_open=216.61,
         atr14_at_open=4.85,
         sma20_at_open=190.84,
-        iv_percentile_at_open=62,
+        vol_percentile_at_open=62,
         trend_bias="bullish",
         short_call_strike=230.0,
         long_call_strike=235.0,
@@ -87,6 +87,39 @@ def test_empty_ledger_round_trip():
     ledger = Ledger(setups=[], skipped=[])
     out = ledger_from_json(ledger_to_json(ledger))
     assert out == ledger
+
+
+def test_from_json_reads_legacy_iv_key_and_missing_atr60():
+    import json
+
+    from ledger.schema import SCHEMA_VERSION, ledger_from_json
+
+    s = _setup()
+    payload = {
+        "schema_version": SCHEMA_VERSION,
+        "site_launch_date": None, "first_settlement_date": None, "last_run": None,
+        "skipped": [],
+        "setups": [{
+            "id": s.id, "ticker": s.ticker, "sector": s.sector,
+            "start_date": s.start_date.isoformat(),
+            "target_exit_date": s.target_exit_date.isoformat(),
+            "expiry_used": s.expiry_used.isoformat(),
+            "underlying_at_open": s.underlying_at_open,
+            "atr14_at_open": s.atr14_at_open, "sma20_at_open": s.sma20_at_open,
+            "iv_percentile_at_open": 73,  # legacy key — no vol_/atr60_ keys
+            "trend_bias": s.trend_bias,
+            "short_call_strike": s.short_call_strike, "long_call_strike": s.long_call_strike,
+            "short_put_strike": s.short_put_strike, "long_put_strike": s.long_put_strike,
+            "net_credit_at_open": s.net_credit_at_open, "wing_width": s.wing_width,
+            "max_profit": s.max_profit, "max_loss": s.max_loss,
+            "break_even_upper": s.break_even_upper, "break_even_lower": s.break_even_lower,
+            "status": s.status, "daily_marks": [], "settlement": None,
+        }],
+    }
+    out = ledger_from_json(json.dumps(payload))
+    loaded = out.setups[0]
+    assert loaded.vol_percentile_at_open == 73   # read from legacy iv key
+    assert loaded.atr60_at_open == 0.0           # missing → default
 
 
 def test_schema_version_and_metadata_preserved():

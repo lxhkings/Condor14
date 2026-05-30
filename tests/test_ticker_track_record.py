@@ -13,7 +13,7 @@ def _nvda_setup(*, id, start, settled_on=None, status="open", pnl=0.0):
         start_date=start, target_exit_date=date(2026, 5, 12),
         expiry_used=date(2026, 5, 16),
         underlying_at_open=216.61, atr14_at_open=4.85, sma20_at_open=190.84,
-        iv_percentile_at_open=62, trend_bias="bullish",
+        vol_percentile_at_open=62, trend_bias="bullish",
         short_call_strike=230.0, long_call_strike=235.0,
         short_put_strike=200.0, long_put_strike=195.0,
         net_credit_at_open=1.42, wing_width=5.0,

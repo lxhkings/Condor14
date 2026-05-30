@@ -32,7 +32,7 @@ def _sector_heatmap(ledger: Ledger) -> list[dict]:
             grouped[s.sector].append(s)
     rows = []
     for sector, setups in grouped.items():
-        avg_iv = sum(s.iv_percentile_at_open for s in setups) // max(len(setups), 1)
+        avg_iv = sum(s.vol_percentile_at_open for s in setups) // max(len(setups), 1)
         rows.append({
             "sector": sector,
             "avg_iv_percentile": avg_iv,

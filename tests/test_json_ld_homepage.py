@@ -14,7 +14,7 @@ def _setup(ticker: str) -> Setup:
         underlying_at_open=100.0,
         atr14_at_open=2.0,
         sma20_at_open=99.0,
-        iv_percentile_at_open=50,
+        vol_percentile_at_open=50,
         trend_bias="neutral",
         short_call_strike=105.0,
         long_call_strike=110.0,

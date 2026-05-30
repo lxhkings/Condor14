@@ -16,7 +16,7 @@ IvBucket = Literal["high", "medium", "low"]
 VolRegime = Literal["expanding", "contracting", "stable"]
 
 
-def classify_iv_percentile(p: int) -> IvBucket:
+def classify_vol_percentile(p: int) -> IvBucket:
     if p > 70:
         return "high"
     if p < 30:
@@ -51,7 +51,7 @@ def _modifier_for(regime: VolRegime) -> str:
 
 
 def render_prelude(*, setup: Setup, atr60: float, jinja_env: Environment) -> str:
-    iv_bucket = classify_iv_percentile(setup.iv_percentile_at_open)
+    iv_bucket = classify_vol_percentile(setup.vol_percentile_at_open)
     regime = classify_vol_regime(atr14=setup.atr14_at_open, atr60=atr60)
     template_name = f"spintax/{setup.trend_bias}_{iv_bucket}.md.j2"
     template = jinja_env.get_template(template_name)
@@ -60,6 +60,6 @@ def render_prelude(*, setup: Setup, atr60: float, jinja_env: Environment) -> str
         underlying_at_open=setup.underlying_at_open,
         atr14_at_open=setup.atr14_at_open,
         sma20_at_open=setup.sma20_at_open,
-        iv_percentile_at_open=setup.iv_percentile_at_open,
+        vol_percentile_at_open=setup.vol_percentile_at_open,
         vol_regime_modifier=_modifier_for(regime),
     )

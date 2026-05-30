@@ -50,7 +50,7 @@ class Setup:
     underlying_at_open: float
     atr14_at_open: float
     sma20_at_open: float
-    iv_percentile_at_open: int
+    vol_percentile_at_open: int
     trend_bias: TrendBias
     short_call_strike: float
     long_call_strike: float
@@ -65,6 +65,7 @@ class Setup:
     status: SetupStatus
     daily_marks: list[DailyMark]
     settlement: Settlement | None
+    atr60_at_open: float = 0.0
 
 
 @dataclass(frozen=True)
@@ -142,7 +143,9 @@ def ledger_from_json(blob: str) -> Ledger:
             underlying_at_open=d["underlying_at_open"],
             atr14_at_open=d["atr14_at_open"],
             sma20_at_open=d["sma20_at_open"],
-            iv_percentile_at_open=d["iv_percentile_at_open"],
+            vol_percentile_at_open=d.get(
+                "vol_percentile_at_open", d.get("iv_percentile_at_open", 50)
+            ),
             trend_bias=d["trend_bias"],
             short_call_strike=d["short_call_strike"],
             long_call_strike=d["long_call_strike"],
@@ -157,6 +160,7 @@ def ledger_from_json(blob: str) -> Ledger:
             status=d["status"],
             daily_marks=marks,
             settlement=sett,
+            atr60_at_open=d.get("atr60_at_open", 0.0),
         )
 
     setups = [_setup(s) for s in data.get("setups", [])]
