@@ -37,6 +37,7 @@ from content_engine.silo import same_sector_peers
 from content_engine.spintax import render_prelude
 from content_engine.tracking_log import build_tracking_log
 from ledger.schema import Ledger, Setup
+from ledger.stats import per_ticker_alltime_stats
 from ledger.store import LedgerStore
 from site_builder.indexnow import (
     diff_changed_urls,
@@ -80,6 +81,7 @@ def _render_ticker(
     today: date,
     env: Environment,
     base_url: str,
+    track_record: dict | None = None,
 ) -> str:
     prelude_md = render_prelude(
         setup=setup, atr60=setup.atr14_at_open, jinja_env=env,
@@ -95,6 +97,7 @@ def _render_ticker(
         active_rows=active_rows,
         settled_rows=settled_rows,
         peers=peers,
+        track_record=track_record,
     )
     blocks = [
         financial_product_jsonld(setup),
@@ -245,6 +248,7 @@ def build(
     public_dir.mkdir(parents=True, exist_ok=True)
 
     ledger = LedgerStore(ledger_path).load()
+    alltime_stats = per_ticker_alltime_stats(ledger)
 
     # Index page
     index_md, index_title, screener = _render_index(
@@ -296,6 +300,7 @@ def build(
             html = _render_ticker(
                 setup=latest[ticker], ledger=ledger, today=today,
                 env=env, base_url=base_url,
+                track_record=alltime_stats.get(ticker),
             )
             ticker_lastmods.append((ticker.lower(), latest[ticker].start_date))
         else:

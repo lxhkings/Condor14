@@ -31,6 +31,20 @@
 - **Max Loss:** ${{ "%.2f"|format(setup.max_loss) }} per spread
 - **Risk-Reward:** 1 : {{ "%.2f"|format(setup.max_loss / setup.max_profit) }}
 
+{% if track_record and track_record.sample_size > 0 %}
+## Track Record (All-Time Settled)
+
+| Metric | Value |
+| :--- | ---: |
+| Settled setups | {{ track_record.sample_size }} |
+| Win rate | {{ "%.0f"|format(track_record.win_rate * 100) }}% |
+| Cumulative P&L | ${{ "%.2f"|format(track_record.cumulative_pnl) }} |
+| Worst single loss | ${{ "%.2f"|format(track_record.worst_single_loss) }} |
+| Max drawdown | ${{ "%.2f"|format(track_record.max_drawdown) }} |
+
+Across {{ track_record.sample_size }} settled 14-day Iron Condor setups on {{ ticker }}, the structure resolved inside the short strikes {{ "%.0f"|format(track_record.win_rate * 100) }}% of the time, for a cumulative realized result of ${{ "%.2f"|format(track_record.cumulative_pnl) }} per spread.
+
+{% endif %}
 ## Methodology Snapshot
 
 - Strike selection: ATR14-based anchors snapped to listed strikes
