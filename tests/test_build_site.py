@@ -1,4 +1,5 @@
 # tests/test_build_site.py
+import dataclasses
 import json
 from datetime import date, datetime, timezone
 from pathlib import Path
@@ -6,7 +7,7 @@ from unittest.mock import patch
 
 import pytest
 
-from build_site import build
+from build_site import _env, _render_ticker, build
 from ledger.schema import Ledger, Settlement, Setup
 from ledger.store import LedgerStore
 
@@ -200,3 +201,33 @@ def test_homepage_renders_top_realized_board(tmp_path):
     assert 'href="/nvda/"' in home
     # Mode A still (well under 200 settled)
     assert "Daily Iron Condor Volatility Screener" in home
+
+
+def _base_setup() -> Setup:
+    return Setup(
+        id="NVDA-2026-04-28", ticker="NVDA", sector="Semiconductors",
+        start_date=date(2026, 4, 28), target_exit_date=date(2026, 5, 12),
+        expiry_used=date(2026, 5, 16),
+        underlying_at_open=216.61, atr14_at_open=4.85, sma20_at_open=190.84,
+        vol_percentile_at_open=62, trend_bias="bullish",
+        short_call_strike=230.0, long_call_strike=235.0,
+        short_put_strike=200.0, long_put_strike=195.0,
+        net_credit_at_open=1.42, wing_width=5.0,
+        max_profit=1.42, max_loss=3.58,
+        break_even_upper=231.42, break_even_lower=198.58,
+        status="open", daily_marks=[], settlement=None,
+    )
+
+
+def test_render_ticker_emits_vol_regime_sentence_when_atr_diverges():
+    # atr14=2.0, atr60=4.0 -> ratio=0.5 < 0.8 -> "contracting"
+    setup = dataclasses.replace(_base_setup(), atr14_at_open=2.0, atr60_at_open=4.0)
+    ledger = Ledger(setups=[setup], site_launch_date=date(2026, 4, 28))
+    html = _render_ticker(
+        setup=setup,
+        ledger=ledger,
+        today=setup.start_date,
+        env=_env(),
+        base_url="https://www.condor14.com",
+    )
+    assert "Volatility is contracting" in html

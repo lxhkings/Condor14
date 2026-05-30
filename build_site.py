@@ -84,7 +84,7 @@ def _render_ticker(
     track_record: dict | None = None,
 ) -> str:
     prelude_md = render_prelude(
-        setup=setup, atr60=setup.atr14_at_open, jinja_env=env,
+        setup=setup, atr60=setup.atr60_at_open, jinja_env=env,
     )
     active_rows, settled_rows = build_tracking_log(ticker=setup.ticker, ledger=ledger, today=today)
     peers = same_sector_peers(setup.ticker)
