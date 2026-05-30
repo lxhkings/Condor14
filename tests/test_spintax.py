@@ -62,7 +62,7 @@ def test_render_prelude_picks_correct_template_by_trend_iv(tmp_path):
 def test_every_template_has_marker_exactly_once():
     failures = []
     for path in SPINTAX_DIR.glob("*.md.j2"):
-        if path.name == "_modifier.md.j2":
+        if path.name.startswith("_"):
             continue
         text = path.read_text()
         count = text.count("{{ vol_regime_modifier }}")
@@ -75,7 +75,7 @@ def test_no_two_templates_share_more_than_30pct_sentences():
     """Spec §5.2: build-time check that pairs of full templates share <=30% sentences."""
     sentences_per_template = {}
     for path in SPINTAX_DIR.glob("*.md.j2"):
-        if path.name == "_modifier.md.j2":
+        if path.name.startswith("_"):
             continue
         text = re.sub(r"\{%.*?%\}", "", path.read_text(), flags=re.DOTALL)
         text = re.sub(r"\{\{.*?\}\}", "", text, flags=re.DOTALL)
@@ -135,3 +135,34 @@ def test_prelude_says_realized_not_implied():
             assert "Realized volatility" in text, f"{bias}/{vol}: missing 'Realized volatility'"
             assert "Implied volatility" not in text, f"{bias}/{vol}: still has 'Implied volatility'"
             assert f"{vol}th percentile" in text, f"{bias}/{vol}: missing '{vol}th percentile'"
+
+
+def _env():
+    return Environment(loader=FileSystemLoader(str(TEMPLATE_DIR)))
+
+
+def test_prelude_includes_track_record_line_when_settled():
+    from content_engine.spintax import render_prelude
+    env = _env()
+    setup = _setup(trend_bias="bullish", iv=50)
+    tr = {"sample_size": 7, "win_rate": 0.57, "cumulative_pnl": 1.2,
+          "worst_single_loss": -3.1, "max_drawdown": -4.0}
+    text = render_prelude(setup=setup, atr60=setup.atr14_at_open,
+                          jinja_env=env, track_record=tr)
+    assert "7" in text
+    assert "settled" in text.lower()
+
+
+def test_prelude_omits_track_record_line_when_none_or_empty():
+    from content_engine.spintax import render_prelude
+    env = _env()
+    setup = _setup(trend_bias="bullish", iv=50)
+    none_text = render_prelude(setup=setup, atr60=setup.atr14_at_open,
+                               jinja_env=env, track_record=None)
+    zero_text = render_prelude(setup=setup, atr60=setup.atr14_at_open, jinja_env=env,
+                               track_record={"sample_size": 0, "win_rate": None,
+                                             "cumulative_pnl": 0.0,
+                                             "worst_single_loss": 0.0,
+                                             "max_drawdown": 0.0})
+    assert "settled cycles" not in none_text.lower()
+    assert "settled cycles" not in zero_text.lower()

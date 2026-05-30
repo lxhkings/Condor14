@@ -4,3 +4,5 @@
 {{ vol_regime_modifier }} Writing an Iron Condor in this low-premium environment requires a calibrated view of the edge. The credit collected is modest, which narrows the breakeven envelope, but the statistical case remains intact: implied volatility tends to overstate future realized movement even in tranquil conditions. Profit does not depend on a large directional swing — the position benefits when the underlying meanders between the short strikes through the holding period.
 
 The 14-day ATR of ${{ "%.2f"|format(atr14_at_open) }} provides the distance metric for strike placement. Anchoring the short leg approximately 1.5 ATRs above and below the current price creates a zone that has historically contained the majority of two-week price paths. The wings are sized to bound the maximum loss while preserving a credit-to-risk ratio that acknowledges the compressed volatility environment.
+
+{% include 'spintax/_track_record_line.md.j2' %}

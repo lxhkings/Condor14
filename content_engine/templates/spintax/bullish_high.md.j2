@@ -4,3 +4,5 @@
 {{ vol_regime_modifier }} For a 14-day Iron Condor, the math favors the seller in this configuration: time decay accelerates while implied volatility has historical pressure to revert lower. The structure thrives when the underlying drifts inside the short strikes, regardless of which direction it leans, and the rich premium translates directly into a wider breakeven envelope.
 
 The 14-day ATR of ${{ "%.2f"|format(atr14_at_open) }} provides the statistical anchor for strike selection. Anchoring the short call at roughly 1.5 ATRs above spot keeps it outside the typical two-week move while still capturing meaningful credit, and the symmetric put-side anchor balances the structure. Risk is bounded by wing width minus the credit received; the position is not directional in intent, only in selection bias when trend filters apply.
+
+{% include 'spintax/_track_record_line.md.j2' %}

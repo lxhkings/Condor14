@@ -4,3 +4,5 @@
 {{ vol_regime_modifier }} An Iron Condor seller in this environment collects substantial up-front credit, producing a wider breakeven range than would be available under normal volatility conditions. The elevated premium provides a cushion against moderate directional moves, but the asymmetric nature of downside tail events warrants attention when sizing the put side. The strategy remains defined-risk from entry, and the hold-to-expiration framework means interim price fluctuations only affect the outcome if they persist through final settlement.
 
 The 14-day ATR of ${{ "%.2f"|format(atr14_at_open) }} anchors the distance for strike selection. Placing the short put approximately 1.5 ATRs below the current level establishes a statistical boundary below which a move would register as exceptional on a two-week time frame. The call side targets a symmetric distance above to balance the structure, and the wings are sized to limit maximum loss to a predetermined level.
+
+{% include 'spintax/_track_record_line.md.j2' %}

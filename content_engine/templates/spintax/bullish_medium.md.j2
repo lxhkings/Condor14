@@ -4,3 +4,5 @@
 {{ vol_regime_modifier }} For a short Iron Condor with a 14-day horizon, this volatility tier presents a proportionate risk-reward profile. The time decay contribution is steady but not outsized, meaning the breakeven envelope fairly reflects the statistical probability of the underlying staying inside the chosen strikes. Profit accrues through theta accumulation as long as price action remains within the short-leg boundaries defined at entry.
 
 The 14-day ATR of ${{ "%.2f"|format(atr14_at_open) }} establishes the reference distance for strike placement. Setting the short call approximately 1.5 ATRs above the current level and the short put an equivalent distance below creates a containment zone that historically captures the bulk of two-week price excursions. The wings are dimensioned to cap the theoretical loss while maintaining a credit-to-risk ratio appropriate for this volatility regime.
+
+{% include 'spintax/_track_record_line.md.j2' %}

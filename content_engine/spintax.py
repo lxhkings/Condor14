@@ -50,10 +50,13 @@ def _modifier_for(regime: VolRegime) -> str:
     return ""
 
 
-def render_prelude(*, setup: Setup, atr60: float, jinja_env: Environment) -> str:
-    iv_bucket = classify_vol_percentile(setup.vol_percentile_at_open)
+def render_prelude(
+    *, setup: Setup, atr60: float, jinja_env: Environment,
+    track_record: dict | None = None,
+) -> str:
+    vol_bucket = classify_vol_percentile(setup.vol_percentile_at_open)
     regime = classify_vol_regime(atr14=setup.atr14_at_open, atr60=atr60)
-    template_name = f"spintax/{setup.trend_bias}_{iv_bucket}.md.j2"
+    template_name = f"spintax/{setup.trend_bias}_{vol_bucket}.md.j2"
     template = jinja_env.get_template(template_name)
     return template.render(
         ticker=setup.ticker,
@@ -62,4 +65,5 @@ def render_prelude(*, setup: Setup, atr60: float, jinja_env: Environment) -> str
         sma20_at_open=setup.sma20_at_open,
         vol_percentile_at_open=setup.vol_percentile_at_open,
         vol_regime_modifier=_modifier_for(regime),
+        track_record=track_record,
     )

@@ -4,3 +4,5 @@
 {{ vol_regime_modifier }} For a 14-day Iron Condor, this combination of neutral positioning and moderate IV represents the baseline scenario the strategy is designed for. The premium collected is proportional to the actuarial probability of the underlying staying between the short strikes, and theta decay provides a gradual erosion of time value as the calendar moves forward. Success depends on the price remaining inside the defined range, not on predicting the direction of any breakout.
 
 The 14-day ATR of ${{ "%.2f"|format(atr14_at_open) }} offers a concrete yardstick for strike placement. Setting the short call approximately 1.5 ATRs above the current level and the short put an equivalent distance below creates a corridor that has historically contained most two-week price movements. The wings are dimensioned to cap the theoretical maximum loss while keeping the margin requirements within a reasonable scope.
+
+{% include 'spintax/_track_record_line.md.j2' %}

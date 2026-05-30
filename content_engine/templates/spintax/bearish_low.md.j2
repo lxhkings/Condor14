@@ -4,3 +4,5 @@
 {{ vol_regime_modifier }} An Iron Condor in this low-volatility bearish landscape operates with a thinner credit, which compresses the breakeven range relative to higher-IV regimes. The statistical edge still applies — implied tends to exceed realized — but the absolute magnitude of that edge is smaller in dollar terms. Given the gradual downward drift, strike selection should acknowledge the bearish tilt while preserving the symmetric structure that defines the Iron Condor.
 
 The 14-day ATR of ${{ "%.2f"|format(atr14_at_open) }} anchors the strike placement process. Placing the short call approximately 1.5 ATRs above the current price and the short put a symmetric distance below draws a boundary around the expected two-week range. The risk parameters are defined at entry, with the wings providing a ceiling on the maximum loss scenario in this compressed volatility environment.
+
+{% include 'spintax/_track_record_line.md.j2' %}

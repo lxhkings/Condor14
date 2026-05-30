@@ -4,3 +4,5 @@
 {{ vol_regime_modifier }} A short Iron Condor with a 14-day horizon capitalizes on this configuration by capturing elevated premium while banking on continued range-bound behavior. The time decay profile is favorable because elevated IV tends to expand the expected move that the market prices relative to what subsequently materializes, generating a statistical edge for the seller. The structure demands no directional conviction — it collects theta regardless of which side of the range the price meanders toward, as long as both short strikes remain untouched at expiration.
 
 The 14-day ATR of ${{ "%.2f"|format(atr14_at_open) }} anchors the strike selection. Placing the short call approximately 1.5 ATRs above the current level and the short put a similar distance below defines a containment zone that historically covers the bulk of two-week price paths. The credit received from the elevated IV widens the breakeven distance, adding a buffer against moderate moves beyond the short strikes.
+
+{% include 'spintax/_track_record_line.md.j2' %}

@@ -4,3 +4,5 @@
 {{ vol_regime_modifier }} In this configuration, a 14-day Iron Condor generates a moderate credit that must be assessed alongside the underlying directional lean. The structure is designed as a directionally neutral position, but the bearish context means the put-side risk warrants a closer look during sizing. The premium is sufficient to construct a breakeven range that extends beyond the typical two-week expected move without requiring the wings to be placed at extreme distances.
 
 The 14-day ATR of ${{ "%.2f"|format(atr14_at_open) }} determines the statistical spacing for the short strikes. Setting the short call approximately 1.5 ATRs above the current level and the short put a comparable distance below produces a capture zone that historically encompasses the majority of two-week price trajectories. The wings are sized to cap the theoretical maximum loss while keeping the capital at risk proportional to the opportunity presented.
+
+{% include 'spintax/_track_record_line.md.j2' %}
