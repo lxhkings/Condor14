@@ -77,3 +77,14 @@ def test_track_record_hidden_when_no_settled(tmp_path):
     )
     html = _build(tmp_path, ledger_path)
     assert "Track Record" not in html
+
+
+def test_methodology_boilerplate_removed_but_link_kept(tmp_path):
+    ledger_path = tmp_path / "ledger.json"
+    _seed_settled(ledger_path)
+    html = _build(tmp_path, ledger_path)
+    # Duplicate boilerplate bullets removed
+    assert "ATR14-based anchors snapped to listed strikes" not in html
+    assert "passive hold-to-expiration" not in html
+    # Methodology link still present
+    assert "/methodology/" in html
