@@ -48,7 +48,7 @@ def vol_percentile(
     # One realized_vol observation per day where a full window is available,
     # capped to the lookback horizon.
     series = []
-    start = max(window, len(closes) - lookback)
+    start = max(window + 1, len(closes) - lookback)
     for end in range(start, len(closes) + 1):
         series.append(realized_vol(closes[:end], window=window))
 

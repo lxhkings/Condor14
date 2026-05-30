@@ -48,3 +48,11 @@ def test_vol_percentile_low_when_latest_window_calmest():
 
 def test_vol_percentile_insufficient_history_returns_50():
     assert vol_percentile([100.0] * 25, window=20, lookback=252) == 50
+
+
+def test_vol_percentile_boundary_exactly_min_sample():
+    # len == window(20) + MIN_RANK_SAMPLE(30) = 50; should not raise, returns int
+    closes = [100.0 + i * 0.01 for i in range(50)]
+    result = vol_percentile(closes, window=20, lookback=252)
+    assert isinstance(result, int)
+    assert 0 <= result <= 100
