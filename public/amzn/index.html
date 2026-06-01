@@ -206,15 +206,15 @@
   tbody tr:nth-child(even) { background: rgba(255,255,255,0.015); }
   /* hover rule defined once in the Tables section above */
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FinancialProduct","name":"AMZN 14-Day Iron Condor Educational Tracker","category":"Options Strategy Educational Tool","additionalProperty":[{"@type":"PropertyValue","name":"Net Credit","value":1.81,"unitText":"USD"},{"@type":"PropertyValue","name":"Max Profit","value":1.81,"unitText":"USD"},{"@type":"PropertyValue","name":"Max Loss","value":3.19,"unitText":"USD"},{"@type":"PropertyValue","name":"Upper Break-even","value":281.81,"unitText":"USD"},{"@type":"PropertyValue","name":"Lower Break-even","value":258.19,"unitText":"USD"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FinancialProduct","name":"AMZN 14-Day Iron Condor Educational Tracker","category":"Options Strategy Educational Tool","additionalProperty":[{"@type":"PropertyValue","name":"Net Credit","value":2.5,"unitText":"USD"},{"@type":"PropertyValue","name":"Max Profit","value":2.5,"unitText":"USD"},{"@type":"PropertyValue","name":"Max Loss","value":2.5,"unitText":"USD"},{"@type":"PropertyValue","name":"Upper Break-even","value":277.5,"unitText":"USD"},{"@type":"PropertyValue","name":"Lower Break-even","value":252.5,"unitText":"USD"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.condor14.com/"},{"@type":"ListItem","position":2,"name":"Mega-Cap Tech"},{"@type":"ListItem","position":3,"name":"AMZN"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AMZN 14-Day Iron Condor Tracker","author":{"@type":"Organization","name":"QuantOptions Data Lab"},"publisher":{"@type":"Organization","name":"QuantOptions Data Lab"},"datePublished":"2026-05-29","dateModified":"2026-06-01"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AMZN 14-Day Iron Condor Tracker","author":{"@type":"Organization","name":"QuantOptions Data Lab"},"publisher":{"@type":"Organization","name":"QuantOptions Data Lab"},"datePublished":"2026-06-01","dateModified":"2026-06-01"}</script>
 </head>
 <body>
 <h1>AMZN 14-Day Iron Condor Tracker — June 01, 2026</h1>
-<p>AMZN is trading at $271.00, maintaining a position above the 20-day simple moving average of $268.76. The intermediate-term price trajectory has been favorable, with the daily chart displaying a sequence of higher lows over recent sessions. Realized volatility registers at the 50th percentile of the trailing 52-week range, placing options in a moderately priced zone where neither cheap nor expensive extremes dominate the landscape. This middle ground often produces the most consistent risk-reward outcomes for theta-based strategies.</p>
-<p>For a short Iron Condor with a 14-day horizon, this volatility tier presents a proportionate risk-reward profile. The time decay contribution is steady but not outsized, meaning the breakeven envelope fairly reflects the statistical probability of the underlying staying inside the chosen strikes. Profit accrues through theta accumulation as long as price action remains within the short-leg boundaries defined at entry.</p>
-<p>The 14-day ATR of $6.64 establishes the reference distance for strike placement. Setting the short call approximately 1.5 ATRs above the current level and the short put an equivalent distance below creates a containment zone that historically captures the bulk of two-week price excursions. The wings are dimensioned to cap the theoretical loss while maintaining a credit-to-risk ratio appropriate for this volatility regime.</p>
+<p>AMZN is trading at $264.37, below the 20-day simple moving average of $268.54. The price structure reflects a measured descent with orderly retracements that fail to reclaim prior swing highs — a controlled downtrend rather than a disorderly selloff. Realized volatility registers at the 50th percentile, placing option premiums in the middle of their observed distribution over the past twelve months. This moderate pricing level allows for a balanced approach to strike selection where neither chasing premium nor accepting thin credit is necessary.</p>
+<p>In this configuration, a 14-day Iron Condor generates a moderate credit that must be assessed alongside the underlying directional lean. The structure is designed as a directionally neutral position, but the bearish context means the put-side risk warrants a closer look during sizing. The premium is sufficient to construct a breakeven range that extends beyond the typical two-week expected move without requiring the wings to be placed at extreme distances.</p>
+<p>The 14-day ATR of $6.82 determines the statistical spacing for the short strikes. Setting the short call approximately 1.5 ATRs above the current level and the short put a comparable distance below produces a capture zone that historically encompasses the majority of two-week price trajectories. The wings are sized to cap the theoretical maximum loss while keeping the capital at risk proportional to the opportunity presented.</p>
 <p>AMZN's 4 prior settled cycles provide an empirical reference point for the strikes framed today.</p>
 <div class="card">
 <h2>Today's Setup</h2>
@@ -228,63 +228,63 @@
 <tbody>
 <tr>
 <td style="text-align:left">Underlying close</td>
-<td style="text-align:right">$271.00</td>
+<td style="text-align:right">$264.37</td>
 </tr>
 <tr>
 <td style="text-align:left">20-day SMA</td>
-<td style="text-align:right">$268.76</td>
+<td style="text-align:right">$268.54</td>
 </tr>
 <tr>
 <td style="text-align:left">14-day ATR</td>
-<td style="text-align:right">$6.64</td>
+<td style="text-align:right">$6.82</td>
 </tr>
 <tr>
 <td style="text-align:left">Trend bias</td>
-<td style="text-align:right">Bullish</td>
+<td style="text-align:right">Bearish</td>
 </tr>
 <tr>
 <td style="text-align:left">Target exit date</td>
-<td style="text-align:right">2026-06-12</td>
+<td style="text-align:right">2026-06-15</td>
 </tr>
 <tr>
 <td style="text-align:left">Expiry used</td>
-<td style="text-align:right">2026-06-12</td>
+<td style="text-align:right">2026-06-15</td>
 </tr>
 <tr>
 <td style="text-align:left">Short call strike</td>
-<td style="text-align:right">$280.00</td>
+<td style="text-align:right">$275.00</td>
 </tr>
 <tr>
 <td style="text-align:left">Long call strike</td>
-<td style="text-align:right">$285.00</td>
+<td style="text-align:right">$280.00</td>
 </tr>
 <tr>
 <td style="text-align:left">Short put strike</td>
-<td style="text-align:right">$260.00</td>
-</tr>
-<tr>
-<td style="text-align:left">Long put strike</td>
 <td style="text-align:right">$255.00</td>
 </tr>
 <tr>
+<td style="text-align:left">Long put strike</td>
+<td style="text-align:right">$250.00</td>
+</tr>
+<tr>
 <td style="text-align:left">Net credit</td>
-<td style="text-align:right">$1.81</td>
+<td style="text-align:right">$2.50</td>
 </tr>
 <tr>
 <td style="text-align:left">Max profit</td>
-<td style="text-align:right">$1.81</td>
+<td style="text-align:right">$2.50</td>
 </tr>
 <tr>
 <td style="text-align:left">Max loss</td>
-<td style="text-align:right">$3.19</td>
+<td style="text-align:right">$2.50</td>
 </tr>
 <tr>
 <td style="text-align:left">Upper break-even</td>
-<td style="text-align:right">$281.81</td>
+<td style="text-align:right">$277.50</td>
 </tr>
 <tr>
 <td style="text-align:left">Lower break-even</td>
-<td style="text-align:right">$258.19</td>
+<td style="text-align:right">$252.50</td>
 </tr>
 </tbody>
 </table></div>
@@ -292,9 +292,9 @@
 <div class="card">
 <h2>Risk Profile</h2>
 <ul>
-<li><strong>Max Profit:</strong> $1.81 per spread</li>
-<li><strong>Max Loss:</strong> $3.19 per spread</li>
-<li><strong>Risk-Reward:</strong> 1 : 1.76</li>
+<li><strong>Max Profit:</strong> $2.50 per spread</li>
+<li><strong>Max Loss:</strong> $2.50 per spread</li>
+<li><strong>Risk-Reward:</strong> 1 : 1.00</li>
 </ul>
 </div>
 <h2>Track Record (All-Time Settled)</h2>
@@ -343,6 +343,13 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td style="text-align:left">2026-06-01</td>
+<td style="text-align:right">$264.37</td>
+<td style="text-align:left">2026-06-15</td>
+<td style="text-align:right">0</td>
+<td style="text-align:left">Open (Day 0)</td>
+</tr>
 <tr>
 <td style="text-align:left">2026-05-29</td>
 <td style="text-align:right">$271.00</td>
