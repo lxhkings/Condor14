@@ -138,6 +138,7 @@ def _render_ticker_placeholder(
     )
     for peer in same_sector_peers(ticker):
         md += f"- [{peer}](/{peer.lower()}/)\n"
+    md += env.get_template("_footer_nav.md.j2").render()
     md += env.get_template("_disclaimer.md.j2").render(
     )
     return render_html_page(

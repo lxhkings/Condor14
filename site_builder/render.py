@@ -127,6 +127,11 @@ CSS_STYLE = """\
 
   .muted { color: var(--text-muted); }
 
+  .sitenav {
+    margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border);
+    font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);
+  }
+
   hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
 
   @media (max-width: 640px) {
