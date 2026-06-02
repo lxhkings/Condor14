@@ -92,3 +92,21 @@ def item_list_schema(setups: list[Setup], *, base_url: str) -> dict:
         "numberOfItems": len(items),
         "itemListElement": items,
     }
+
+
+def organization_schema(*, base_url: str, contact_email: str) -> dict:
+    return {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "QuantOptions Data Lab",
+        "url": f"{base_url}/",
+        "description": (
+            "Automated educational research project tracking 14-day iron "
+            "condor setups computed from real OPRA options quotes."
+        ),
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": contact_email,
+            "contactType": "customer support",
+        },
+    }
