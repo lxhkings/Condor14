@@ -1,0 +1,25 @@
+{# content_engine/templates/about.md.j2 #}
+{% extends "_base.md.j2" %}
+{% block body %}
+# About
+
+Condor14 is an automated, educational research project operated by **QuantOptions Data Lab**. Every trading day it computes a single 14-day iron condor setup for each tracked US equity and ETF, then tracks that setup live to expiration and records the realized outcome in a public ledger.
+
+## What this site is
+
+- An **educational data project**. It demonstrates how a fully rule-based options strategy behaves over time across many underlyings.
+- **Algorithmically generated.** No human discretion selects strikes, entries, or exits. Every number is produced by the formulas documented on the [methodology page](/methodology/).
+- **Transparent.** Each setup is published when it opens and settled strictly by holding to expiration, so the win rates and cumulative results shown reflect a consistent, passive research harness.
+
+## What this site is not
+
+This site does not constitute financial advice, a solicitation, or a recommendation to buy or sell any security. The setups are research artifacts, not instructions. Options trading involves substantial risk; see the disclaimer at the bottom of every page.
+
+## Data
+
+Options quotes and underlying prices are sourced from OPRA via MarketData.app. Strike anchoring, net-credit pricing, and settlement rules are fully specified on the [methodology page](/methodology/).
+
+## Contact
+
+Questions, data corrections, or feedback: see the [contact page](/contact/).
+{% endblock %}

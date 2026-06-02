@@ -31,6 +31,7 @@ from content_engine.json_ld import (
     breadcrumb_list,
     financial_product_jsonld,
     item_list_schema,
+    organization_schema,
     website_schema,
 )
 from content_engine.silo import same_sector_peers
@@ -63,6 +64,7 @@ HOMEPAGE_DESCRIPTION = (
     "to expiration across 30+ liquid US equities and ETFs."
 )
 THEME_COLOR = "#0d1117"
+PUBLISHER_EMAIL = "contact@condor14.com"
 
 
 def _env() -> Environment:
@@ -261,6 +263,7 @@ def build(
             canonical_url=f"{base_url}/",
             description=HOMEPAGE_DESCRIPTION,
         ),
+        organization_schema(base_url=base_url, contact_email=PUBLISHER_EMAIL),
         item_list_schema(
             _unique_by_ticker(screener["highest_premium_setups"]),
             base_url=base_url,
@@ -293,6 +296,26 @@ def build(
     )
     _write(public_dir / "methodology" / "index.html", methodology_html)
 
+    # Trust & authority pages (about / privacy / contact)
+    for slug, template_name, title in (
+        ("about", "about.md.j2", "About -- Iron Condor Tracker"),
+        ("privacy", "privacy.md.j2", "Privacy Policy -- Iron Condor Tracker"),
+        ("contact", "contact.md.j2", "Contact -- Iron Condor Tracker"),
+    ):
+        page_md = env.get_template(template_name).render(
+            publisher_email=PUBLISHER_EMAIL,
+        )
+        page_html = render_html_page(
+            markdown_source=page_md,
+            page_title=title,
+            canonical_url=f"{base_url}/{slug}/",
+            json_ld_blocks=[],
+            favicon_url="/favicon.svg",
+            apple_touch_icon_url="/apple-touch-icon.png",
+            theme_color=THEME_COLOR,
+        )
+        _write(public_dir / slug / "index.html", page_html)
+
     # Ticker pages (one per TICKERS member; placeholder if no setup found)
     latest = _latest_setup_per_ticker(ledger)
     ticker_lastmods: list[tuple[str, date]] = []
@@ -319,7 +342,10 @@ def build(
     sitemap = generate_sitemap_xml(
         base_url=base_url,
         ticker_pages=ticker_lastmods,
-        static_pages=[("/", today), ("/methodology/", today)],
+        static_pages=[
+            ("/", today), ("/methodology/", today),
+            ("/about/", today), ("/privacy/", today), ("/contact/", today),
+        ],
     )
     _write(public_dir / "sitemap.xml", sitemap)
     _write(public_dir / "robots.txt", generate_robots_txt(host=host))
@@ -330,9 +356,13 @@ def build(
 
     # IndexNow ping (best-effort)
     if not skip_indexnow_ping:
-        all_urls = [f"{base_url}/"] + [f"{base_url}/methodology/"] + [
-            f"{base_url}/{t.lower()}/" for t in TICKERS
-        ]
+        all_urls = (
+            [
+                f"{base_url}/", f"{base_url}/methodology/",
+                f"{base_url}/about/", f"{base_url}/privacy/", f"{base_url}/contact/",
+            ]
+            + [f"{base_url}/{t.lower()}/" for t in TICKERS]
+        )
         new_urls = diff_changed_urls(
             current_urls=all_urls,
             last_indexed_path=last_indexed_path,

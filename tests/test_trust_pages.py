@@ -71,3 +71,46 @@ def test_footer_nav_on_all_page_types(tmp_path):
         assert "/privacy/" in html
         assert "/contact/" in html
         assert "/methodology/" in html
+
+
+from build_site import PUBLISHER_EMAIL
+
+
+def test_trust_pages_render(tmp_path):
+    public = _build(tmp_path)
+    for slug in ("about", "privacy", "contact"):
+        page = public / slug / "index.html"
+        assert page.is_file()
+        assert len(page.read_text()) > 0
+
+
+def test_privacy_page_has_adsense_requisites(tmp_path):
+    public = _build(tmp_path)
+    html = (public / "privacy" / "index.html").read_text().lower()
+    assert "google" in html
+    assert "cookie" in html
+    assert "https://www.google.com/settings/ads" in html
+    assert "aboutads.info" in html
+    assert PUBLISHER_EMAIL.lower() in html
+
+
+def test_contact_page_has_email(tmp_path):
+    public = _build(tmp_path)
+    html = (public / "contact" / "index.html").read_text()
+    assert PUBLISHER_EMAIL in html
+    assert f"mailto:{PUBLISHER_EMAIL}" in html
+
+
+def test_sitemap_includes_trust_pages(tmp_path):
+    public = _build(tmp_path)
+    sitemap = (public / "sitemap.xml").read_text()
+    assert "/about/" in sitemap
+    assert "/privacy/" in sitemap
+    assert "/contact/" in sitemap
+
+
+def test_homepage_has_organization_jsonld(tmp_path):
+    public = _build(tmp_path)
+    html = (public / "index.html").read_text()
+    assert '"@type":"Organization"' in html
+    assert PUBLISHER_EMAIL in html
