@@ -135,6 +135,11 @@
 
   .muted { color: var(--text-muted); }
 
+  .sitenav {
+    margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border);
+    font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);
+  }
+
   hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
 
   @media (max-width: 640px) {
@@ -215,6 +220,7 @@
   /* hover rule defined once in the Tables section above */
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Iron Condor Tracker","url":"https://www.condor14.com/","description":"Daily iron condor setups computed from real OPRA quotes and tracked live to expiration across 30+ liquid US equities and ETFs.","publisher":{"@type":"Organization","name":"QuantOptions Data Lab"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"QuantOptions Data Lab","url":"https://www.condor14.com/","description":"Automated educational research project tracking 14-day iron condor setups computed from real OPRA options quotes.","contactPoint":{"@type":"ContactPoint","email":"contact@condor14.com","contactType":"customer support"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","numberOfItems":9,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://www.condor14.com/amzn/","name":"AMZN 14-Day Iron Condor Tracker"},{"@type":"ListItem","position":2,"url":"https://www.condor14.com/meta/","name":"META 14-Day Iron Condor Tracker"},{"@type":"ListItem","position":3,"url":"https://www.condor14.com/iwm/","name":"IWM 14-Day Iron Condor Tracker"},{"@type":"ListItem","position":4,"url":"https://www.condor14.com/aapl/","name":"AAPL 14-Day Iron Condor Tracker"},{"@type":"ListItem","position":5,"url":"https://www.condor14.com/msft/","name":"MSFT 14-Day Iron Condor Tracker"},{"@type":"ListItem","position":6,"url":"https://www.condor14.com/googl/","name":"GOOGL 14-Day Iron Condor Tracker"},{"@type":"ListItem","position":7,"url":"https://www.condor14.com/tsla/","name":"TSLA 14-Day Iron Condor Tracker"},{"@type":"ListItem","position":8,"url":"https://www.condor14.com/nvda/","name":"NVDA 14-Day Iron Condor Tracker"},{"@type":"ListItem","position":9,"url":"https://www.condor14.com/avgo/","name":"AVGO 14-Day Iron Condor Tracker"}]}</script>
 </head>
 <body>
@@ -440,6 +446,9 @@
 </ul>
 <h2>Methodology</h2>
 <p>Every setup is computed from real OPRA bid-ask quotes and tracked live to expiration. <a href="/methodology/">Read the full methodology →</a></p>
+<nav class="sitenav">
+<p><a href="/">Home</a> · <a href="/methodology/">Methodology</a> · <a href="/about/">About</a> · <a href="/privacy/">Privacy Policy</a> · <a href="/contact/">Contact</a></p>
+</nav>
 <div class="disclaimer">
 <p><strong>DISCLAIMER</strong></p>
 <p>This content is published for <strong>educational purposes only</strong> and does not constitute financial advice, a solicitation, or a recommendation to buy or sell any security. Options trading involves substantial risk and is not suitable for all investors. Past performance — including win rates, drawdowns, and cumulative P&amp;L figures displayed on this site — does not guarantee future results.</p>

@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6718270775160916" crossorigin="anonymous"></script>
-<title>Methodology -- Iron Condor Tracker</title>
-<link rel="canonical" href="https://www.condor14.com/methodology/">
+<title>Privacy Policy -- Iron Condor Tracker</title>
+<link rel="canonical" href="https://www.condor14.com/privacy/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#0d1117">
@@ -214,59 +214,24 @@
 
 </head>
 <body>
-<h1>Methodology</h1>
-<p>This page documents every formula, threshold, and rule used to compute the setups published on this site.</p>
-<h2>Strategy</h2>
-<p>A 14-day Iron Condor: sell one out-of-the-money call spread and one out-of-the-money put spread on the same ticker, both expiring within a target window of 13–16 calendar days from the open date. The structure profits when the underlying closes inside the short strikes at expiration; max loss is bounded by wing width minus net credit.</p>
-<h2>Strike Selection (ATR-anchored)</h2>
-<p>For an underlying spot price <code>S</code> and its 14-day Wilder's ATR <code>ATR14</code>:</p>
+<h1>Privacy Policy</h1>
+<p>QuantOptions Data Lab operates Condor14 as a static, content-only website. This policy explains what data is and is not collected when you visit.</p>
+<h2>Information we collect</h2>
+<p>This site does not require registration and does not ask you for personal information. We do not operate login accounts, comment forms, or newsletters, and we do not sell personal information.</p>
+<h2>Cookies and third-party advertising</h2>
+<p>This site displays ads served by Google AdSense. Third-party vendors, including Google, use cookies to serve ads based on your prior visits to this and other websites.</p>
 <ul>
-<li>Short call anchor: <code>S + 1.5 * ATR14</code></li>
-<li>Short put anchor: <code>S - 1.5 * ATR14</code></li>
-<li>Each anchor snaps to the nearest <strong>listed</strong> strike on the chosen expiration.</li>
-<li>Wing width: <code>max(0.5 * ATR14, one strike spacing increment)</code>, snapped to listed strikes outside each short.</li>
+<li>Google's use of advertising cookies enables it and its partners to serve ads to you based on your visit to this site and/or other sites on the Internet.</li>
+<li>You may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads">Google Ads Settings</a>.</li>
+<li>You may opt out of a third-party vendor's use of cookies for personalized advertising by visiting <a href="https://www.aboutads.info/choices/">www.aboutads.info</a>.</li>
 </ul>
-<h2>ATR14 Formula (Wilder's Smoothing)</h2>
-<pre><code>TR_t = max(High_t - Low_t,  |High_t - Close_{t-1}|,  |Low_t - Close_{t-1}|)
-Seed ATR = mean of first 14 TRs
-ATR_t = (ATR_{t-1} * 13 + TR_t) / 14
-</code></pre>
-<h2>Net Credit (Conservative Quoting)</h2>
-<p>Short legs are priced at the <strong>bid</strong> (worst realistic fill received). Long legs are priced at the <strong>ask</strong> (worst realistic fill paid).</p>
-<pre><code>Net Credit       = (short_call.bid + short_put.bid) - (long_call.ask + long_put.ask)
-Wing Width       = long_call.strike - short_call.strike  (= short_put.strike - long_put.strike)
-Max Profit       = Net Credit
-Max Loss         = Wing Width - Net Credit
-Upper Break-even = short_call.strike + Net Credit
-Lower Break-even = short_put.strike  - Net Credit
-</code></pre>
-<p>If the computed Net Credit ≤ 0, no setup is published for that ticker that day; the ticker is logged as <code>skipped</code> in the public ledger.</p>
-<h2>Win Condition (Hold-to-Expiration)</h2>
-<p>A setup is recorded as <code>won</code> if and only if the underlying closing price on the target exit date satisfies:</p>
-<pre><code>short_put_strike &lt;= underlying_close &lt;= short_call_strike
-</code></pre>
-<p>Otherwise it is recorded as <code>lost</code>. Mid-cycle short-strike breaches are tracked but do not trigger early settlement — this is a strictly passive backtest harness, consistent with the disclaimer language in the site footer.</p>
-<h2>Liquidity Filter</h2>
-<p>A leg is excluded (and therefore the entire setup is skipped) if any of the following hold:</p>
-<ul>
-<li><code>bid &lt;= 0</code></li>
-<li><code>(ask - bid) / mid &gt; 0.30</code></li>
-<li><code>open_interest &lt; 100</code></li>
-</ul>
-<h2>Settlement Edge Cases</h2>
-<ul>
-<li>Boundary close: an underlying close exactly equal to a short strike counts as <code>won</code> (inclusive on both sides).</li>
-<li>Holiday-shifted exit: if the target exit date falls on a market holiday, settlement is recorded on the next valid trading day using that day's close.</li>
-</ul>
-<h2>Trend &amp; Volatility Tags</h2>
-<p>The headline paragraph on each ticker page is selected from a 9-cell matrix indexed by:</p>
-<ul>
-<li><strong>Trend bias:</strong> <code>bullish</code> if close &gt; SMA20 × 1.005, <code>bearish</code> if close &lt; SMA20 × 0.995, otherwise <code>neutral</code></li>
-<li><strong>IV percentile:</strong> <code>high</code> if &gt;70, <code>low</code> if &lt;30, otherwise <code>medium</code></li>
-<li><strong>Vol regime:</strong> <code>expanding</code> if ATR14 &gt; ATR60 × 1.2, <code>contracting</code> if &lt; ATR60 × 0.8 (rendered as a 1-sentence inline modifier)</li>
-</ul>
-<h2>Author</h2>
-<p>QuantOptions Data Lab. Data source: OPRA via MarketData.app.</p>
+<p>For more information on how Google uses data when you use its partners' sites or apps, see <a href="https://policies.google.com/technologies/partner-sites">Google's policies</a>.</p>
+<h2>Analytics</h2>
+<p>Aggregate, non-identifying request logs may be retained by our hosting provider for security and performance. These logs are not used to identify individual visitors.</p>
+<h2>Changes to this policy</h2>
+<p>This policy may be updated as the site evolves. Material changes will be reflected on this page.</p>
+<h2>Contact</h2>
+<p>Questions about this policy: contact@condor14.com (see also the <a href="/contact/">contact page</a>).</p>
 <nav class="sitenav">
 <p><a href="/">Home</a> · <a href="/methodology/">Methodology</a> · <a href="/about/">About</a> · <a href="/privacy/">Privacy Policy</a> · <a href="/contact/">Contact</a></p>
 </nav>
