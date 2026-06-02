@@ -64,7 +64,7 @@ HOMEPAGE_DESCRIPTION = (
     "to expiration across 30+ liquid US equities and ETFs."
 )
 THEME_COLOR = "#0d1117"
-PUBLISHER_EMAIL = "contact@condor14.com"
+PUBLISHER_EMAIL = "lxhkings@gmail.com"
 
 
 def _env() -> Environment:
