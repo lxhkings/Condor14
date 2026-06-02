@@ -10,3 +10,4 @@ data/ledger.json.tmp
 .worktrees/
 .DS_Store
 logs/
+docs/
