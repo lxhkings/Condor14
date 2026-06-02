@@ -211,15 +211,15 @@
   tbody tr:nth-child(even) { background: rgba(255,255,255,0.015); }
   /* hover rule defined once in the Tables section above */
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FinancialProduct","name":"MARA 14-Day Iron Condor Educational Tracker","category":"Options Strategy Educational Tool","additionalProperty":[{"@type":"PropertyValue","name":"Net Credit","value":0.14,"unitText":"USD"},{"@type":"PropertyValue","name":"Max Profit","value":0.14,"unitText":"USD"},{"@type":"PropertyValue","name":"Max Loss","value":0.36,"unitText":"USD"},{"@type":"PropertyValue","name":"Upper Break-even","value":15.14,"unitText":"USD"},{"@type":"PropertyValue","name":"Lower Break-even","value":12.36,"unitText":"USD"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FinancialProduct","name":"MARA 14-Day Iron Condor Educational Tracker","category":"Options Strategy Educational Tool","additionalProperty":[{"@type":"PropertyValue","name":"Net Credit","value":0.17,"unitText":"USD"},{"@type":"PropertyValue","name":"Max Profit","value":0.17,"unitText":"USD"},{"@type":"PropertyValue","name":"Max Loss","value":0.33,"unitText":"USD"},{"@type":"PropertyValue","name":"Upper Break-even","value":16.17,"unitText":"USD"},{"@type":"PropertyValue","name":"Lower Break-even","value":12.83,"unitText":"USD"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.condor14.com/"},{"@type":"ListItem","position":2,"name":"High-Beta / Crypto"},{"@type":"ListItem","position":3,"name":"MARA"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"MARA 14-Day Iron Condor Tracker","author":{"@type":"Organization","name":"QuantOptions Data Lab"},"publisher":{"@type":"Organization","name":"QuantOptions Data Lab"},"datePublished":"2026-05-29","dateModified":"2026-06-02"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"MARA 14-Day Iron Condor Tracker","author":{"@type":"Organization","name":"QuantOptions Data Lab"},"publisher":{"@type":"Organization","name":"QuantOptions Data Lab"},"datePublished":"2026-06-02","dateModified":"2026-06-02"}</script>
 </head>
 <body>
 <h1>MARA 14-Day Iron Condor Tracker — June 02, 2026</h1>
-<p>MARA is trading at $13.71, maintaining a position above the 20-day simple moving average of $13.01. The intermediate-term price trajectory has been favorable, with the daily chart displaying a sequence of higher lows over recent sessions. Realized volatility registers at the 50th percentile of the trailing 52-week range, placing options in a moderately priced zone where neither cheap nor expensive extremes dominate the landscape. This middle ground often produces the most consistent risk-reward outcomes for theta-based strategies.</p>
-<p>For a short Iron Condor with a 14-day horizon, this volatility tier presents a proportionate risk-reward profile. The time decay contribution is steady but not outsized, meaning the breakeven envelope fairly reflects the statistical probability of the underlying staying inside the chosen strikes. Profit accrues through theta accumulation as long as price action remains within the short-leg boundaries defined at entry.</p>
-<p>The 14-day ATR of $0.88 establishes the reference distance for strike placement. Setting the short call approximately 1.5 ATRs above the current level and the short put an equivalent distance below creates a containment zone that historically captures the bulk of two-week price excursions. The wings are dimensioned to cap the theoretical loss while maintaining a credit-to-risk ratio appropriate for this volatility regime.</p>
+<p>MARA holds at $14.62, above the 20-day simple moving average of $13.21. The daily chart shows a measured advance with relatively narrow price bars and orderly pullbacks — a quiet uptrend where realized volatility has been subdued. Realized volatility registers at the 0th percentile, a compressed reading that places options in the cheaper tier of the trailing 12-month distribution. In this zone, the difference between implied and realized volatility tends to narrow, so the edge comes from precision rather than premium magnitude.</p>
+<p>Writing an Iron Condor in this low-premium environment requires a calibrated view of the edge. The credit collected is modest, which narrows the breakeven envelope, but the statistical case remains intact: implied volatility tends to overstate future realized movement even in tranquil conditions. Profit does not depend on a large directional swing — the position benefits when the underlying meanders between the short strikes through the holding period.</p>
+<p>The 14-day ATR of $0.92 provides the distance metric for strike placement. Anchoring the short leg approximately 1.5 ATRs above and below the current price creates a zone that has historically contained the majority of two-week price paths. The wings are sized to bound the maximum loss while preserving a credit-to-risk ratio that acknowledges the compressed volatility environment.</p>
 <p>MARA's 1 prior settled cycles provide an empirical reference point for the strikes framed today.</p>
 <div class="card">
 <h2>Today's Setup</h2>
@@ -233,15 +233,15 @@
 <tbody>
 <tr>
 <td style="text-align:left">Underlying close</td>
-<td style="text-align:right">$13.71</td>
+<td style="text-align:right">$14.62</td>
 </tr>
 <tr>
 <td style="text-align:left">20-day SMA</td>
-<td style="text-align:right">$13.01</td>
+<td style="text-align:right">$13.21</td>
 </tr>
 <tr>
 <td style="text-align:left">14-day ATR</td>
-<td style="text-align:right">$0.88</td>
+<td style="text-align:right">$0.92</td>
 </tr>
 <tr>
 <td style="text-align:left">Trend bias</td>
@@ -249,47 +249,47 @@
 </tr>
 <tr>
 <td style="text-align:left">Target exit date</td>
-<td style="text-align:right">2026-06-12</td>
+<td style="text-align:right">2026-06-16</td>
 </tr>
 <tr>
 <td style="text-align:left">Expiry used</td>
-<td style="text-align:right">2026-06-12</td>
+<td style="text-align:right">2026-06-18</td>
 </tr>
 <tr>
 <td style="text-align:left">Short call strike</td>
-<td style="text-align:right">$15.00</td>
+<td style="text-align:right">$16.00</td>
 </tr>
 <tr>
 <td style="text-align:left">Long call strike</td>
-<td style="text-align:right">$15.50</td>
+<td style="text-align:right">$16.50</td>
 </tr>
 <tr>
 <td style="text-align:left">Short put strike</td>
-<td style="text-align:right">$12.50</td>
+<td style="text-align:right">$13.00</td>
 </tr>
 <tr>
 <td style="text-align:left">Long put strike</td>
-<td style="text-align:right">$12.00</td>
+<td style="text-align:right">$12.50</td>
 </tr>
 <tr>
 <td style="text-align:left">Net credit</td>
-<td style="text-align:right">$0.14</td>
+<td style="text-align:right">$0.17</td>
 </tr>
 <tr>
 <td style="text-align:left">Max profit</td>
-<td style="text-align:right">$0.14</td>
+<td style="text-align:right">$0.17</td>
 </tr>
 <tr>
 <td style="text-align:left">Max loss</td>
-<td style="text-align:right">$0.36</td>
+<td style="text-align:right">$0.33</td>
 </tr>
 <tr>
 <td style="text-align:left">Upper break-even</td>
-<td style="text-align:right">$15.14</td>
+<td style="text-align:right">$16.17</td>
 </tr>
 <tr>
 <td style="text-align:left">Lower break-even</td>
-<td style="text-align:right">$12.36</td>
+<td style="text-align:right">$12.83</td>
 </tr>
 </tbody>
 </table></div>
@@ -297,9 +297,9 @@
 <div class="card">
 <h2>Risk Profile</h2>
 <ul>
-<li><strong>Max Profit:</strong> $0.14 per spread</li>
-<li><strong>Max Loss:</strong> $0.36 per spread</li>
-<li><strong>Risk-Reward:</strong> 1 : 2.57</li>
+<li><strong>Max Profit:</strong> $0.17 per spread</li>
+<li><strong>Max Loss:</strong> $0.33 per spread</li>
+<li><strong>Risk-Reward:</strong> 1 : 1.94</li>
 </ul>
 </div>
 <h2>Track Record (All-Time Settled)</h2>
@@ -348,6 +348,13 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td style="text-align:left">2026-06-02</td>
+<td style="text-align:right">$14.62</td>
+<td style="text-align:left">2026-06-16</td>
+<td style="text-align:right">0</td>
+<td style="text-align:left">Open (Day 0)</td>
+</tr>
 <tr>
 <td style="text-align:left">2026-05-29</td>
 <td style="text-align:right">$13.71</td>

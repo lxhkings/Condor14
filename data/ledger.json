@@ -2,7 +2,7 @@
   "schema_version": 1,
   "site_launch_date": "2026-05-01",
   "first_settlement_date": "2026-05-14",
-  "last_run": "2026-06-01T14:30:47.422301+00:00",
+  "last_run": "2026-06-02T14:31:16.949303+00:00",
   "setups": [
     {
       "id": "NVDA-2026-04-29",
@@ -14,7 +14,7 @@
       "underlying_at_open": 213.17,
       "atr14_at_open": 5.8521,
       "sma20_at_open": 193.2375,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 220.0,
       "long_call_strike": 225.0,
@@ -109,7 +109,8 @@
         "final_underlying": 234.98,
         "breached_side": "upper",
         "final_pnl_per_spread": -326.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "TSLA-2026-04-29",
@@ -121,7 +122,7 @@
       "underlying_at_open": 376.02,
       "atr14_at_open": 14.6411,
       "sma20_at_open": 371.006,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 400.0,
       "long_call_strike": 410.0,
@@ -216,7 +217,8 @@
         "final_underlying": 446.605,
         "breached_side": "upper",
         "final_pnl_per_spread": -782.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "AAPL-2026-04-29",
@@ -228,7 +230,7 @@
       "underlying_at_open": 270.71,
       "atr14_at_open": 5.8035,
       "sma20_at_open": 263.543,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 280.0,
       "long_call_strike": 285.0,
@@ -323,7 +325,8 @@
         "final_underlying": 299.0299,
         "breached_side": "upper",
         "final_pnl_per_spread": -315.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "AMZN-2026-04-29",
@@ -335,7 +338,7 @@
       "underlying_at_open": 259.7,
       "atr14_at_open": 6.2666,
       "sma20_at_open": 238.978,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 270.0,
       "long_call_strike": 275.0,
@@ -430,7 +433,8 @@
         "final_underlying": 267.7,
         "breached_side": null,
         "final_pnl_per_spread": 55.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "MSFT-2026-04-29",
@@ -442,7 +446,7 @@
       "underlying_at_open": 429.25,
       "atr14_at_open": 10.139,
       "sma20_at_open": 398.889,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 445.0,
       "long_call_strike": 455.0,
@@ -537,7 +541,8 @@
         "final_underlying": 411.3,
         "breached_side": "lower",
         "final_pnl_per_spread": -65.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "META-2026-04-29",
@@ -549,7 +554,7 @@
       "underlying_at_open": 671.34,
       "atr14_at_open": 18.4358,
       "sma20_at_open": 638.8595,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 700.0,
       "long_call_strike": 710.0,
@@ -644,7 +649,8 @@
         "final_underlying": 621.87,
         "breached_side": "lower",
         "final_pnl_per_spread": -624.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "GOOGL-2026-04-29",
@@ -656,7 +662,7 @@
       "underlying_at_open": 349.78,
       "atr14_at_open": 7.8362,
       "sma20_at_open": 325.035,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 360.0,
       "long_call_strike": 365.0,
@@ -751,7 +757,8 @@
         "final_underlying": 398.17,
         "breached_side": "upper",
         "final_pnl_per_spread": -485.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "SPY-2026-04-29",
@@ -763,7 +770,7 @@
       "underlying_at_open": 711.69,
       "atr14_at_open": 8.255,
       "sma20_at_open": 689.025,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 725.0,
       "long_call_strike": 730.0,
@@ -858,7 +865,8 @@
         "final_underlying": 748.45,
         "breached_side": "upper",
         "final_pnl_per_spread": -279.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "AMZN-2026-04-30",
@@ -870,7 +878,7 @@
       "underlying_at_open": 263.04,
       "atr14_at_open": 6.2666,
       "sma20_at_open": 238.978,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 272.5,
       "long_call_strike": 277.5,
@@ -960,7 +968,8 @@
         "final_underlying": 267.69,
         "breached_side": null,
         "final_pnl_per_spread": 275.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "META-2026-04-30",
@@ -972,7 +981,7 @@
       "underlying_at_open": 669.12,
       "atr14_at_open": 18.4358,
       "sma20_at_open": 638.8595,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 697.5,
       "long_call_strike": 707.5,
@@ -1062,7 +1071,8 @@
         "final_underlying": 621.87,
         "breached_side": "lower",
         "final_pnl_per_spread": -357.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "GOOGL-2026-04-30",
@@ -1074,7 +1084,7 @@
       "underlying_at_open": 349.94,
       "atr14_at_open": 7.8362,
       "sma20_at_open": 325.035,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 362.5,
       "long_call_strike": 367.5,
@@ -1164,7 +1174,8 @@
         "final_underlying": 398.17,
         "breached_side": "upper",
         "final_pnl_per_spread": -337.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "SPY-2026-04-30",
@@ -1176,7 +1187,7 @@
       "underlying_at_open": 711.58,
       "atr14_at_open": 8.255,
       "sma20_at_open": 689.025,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 725.0,
       "long_call_strike": 730.0,
@@ -1266,7 +1277,8 @@
         "final_underlying": 748.49,
         "breached_side": "upper",
         "final_pnl_per_spread": -294.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "QQQ-2026-04-30",
@@ -1278,7 +1290,7 @@
       "underlying_at_open": 661.57,
       "atr14_at_open": 10.2765,
       "sma20_at_open": 625.3465,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 675.0,
       "long_call_strike": 685.0,
@@ -1368,7 +1380,8 @@
         "final_underlying": 721.33,
         "breached_side": "upper",
         "final_pnl_per_spread": -625.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "IWM-2026-04-30",
@@ -1380,7 +1393,7 @@
       "underlying_at_open": 272.08,
       "atr14_at_open": 4.7963,
       "sma20_at_open": 265.916,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 279.0,
       "long_call_strike": 282.0,
@@ -1470,7 +1483,8 @@
         "final_underlying": 284.36,
         "breached_side": "upper",
         "final_pnl_per_spread": -356.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "SMH-2026-04-30",
@@ -1482,7 +1496,7 @@
       "underlying_at_open": 499.58,
       "atr14_at_open": 13.6828,
       "sma20_at_open": 445.6095,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 520.0,
       "long_call_strike": 530.0,
@@ -1567,7 +1581,8 @@
         "final_underlying": 579.89,
         "breached_side": "upper",
         "final_pnl_per_spread": -507.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "SPY-2026-05-01",
@@ -1579,7 +1594,7 @@
       "underlying_at_open": 721.27,
       "atr14_at_open": 7.6424,
       "sma20_at_open": 698.5335,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 733.0,
       "long_call_strike": 737.0,
@@ -1664,7 +1679,8 @@
         "final_underlying": 741.465,
         "breached_side": "upper",
         "final_pnl_per_spread": -224.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "QQQ-2026-05-01",
@@ -1676,7 +1692,7 @@
       "underlying_at_open": 669.9613,
       "atr14_at_open": 9.4644,
       "sma20_at_open": 637.989,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 684.0,
       "long_call_strike": 689.0,
@@ -1761,7 +1777,8 @@
         "final_underlying": 711.7,
         "breached_side": "upper",
         "final_pnl_per_spread": -270.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "IWM-2026-05-01",
@@ -1773,7 +1790,7 @@
       "underlying_at_open": 277.75,
       "atr14_at_open": 4.5829,
       "sma20_at_open": 269.8635,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 285.0,
       "long_call_strike": 288.0,
@@ -1858,7 +1875,8 @@
         "final_underlying": 277.84,
         "breached_side": null,
         "final_pnl_per_spread": 123.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "SMH-2026-05-01",
@@ -1870,7 +1888,7 @@
       "underlying_at_open": 502.755,
       "atr14_at_open": 12.637,
       "sma20_at_open": 462.663,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 520.0,
       "long_call_strike": 530.0,
@@ -1955,7 +1973,8 @@
         "final_underlying": 561.1,
         "breached_side": "upper",
         "final_pnl_per_spread": -740.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "ARKK-2026-05-01",
@@ -1967,7 +1986,7 @@
       "underlying_at_open": 75.895,
       "atr14_at_open": 2.4786,
       "sma20_at_open": 73.9225,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 80.0,
       "long_call_strike": 82.0,
@@ -2052,7 +2071,8 @@
         "final_underlying": 75.32,
         "breached_side": null,
         "final_pnl_per_spread": 58.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "NVDA-2026-05-01",
@@ -2064,7 +2084,7 @@
       "underlying_at_open": 201.565,
       "atr14_at_open": 5.9793,
       "sma20_at_open": 197.3975,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 210.0,
       "long_call_strike": 215.0,
@@ -2149,7 +2169,8 @@
         "final_underlying": 227.82,
         "breached_side": "upper",
         "final_pnl_per_spread": -304.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "AVGO-2026-05-01",
@@ -2161,7 +2182,7 @@
       "underlying_at_open": 413.76,
       "atr14_at_open": 12.8919,
       "sma20_at_open": 380.321,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 435.0,
       "long_call_strike": 445.0,
@@ -2246,7 +2267,8 @@
         "final_underlying": 426.075,
         "breached_side": null,
         "final_pnl_per_spread": 215.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "TSM-2026-05-01",
@@ -2258,7 +2280,7 @@
       "underlying_at_open": 393.15,
       "atr14_at_open": 12.7519,
       "sma20_at_open": 376.736,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 410.0,
       "long_call_strike": 420.0,
@@ -2343,7 +2365,8 @@
         "final_underlying": 406.935,
         "breached_side": null,
         "final_pnl_per_spread": 115.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "AMD-2026-05-01",
@@ -2355,7 +2378,7 @@
       "underlying_at_open": 356.595,
       "atr14_at_open": 15.3862,
       "sma20_at_open": 270.529,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 380.0,
       "long_call_strike": 390.0,
@@ -2435,7 +2458,8 @@
         "final_underlying": 435.805,
         "breached_side": "upper",
         "final_pnl_per_spread": -570.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "AAPL-2026-05-01",
@@ -2447,7 +2471,7 @@
       "underlying_at_open": 283.9899,
       "atr14_at_open": 6.1735,
       "sma20_at_open": 266.4357,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 292.5,
       "long_call_strike": 300.0,
@@ -2527,7 +2551,8 @@
         "final_underlying": 302.11,
         "breached_side": "upper",
         "final_pnl_per_spread": -539.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "MSFT-2026-05-01",
@@ -2539,7 +2564,7 @@
       "underlying_at_open": 412.34,
       "atr14_at_open": 10.8536,
       "sma20_at_open": 405.5185,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 427.5,
       "long_call_strike": 435.0,
@@ -2619,7 +2644,8 @@
         "final_underlying": 423.37,
         "breached_side": null,
         "final_pnl_per_spread": 232.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "GOOGL-2026-05-01",
@@ -2631,7 +2657,7 @@
       "underlying_at_open": 384.33,
       "atr14_at_open": 9.7525,
       "sma20_at_open": 336.7357,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 400.0,
       "long_call_strike": 405.0,
@@ -2711,7 +2737,8 @@
         "final_underlying": 397.65,
         "breached_side": null,
         "final_pnl_per_spread": 124.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "META-2026-05-01",
@@ -2723,7 +2750,7 @@
       "underlying_at_open": 613.12,
       "atr14_at_open": 20.4577,
       "sma20_at_open": 647.47,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bearish",
       "short_call_strike": 645.0,
       "long_call_strike": 660.0,
@@ -2803,7 +2830,8 @@
         "final_underlying": 615.2,
         "breached_side": null,
         "final_pnl_per_spread": 358.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "AMZN-2026-05-01",
@@ -2815,7 +2843,7 @@
       "underlying_at_open": 268.79,
       "atr14_at_open": 6.8941,
       "sma20_at_open": 247.1285,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 280.0,
       "long_call_strike": 285.0,
@@ -2895,7 +2923,8 @@
         "final_underlying": 263.74,
         "breached_side": null,
         "final_pnl_per_spread": 134.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "TSLA-2026-05-01",
@@ -2907,7 +2936,7 @@
       "underlying_at_open": 382.9899,
       "atr14_at_open": 13.5335,
       "sma20_at_open": 372.306,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 402.5,
       "long_call_strike": 410.0,
@@ -2987,7 +3016,8 @@
         "final_underlying": 426.16,
         "breached_side": "upper",
         "final_pnl_per_spread": -661.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "NFLX-2026-05-01",
@@ -2999,7 +3029,7 @@
       "underlying_at_open": 93.82,
       "atr14_at_open": 2.8327,
       "sma20_at_open": 98.0165,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bearish",
       "short_call_strike": 98.0,
       "long_call_strike": 100.0,
@@ -3079,7 +3109,8 @@
         "final_underlying": 87.05,
         "breached_side": "lower",
         "final_pnl_per_spread": -146.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "COIN-2026-05-01",
@@ -3091,7 +3122,7 @@
       "underlying_at_open": 192.865,
       "atr14_at_open": 11.9312,
       "sma20_at_open": 187.5703,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 210.0,
       "long_call_strike": 217.5,
@@ -3171,7 +3202,8 @@
         "final_underlying": 193.69,
         "breached_side": null,
         "final_pnl_per_spread": 293.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "SPY-2026-05-05",
@@ -3183,7 +3215,7 @@
       "underlying_at_open": 722.48,
       "atr14_at_open": 7.5803,
       "sma20_at_open": 704.618,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 735.0,
       "long_call_strike": 740.0,
@@ -3263,7 +3295,8 @@
         "final_underlying": 738.22,
         "breached_side": "upper",
         "final_pnl_per_spread": -112.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "QQQ-2026-05-05",
@@ -3275,7 +3308,7 @@
       "underlying_at_open": 680.23,
       "atr14_at_open": 9.5648,
       "sma20_at_open": 646.997,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 695.0,
       "long_call_strike": 700.0,
@@ -3355,7 +3388,8 @@
         "final_underlying": 708.8,
         "breached_side": "upper",
         "final_pnl_per_spread": -369.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "IWM-2026-05-05",
@@ -3367,7 +3401,7 @@
       "underlying_at_open": 280.46,
       "atr14_at_open": 4.567,
       "sma20_at_open": 272.5915,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 287.0,
       "long_call_strike": 290.0,
@@ -3447,7 +3481,8 @@
         "final_underlying": 279.83,
         "breached_side": null,
         "final_pnl_per_spread": 104.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "NVDA-2026-05-05",
@@ -3459,7 +3494,7 @@
       "underlying_at_open": 198.34,
       "atr14_at_open": 5.9718,
       "sma20_at_open": 199.278,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "neutral",
       "short_call_strike": 205.0,
       "long_call_strike": 210.0,
@@ -3539,7 +3574,8 @@
         "final_underlying": 219.15,
         "breached_side": "upper",
         "final_pnl_per_spread": -319.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "GOOGL-2026-05-05",
@@ -3551,7 +3587,7 @@
       "underlying_at_open": 388.01,
       "atr14_at_open": 9.7542,
       "sma20_at_open": 345.311,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 402.5,
       "long_call_strike": 407.5,
@@ -3631,7 +3667,8 @@
         "final_underlying": 387.49,
         "breached_side": null,
         "final_pnl_per_spread": 203.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "SPY-2026-05-06",
@@ -3643,7 +3680,7 @@
       "underlying_at_open": 730.13,
       "atr14_at_open": 7.5031,
       "sma20_at_open": 704.618,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 740.0,
       "long_call_strike": 745.0,
@@ -3718,7 +3755,8 @@
         "final_underlying": 738.22,
         "breached_side": null,
         "final_pnl_per_spread": 240.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "QQQ-2026-05-06",
@@ -3730,7 +3768,7 @@
       "underlying_at_open": 688.64,
       "atr14_at_open": 9.4854,
       "sma20_at_open": 646.997,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 705.0,
       "long_call_strike": 710.0,
@@ -3805,7 +3843,8 @@
         "final_underlying": 708.8,
         "breached_side": "upper",
         "final_pnl_per_spread": -153.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "IWM-2026-05-06",
@@ -3817,7 +3856,7 @@
       "underlying_at_open": 283.88,
       "atr14_at_open": 4.521,
       "sma20_at_open": 272.5915,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 291.0,
       "long_call_strike": 300.0,
@@ -3892,7 +3931,8 @@
         "final_underlying": 279.83,
         "breached_side": null,
         "final_pnl_per_spread": 186.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "NVDA-2026-05-06",
@@ -3904,7 +3944,7 @@
       "underlying_at_open": 204.155,
       "atr14_at_open": 5.9501,
       "sma20_at_open": 199.278,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 212.5,
       "long_call_strike": 217.5,
@@ -3979,7 +4019,8 @@
         "final_underlying": 219.157,
         "breached_side": "upper",
         "final_pnl_per_spread": -220.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "SPY-2026-05-07",
@@ -3991,7 +4032,7 @@
       "underlying_at_open": 734.6,
       "atr14_at_open": 7.5031,
       "sma20_at_open": 704.618,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 745.0,
       "long_call_strike": 750.0,
@@ -4056,7 +4097,8 @@
         "final_underlying": 738.22,
         "breached_side": null,
         "final_pnl_per_spread": 247.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "QQQ-2026-05-07",
@@ -4068,7 +4110,7 @@
       "underlying_at_open": 699.5,
       "atr14_at_open": 9.4854,
       "sma20_at_open": 646.997,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 715.0,
       "long_call_strike": 720.0,
@@ -4133,7 +4175,8 @@
         "final_underlying": 708.8,
         "breached_side": null,
         "final_pnl_per_spread": 252.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "IWM-2026-05-07",
@@ -4145,7 +4188,7 @@
       "underlying_at_open": 284.62,
       "atr14_at_open": 4.521,
       "sma20_at_open": 272.5915,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 291.0,
       "long_call_strike": 294.0,
@@ -4210,7 +4253,8 @@
         "final_underlying": 279.83,
         "breached_side": null,
         "final_pnl_per_spread": 130.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "NVDA-2026-05-07",
@@ -4222,7 +4266,7 @@
       "underlying_at_open": 213.16,
       "atr14_at_open": 5.9501,
       "sma20_at_open": 199.278,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 222.5,
       "long_call_strike": 227.5,
@@ -4287,7 +4331,8 @@
         "final_underlying": 219.157,
         "breached_side": null,
         "final_pnl_per_spread": 295.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "SPY-2026-05-08",
@@ -4299,7 +4344,7 @@
       "underlying_at_open": 736.895,
       "atr14_at_open": 7.652,
       "sma20_at_open": 713.0258,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 748.0,
       "long_call_strike": 755.0,
@@ -4369,7 +4414,8 @@
         "final_underlying": 747.74,
         "breached_side": null,
         "final_pnl_per_spread": 262.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "QQQ-2026-05-08",
@@ -4381,7 +4427,7 @@
       "underlying_at_open": 707.19,
       "atr14_at_open": 10.0928,
       "sma20_at_open": 660.5925,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 720.0,
       "long_call_strike": 730.0,
@@ -4451,7 +4497,8 @@
         "final_underlying": 720.96,
         "breached_side": "upper",
         "final_pnl_per_spread": 344.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "IWM-2026-05-08",
@@ -4463,7 +4510,7 @@
       "underlying_at_open": 283.145,
       "atr14_at_open": 4.5738,
       "sma20_at_open": 276.12,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 290.0,
       "long_call_strike": 293.0,
@@ -4533,7 +4580,8 @@
         "final_underlying": 284.7701,
         "breached_side": null,
         "final_pnl_per_spread": 127.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "NVDA-2026-05-08",
@@ -4545,7 +4593,7 @@
       "underlying_at_open": 216.17,
       "atr14_at_open": 6.5682,
       "sma20_at_open": 203.2315,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 225.0,
       "long_call_strike": 230.0,
@@ -4615,7 +4663,8 @@
         "final_underlying": 218.015,
         "breached_side": null,
         "final_pnl_per_spread": 295.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "NVDA-2026-05-11",
@@ -4627,7 +4676,7 @@
       "underlying_at_open": 217.79,
       "atr14_at_open": 6.4622,
       "sma20_at_open": 204.6053,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 225.0,
       "long_call_strike": 230.0,
@@ -4697,7 +4746,8 @@
         "final_underlying": 214.42,
         "breached_side": null,
         "final_pnl_per_spread": 191.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "AVGO-2026-05-11",
@@ -4709,7 +4759,7 @@
       "underlying_at_open": 431.6,
       "atr14_at_open": 14.0977,
       "sma20_at_open": 412.7695,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 455.0,
       "long_call_strike": 465.0,
@@ -4779,7 +4829,8 @@
         "final_underlying": 424.86,
         "breached_side": null,
         "final_pnl_per_spread": 499.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "AAPL-2026-05-11",
@@ -4791,7 +4842,7 @@
       "underlying_at_open": 292.315,
       "atr14_at_open": 6.3515,
       "sma20_at_open": 274.5439,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 300.0,
       "long_call_strike": 305.0,
@@ -4856,7 +4907,8 @@
         "final_underlying": 311.4,
         "breached_side": "upper",
         "final_pnl_per_spread": -494.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "MSFT-2026-05-11",
@@ -4868,7 +4920,7 @@
       "underlying_at_open": 409.8677,
       "atr14_at_open": 10.7973,
       "sma20_at_open": 417.4083,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bearish",
       "short_call_strike": 425.0,
       "long_call_strike": 435.0,
@@ -4933,7 +4985,8 @@
         "final_underlying": 415.255,
         "breached_side": null,
         "final_pnl_per_spread": 358.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "GOOGL-2026-05-11",
@@ -4945,7 +4998,7 @@
       "underlying_at_open": 395.75,
       "atr14_at_open": 9.3852,
       "sma20_at_open": 361.2867,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 410.0,
       "long_call_strike": 415.0,
@@ -5010,7 +5063,8 @@
         "final_underlying": 386.07,
         "breached_side": null,
         "final_pnl_per_spread": 176.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "META-2026-05-11",
@@ -5022,7 +5076,7 @@
       "underlying_at_open": 602.17,
       "atr14_at_open": 18.1322,
       "sma20_at_open": 647.2085,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bearish",
       "short_call_strike": 630.0,
       "long_call_strike": 640.0,
@@ -5087,7 +5141,8 @@
         "final_underlying": 607.135,
         "breached_side": null,
         "final_pnl_per_spread": 404.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "AMZN-2026-05-11",
@@ -5099,7 +5154,7 @@
       "underlying_at_open": 272.85,
       "atr14_at_open": 6.7018,
       "sma20_at_open": 261.2338,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 285.0,
       "long_call_strike": 290.0,
@@ -5164,7 +5219,8 @@
         "final_underlying": 263.78,
         "breached_side": "lower",
         "final_pnl_per_spread": 2.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "TSLA-2026-05-11",
@@ -5176,7 +5232,7 @@
       "underlying_at_open": 420.945,
       "atr14_at_open": 14.5057,
       "sma20_at_open": 390.1745,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 445.0,
       "long_call_strike": 455.0,
@@ -5241,7 +5297,8 @@
         "final_underlying": 433.0501,
         "breached_side": null,
         "final_pnl_per_spread": 192.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "SPY-2026-05-12",
@@ -5253,7 +5310,7 @@
       "underlying_at_open": 732.51,
       "atr14_at_open": 7.2896,
       "sma20_at_open": 715.652,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 745.0,
       "long_call_strike": 750.0,
@@ -5308,7 +5365,8 @@
         "final_underlying": 749.7888,
         "breached_side": "upper",
         "final_pnl_per_spread": -346.88
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "QQQ-2026-05-12",
@@ -5320,7 +5378,7 @@
       "underlying_at_open": 700.37,
       "atr14_at_open": 9.9476,
       "sma20_at_open": 665.51,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 715.0,
       "long_call_strike": 720.0,
@@ -5375,7 +5433,8 @@
         "final_underlying": 728.26,
         "breached_side": "upper",
         "final_pnl_per_spread": -228.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "IWM-2026-05-12",
@@ -5387,7 +5446,7 @@
       "underlying_at_open": 278.68,
       "atr14_at_open": 4.4097,
       "sma20_at_open": 277.1815,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 285.0,
       "long_call_strike": 288.0,
@@ -5442,7 +5501,8 @@
         "final_underlying": 289.06,
         "breached_side": "upper",
         "final_pnl_per_spread": -213.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "NVDA-2026-05-12",
@@ -5454,7 +5514,7 @@
       "underlying_at_open": 215.25,
       "atr14_at_open": 6.4549,
       "sma20_at_open": 204.6053,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 225.0,
       "long_call_strike": 230.0,
@@ -5509,7 +5569,8 @@
         "final_underlying": 214.42,
         "breached_side": null,
         "final_pnl_per_spread": 230.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "QQQ-2026-05-14",
@@ -5521,7 +5582,7 @@
       "underlying_at_open": 721.595,
       "atr14_at_open": 10.4387,
       "sma20_at_open": 677.4443,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 737.0,
       "long_call_strike": 743.0,
@@ -5581,7 +5642,8 @@
         "final_underlying": 734.69,
         "breached_side": null,
         "final_pnl_per_spread": 322.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "AMD-2026-05-14",
@@ -5593,7 +5655,7 @@
       "underlying_at_open": 451.2299,
       "atr14_at_open": 22.8971,
       "sma20_at_open": 364.503,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 485.0,
       "long_call_strike": 500.0,
@@ -5653,7 +5715,8 @@
         "final_underlying": 523.705,
         "breached_side": "upper",
         "final_pnl_per_spread": -910.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "TSM-2026-05-14",
@@ -5665,7 +5728,7 @@
       "underlying_at_open": 417.89,
       "atr14_at_open": 14.8354,
       "sma20_at_open": 396.1595,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 440.0,
       "long_call_strike": 450.0,
@@ -5725,7 +5788,8 @@
         "final_underlying": 424.615,
         "breached_side": null,
         "final_pnl_per_spread": 305.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "NFLX-2026-05-14",
@@ -5737,7 +5801,7 @@
       "underlying_at_open": 87.755,
       "atr14_at_open": 2.5123,
       "sma20_at_open": 90.7997,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bearish",
       "short_call_strike": 92.0,
       "long_call_strike": 94.0,
@@ -5797,7 +5861,8 @@
         "final_underlying": 85.71,
         "breached_side": null,
         "final_pnl_per_spread": 59.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "SPY-2026-05-15",
@@ -5809,7 +5874,7 @@
       "underlying_at_open": 741.38,
       "atr14_at_open": 7.488,
       "sma20_at_open": 722.3705,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 753.0,
       "long_call_strike": 757.0,
@@ -5869,7 +5934,8 @@
         "final_underlying": 756.875,
         "breached_side": "upper",
         "final_pnl_per_spread": -193.5
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "IWM-2026-05-15",
@@ -5881,7 +5947,7 @@
       "underlying_at_open": 277.83,
       "atr14_at_open": 4.5238,
       "sma20_at_open": 279.2735,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bearish",
       "short_call_strike": 285.0,
       "long_call_strike": 288.0,
@@ -5941,7 +6007,8 @@
         "final_underlying": 289.09,
         "breached_side": "upper",
         "final_pnl_per_spread": -174.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "NVDA-2026-05-15",
@@ -5953,7 +6020,7 @@
       "underlying_at_open": 227.915,
       "atr14_at_open": 7.0996,
       "sma20_at_open": 209.099,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 237.5,
       "long_call_strike": 242.5,
@@ -6013,7 +6080,8 @@
         "final_underlying": 216.245,
         "breached_side": "lower",
         "final_pnl_per_spread": 154.5
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "AMD-2026-05-15",
@@ -6025,7 +6093,7 @@
       "underlying_at_open": 435.395,
       "atr14_at_open": 22.8971,
       "sma20_at_open": 364.503,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 470.0,
       "long_call_strike": 482.5,
@@ -6085,7 +6153,8 @@
         "final_underlying": 514.72,
         "breached_side": "upper",
         "final_pnl_per_spread": -915.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "AAPL-2026-05-15",
@@ -6097,7 +6166,7 @@
       "underlying_at_open": 302.41,
       "atr14_at_open": 6.0335,
       "sma20_at_open": 279.8907,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 312.5,
       "long_call_strike": 317.5,
@@ -6157,7 +6226,8 @@
         "final_underlying": 313.87,
         "breached_side": "upper",
         "final_pnl_per_spread": 6.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "MSFT-2026-05-15",
@@ -6169,7 +6239,7 @@
       "underlying_at_open": 423.615,
       "atr14_at_open": 10.4112,
       "sma20_at_open": 417.5385,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 440.0,
       "long_call_strike": 447.5,
@@ -6229,7 +6299,8 @@
         "final_underlying": 441.69,
         "breached_side": "upper",
         "final_pnl_per_spread": 60.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "META-2026-05-15",
@@ -6241,7 +6312,7 @@
       "underlying_at_open": 615.3801,
       "atr14_at_open": 17.3538,
       "sma20_at_open": 638.6096,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bearish",
       "short_call_strike": 642.5,
       "long_call_strike": 652.5,
@@ -6301,7 +6372,8 @@
         "final_underlying": 623.83,
         "breached_side": null,
         "final_pnl_per_spread": 275.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "TSLA-2026-05-15",
@@ -6313,7 +6385,7 @@
       "underlying_at_open": 426.42,
       "atr14_at_open": 16.5278,
       "sma20_at_open": 400.4135,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 450.0,
       "long_call_strike": 460.0,
@@ -6373,7 +6445,8 @@
         "final_underlying": 431.595,
         "breached_side": null,
         "final_pnl_per_spread": 365.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "NFLX-2026-05-15",
@@ -6385,7 +6458,7 @@
       "underlying_at_open": 87.13,
       "atr14_at_open": 2.5123,
       "sma20_at_open": 90.7997,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bearish",
       "short_call_strike": 91.0,
       "long_call_strike": 93.0,
@@ -6445,7 +6518,8 @@
         "final_underlying": 85.8602,
         "breached_side": null,
         "final_pnl_per_spread": 54.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "MSTR-2026-05-15",
@@ -6457,7 +6531,7 @@
       "underlying_at_open": 175.1999,
       "atr14_at_open": 10.4598,
       "sma20_at_open": 176.4505,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bearish",
       "short_call_strike": 190.0,
       "long_call_strike": 197.5,
@@ -6517,7 +6591,8 @@
         "final_underlying": 150.9,
         "breached_side": "lower",
         "final_pnl_per_spread": -545.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "MARA-2026-05-15",
@@ -6529,7 +6604,7 @@
       "underlying_at_open": 12.235,
       "atr14_at_open": 0.9018,
       "sma20_at_open": 12.0525,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 13.5,
       "long_call_strike": 14.0,
@@ -6589,7 +6664,8 @@
         "final_underlying": 13.77,
         "breached_side": "upper",
         "final_pnl_per_spread": -13.0
-      }
+      },
+      "atr60_at_open": 0.0
     },
     {
       "id": "SPY-2026-05-21",
@@ -6601,7 +6677,7 @@
       "underlying_at_open": 738.24,
       "atr14_at_open": 7.4751,
       "sma20_at_open": 729.7755,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 750.0,
       "long_call_strike": 755.0,
@@ -6654,9 +6730,15 @@
           "date": "2026-06-01",
           "underlying_close": 755.87,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 757.7609,
+          "breached_short": true
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "QQQ-2026-05-21",
@@ -6668,7 +6750,7 @@
       "underlying_at_open": 708.83,
       "atr14_at_open": 10.6931,
       "sma20_at_open": 691.945,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 725.0,
       "long_call_strike": 735.0,
@@ -6721,9 +6803,15 @@
           "date": "2026-06-01",
           "underlying_close": 738.155,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 742.575,
+          "breached_short": true
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "IWM-2026-05-21",
@@ -6735,7 +6823,7 @@
       "underlying_at_open": 279.86,
       "atr14_at_open": 4.9032,
       "sma20_at_open": 279.601,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "neutral",
       "short_call_strike": 285.0,
       "long_call_strike": 290.0,
@@ -6788,9 +6876,15 @@
           "date": "2026-06-01",
           "underlying_close": 287.03,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 289.84,
+          "breached_short": true
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "SMH-2026-05-21",
@@ -6802,7 +6896,7 @@
       "underlying_at_open": 562.07,
       "atr14_at_open": 17.8585,
       "sma20_at_open": 538.373,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 590.0,
       "long_call_strike": 600.0,
@@ -6855,9 +6949,15 @@
           "date": "2026-06-01",
           "underlying_close": 602.0288,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 622.4,
+          "breached_short": true
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "NVDA-2026-05-21",
@@ -6869,7 +6969,7 @@
       "underlying_at_open": 219.1945,
       "atr14_at_open": 7.6668,
       "sma20_at_open": 214.381,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 230.0,
       "long_call_strike": 235.0,
@@ -6922,9 +7022,15 @@
           "date": "2026-06-01",
           "underlying_close": 221.395,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 228.5684,
+          "breached_short": false
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "AMD-2026-05-21",
@@ -6936,7 +7042,7 @@
       "underlying_at_open": 437.455,
       "atr14_at_open": 24.6068,
       "sma20_at_open": 399.3155,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 475.0,
       "long_call_strike": 490.0,
@@ -6989,9 +7095,15 @@
           "date": "2026-06-01",
           "underlying_close": 501.46,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 505.31,
+          "breached_short": true
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "NFLX-2026-05-21",
@@ -7003,7 +7115,7 @@
       "underlying_at_open": 88.485,
       "atr14_at_open": 2.5296,
       "sma20_at_open": 89.3487,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bearish",
       "short_call_strike": 92.0,
       "long_call_strike": 94.0,
@@ -7056,9 +7168,15 @@
           "date": "2026-06-01",
           "underlying_close": 85.44,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 84.035,
+          "breached_short": true
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "MSTR-2026-05-21",
@@ -7070,7 +7188,7 @@
       "underlying_at_open": 163.13,
       "atr14_at_open": 10.1534,
       "sma20_at_open": 175.7335,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bearish",
       "short_call_strike": 177.5,
       "long_call_strike": 185.0,
@@ -7123,9 +7241,15 @@
           "date": "2026-06-01",
           "underlying_close": 149.83,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 135.1527,
+          "breached_short": true
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "MARA-2026-05-21",
@@ -7137,7 +7261,7 @@
       "underlying_at_open": 13.24,
       "atr14_at_open": 0.9077,
       "sma20_at_open": 12.3135,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 14.5,
       "long_call_strike": 15.0,
@@ -7190,9 +7314,15 @@
           "date": "2026-06-01",
           "underlying_close": 14.68,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 14.62,
+          "breached_short": true
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "TSM-2026-05-21",
@@ -7204,7 +7334,7 @@
       "underlying_at_open": 402.755,
       "atr14_at_open": 14.3932,
       "sma20_at_open": 402.2948,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "neutral",
       "short_call_strike": 425.0,
       "long_call_strike": 435.0,
@@ -7247,9 +7377,15 @@
           "date": "2026-06-01",
           "underlying_close": 439.07,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 440.06,
+          "breached_short": true
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "SPY-2026-05-22",
@@ -7261,7 +7397,7 @@
       "underlying_at_open": 747.725,
       "atr14_at_open": 7.4751,
       "sma20_at_open": 729.7755,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 759.0,
       "long_call_strike": 763.0,
@@ -7299,9 +7435,15 @@
           "date": "2026-06-01",
           "underlying_close": 755.875,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 757.79,
+          "breached_short": false
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "QQQ-2026-05-22",
@@ -7313,7 +7455,7 @@
       "underlying_at_open": 721.03,
       "atr14_at_open": 10.6931,
       "sma20_at_open": 691.945,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 737.0,
       "long_call_strike": 743.0,
@@ -7351,9 +7493,15 @@
           "date": "2026-06-01",
           "underlying_close": 738.155,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 742.6,
+          "breached_short": true
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "IWM-2026-05-22",
@@ -7365,7 +7513,7 @@
       "underlying_at_open": 284.81,
       "atr14_at_open": 4.9032,
       "sma20_at_open": 279.601,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 292.0,
       "long_call_strike": 295.0,
@@ -7403,9 +7551,15 @@
           "date": "2026-06-01",
           "underlying_close": 287.01,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 289.85,
+          "breached_short": false
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "NVDA-2026-05-22",
@@ -7417,7 +7571,7 @@
       "underlying_at_open": 218.025,
       "atr14_at_open": 7.6668,
       "sma20_at_open": 214.381,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 230.0,
       "long_call_strike": 235.0,
@@ -7455,9 +7609,15 @@
           "date": "2026-06-01",
           "underlying_close": 221.43,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 228.5684,
+          "breached_short": false
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "AAPL-2026-05-22",
@@ -7469,7 +7629,7 @@
       "underlying_at_open": 310.8742,
       "atr14_at_open": 5.7454,
       "sma20_at_open": 287.1646,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 320.0,
       "long_call_strike": 325.0,
@@ -7507,9 +7667,15 @@
           "date": "2026-06-01",
           "underlying_close": 307.8275,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 310.34,
+          "breached_short": false
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "META-2026-05-22",
@@ -7521,7 +7687,7 @@
       "underlying_at_open": 610.29,
       "atr14_at_open": 15.8449,
       "sma20_at_open": 621.8388,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bearish",
       "short_call_strike": 635.0,
       "long_call_strike": 645.0,
@@ -7559,9 +7725,15 @@
           "date": "2026-06-01",
           "underlying_close": 609.97,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 603.19,
+          "breached_short": false
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "AMZN-2026-05-22",
@@ -7573,7 +7745,7 @@
       "underlying_at_open": 269.07,
       "atr14_at_open": 6.6057,
       "sma20_at_open": 266.7475,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 280.0,
       "long_call_strike": 285.0,
@@ -7611,9 +7783,15 @@
           "date": "2026-06-01",
           "underlying_close": 264.14,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 257.7744,
+          "breached_short": true
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "NFLX-2026-05-22",
@@ -7625,7 +7803,7 @@
       "underlying_at_open": 88.8201,
       "atr14_at_open": 2.5296,
       "sma20_at_open": 89.3487,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bearish",
       "short_call_strike": 93.0,
       "long_call_strike": 95.0,
@@ -7663,9 +7841,15 @@
           "date": "2026-06-01",
           "underlying_close": 85.445,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 84.0329,
+          "breached_short": true
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "MARA-2026-05-22",
@@ -7677,7 +7861,7 @@
       "underlying_at_open": 13.915,
       "atr14_at_open": 0.9077,
       "sma20_at_open": 12.3135,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 15.5,
       "long_call_strike": 16.0,
@@ -7715,9 +7899,15 @@
           "date": "2026-06-01",
           "underlying_close": 14.675,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 14.625,
+          "breached_short": false
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "NVDA-2026-05-26",
@@ -7729,7 +7919,7 @@
       "underlying_at_open": 214.47,
       "atr14_at_open": 7.3546,
       "sma20_at_open": 214.64,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "neutral",
       "short_call_strike": 225.0,
       "long_call_strike": 230.0,
@@ -7762,9 +7952,15 @@
           "date": "2026-06-01",
           "underlying_close": 221.42,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 228.55,
+          "breached_short": true
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "AVGO-2026-05-26",
@@ -7776,7 +7972,7 @@
       "underlying_at_open": 424.8,
       "atr14_at_open": 15.1972,
       "sma20_at_open": 419.42,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 450.0,
       "long_call_strike": 460.0,
@@ -7809,9 +8005,15 @@
           "date": "2026-06-01",
           "underlying_close": 451.28,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 479.24,
+          "breached_short": true
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "AAPL-2026-05-26",
@@ -7823,7 +8025,7 @@
       "underlying_at_open": 311.43,
       "atr14_at_open": 5.7603,
       "sma20_at_open": 291.4212,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 320.0,
       "long_call_strike": 325.0,
@@ -7856,9 +8058,15 @@
           "date": "2026-06-01",
           "underlying_close": 307.8275,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 310.335,
+          "breached_short": false
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "MSFT-2026-05-26",
@@ -7870,7 +8078,7 @@
       "underlying_at_open": 415.31,
       "atr14_at_open": 10.7085,
       "sma20_at_open": 415.3755,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "neutral",
       "short_call_strike": 430.0,
       "long_call_strike": 440.0,
@@ -7903,9 +8111,15 @@
           "date": "2026-06-01",
           "underlying_close": 461.705,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 444.265,
+          "breached_short": true
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "GOOGL-2026-05-26",
@@ -7917,7 +8131,7 @@
       "underlying_at_open": 386.34,
       "atr14_at_open": 9.7306,
       "sma20_at_open": 387.283,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "neutral",
       "short_call_strike": 400.0,
       "long_call_strike": 405.0,
@@ -7950,9 +8164,15 @@
           "date": "2026-06-01",
           "underlying_close": 375.71,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 370.52,
+          "breached_short": false
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "META-2026-05-26",
@@ -7964,7 +8184,7 @@
       "underlying_at_open": 607.16,
       "atr14_at_open": 14.9796,
       "sma20_at_open": 615.5263,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bearish",
       "short_call_strike": 630.0,
       "long_call_strike": 640.0,
@@ -7997,9 +8217,15 @@
           "date": "2026-06-01",
           "underlying_close": 610.0,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 603.19,
+          "breached_short": false
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "AMZN-2026-05-26",
@@ -8011,7 +8237,7 @@
       "underlying_at_open": 263.865,
       "atr14_at_open": 6.6612,
       "sma20_at_open": 267.2312,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bearish",
       "short_call_strike": 275.0,
       "long_call_strike": 280.0,
@@ -8044,9 +8270,15 @@
           "date": "2026-06-01",
           "underlying_close": 264.14,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 257.7744,
+          "breached_short": false
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "TSLA-2026-05-26",
@@ -8058,7 +8290,7 @@
       "underlying_at_open": 433.1,
       "atr14_at_open": 16.0191,
       "sma20_at_open": 411.98,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 455.0,
       "long_call_strike": 465.0,
@@ -8091,9 +8323,15 @@
           "date": "2026-06-01",
           "underlying_close": 421.42,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 419.76,
+          "breached_short": false
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "NVDA-2026-05-27",
@@ -8105,7 +8343,7 @@
       "underlying_at_open": 212.6,
       "atr14_at_open": 7.3528,
       "sma20_at_open": 214.64,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bearish",
       "short_call_strike": 225.0,
       "long_call_strike": 230.0,
@@ -8133,9 +8371,15 @@
           "date": "2026-06-01",
           "underlying_close": 221.42,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 228.55,
+          "breached_short": true
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "META-2026-05-27",
@@ -8147,7 +8391,7 @@
       "underlying_at_open": 635.255,
       "atr14_at_open": 15.0576,
       "sma20_at_open": 615.5263,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 657.5,
       "long_call_strike": 667.5,
@@ -8175,9 +8419,15 @@
           "date": "2026-06-01",
           "underlying_close": 610.0,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 603.19,
+          "breached_short": true
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "AMZN-2026-05-27",
@@ -8189,7 +8439,7 @@
       "underlying_at_open": 271.85,
       "atr14_at_open": 6.69,
       "sma20_at_open": 267.2312,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 282.5,
       "long_call_strike": 287.5,
@@ -8217,9 +8467,15 @@
           "date": "2026-06-01",
           "underlying_close": 264.14,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 257.81,
+          "breached_short": true
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "NFLX-2026-05-27",
@@ -8231,7 +8487,7 @@
       "underlying_at_open": 87.35,
       "atr14_at_open": 2.4995,
       "sma20_at_open": 89.0168,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bearish",
       "short_call_strike": 91.0,
       "long_call_strike": 93.0,
@@ -8259,9 +8515,15 @@
           "date": "2026-06-01",
           "underlying_close": 85.455,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 84.04,
+          "breached_short": false
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "MSTR-2026-05-27",
@@ -8273,7 +8535,7 @@
       "underlying_at_open": 154.2,
       "atr14_at_open": 9.937,
       "sma20_at_open": 174.9987,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bearish",
       "short_call_strike": 170.0,
       "long_call_strike": 175.0,
@@ -8301,9 +8563,15 @@
           "date": "2026-06-01",
           "underlying_close": 149.91,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 135.19,
+          "breached_short": true
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "MARA-2026-05-27",
@@ -8315,7 +8583,7 @@
       "underlying_at_open": 14.33,
       "atr14_at_open": 0.9203,
       "sma20_at_open": 12.6122,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 15.5,
       "long_call_strike": 16.0,
@@ -8343,9 +8611,15 @@
           "date": "2026-06-01",
           "underlying_close": 14.675,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 14.63,
+          "breached_short": false
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "NVDA-2026-05-28",
@@ -8357,7 +8631,7 @@
       "underlying_at_open": 212.62,
       "atr14_at_open": 7.3528,
       "sma20_at_open": 214.64,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bearish",
       "short_call_strike": 222.5,
       "long_call_strike": 227.5,
@@ -8380,9 +8654,15 @@
           "date": "2026-06-01",
           "underlying_close": 221.4,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 228.545,
+          "breached_short": true
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "NFLX-2026-05-28",
@@ -8394,7 +8674,7 @@
       "underlying_at_open": 85.71,
       "atr14_at_open": 2.4995,
       "sma20_at_open": 89.0168,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bearish",
       "short_call_strike": 89.0,
       "long_call_strike": 91.0,
@@ -8417,9 +8697,15 @@
           "date": "2026-06-01",
           "underlying_close": 85.445,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 84.04,
+          "breached_short": false
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "MSTR-2026-05-28",
@@ -8431,7 +8717,7 @@
       "underlying_at_open": 147.03,
       "atr14_at_open": 9.937,
       "sma20_at_open": 174.9987,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bearish",
       "short_call_strike": 162.5,
       "long_call_strike": 167.5,
@@ -8454,9 +8740,15 @@
           "date": "2026-06-01",
           "underlying_close": 149.79,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 135.29,
+          "breached_short": false
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "MARA-2026-05-28",
@@ -8468,7 +8760,7 @@
       "underlying_at_open": 13.955,
       "atr14_at_open": 0.9203,
       "sma20_at_open": 12.6122,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 15.5,
       "long_call_strike": 16.0,
@@ -8491,9 +8783,15 @@
           "date": "2026-06-01",
           "underlying_close": 14.675,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 14.625,
+          "breached_short": false
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "SPY-2026-05-29",
@@ -8505,7 +8803,7 @@
       "underlying_at_open": 756.875,
       "atr14_at_open": 6.8842,
       "sma20_at_open": 739.3552,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 767.0,
       "long_call_strike": 771.0,
@@ -8523,9 +8821,15 @@
           "date": "2026-06-01",
           "underlying_close": 755.85,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 757.79,
+          "breached_short": false
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "IWM-2026-05-29",
@@ -8537,7 +8841,7 @@
       "underlying_at_open": 289.09,
       "atr14_at_open": 4.759,
       "sma20_at_open": 283.201,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 296.0,
       "long_call_strike": 299.0,
@@ -8555,9 +8859,15 @@
           "date": "2026-06-01",
           "underlying_close": 287.0,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 289.88,
+          "breached_short": false
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "NVDA-2026-05-29",
@@ -8569,7 +8879,7 @@
       "underlying_at_open": 216.29,
       "atr14_at_open": 6.963,
       "sma20_at_open": 215.7155,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "neutral",
       "short_call_strike": 227.5,
       "long_call_strike": 232.5,
@@ -8587,9 +8897,15 @@
           "date": "2026-06-01",
           "underlying_close": 221.4,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 228.545,
+          "breached_short": true
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "AVGO-2026-05-29",
@@ -8601,7 +8917,7 @@
       "underlying_at_open": 439.19,
       "atr14_at_open": 15.7629,
       "sma20_at_open": 422.5278,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 462.5,
       "long_call_strike": 472.5,
@@ -8619,9 +8935,15 @@
           "date": "2026-06-01",
           "underlying_close": 451.255,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 479.275,
+          "breached_short": true
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "AAPL-2026-05-29",
@@ -8633,7 +8955,7 @@
       "underlying_at_open": 313.73,
       "atr14_at_open": 5.4561,
       "sma20_at_open": 297.5463,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 322.5,
       "long_call_strike": 327.5,
@@ -8651,9 +8973,15 @@
           "date": "2026-06-01",
           "underlying_close": 307.855,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 310.365,
+          "breached_short": false
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "MSFT-2026-05-29",
@@ -8665,7 +8993,7 @@
       "underlying_at_open": 441.41,
       "atr14_at_open": 11.2823,
       "sma20_at_open": 416.5272,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 457.5,
       "long_call_strike": 465.0,
@@ -8683,9 +9011,15 @@
           "date": "2026-06-01",
           "underlying_close": 461.785,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 444.3697,
+          "breached_short": false
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "GOOGL-2026-05-29",
@@ -8697,7 +9031,7 @@
       "underlying_at_open": 382.98,
       "atr14_at_open": 9.457,
       "sma20_at_open": 391.28,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bearish",
       "short_call_strike": 397.5,
       "long_call_strike": 402.5,
@@ -8715,9 +9049,15 @@
           "date": "2026-06-01",
           "underlying_close": 375.71,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 370.51,
+          "breached_short": false
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "META-2026-05-29",
@@ -8729,7 +9069,7 @@
       "underlying_at_open": 623.81,
       "atr14_at_open": 15.6272,
       "sma20_at_open": 612.8925,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 647.5,
       "long_call_strike": 657.5,
@@ -8747,9 +9087,15 @@
           "date": "2026-06-01",
           "underlying_close": 610.05,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 603.275,
+          "breached_short": false
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "AMZN-2026-05-29",
@@ -8761,7 +9107,7 @@
       "underlying_at_open": 271.0,
       "atr14_at_open": 6.6368,
       "sma20_at_open": 268.7565,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 280.0,
       "long_call_strike": 285.0,
@@ -8779,9 +9125,15 @@
           "date": "2026-06-01",
           "underlying_close": 264.14,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 257.8,
+          "breached_short": true
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "TSLA-2026-05-29",
@@ -8793,7 +9145,7 @@
       "underlying_at_open": 431.63,
       "atr14_at_open": 15.0636,
       "sma20_at_open": 421.188,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 455.0,
       "long_call_strike": 465.0,
@@ -8811,9 +9163,15 @@
           "date": "2026-06-01",
           "underlying_close": 421.42,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 419.79,
+          "breached_short": false
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "NFLX-2026-05-29",
@@ -8825,7 +9183,7 @@
       "underlying_at_open": 85.82,
       "atr14_at_open": 2.2939,
       "sma20_at_open": 88.0893,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bearish",
       "short_call_strike": 89.0,
       "long_call_strike": 91.0,
@@ -8843,9 +9201,15 @@
           "date": "2026-06-01",
           "underlying_close": 85.455,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 84.04,
+          "breached_short": false
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "MSTR-2026-05-29",
@@ -8857,7 +9221,7 @@
       "underlying_at_open": 150.8101,
       "atr14_at_open": 9.3369,
       "sma20_at_open": 173.1645,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bearish",
       "short_call_strike": 165.0,
       "long_call_strike": 170.0,
@@ -8875,9 +9239,15 @@
           "date": "2026-06-01",
           "underlying_close": 149.79,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 135.29,
+          "breached_short": true
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "MARA-2026-05-29",
@@ -8889,7 +9259,7 @@
       "underlying_at_open": 13.71,
       "atr14_at_open": 0.8756,
       "sma20_at_open": 13.0115,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 15.0,
       "long_call_strike": 15.5,
@@ -8907,9 +9277,15 @@
           "date": "2026-06-01",
           "underlying_close": 14.675,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-02",
+          "underlying_close": 14.619,
+          "breached_short": false
         }
       ],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "IWM-2026-06-01",
@@ -8921,7 +9297,7 @@
       "underlying_at_open": 287.0,
       "atr14_at_open": 4.6218,
       "sma20_at_open": 283.654,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 294.0,
       "long_call_strike": 297.0,
@@ -8934,8 +9310,15 @@
       "break_even_upper": 295.25,
       "break_even_lower": 278.75,
       "status": "open",
-      "daily_marks": [],
-      "settlement": null
+      "daily_marks": [
+        {
+          "date": "2026-06-02",
+          "underlying_close": 289.88,
+          "breached_short": false
+        }
+      ],
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "NVDA-2026-06-01",
@@ -8947,7 +9330,7 @@
       "underlying_at_open": 221.36,
       "atr14_at_open": 7.3577,
       "sma20_at_open": 216.6025,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 230.0,
       "long_call_strike": 235.0,
@@ -8960,8 +9343,15 @@
       "break_even_upper": 231.4,
       "break_even_lower": 208.6,
       "status": "open",
-      "daily_marks": [],
-      "settlement": null
+      "daily_marks": [
+        {
+          "date": "2026-06-02",
+          "underlying_close": 228.545,
+          "breached_short": false
+        }
+      ],
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "AVGO-2026-06-01",
@@ -8973,7 +9363,7 @@
       "underlying_at_open": 451.255,
       "atr14_at_open": 15.667,
       "sma20_at_open": 424.4042,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 470.0,
       "long_call_strike": 480.0,
@@ -8986,8 +9376,15 @@
       "break_even_upper": 470.8,
       "break_even_lower": 429.2,
       "status": "open",
-      "daily_marks": [],
-      "settlement": null
+      "daily_marks": [
+        {
+          "date": "2026-06-02",
+          "underlying_close": 479.275,
+          "breached_short": true
+        }
+      ],
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "AAPL-2026-06-01",
@@ -8999,7 +9396,7 @@
       "underlying_at_open": 308.0199,
       "atr14_at_open": 5.5271,
       "sma20_at_open": 298.8702,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 315.0,
       "long_call_strike": 320.0,
@@ -9012,8 +9409,15 @@
       "break_even_upper": 316.97,
       "break_even_lower": 298.03,
       "status": "open",
-      "daily_marks": [],
-      "settlement": null
+      "daily_marks": [
+        {
+          "date": "2026-06-02",
+          "underlying_close": 310.365,
+          "breached_short": false
+        }
+      ],
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "MSFT-2026-06-01",
@@ -9025,7 +9429,7 @@
       "underlying_at_open": 461.475,
       "atr14_at_open": 12.0863,
       "sma20_at_open": 419.3634,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bullish",
       "short_call_strike": 480.0,
       "long_call_strike": 490.0,
@@ -9038,8 +9442,15 @@
       "break_even_upper": 483.54,
       "break_even_lower": 441.46,
       "status": "open",
-      "daily_marks": [],
-      "settlement": null
+      "daily_marks": [
+        {
+          "date": "2026-06-02",
+          "underlying_close": 444.39,
+          "breached_short": true
+        }
+      ],
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "GOOGL-2026-06-01",
@@ -9051,7 +9462,7 @@
       "underlying_at_open": 375.87,
       "atr14_at_open": 9.2889,
       "sma20_at_open": 390.658,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bearish",
       "short_call_strike": 390.0,
       "long_call_strike": 395.0,
@@ -9064,8 +9475,15 @@
       "break_even_upper": 391.64,
       "break_even_lower": 358.36,
       "status": "open",
-      "daily_marks": [],
-      "settlement": null
+      "daily_marks": [
+        {
+          "date": "2026-06-02",
+          "underlying_close": 370.51,
+          "breached_short": false
+        }
+      ],
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "META-2026-06-01",
@@ -9077,7 +9495,7 @@
       "underlying_at_open": 611.535,
       "atr14_at_open": 16.2478,
       "sma20_at_open": 613.4645,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "neutral",
       "short_call_strike": 635.0,
       "long_call_strike": 645.0,
@@ -9090,8 +9508,15 @@
       "break_even_upper": 639.35,
       "break_even_lower": 580.65,
       "status": "open",
-      "daily_marks": [],
-      "settlement": null
+      "daily_marks": [
+        {
+          "date": "2026-06-02",
+          "underlying_close": 603.27,
+          "breached_short": false
+        }
+      ],
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "AMZN-2026-06-01",
@@ -9103,7 +9528,7 @@
       "underlying_at_open": 264.37,
       "atr14_at_open": 6.8175,
       "sma20_at_open": 268.5445,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "bearish",
       "short_call_strike": 275.0,
       "long_call_strike": 280.0,
@@ -9116,8 +9541,15 @@
       "break_even_upper": 277.5,
       "break_even_lower": 252.5,
       "status": "open",
-      "daily_marks": [],
-      "settlement": null
+      "daily_marks": [
+        {
+          "date": "2026-06-02",
+          "underlying_close": 257.8,
+          "breached_short": false
+        }
+      ],
+      "settlement": null,
+      "atr60_at_open": 0.0
     },
     {
       "id": "TSLA-2026-06-01",
@@ -9129,7 +9561,7 @@
       "underlying_at_open": 421.51,
       "atr14_at_open": 15.0648,
       "sma20_at_open": 422.9342,
-      "iv_percentile_at_open": 50,
+      "vol_percentile_at_open": 50,
       "trend_bias": "neutral",
       "short_call_strike": 445.0,
       "long_call_strike": 455.0,
@@ -9142,8 +9574,231 @@
       "break_even_upper": 448.03,
       "break_even_lower": 396.97,
       "status": "open",
+      "daily_marks": [
+        {
+          "date": "2026-06-02",
+          "underlying_close": 419.795,
+          "breached_short": false
+        }
+      ],
+      "settlement": null,
+      "atr60_at_open": 0.0
+    },
+    {
+      "id": "SPY-2026-06-02",
+      "ticker": "SPY",
+      "sector": "Broad ETF",
+      "start_date": "2026-06-02",
+      "target_exit_date": "2026-06-16",
+      "expiry_used": "2026-06-16",
+      "underlying_at_open": 757.8999,
+      "atr14_at_open": 6.5539,
+      "sma20_at_open": 741.0955,
+      "vol_percentile_at_open": 5,
+      "trend_bias": "bullish",
+      "short_call_strike": 770.0,
+      "long_call_strike": 775.0,
+      "short_put_strike": 750.0,
+      "long_put_strike": 745.0,
+      "net_credit_at_open": 2.26,
+      "wing_width": 5.0,
+      "max_profit": 2.26,
+      "max_loss": 2.74,
+      "break_even_upper": 772.26,
+      "break_even_lower": 747.74,
+      "status": "open",
       "daily_marks": [],
-      "settlement": null
+      "settlement": null,
+      "atr60_at_open": 8.4027
+    },
+    {
+      "id": "QQQ-2026-06-02",
+      "ticker": "QQQ",
+      "sector": "Broad ETF",
+      "start_date": "2026-06-02",
+      "target_exit_date": "2026-06-16",
+      "expiry_used": "2026-06-16",
+      "underlying_at_open": 742.8002,
+      "atr14_at_open": 9.9177,
+      "sma20_at_open": 712.233,
+      "vol_percentile_at_open": 30,
+      "trend_bias": "bullish",
+      "short_call_strike": 760.0,
+      "long_call_strike": 765.0,
+      "short_put_strike": 730.0,
+      "long_put_strike": 725.0,
+      "net_credit_at_open": 2.54,
+      "wing_width": 5.0,
+      "max_profit": 2.54,
+      "max_loss": 2.46,
+      "break_even_upper": 762.54,
+      "break_even_lower": 727.46,
+      "status": "open",
+      "daily_marks": [],
+      "settlement": null,
+      "atr60_at_open": 10.5709
+    },
+    {
+      "id": "IWM-2026-06-02",
+      "ticker": "IWM",
+      "sector": "Broad ETF",
+      "start_date": "2026-06-02",
+      "target_exit_date": "2026-06-16",
+      "expiry_used": "2026-06-16",
+      "underlying_at_open": 289.94,
+      "atr14_at_open": 4.7173,
+      "sma20_at_open": 283.654,
+      "vol_percentile_at_open": 44,
+      "trend_bias": "bullish",
+      "short_call_strike": 296.0,
+      "long_call_strike": 300.0,
+      "short_put_strike": 283.0,
+      "long_put_strike": 280.0,
+      "net_credit_at_open": 1.59,
+      "wing_width": 4.0,
+      "max_profit": 1.59,
+      "max_loss": 2.41,
+      "break_even_upper": 297.59,
+      "break_even_lower": 281.41,
+      "status": "open",
+      "daily_marks": [],
+      "settlement": null,
+      "atr60_at_open": 5.1719
+    },
+    {
+      "id": "SMH-2026-06-02",
+      "ticker": "SMH",
+      "sector": "Sector ETF",
+      "start_date": "2026-06-02",
+      "target_exit_date": "2026-06-16",
+      "expiry_used": "2026-06-18",
+      "underlying_at_open": 623.15,
+      "atr14_at_open": 18.1588,
+      "sma20_at_open": 566.3994,
+      "vol_percentile_at_open": 70,
+      "trend_bias": "bullish",
+      "short_call_strike": 650.0,
+      "long_call_strike": 660.0,
+      "short_put_strike": 595.0,
+      "long_put_strike": 585.0,
+      "net_credit_at_open": 4.0,
+      "wing_width": 10.0,
+      "max_profit": 4.0,
+      "max_loss": 6.0,
+      "break_even_upper": 654.0,
+      "break_even_lower": 591.0,
+      "status": "open",
+      "daily_marks": [],
+      "settlement": null,
+      "atr60_at_open": 15.1778
+    },
+    {
+      "id": "NFLX-2026-06-02",
+      "ticker": "NFLX",
+      "sector": "Mega-Cap Tech",
+      "start_date": "2026-06-02",
+      "target_exit_date": "2026-06-16",
+      "expiry_used": "2026-06-18",
+      "underlying_at_open": 83.9399,
+      "atr14_at_open": 2.2373,
+      "sma20_at_open": 87.77,
+      "vol_percentile_at_open": 2,
+      "trend_bias": "bearish",
+      "short_call_strike": 87.0,
+      "long_call_strike": 89.0,
+      "short_put_strike": 81.0,
+      "long_put_strike": 79.0,
+      "net_credit_at_open": 0.83,
+      "wing_width": 2.0,
+      "max_profit": 0.83,
+      "max_loss": 1.17,
+      "break_even_upper": 87.83,
+      "break_even_lower": 80.17,
+      "status": "open",
+      "daily_marks": [],
+      "settlement": null,
+      "atr60_at_open": 2.5977
+    },
+    {
+      "id": "COIN-2026-06-02",
+      "ticker": "COIN",
+      "sector": "High-Beta / Crypto",
+      "start_date": "2026-06-02",
+      "target_exit_date": "2026-06-16",
+      "expiry_used": "2026-06-18",
+      "underlying_at_open": 172.895,
+      "atr14_at_open": 12.2513,
+      "sma20_at_open": 194.1135,
+      "vol_percentile_at_open": 81,
+      "trend_bias": "bearish",
+      "short_call_strike": 192.5,
+      "long_call_strike": 200.0,
+      "short_put_strike": 155.0,
+      "long_put_strike": 145.0,
+      "net_credit_at_open": 2.52,
+      "wing_width": 10.0,
+      "max_profit": 2.52,
+      "max_loss": 7.48,
+      "break_even_upper": 195.02,
+      "break_even_lower": 152.48,
+      "status": "open",
+      "daily_marks": [],
+      "settlement": null,
+      "atr60_at_open": 12.2372
+    },
+    {
+      "id": "MSTR-2026-06-02",
+      "ticker": "MSTR",
+      "sector": "High-Beta / Crypto",
+      "start_date": "2026-06-02",
+      "target_exit_date": "2026-06-16",
+      "expiry_used": "2026-06-18",
+      "underlying_at_open": 135.66,
+      "atr14_at_open": 10.3806,
+      "sma20_at_open": 172.2063,
+      "vol_percentile_at_open": 26,
+      "trend_bias": "bearish",
+      "short_call_strike": 152.0,
+      "long_call_strike": 157.5,
+      "short_put_strike": 120.0,
+      "long_put_strike": 114.0,
+      "net_credit_at_open": 1.78,
+      "wing_width": 6.0,
+      "max_profit": 1.78,
+      "max_loss": 4.22,
+      "break_even_upper": 153.78,
+      "break_even_lower": 118.22,
+      "status": "open",
+      "daily_marks": [],
+      "settlement": null,
+      "atr60_at_open": 9.5379
+    },
+    {
+      "id": "MARA-2026-06-02",
+      "ticker": "MARA",
+      "sector": "High-Beta / Crypto",
+      "start_date": "2026-06-02",
+      "target_exit_date": "2026-06-16",
+      "expiry_used": "2026-06-18",
+      "underlying_at_open": 14.6169,
+      "atr14_at_open": 0.9232,
+      "sma20_at_open": 13.2065,
+      "vol_percentile_at_open": 0,
+      "trend_bias": "bullish",
+      "short_call_strike": 16.0,
+      "long_call_strike": 16.5,
+      "short_put_strike": 13.0,
+      "long_put_strike": 12.5,
+      "net_credit_at_open": 0.17,
+      "wing_width": 0.5,
+      "max_profit": 0.17,
+      "max_loss": 0.33,
+      "break_even_upper": 16.17,
+      "break_even_lower": 12.83,
+      "status": "open",
+      "daily_marks": [],
+      "settlement": null,
+      "atr60_at_open": 0.8287
     }
   ],
   "skipped": [
@@ -10666,6 +11321,56 @@
       "ticker": "MARA",
       "date": "2026-06-01",
       "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "NVDA",
+      "date": "2026-06-02",
+      "reason": "illiquid:long_put:low_oi"
+    },
+    {
+      "ticker": "AMD",
+      "date": "2026-06-02",
+      "reason": "illiquid:short_call:low_oi"
+    },
+    {
+      "ticker": "AVGO",
+      "date": "2026-06-02",
+      "reason": "illiquid:short_call:low_oi"
+    },
+    {
+      "ticker": "TSM",
+      "date": "2026-06-02",
+      "reason": "illiquid:long_call:low_oi"
+    },
+    {
+      "ticker": "AAPL",
+      "date": "2026-06-02",
+      "reason": "illiquid:short_call:low_oi"
+    },
+    {
+      "ticker": "MSFT",
+      "date": "2026-06-02",
+      "reason": "illiquid:short_put:low_oi"
+    },
+    {
+      "ticker": "GOOGL",
+      "date": "2026-06-02",
+      "reason": "illiquid:short_call:low_oi"
+    },
+    {
+      "ticker": "META",
+      "date": "2026-06-02",
+      "reason": "illiquid:short_call:low_oi"
+    },
+    {
+      "ticker": "AMZN",
+      "date": "2026-06-02",
+      "reason": "illiquid:short_call:low_oi"
+    },
+    {
+      "ticker": "TSLA",
+      "date": "2026-06-02",
+      "reason": "illiquid:short_call:low_oi"
     }
   ]
 }
