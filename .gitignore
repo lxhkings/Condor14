@@ -11,3 +11,5 @@ data/ledger.json.tmp
 .DS_Store
 logs/
 docs/
+.vercel
+.env*
