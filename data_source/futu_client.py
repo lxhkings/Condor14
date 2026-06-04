@@ -41,6 +41,7 @@ class OptionLeg:
     volume: int
     iv: float
     delta: float = 0.0
+    quote_collapsed: bool = False
 
 
 # Futu 服务端限频提示常见关键字（中文/英文兜底）。
@@ -230,9 +231,11 @@ class FutuClient:
             # Use mid-price for backtesting when quotes are missing or
             # the spread is impractically wide (closed market).
             spread_ok = bid > 0 and ask > 0 and (ask - bid) / mid_raw <= 0.30 if mid_raw > 0 else False
+            collapsed = False
             if mid_raw > 0 and not spread_ok:
                 bid = round(mid_raw, 2)
                 ask = round(mid_raw, 2)
+                collapsed = True
             # Futu returns IV as percentage; convert to decimal for consistency
             iv = self._safe_float(row.get("option_implied_volatility")) / 100.0
             delta = self._safe_float(row.get("option_delta"))
@@ -256,6 +259,7 @@ class FutuClient:
                     volume=vol,
                     iv=iv,
                     delta=delta,
+                    quote_collapsed=collapsed,
                 )
             )
         return legs

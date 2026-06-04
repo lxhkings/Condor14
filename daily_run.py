@@ -160,6 +160,13 @@ def _open_one_setup(
             return SkippedEntry(ticker=ticker, date=today,
                                 reason=f"illiquid:{name}:{rejection.value}")
 
+    collapsed_legs = [name for name, leg in legs.items() if leg.quote_collapsed]
+    if collapsed_legs:
+        log.warning(
+            "FALLBACK_AUDIT %s would_skip_no_fallback legs=%s",
+            ticker, ",".join(collapsed_legs),
+        )
+
     try:
         ic: IronCondor = build_condor(**legs)
     except ZeroOrNegativeCreditError as e:
