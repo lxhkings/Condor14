@@ -16,7 +16,8 @@ echo "=== $(date -u '+%Y-%m-%d %H:%M:%S UTC') start ==="
 cd "$REPO"
 
 # Skip non-trading days
-/opt/homebrew/bin/uv run python - <<'EOF'
+status=0
+/opt/homebrew/bin/uv run python - <<'EOF' || status=$?
 from data_source.trading_calendar import is_trading_day
 from datetime import datetime
 from zoneinfo import ZoneInfo
@@ -26,7 +27,6 @@ if not is_trading_day(et_today):
     print(f"Not a trading day ({et_today}), skipping.")
     sys.exit(1)
 EOF
-status=$?
 [ $status -ne 0 ] && echo "Skipped." && exit 0
 
 echo "--- daily_run.py ---"
@@ -41,7 +41,7 @@ if git diff --cached --quiet; then
     echo "No changes to commit."
 else
     git commit -m "chore(site): daily update $(date -u +%Y-%m-%d)"
-    git pull --rebase origin main
+    git pull --rebase --autostash origin main
     git push origin main
     echo "Pushed. Vercel will deploy."
 fi
