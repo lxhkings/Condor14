@@ -157,3 +157,23 @@ def test_option_chain_calls_snapshot_limiter_acquire(fake_ctx):
     client = _make_client(fake_ctx, snapshot_limiter=snapshot_limiter)
     client.option_chain("AAPL", expiration=date(2026, 5, 23))
     snapshot_limiter.acquire.assert_called_once()
+
+
+def test_option_chain_populates_leg_code(fake_ctx):
+    chain_df = pd.DataFrame({"code": ["US.AAPL260523C00200000"]})
+    snap_df = pd.DataFrame([{
+        "code": "US.AAPL260523C00200000",
+        "option_type": "CALL",
+        "option_strike_price": 200.0,
+        "bid_price": 2.0, "ask_price": 2.1, "last_price": 2.05,
+        "prev_close_price": 2.0,
+        "option_implied_volatility": 40.0,
+        "option_delta": 0.3,
+        "option_open_interest": 1000, "volume": 500,
+    }])
+    fake_ctx.get_option_chain.return_value = (RET_OK, chain_df)
+    fake_ctx.get_market_snapshot.return_value = (RET_OK, snap_df)
+    client = _make_client(fake_ctx)
+    legs = client.option_chain("AAPL", expiration=date(2026, 5, 23), near_spot=200.0)
+    assert len(legs) == 1
+    assert legs[0].code == "US.AAPL260523C00200000"

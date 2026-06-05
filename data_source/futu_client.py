@@ -42,6 +42,7 @@ class OptionLeg:
     iv: float
     delta: float = 0.0
     quote_collapsed: bool = False
+    code: str = ""
 
 
 # Futu 服务端限频提示常见关键字（中文/英文兜底）。
@@ -260,6 +261,7 @@ class FutuClient:
                     iv=iv,
                     delta=delta,
                     quote_collapsed=collapsed,
+                    code=str(row.get("code") or ""),
                 )
             )
         return legs
