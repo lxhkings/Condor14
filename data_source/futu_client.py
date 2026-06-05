@@ -45,6 +45,13 @@ class OptionLeg:
     code: str = ""
 
 
+@dataclass(frozen=True)
+class VolPoint:
+    date: date
+    iv: float
+    hv: float
+
+
 # Futu 服务端限频提示常见关键字（中文/英文兜底）。
 _RATE_LIMIT_KEYWORDS = ("频率", "rate limit", "FREQ_LIMIT", "请求频率")
 _RATE_LIMIT_BACKOFF_SEC = 30.0
@@ -317,6 +324,34 @@ class FutuClient:
         if data is None or data.empty:
             return None
         return self._safe_float(data.iloc[0].get("strike_probability"))
+
+    def option_volatility(
+        self, code: str, *, window: int = 1, hv_days: int = 30
+    ) -> list[VolPoint] | None:
+        """IV/HV series (ascending by date) for an option contract, or None.
+
+        `window` is Futu's query_time_period int code (1≈1wk … 4≈~5-6mo).
+        `hv_days` is the historical-volatility lookback.
+        """
+        self._analytics_limiter.acquire()
+        ret, data = self._ctx.get_option_volatility(
+            code, query_time_period=window, hv_time_period=hv_days
+        )
+        if ret != RET_OK:
+            log.warning("get_option_volatility(%s) failed: ret=%s msg=%s", code, ret, data)
+            return None
+        if data is None or data.empty:
+            return None
+        points: list[VolPoint] = []
+        for _, row in data.iterrows():
+            points.append(
+                VolPoint(
+                    date=datetime.strptime(str(row["timestamp_str"])[:10], "%Y-%m-%d").date(),
+                    iv=self._safe_float(row.get("implied_volatility")),
+                    hv=self._safe_float(row.get("history_volatility")),
+                )
+            )
+        return points
 
     def list_expirations(self, ticker: str) -> list[date]:
         code = _to_code(ticker)

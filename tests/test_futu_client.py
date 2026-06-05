@@ -182,6 +182,32 @@ def test_option_exercise_prob_none_on_empty(fake_ctx):
     assert client.option_exercise_prob("US.AAPL260702C260000") is None
 
 
+def test_option_volatility_returns_points(fake_ctx):
+    df = pd.DataFrame({
+        "timestamp_str": ["2026-05-21", "2026-05-22"],  # API sorts ascending
+        "implied_volatility": [32.8, 26.7],
+        "history_volatility": [21.9, 22.0],
+    })
+    fake_ctx.get_option_volatility.return_value = (RET_OK, df)
+    client = _make_client(fake_ctx)
+    pts = client.option_volatility("US.AAPL281215C320000", window=1, hv_days=30)
+    assert [p.iv for p in pts] == [32.8, 26.7]
+    assert pts[-1].hv == 22.0
+    assert pts[0].date == date(2026, 5, 21)
+
+
+def test_option_volatility_none_on_error(fake_ctx):
+    fake_ctx.get_option_volatility.return_value = (RET_ERROR, "频率限制")
+    client = _make_client(fake_ctx)
+    assert client.option_volatility("US.AAPL281215C320000", window=1) is None
+
+
+def test_option_volatility_none_on_empty(fake_ctx):
+    fake_ctx.get_option_volatility.return_value = (RET_OK, pd.DataFrame())
+    client = _make_client(fake_ctx)
+    assert client.option_volatility("US.AAPL281215C320000", window=1) is None
+
+
 def test_option_chain_populates_leg_code(fake_ctx):
     chain_df = pd.DataFrame({"code": ["US.AAPL260523C00200000"]})
     snap_df = pd.DataFrame([{
