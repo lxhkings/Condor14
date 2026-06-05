@@ -25,6 +25,7 @@ from data_source.trading_calendar import is_trading_day
 from ledger.schema import (
     DailyMark,
     Ledger,
+    OptionAnalyticsSnapshot,
     Settlement,
     Setup,
     SkippedEntry,
@@ -79,6 +80,30 @@ def _refresh_bars(
         bars = client.daily_bars(ticker, start=start, end=today)
         cache.upsert(bars)
     return cache.read(ticker, start=today - timedelta(days=400), end=today)
+
+
+def _build_analytics(
+    client: FutuClient, short_call: OptionLeg, short_put: OptionLeg
+) -> OptionAnalyticsSnapshot | None:
+    """Open-time POP + short-call IV/HV. Returns None if any call is unavailable."""
+    if not short_call.code or not short_put.code:
+        return None
+    sc = client.option_exercise_prob(short_call.code)
+    sp = client.option_exercise_prob(short_put.code)
+    vol = client.option_volatility(short_call.code, window=1, hv_days=30)
+    if sc is None or sp is None or not vol:
+        return None
+    latest = vol[-1]
+    pop = max(0.0, min(100.0, 100.0 - sc - sp))
+    return OptionAnalyticsSnapshot(
+        short_call_exercise_prob=round(sc, 2),
+        short_put_exercise_prob=round(sp, 2),
+        implied_pop=round(pop, 2),
+        short_call_iv=round(latest.iv, 2),
+        short_call_hv=round(latest.hv, 2),
+        vol_premium=round(latest.iv - latest.hv, 2),
+        iv_gt_hv=latest.iv > latest.hv,
+    )
 
 
 def _open_one_setup(
@@ -172,6 +197,7 @@ def _open_one_setup(
     except ZeroOrNegativeCreditError as e:
         return SkippedEntry(ticker=ticker, date=today, reason=f"no_credit:{e}")
 
+    analytics = _build_analytics(client, legs["short_call"], legs["short_put"])
     target_exit = today + timedelta(days=14)
     return Setup(
         id=f"{ticker}-{today.isoformat()}",
@@ -196,6 +222,7 @@ def _open_one_setup(
         max_loss=ic.max_loss,
         break_even_upper=ic.break_even_upper,
         break_even_lower=ic.break_even_lower,
+        analytics_at_open=analytics,
         status="open",
         daily_marks=[],
         settlement=None,

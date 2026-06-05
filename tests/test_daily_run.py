@@ -215,6 +215,54 @@ def test_list_expirations_wrapper_backwards_compat_no_cache_arg():
     assert wrap(client, "AAPL") == [date(2026, 5, 23)]
 
 
+def test_open_setup_captures_analytics(tmp_path, fake_client, monkeypatch):
+    from daily_run import run
+    from dataclasses import replace
+
+    base_legs = _legs(expiration=date(2026, 5, 12))
+    fake_client.option_chain.return_value = [
+        replace(L, code=f"US.NVDA-{L.side}-{int(L.strike)}") for L in base_legs
+    ]
+    fake_client.option_exercise_prob.return_value = 7.0
+    from data_source.futu_client import VolPoint
+    fake_client.option_volatility.return_value = [
+        VolPoint(date=date(2026, 5, 11), iv=40.0, hv=28.0),
+        VolPoint(date=date(2026, 5, 12), iv=42.0, hv=30.0),
+    ]
+
+    monkeypatch.setattr("daily_run.is_trading_day", lambda d: True)
+    monkeypatch.setattr("daily_run.list_expirations", lambda client, ticker, **kw: [date(2026, 5, 12)])
+    monkeypatch.setattr("daily_run.TICKERS", ["NVDA"])
+    monkeypatch.setattr("daily_run.SECTORS", {"NVDA": "Semiconductors"})
+
+    store = LedgerStore(tmp_path / "ledger.json")
+    run(today=date(2026, 4, 28), client=fake_client, store=store, cache_path=tmp_path / "cache.sqlite")
+
+    snap = store.load().setups[0].analytics_at_open
+    assert snap is not None
+    assert snap.implied_pop == 86.0          # 100 - 7 - 7
+    assert snap.short_call_iv == 42.0        # latest VolPoint
+    assert snap.iv_gt_hv is True
+
+
+def test_open_setup_analytics_none_on_api_failure(tmp_path, fake_client, monkeypatch):
+    from daily_run import run
+    fake_client.option_exercise_prob.return_value = None  # API failed
+    fake_client.option_volatility.return_value = None
+
+    monkeypatch.setattr("daily_run.is_trading_day", lambda d: True)
+    monkeypatch.setattr("daily_run.list_expirations", lambda client, ticker, **kw: [date(2026, 5, 12)])
+    monkeypatch.setattr("daily_run.TICKERS", ["NVDA"])
+    monkeypatch.setattr("daily_run.SECTORS", {"NVDA": "Semiconductors"})
+
+    store = LedgerStore(tmp_path / "ledger.json")
+    run(today=date(2026, 4, 28), client=fake_client, store=store, cache_path=tmp_path / "cache.sqlite")
+
+    out = store.load()
+    assert len(out.setups) == 1               # setup still opens
+    assert out.setups[0].analytics_at_open is None
+
+
 def test_run_populates_vol_percentile_and_atr60(tmp_path, fake_client, monkeypatch):
     from datetime import timedelta
 
