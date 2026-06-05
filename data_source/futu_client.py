@@ -77,6 +77,7 @@ class FutuClient:
         chain_limiter: TokenBucket | None = None,
         exp_limiter: TokenBucket | None = None,
         snapshot_limiter: TokenBucket | None = None,
+        analytics_limiter: TokenBucket | None = None,
     ) -> None:
         if _ctx is not None:
             self._ctx = _ctx
@@ -89,6 +90,8 @@ class FutuClient:
         # Futu 公开限频：Qot_GetMarketSnapshot 60/30s = 2/s。
         # 留 10% 安全余量 → 1.8/s，capacity=54。
         self._snapshot_limiter = snapshot_limiter or TokenBucket(rate_per_sec=1.8, capacity=54)
+        # Futu 公开限频：期权分析类接口 30/30s = 1/s。留余量 → 0.9/s，capacity=27。
+        self._analytics_limiter = analytics_limiter or TokenBucket(rate_per_sec=0.9, capacity=27)
 
     def close(self) -> None:
         self._ctx.close()
@@ -300,6 +303,20 @@ class FutuClient:
                     )
                 )
         return rows
+
+    def option_exercise_prob(self, code: str) -> float | None:
+        """Latest exercise probability (percent) for an option contract, or None.
+
+        Futu returns rows sorted time-descending, so row 0 is the latest.
+        """
+        self._analytics_limiter.acquire()
+        ret, data = self._ctx.get_option_exercise_probability(code)
+        if ret != RET_OK:
+            log.warning("get_option_exercise_probability(%s) failed: ret=%s msg=%s", code, ret, data)
+            return None
+        if data is None or data.empty:
+            return None
+        return self._safe_float(data.iloc[0].get("strike_probability"))
 
     def list_expirations(self, ticker: str) -> list[date]:
         code = _to_code(ticker)

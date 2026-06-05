@@ -159,6 +159,29 @@ def test_option_chain_calls_snapshot_limiter_acquire(fake_ctx):
     snapshot_limiter.acquire.assert_called_once()
 
 
+def test_option_exercise_prob_returns_latest(fake_ctx):
+    df = pd.DataFrame({
+        "timestamp_str": ["2026-06-05", "2026-06-04"],
+        "security_price": [311.2, 310.3],
+        "strike_probability": [92.9, 94.8],  # row 0 = latest (API sorts desc)
+    })
+    fake_ctx.get_option_exercise_probability.return_value = (RET_OK, df)
+    client = _make_client(fake_ctx)
+    assert client.option_exercise_prob("US.AAPL260702C260000") == 92.9
+
+
+def test_option_exercise_prob_none_on_error(fake_ctx):
+    fake_ctx.get_option_exercise_probability.return_value = (RET_ERROR, "频率限制")
+    client = _make_client(fake_ctx)
+    assert client.option_exercise_prob("US.AAPL260702C260000") is None
+
+
+def test_option_exercise_prob_none_on_empty(fake_ctx):
+    fake_ctx.get_option_exercise_probability.return_value = (RET_OK, pd.DataFrame())
+    client = _make_client(fake_ctx)
+    assert client.option_exercise_prob("US.AAPL260702C260000") is None
+
+
 def test_option_chain_populates_leg_code(fake_ctx):
     chain_df = pd.DataFrame({"code": ["US.AAPL260523C00200000"]})
     snap_df = pd.DataFrame([{
