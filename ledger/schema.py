@@ -40,6 +40,17 @@ class Settlement:
 
 
 @dataclass(frozen=True)
+class OptionAnalyticsSnapshot:
+    short_call_exercise_prob: float
+    short_put_exercise_prob: float
+    implied_pop: float
+    short_call_iv: float
+    short_call_hv: float
+    vol_premium: float
+    iv_gt_hv: bool
+
+
+@dataclass(frozen=True)
 class Setup:
     id: str
     ticker: str
@@ -66,6 +77,7 @@ class Setup:
     daily_marks: list[DailyMark]
     settlement: Settlement | None
     atr60_at_open: float = 0.0
+    analytics_at_open: OptionAnalyticsSnapshot | None = None
 
 
 @dataclass(frozen=True)
@@ -135,6 +147,18 @@ def ledger_from_json(blob: str) -> Ledger:
                 breached_side=sd["breached_side"],
                 final_pnl_per_spread=sd["final_pnl_per_spread"],
             )
+        analytics = None
+        ad = d.get("analytics_at_open")
+        if ad is not None:
+            analytics = OptionAnalyticsSnapshot(
+                short_call_exercise_prob=ad["short_call_exercise_prob"],
+                short_put_exercise_prob=ad["short_put_exercise_prob"],
+                implied_pop=ad["implied_pop"],
+                short_call_iv=ad["short_call_iv"],
+                short_call_hv=ad["short_call_hv"],
+                vol_premium=ad["vol_premium"],
+                iv_gt_hv=ad["iv_gt_hv"],
+            )
         return Setup(
             id=d["id"], ticker=d["ticker"], sector=d["sector"],
             start_date=_parse_date(d["start_date"]),
@@ -161,6 +185,7 @@ def ledger_from_json(blob: str) -> Ledger:
             daily_marks=marks,
             settlement=sett,
             atr60_at_open=d.get("atr60_at_open", 0.0),
+            analytics_at_open=analytics,
         )
 
     setups = [_setup(s) for s in data.get("setups", [])]
