@@ -45,3 +45,7 @@ def generate_robots_txt(*, host: str) -> str:
         "Allow: /\n"
         f"Sitemap: https://{host}/sitemap.xml\n"
     )
+
+
+def generate_ads_txt(*, publisher_id: str) -> str:
+    return f"google.com, {publisher_id}, DIRECT, f08c47fec0942fa0\n"

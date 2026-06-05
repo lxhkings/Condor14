@@ -64,3 +64,10 @@ def test_robots_txt_lists_sitemap_url_with_substituted_host():
     assert "User-agent: *" in txt
     assert "Allow: /" in txt
     assert "Sitemap: https://example.com/sitemap.xml" in txt
+
+
+def test_ads_txt_contains_direct_publisher_record():
+    from site_builder.sitemap import generate_ads_txt
+
+    txt = generate_ads_txt(publisher_id="pub-6718270775160916")
+    assert txt == "google.com, pub-6718270775160916, DIRECT, f08c47fec0942fa0\n"
