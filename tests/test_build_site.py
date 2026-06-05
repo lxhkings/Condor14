@@ -63,6 +63,27 @@ def test_build_with_empty_ledger_produces_all_pages(tmp_path):
     assert (public / "abc123def456abc123def456abc123de.txt").exists()
 
 
+def test_build_writes_ads_txt(tmp_path):
+    ledger_path = tmp_path / "ledger.json"
+    _seed_empty_ledger(ledger_path)
+    public = tmp_path / "public"
+    indexnow_key = tmp_path / "indexnow_key.txt"
+    indexnow_key.write_text("abc123def456abc123def456abc123de")
+
+    rc = build(
+        ledger_path=ledger_path,
+        public_dir=public,
+        host="example.com",
+        today=date(2026, 4, 28),
+        indexnow_key_path=indexnow_key,
+        last_indexed_path=tmp_path / "last_indexed.json",
+        skip_indexnow_ping=True,
+    )
+    assert rc == 0
+    ads = (public / "ads.txt").read_text()
+    assert ads == "google.com, pub-6718270775160916, DIRECT, f08c47fec0942fa0\n"
+
+
 def test_build_renders_setup_data_into_ticker_page(tmp_path):
     ledger_path = tmp_path / "ledger.json"
     _seed_ledger_with_one_open(ledger_path)

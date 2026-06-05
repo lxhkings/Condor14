@@ -51,7 +51,11 @@ from site_builder.leaderboard import (
 )
 from site_builder.render import render_html_page
 from site_builder.screener import build_screener_data
-from site_builder.sitemap import generate_robots_txt, generate_sitemap_xml
+from site_builder.sitemap import (
+    generate_ads_txt,
+    generate_robots_txt,
+    generate_sitemap_xml,
+)
 
 log = logging.getLogger("build_site")
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s %(message)s")
@@ -65,6 +69,7 @@ HOMEPAGE_DESCRIPTION = (
 )
 THEME_COLOR = "#0d1117"
 PUBLISHER_EMAIL = "lxhkings@gmail.com"
+ADSENSE_PUBLISHER_ID = "pub-6718270775160916"
 
 
 def _env() -> Environment:
@@ -349,6 +354,7 @@ def build(
     )
     _write(public_dir / "sitemap.xml", sitemap)
     _write(public_dir / "robots.txt", generate_robots_txt(host=host))
+    _write(public_dir / "ads.txt", generate_ads_txt(publisher_id=ADSENSE_PUBLISHER_ID))
 
     # IndexNow key file
     key = read_key(indexnow_key_path)
