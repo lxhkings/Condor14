@@ -45,6 +45,20 @@
 Across {{ track_record.sample_size }} settled 14-day Iron Condor setups on {{ ticker }}, the structure resolved inside the short strikes {{ "%.0f"|format(track_record.win_rate * 100) }}% of the time, for a cumulative realized result of ${{ "%.2f"|format(track_record.cumulative_pnl) }} per spread.
 
 {% endif %}
+{% if setup.analytics_at_open %}
+## Probability at Open
+
+| Metric | Value |
+| :--- | ---: |
+| Implied probability of profit | {{ "%.1f"|format(setup.analytics_at_open.implied_pop) }}% |
+| Chance of closing above short call | {{ "%.1f"|format(setup.analytics_at_open.short_call_exercise_prob) }}% |
+| Chance of closing below short put | {{ "%.1f"|format(setup.analytics_at_open.short_put_exercise_prob) }}% |
+| Short-call implied volatility | {{ "%.1f"|format(setup.analytics_at_open.short_call_iv) }}% |
+| Historical volatility | {{ "%.1f"|format(setup.analytics_at_open.short_call_hv) }}% |
+| Volatility premium | {{ "%.1f"|format(setup.analytics_at_open.vol_premium) }}{% if setup.analytics_at_open.iv_gt_hv %} (IV &gt; HV){% endif %} |
+
+Probabilities are Futu-derived for the 14-day contracts in this setup.
+{% endif %}
 ## Methodology Snapshot
 
 [Full methodology →](/methodology/)

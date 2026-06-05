@@ -240,6 +240,45 @@ def _base_setup() -> Setup:
     )
 
 
+def test_ticker_page_renders_analytics_block(tmp_path):
+    from datetime import date
+    from build_site import build
+    from ledger.schema import Ledger, Setup, OptionAnalyticsSnapshot
+    from ledger.store import LedgerStore
+
+    setup = Setup(
+        id="NVDA-2026-06-05", ticker="NVDA", sector="Semiconductors",
+        start_date=date(2026, 6, 5), target_exit_date=date(2026, 6, 19),
+        expiry_used=date(2026, 6, 19), underlying_at_open=216.0,
+        atr14_at_open=5.0, sma20_at_open=210.0, vol_percentile_at_open=50,
+        trend_bias="neutral", short_call_strike=230.0, long_call_strike=235.0,
+        short_put_strike=200.0, long_put_strike=195.0, net_credit_at_open=1.2,
+        wing_width=5.0, max_profit=1.2, max_loss=3.8,
+        break_even_upper=231.2, break_even_lower=198.8,
+        status="open", daily_marks=[], settlement=None,
+        analytics_at_open=OptionAnalyticsSnapshot(
+            short_call_exercise_prob=8.0, short_put_exercise_prob=6.0, implied_pop=86.0,
+            short_call_iv=32.8, short_call_hv=22.0, vol_premium=10.8, iv_gt_hv=True,
+        ),
+    )
+    ledger_path = tmp_path / "ledger.json"
+    LedgerStore(ledger_path).save(Ledger(setups=[setup], site_launch_date=date(2026, 6, 5)))
+    (tmp_path / "key.txt").write_text("0123456789abcdef0123456789abcdef")
+
+    public = tmp_path / "public"
+    build(
+        ledger_path=ledger_path, public_dir=public, host="example.com",
+        today=date(2026, 6, 5),
+        indexnow_key_path=tmp_path / "key.txt",
+        last_indexed_path=tmp_path / "last.json",
+        skip_indexnow_ping=True,
+    )
+    html = (public / "nvda" / "index.html").read_text()
+    assert "Probability at Open" in html
+    assert "86" in html               # implied POP
+    assert "32.8" in html             # short-call IV
+
+
 def test_render_ticker_emits_vol_regime_sentence_when_atr_diverges():
     # atr14=2.0, atr60=4.0 -> ratio=0.5 < 0.8 -> "contracting"
     setup = dataclasses.replace(_base_setup(), atr14_at_open=2.0, atr60_at_open=4.0)
