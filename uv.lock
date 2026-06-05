@@ -72,7 +72,7 @@ wheels = [
 
 [[package]]
 name = "futu-api"
-version = "10.4.6408"
+version = "10.7.6708"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pandas" },
@@ -80,7 +80,7 @@ dependencies = [
     { name = "pycryptodome" },
     { name = "simplejson" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/b4/1b/e3022321d2cdb7b3d381e7585abd41eaa7e30875cd99d5c3e1f78179acca/futu_api-10.4.6408.tar.gz", hash = "sha256:acc030cd6a00027f54b0d4c91d3b145c362388809e0160a917ad07e094eecb18", size = 6195165, upload-time = "2026-04-23T09:52:50.89Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/45/ca/34ea135e1bfc9ab7249bda4c77c89c93e31f65f53f5f48680ae5b95a2ed2/futu_api-10.7.6708.tar.gz", hash = "sha256:03118921c6662e5f14913d6071e9e72d7eee89674569bef4f86caadd48813867", size = 6299789, upload-time = "2026-06-04T12:28:15.599Z" }
 
 [[package]]
 name = "h11"
@@ -175,7 +175,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "futu-api", specifier = ">=10.4.6408" },
+    { name = "futu-api", specifier = ">=10.7.6708" },
     { name = "httpx", specifier = ">=0.27,<1.0" },
     { name = "ib-insync", specifier = ">=0.9.86" },
     { name = "jinja2", specifier = ">=3.1,<4.0" },

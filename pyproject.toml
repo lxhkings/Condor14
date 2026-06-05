@@ -11,7 +11,7 @@ dependencies = [
     "socksio>=1.0.0",
     "massive>=2.6.0",
     "ib-insync>=0.9.86",
-    "futu-api>=10.4.6408",
+    "futu-api>=10.7.6708",
 ]
 
 [dependency-groups]
