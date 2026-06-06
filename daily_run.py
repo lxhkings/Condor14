@@ -236,10 +236,13 @@ def _evaluate_open_setups(
     cache: DailyBarsCache,
     today: date,
 ) -> None:
+    quote_cache: dict[str, object] = {}
     for i, s in enumerate(ledger.setups):
         if s.status != "open":
             continue
-        quote = client.quote(s.ticker)
+        if s.ticker not in quote_cache:
+            quote_cache[s.ticker] = client.quote(s.ticker)
+        quote = quote_cache[s.ticker]
         # Fall back to latest bar close when live quote is unavailable
         bars = cache.read(s.ticker, start=today - timedelta(days=5), end=today)
         spot = quote.last if quote.last > 0 else (bars[-1].close if bars else 0.0)

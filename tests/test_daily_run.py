@@ -302,3 +302,40 @@ def test_run_populates_vol_percentile_and_atr60(tmp_path, fake_client, monkeypat
     assert s.atr60_at_open == pytest.approx(round(atr60(hlc), 4))
     assert s.atr60_at_open > 0.0
     assert s.vol_percentile_at_open == vol_percentile(closes)
+
+
+def test_mark_dedupes_quote_per_ticker(tmp_path, fake_client, monkeypatch):
+    from daily_run import run
+    from ledger.schema import Ledger
+
+    monkeypatch.setattr("daily_run.is_trading_day", lambda d: True)
+    monkeypatch.setattr("daily_run.TICKERS", [])   # 不开新仓
+    monkeypatch.setattr("daily_run.SECTORS", {})
+
+    def _open(idx: int) -> Setup:
+        return Setup(
+            id=f"NVDA-2026-04-2{idx}", ticker="NVDA", sector="Semiconductors",
+            start_date=date(2026, 4, 20), target_exit_date=date(2026, 5, 12),
+            expiry_used=date(2026, 5, 12),
+            underlying_at_open=210.0, atr14_at_open=4.0, sma20_at_open=200.0,
+            vol_percentile_at_open=50, trend_bias="bullish",
+            short_call_strike=230.0, long_call_strike=235.0,
+            short_put_strike=200.0, long_put_strike=195.0,
+            net_credit_at_open=1.50, wing_width=5.0,
+            max_profit=1.50, max_loss=3.50,
+            break_even_upper=231.50, break_even_lower=198.50,
+            status="open", daily_marks=[], settlement=None,
+        )
+
+    store = LedgerStore(tmp_path / "ledger.json")
+    store.save(Ledger(setups=[_open(1), _open(2), _open(3)],
+                       site_launch_date=date(2026, 4, 20)))
+
+    run(today=date(2026, 4, 28), client=fake_client, store=store,
+        cache_path=tmp_path / "cache.sqlite")
+
+    # 3 个同标 open setup → quote 只取一次
+    assert fake_client.quote.call_count == 1
+    # 每个 setup 仍各自追加了当日 mark
+    out = store.load()
+    assert all(len(s.daily_marks) == 1 for s in out.setups)
