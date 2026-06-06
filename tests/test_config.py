@@ -1,9 +1,9 @@
 from config import SECTORS, TICKERS
 
 
-def test_tickers_has_18_unique_entries():
-    assert len(TICKERS) == 18
-    assert len(set(TICKERS)) == 18
+def test_tickers_has_50_unique_entries():
+    assert len(TICKERS) == 50
+    assert len(set(TICKERS)) == 50
 
 
 def test_every_ticker_has_a_sector():
