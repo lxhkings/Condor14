@@ -51,6 +51,15 @@ class OptionAnalyticsSnapshot:
 
 
 @dataclass(frozen=True)
+class QuoteAudit:
+    legs: dict[str, dict]
+    net_credit_published: float
+    net_credit_conservative: float
+    credit_deviation: float
+    any_collapsed: bool
+
+
+@dataclass(frozen=True)
 class Setup:
     id: str
     ticker: str
@@ -78,6 +87,7 @@ class Setup:
     settlement: Settlement | None
     atr60_at_open: float = 0.0
     analytics_at_open: OptionAnalyticsSnapshot | None = None
+    quote_audit: QuoteAudit | None = None
 
 
 @dataclass(frozen=True)
@@ -159,6 +169,16 @@ def ledger_from_json(blob: str) -> Ledger:
                 vol_premium=ad["vol_premium"],
                 iv_gt_hv=ad["iv_gt_hv"],
             )
+        qa = d.get("quote_audit")
+        quote_audit = None
+        if qa is not None:
+            quote_audit = QuoteAudit(
+                legs=qa["legs"],
+                net_credit_published=qa["net_credit_published"],
+                net_credit_conservative=qa["net_credit_conservative"],
+                credit_deviation=qa["credit_deviation"],
+                any_collapsed=qa["any_collapsed"],
+            )
         return Setup(
             id=d["id"], ticker=d["ticker"], sector=d["sector"],
             start_date=_parse_date(d["start_date"]),
@@ -186,6 +206,7 @@ def ledger_from_json(blob: str) -> Ledger:
             settlement=sett,
             atr60_at_open=d.get("atr60_at_open", 0.0),
             analytics_at_open=analytics,
+            quote_audit=quote_audit,
         )
 
     setups = [_setup(s) for s in data.get("setups", [])]
