@@ -74,7 +74,7 @@ def list_expirations(
 def _refresh_bars(
     client: FutuClient, cache: DailyBarsCache, ticker: str, today: date
 ) -> list[BarRow]:
-    """Ensure ~1y of bars ending today; refresh from MarketData if stale."""
+    """Ensure ~1y of bars ending today; refresh from broker if stale."""
     latest = cache.latest_date(ticker)
     if latest is None or latest < today - timedelta(days=2):
         start = today - timedelta(days=400)

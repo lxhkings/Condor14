@@ -64,7 +64,7 @@ REPO_ROOT = Path(__file__).parent
 TEMPLATE_DIR = REPO_ROOT / "content_engine" / "templates"
 ASSETS_DIR = REPO_ROOT / "assets"
 HOMEPAGE_DESCRIPTION = (
-    "Daily iron condor setups computed from real OPRA quotes and tracked live "
+    "Daily iron condor setups computed from real quotes and tracked live "
     "to expiration across 30+ liquid US equities and ETFs."
 )
 THEME_COLOR = "#0d1117"

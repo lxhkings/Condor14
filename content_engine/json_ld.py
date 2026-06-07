@@ -102,7 +102,7 @@ def organization_schema(*, base_url: str, contact_email: str) -> dict:
         "url": f"{base_url}/",
         "description": (
             "Automated educational research project tracking 14-day iron "
-            "condor setups computed from real OPRA options quotes."
+            "condor setups computed from real options quotes."
         ),
         "contactPoint": {
             "@type": "ContactPoint",

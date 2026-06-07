@@ -181,3 +181,34 @@ def test_schema_version_and_metadata_preserved():
     assert out.site_launch_date == date(2026, 4, 28)
     assert out.first_settlement_date == date(2026, 5, 12)
     assert out.last_run is not None
+
+
+def test_quote_audit_round_trip():
+    from ledger.schema import QuoteAudit
+    from dataclasses import replace
+    audit = QuoteAudit(
+        legs={
+            "short_call": {"bid_price": 2.10, "ask_price": 2.20, "raw_bid": 2.10,
+                           "raw_ask": 2.20, "bid": 2.10, "ask": 2.20,
+                           "collapsed": False, "option_delta": 0.16},
+            "long_call": {"bid_price": 1.20, "ask_price": 1.30, "raw_bid": 1.20,
+                          "raw_ask": 1.30, "bid": 1.20, "ask": 1.30,
+                          "collapsed": False, "option_net_open_interest": "N/A"},
+            "short_put": {"bid": 1.85, "ask": 1.95, "raw_bid": 1.85, "raw_ask": 1.95,
+                          "collapsed": False},
+            "long_put": {"bid": 1.05, "ask": 1.15, "raw_bid": 1.05, "raw_ask": 1.15,
+                         "collapsed": False},
+        },
+        net_credit_published=1.42,
+        net_credit_conservative=1.42,
+        credit_deviation=0.0,
+        any_collapsed=False,
+    )
+    setup = replace(_setup(), quote_audit=audit)
+    out = ledger_from_json(ledger_to_json(Ledger(setups=[setup], skipped=[])))
+    assert out.setups[0].quote_audit == audit
+
+
+def test_setup_without_quote_audit_defaults_none():
+    out = ledger_from_json(ledger_to_json(Ledger(setups=[_setup()], skipped=[])))
+    assert out.setups[0].quote_audit is None
