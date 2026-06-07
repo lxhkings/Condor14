@@ -26,6 +26,7 @@ from ledger.schema import (
     DailyMark,
     Ledger,
     OptionAnalyticsSnapshot,
+    QuoteAudit,
     Settlement,
     Setup,
     SkippedEntry,
@@ -199,6 +200,22 @@ def _open_one_setup(
 
     analytics = _build_analytics(client, legs["short_call"], legs["short_put"])
     target_exit = today + timedelta(days=14)
+
+    def _leg_bag(L: OptionLeg) -> dict:
+        return {**L.snapshot,
+                "raw_bid": L.raw_bid, "raw_ask": L.raw_ask,
+                "bid": L.bid, "ask": L.ask, "collapsed": L.quote_collapsed}
+
+    conservative = round(
+        legs["short_call"].raw_bid + legs["short_put"].raw_bid
+        - legs["long_call"].raw_ask - legs["long_put"].raw_ask, 4)
+    quote_audit = QuoteAudit(
+        legs={name: _leg_bag(L) for name, L in legs.items()},
+        net_credit_published=ic.net_credit,
+        net_credit_conservative=conservative,
+        credit_deviation=round(ic.net_credit - conservative, 4),
+        any_collapsed=any(L.quote_collapsed for L in legs.values()),
+    )
     return Setup(
         id=f"{ticker}-{today.isoformat()}",
         ticker=ticker,
@@ -223,6 +240,7 @@ def _open_one_setup(
         break_even_upper=ic.break_even_upper,
         break_even_lower=ic.break_even_lower,
         analytics_at_open=analytics,
+        quote_audit=quote_audit,
         status="open",
         daily_marks=[],
         settlement=None,

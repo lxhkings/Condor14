@@ -31,13 +31,13 @@ def _legs(expiration: date) -> list[OptionLeg]:
                 volume=500, iv=0.4)
     return [
         OptionLeg(side="put",  strike=195.0, bid=1.05, ask=1.15, mid=1.10,
-                  open_interest=1500, **base),
+                  raw_bid=1.05, raw_ask=1.15, open_interest=1500, **base),
         OptionLeg(side="put",  strike=200.0, bid=1.85, ask=1.95, mid=1.90,
-                  open_interest=2000, **base),
+                  raw_bid=1.85, raw_ask=1.95, open_interest=2000, **base),
         OptionLeg(side="call", strike=230.0, bid=2.10, ask=2.20, mid=2.15,
-                  open_interest=2500, **base),
+                  raw_bid=2.10, raw_ask=2.20, open_interest=2500, **base),
         OptionLeg(side="call", strike=235.0, bid=1.20, ask=1.30, mid=1.25,
-                  open_interest=1800, **base),
+                  raw_bid=1.20, raw_ask=1.30, open_interest=1800, **base),
     ]
 
 
@@ -339,3 +339,25 @@ def test_mark_dedupes_quote_per_ticker(tmp_path, fake_client, monkeypatch):
     # 每个 setup 仍各自追加了当日 mark
     out = store.load()
     assert all(len(s.daily_marks) == 1 for s in out.setups)
+
+
+def test_run_attaches_quote_audit(tmp_path, fake_client, monkeypatch):
+    from daily_run import run
+
+    monkeypatch.setattr("daily_run.is_trading_day", lambda d: True)
+    monkeypatch.setattr("daily_run.list_expirations",
+                        lambda client, ticker, **kw: [date(2026, 5, 12)])
+    monkeypatch.setattr("daily_run.TICKERS", ["NVDA"])
+    monkeypatch.setattr("daily_run.SECTORS", {"NVDA": "Semiconductors"})
+
+    store = LedgerStore(tmp_path / "ledger.json")
+    cache_path = tmp_path / "cache.sqlite"
+    run(today=date(2026, 4, 28), client=fake_client, store=store, cache_path=cache_path)
+
+    qa = store.load().setups[0].quote_audit
+    assert qa is not None
+    assert set(qa.legs) == {"short_call", "long_call", "short_put", "long_put"}
+    # raw==bid/ask -> 保守等于发布，deviation 0
+    assert qa.net_credit_conservative == qa.net_credit_published
+    assert qa.credit_deviation == 0.0
+    assert qa.any_collapsed is False
