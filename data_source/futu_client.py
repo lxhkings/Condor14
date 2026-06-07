@@ -7,7 +7,7 @@ from __future__ import annotations
 
 import logging
 import time
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import date, datetime, timezone
 from typing import Literal
 
@@ -17,6 +17,34 @@ from data_source.cache import BarRow
 from data_source.rate_limit import TokenBucket
 
 log = logging.getLogger(__name__)
+
+# Futu 期权 snapshot 采集字段：数值类（安全解析为 float）与原值透传类。
+_SNAP_NUM_FIELDS = (
+    "bid_price", "ask_price", "bid_vol", "ask_vol", "last_price",
+    "prev_close_price", "price_spread", "high_price", "low_price",
+    "open_price", "turnover", "volume", "option_strike_price",
+    "option_open_interest", "option_premium", "option_contract_size",
+    "option_contract_multiplier", "option_expiry_date_distance",
+    "option_implied_volatility", "option_delta", "option_gamma",
+    "option_vega", "option_theta", "option_rho",
+)
+_SNAP_RAW_FIELDS = (
+    "option_type", "option_net_open_interest", "option_area_type",
+    "strike_time", "update_time", "suspension", "option_valid",
+)
+
+
+def _jsonable(v: object) -> object:
+    """Coerce pandas/numpy scalars to JSON-native; pass through str/None."""
+    if v is None or isinstance(v, (str, bool, int, float)):
+        return v
+    item = getattr(v, "item", None)
+    if callable(item):
+        try:
+            return item()
+        except (ValueError, TypeError):
+            pass
+    return str(v)
 
 
 @dataclass(frozen=True)
@@ -43,6 +71,9 @@ class OptionLeg:
     delta: float = 0.0
     quote_collapsed: bool = False
     code: str = ""
+    raw_bid: float = 0.0
+    raw_ask: float = 0.0
+    snapshot: dict = field(default_factory=dict)
 
 
 @dataclass(frozen=True)
@@ -229,6 +260,11 @@ class FutuClient:
 
             bid = self._safe_float(row.get("bid_price"))
             ask = self._safe_float(row.get("ask_price"))
+            raw_bid = self._safe_float(row.get("bid_price"))
+            raw_ask = self._safe_float(row.get("ask_price"))
+            snapshot = {k: self._safe_float(row.get(k)) for k in _SNAP_NUM_FIELDS}
+            for k in _SNAP_RAW_FIELDS:
+                snapshot[k] = _jsonable(row.get(k))
             # Fair-value mid: prefer (bid+ask)/2, then last/prev-close,
             # then the lone quoted side.
             if bid > 0 and ask > 0:
@@ -272,6 +308,9 @@ class FutuClient:
                     delta=delta,
                     quote_collapsed=collapsed,
                     code=str(row.get("code") or ""),
+                    raw_bid=raw_bid,
+                    raw_ask=raw_ask,
+                    snapshot=snapshot,
                 )
             )
         return legs

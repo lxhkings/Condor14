@@ -226,3 +226,37 @@ def test_option_chain_populates_leg_code(fake_ctx):
     legs = client.option_chain("AAPL", expiration=date(2026, 5, 23), near_spot=200.0)
     assert len(legs) == 1
     assert legs[0].code == "US.AAPL260523C00200000"
+
+
+def test_option_chain_preserves_raw_quotes_on_collapse(fake_ctx):
+    # 宽价差 (0.1/2.0, spread 190%>30%) 触发 collapse
+    chain_df = pd.DataFrame({"code": ["US.AAPL250523P00200000"]})
+    snap_df = pd.DataFrame({
+        "option_type": ["PUT"], "option_strike_price": [200.0],
+        "bid_price": [0.10], "ask_price": [2.00], "last_price": [1.0],
+        "prev_close_price": [1.0], "option_implied_volatility": [30.0],
+        "option_delta": [-0.5], "option_gamma": [0.02], "option_vega": [0.1],
+        "option_theta": [-0.05], "option_rho": [0.01],
+        "option_open_interest": [500], "option_net_open_interest": ["N/A"],
+        "volume": [100], "bid_vol": [40], "ask_vol": [60], "price_spread": [1.90],
+    })
+    fake_ctx.get_option_chain.return_value = (RET_OK, chain_df)
+    fake_ctx.get_market_snapshot.return_value = (RET_OK, snap_df)
+    client = _make_client(fake_ctx)
+    legs = client.option_chain("AAPL", expiration=date(2026, 5, 23))
+    assert len(legs) == 1
+    leg = legs[0]
+    # collapse 改写 bid/ask -> mid
+    assert leg.quote_collapsed is True
+    assert leg.bid == leg.ask  # mid
+    # 真实值保留
+    assert leg.raw_bid == 0.10
+    assert leg.raw_ask == 2.00
+    # snapshot 全字段袋，bid_price 仍是真实原值，希腊值齐
+    assert leg.snapshot["bid_price"] == 0.10
+    assert leg.snapshot["ask_price"] == 2.00
+    assert leg.snapshot["bid_vol"] == 40
+    assert leg.snapshot["ask_vol"] == 60
+    assert leg.snapshot["option_gamma"] == 0.02
+    # 'N/A' 安全透传，不崩
+    assert leg.snapshot["option_net_open_interest"] == "N/A"
