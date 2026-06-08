@@ -2,7 +2,7 @@
   "schema_version": 1,
   "site_launch_date": "2026-05-01",
   "first_settlement_date": "2026-05-14",
-  "last_run": "2026-06-05T14:31:35.059308+00:00",
+  "last_run": "2026-06-08T14:32:25.706611+00:00",
   "setups": [
     {
       "id": "NVDA-2026-04-29",
@@ -111,7 +111,8 @@
         "final_pnl_per_spread": -326.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "TSLA-2026-04-29",
@@ -220,7 +221,8 @@
         "final_pnl_per_spread": -782.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "AAPL-2026-04-29",
@@ -329,7 +331,8 @@
         "final_pnl_per_spread": -315.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "AMZN-2026-04-29",
@@ -438,7 +441,8 @@
         "final_pnl_per_spread": 55.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "MSFT-2026-04-29",
@@ -547,7 +551,8 @@
         "final_pnl_per_spread": -65.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "META-2026-04-29",
@@ -656,7 +661,8 @@
         "final_pnl_per_spread": -624.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "GOOGL-2026-04-29",
@@ -765,7 +771,8 @@
         "final_pnl_per_spread": -485.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "SPY-2026-04-29",
@@ -874,7 +881,8 @@
         "final_pnl_per_spread": -279.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "AMZN-2026-04-30",
@@ -978,7 +986,8 @@
         "final_pnl_per_spread": 275.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "META-2026-04-30",
@@ -1082,7 +1091,8 @@
         "final_pnl_per_spread": -357.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "GOOGL-2026-04-30",
@@ -1186,7 +1196,8 @@
         "final_pnl_per_spread": -337.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "SPY-2026-04-30",
@@ -1290,7 +1301,8 @@
         "final_pnl_per_spread": -294.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "QQQ-2026-04-30",
@@ -1394,7 +1406,8 @@
         "final_pnl_per_spread": -625.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "IWM-2026-04-30",
@@ -1498,7 +1511,8 @@
         "final_pnl_per_spread": -356.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "SMH-2026-04-30",
@@ -1597,7 +1611,8 @@
         "final_pnl_per_spread": -507.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "SPY-2026-05-01",
@@ -1696,7 +1711,8 @@
         "final_pnl_per_spread": -224.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "QQQ-2026-05-01",
@@ -1795,7 +1811,8 @@
         "final_pnl_per_spread": -270.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "IWM-2026-05-01",
@@ -1894,7 +1911,8 @@
         "final_pnl_per_spread": 123.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "SMH-2026-05-01",
@@ -1993,7 +2011,8 @@
         "final_pnl_per_spread": -740.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "ARKK-2026-05-01",
@@ -2092,7 +2111,8 @@
         "final_pnl_per_spread": 58.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "NVDA-2026-05-01",
@@ -2191,7 +2211,8 @@
         "final_pnl_per_spread": -304.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "AVGO-2026-05-01",
@@ -2290,7 +2311,8 @@
         "final_pnl_per_spread": 215.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "TSM-2026-05-01",
@@ -2389,7 +2411,8 @@
         "final_pnl_per_spread": 115.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "AMD-2026-05-01",
@@ -2483,7 +2506,8 @@
         "final_pnl_per_spread": -570.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "AAPL-2026-05-01",
@@ -2577,7 +2601,8 @@
         "final_pnl_per_spread": -539.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "MSFT-2026-05-01",
@@ -2671,7 +2696,8 @@
         "final_pnl_per_spread": 232.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "GOOGL-2026-05-01",
@@ -2765,7 +2791,8 @@
         "final_pnl_per_spread": 124.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "META-2026-05-01",
@@ -2859,7 +2886,8 @@
         "final_pnl_per_spread": 358.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "AMZN-2026-05-01",
@@ -2953,7 +2981,8 @@
         "final_pnl_per_spread": 134.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "TSLA-2026-05-01",
@@ -3047,7 +3076,8 @@
         "final_pnl_per_spread": -661.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "NFLX-2026-05-01",
@@ -3141,7 +3171,8 @@
         "final_pnl_per_spread": -146.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "COIN-2026-05-01",
@@ -3235,7 +3266,8 @@
         "final_pnl_per_spread": 293.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "SPY-2026-05-05",
@@ -3329,7 +3361,8 @@
         "final_pnl_per_spread": -112.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "QQQ-2026-05-05",
@@ -3423,7 +3456,8 @@
         "final_pnl_per_spread": -369.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "IWM-2026-05-05",
@@ -3517,7 +3551,8 @@
         "final_pnl_per_spread": 104.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "NVDA-2026-05-05",
@@ -3611,7 +3646,8 @@
         "final_pnl_per_spread": -319.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "GOOGL-2026-05-05",
@@ -3705,7 +3741,8 @@
         "final_pnl_per_spread": 203.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "SPY-2026-05-06",
@@ -3794,7 +3831,8 @@
         "final_pnl_per_spread": 240.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "QQQ-2026-05-06",
@@ -3883,7 +3921,8 @@
         "final_pnl_per_spread": -153.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "IWM-2026-05-06",
@@ -3972,7 +4011,8 @@
         "final_pnl_per_spread": 186.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "NVDA-2026-05-06",
@@ -4061,7 +4101,8 @@
         "final_pnl_per_spread": -220.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "SPY-2026-05-07",
@@ -4140,7 +4181,8 @@
         "final_pnl_per_spread": 247.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "QQQ-2026-05-07",
@@ -4219,7 +4261,8 @@
         "final_pnl_per_spread": 252.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "IWM-2026-05-07",
@@ -4298,7 +4341,8 @@
         "final_pnl_per_spread": 130.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "NVDA-2026-05-07",
@@ -4377,7 +4421,8 @@
         "final_pnl_per_spread": 295.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "SPY-2026-05-08",
@@ -4461,7 +4506,8 @@
         "final_pnl_per_spread": 262.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "QQQ-2026-05-08",
@@ -4545,7 +4591,8 @@
         "final_pnl_per_spread": 344.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "IWM-2026-05-08",
@@ -4629,7 +4676,8 @@
         "final_pnl_per_spread": 127.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "NVDA-2026-05-08",
@@ -4713,7 +4761,8 @@
         "final_pnl_per_spread": 295.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "NVDA-2026-05-11",
@@ -4797,7 +4846,8 @@
         "final_pnl_per_spread": 191.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "AVGO-2026-05-11",
@@ -4881,7 +4931,8 @@
         "final_pnl_per_spread": 499.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "AAPL-2026-05-11",
@@ -4960,7 +5011,8 @@
         "final_pnl_per_spread": -494.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "MSFT-2026-05-11",
@@ -5039,7 +5091,8 @@
         "final_pnl_per_spread": 358.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "GOOGL-2026-05-11",
@@ -5118,7 +5171,8 @@
         "final_pnl_per_spread": 176.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "META-2026-05-11",
@@ -5197,7 +5251,8 @@
         "final_pnl_per_spread": 404.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "AMZN-2026-05-11",
@@ -5276,7 +5331,8 @@
         "final_pnl_per_spread": 2.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "TSLA-2026-05-11",
@@ -5355,7 +5411,8 @@
         "final_pnl_per_spread": 192.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "SPY-2026-05-12",
@@ -5424,7 +5481,8 @@
         "final_pnl_per_spread": -346.88
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "QQQ-2026-05-12",
@@ -5493,7 +5551,8 @@
         "final_pnl_per_spread": -228.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "IWM-2026-05-12",
@@ -5562,7 +5621,8 @@
         "final_pnl_per_spread": -213.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "NVDA-2026-05-12",
@@ -5631,7 +5691,8 @@
         "final_pnl_per_spread": 230.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "QQQ-2026-05-14",
@@ -5705,7 +5766,8 @@
         "final_pnl_per_spread": 322.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "AMD-2026-05-14",
@@ -5779,7 +5841,8 @@
         "final_pnl_per_spread": -910.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "TSM-2026-05-14",
@@ -5853,7 +5916,8 @@
         "final_pnl_per_spread": 305.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "NFLX-2026-05-14",
@@ -5927,7 +5991,8 @@
         "final_pnl_per_spread": 59.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "SPY-2026-05-15",
@@ -6001,7 +6066,8 @@
         "final_pnl_per_spread": -193.5
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "IWM-2026-05-15",
@@ -6075,7 +6141,8 @@
         "final_pnl_per_spread": -174.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "NVDA-2026-05-15",
@@ -6149,7 +6216,8 @@
         "final_pnl_per_spread": 154.5
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "AMD-2026-05-15",
@@ -6223,7 +6291,8 @@
         "final_pnl_per_spread": -915.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "AAPL-2026-05-15",
@@ -6297,7 +6366,8 @@
         "final_pnl_per_spread": 6.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "MSFT-2026-05-15",
@@ -6371,7 +6441,8 @@
         "final_pnl_per_spread": 60.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "META-2026-05-15",
@@ -6445,7 +6516,8 @@
         "final_pnl_per_spread": 275.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "TSLA-2026-05-15",
@@ -6519,7 +6591,8 @@
         "final_pnl_per_spread": 365.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "NFLX-2026-05-15",
@@ -6593,7 +6666,8 @@
         "final_pnl_per_spread": 54.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "MSTR-2026-05-15",
@@ -6667,7 +6741,8 @@
         "final_pnl_per_spread": -545.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "MARA-2026-05-15",
@@ -6741,7 +6816,8 @@
         "final_pnl_per_spread": -13.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "SPY-2026-05-21",
@@ -6830,7 +6906,8 @@
         "final_pnl_per_spread": -178.5
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "QQQ-2026-05-21",
@@ -6919,7 +6996,8 @@
         "final_pnl_per_spread": -538.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "IWM-2026-05-21",
@@ -7008,7 +7086,8 @@
         "final_pnl_per_spread": -312.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "SMH-2026-05-21",
@@ -7097,7 +7176,8 @@
         "final_pnl_per_spread": -635.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "NVDA-2026-05-21",
@@ -7186,7 +7266,8 @@
         "final_pnl_per_spread": 197.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "AMD-2026-05-21",
@@ -7275,7 +7356,8 @@
         "final_pnl_per_spread": -1015.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "NFLX-2026-05-21",
@@ -7364,7 +7446,8 @@
         "final_pnl_per_spread": -129.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "MSTR-2026-05-21",
@@ -7453,7 +7536,8 @@
         "final_pnl_per_spread": -581.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "MARA-2026-05-21",
@@ -7542,7 +7626,8 @@
         "final_pnl_per_spread": 17.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "TSM-2026-05-21",
@@ -7621,7 +7706,8 @@
         "final_pnl_per_spread": -709.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "SPY-2026-05-22",
@@ -7700,7 +7786,8 @@
         "final_pnl_per_spread": 181.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "QQQ-2026-05-22",
@@ -7779,7 +7866,8 @@
         "final_pnl_per_spread": 274.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "IWM-2026-05-22",
@@ -7858,7 +7946,8 @@
         "final_pnl_per_spread": 111.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "NVDA-2026-05-22",
@@ -7937,7 +8026,8 @@
         "final_pnl_per_spread": 170.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "AAPL-2026-05-22",
@@ -8016,7 +8106,8 @@
         "final_pnl_per_spread": 154.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "META-2026-05-22",
@@ -8095,7 +8186,8 @@
         "final_pnl_per_spread": 263.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "AMZN-2026-05-22",
@@ -8174,7 +8266,8 @@
         "final_pnl_per_spread": -340.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "NFLX-2026-05-22",
@@ -8253,7 +8346,8 @@
         "final_pnl_per_spread": -142.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "MARA-2026-05-22",
@@ -8332,7 +8426,8 @@
         "final_pnl_per_spread": 15.0
       },
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "NVDA-2026-05-26",
@@ -8397,11 +8492,17 @@
           "date": "2026-06-05",
           "underlying_close": 211.23,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 207.77,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "AVGO-2026-05-26",
@@ -8466,11 +8567,17 @@
           "date": "2026-06-05",
           "underlying_close": 399.395,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 395.149,
+          "breached_short": true
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "AAPL-2026-05-26",
@@ -8535,11 +8642,17 @@
           "date": "2026-06-05",
           "underlying_close": 313.45,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 311.865,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "MSFT-2026-05-26",
@@ -8604,11 +8717,17 @@
           "date": "2026-06-05",
           "underlying_close": 422.82,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 412.6,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "GOOGL-2026-05-26",
@@ -8673,11 +8792,17 @@
           "date": "2026-06-05",
           "underlying_close": 370.31,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 361.5,
+          "breached_short": true
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "META-2026-05-26",
@@ -8742,11 +8867,17 @@
           "date": "2026-06-05",
           "underlying_close": 618.3701,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 588.17,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "AMZN-2026-05-26",
@@ -8811,11 +8942,17 @@
           "date": "2026-06-05",
           "underlying_close": 253.98,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 246.91,
+          "breached_short": true
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "TSLA-2026-05-26",
@@ -8880,11 +9017,17 @@
           "date": "2026-06-05",
           "underlying_close": 406.82,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 402.7,
+          "breached_short": true
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "NVDA-2026-05-27",
@@ -8944,11 +9087,17 @@
           "date": "2026-06-05",
           "underlying_close": 211.23,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 207.77,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "META-2026-05-27",
@@ -9008,11 +9157,17 @@
           "date": "2026-06-05",
           "underlying_close": 618.74,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 588.17,
+          "breached_short": true
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "AMZN-2026-05-27",
@@ -9072,11 +9227,17 @@
           "date": "2026-06-05",
           "underlying_close": 254.02,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 246.91,
+          "breached_short": true
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "NFLX-2026-05-27",
@@ -9136,11 +9297,17 @@
           "date": "2026-06-05",
           "underlying_close": 81.895,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 82.6928,
+          "breached_short": true
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "MSTR-2026-05-27",
@@ -9200,11 +9367,17 @@
           "date": "2026-06-05",
           "underlying_close": 117.87,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 126.01,
+          "breached_short": true
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "MARA-2026-05-27",
@@ -9264,11 +9437,17 @@
           "date": "2026-06-05",
           "underlying_close": 12.51,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 12.89,
+          "breached_short": true
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "NVDA-2026-05-28",
@@ -9323,11 +9502,17 @@
           "date": "2026-06-05",
           "underlying_close": 211.245,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 207.77,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "NFLX-2026-05-28",
@@ -9382,11 +9567,17 @@
           "date": "2026-06-05",
           "underlying_close": 81.895,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 82.6928,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "MSTR-2026-05-28",
@@ -9441,11 +9632,17 @@
           "date": "2026-06-05",
           "underlying_close": 117.89,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 126.01,
+          "breached_short": true
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "MARA-2026-05-28",
@@ -9500,11 +9697,17 @@
           "date": "2026-06-05",
           "underlying_close": 12.51,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 12.89,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "SPY-2026-05-29",
@@ -9554,11 +9757,17 @@
           "date": "2026-06-05",
           "underlying_close": 749.2064,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 742.43,
+          "breached_short": true
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "IWM-2026-05-29",
@@ -9608,11 +9817,17 @@
           "date": "2026-06-05",
           "underlying_close": 286.45,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 285.29,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "NVDA-2026-05-29",
@@ -9662,11 +9877,17 @@
           "date": "2026-06-05",
           "underlying_close": 211.305,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 207.77,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "AVGO-2026-05-29",
@@ -9716,11 +9937,17 @@
           "date": "2026-06-05",
           "underlying_close": 399.56,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 395.149,
+          "breached_short": true
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "AAPL-2026-05-29",
@@ -9770,11 +9997,17 @@
           "date": "2026-06-05",
           "underlying_close": 313.45,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 311.865,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "MSFT-2026-05-29",
@@ -9824,11 +10057,17 @@
           "date": "2026-06-05",
           "underlying_close": 422.82,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 412.6,
+          "breached_short": true
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "GOOGL-2026-05-29",
@@ -9878,11 +10117,17 @@
           "date": "2026-06-05",
           "underlying_close": 370.385,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 361.5,
+          "breached_short": true
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "META-2026-05-29",
@@ -9932,11 +10177,17 @@
           "date": "2026-06-05",
           "underlying_close": 618.74,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 588.17,
+          "breached_short": true
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "AMZN-2026-05-29",
@@ -9986,11 +10237,17 @@
           "date": "2026-06-05",
           "underlying_close": 253.95,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 246.91,
+          "breached_short": true
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "TSLA-2026-05-29",
@@ -10040,11 +10297,17 @@
           "date": "2026-06-05",
           "underlying_close": 406.96,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 402.7,
+          "breached_short": true
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "NFLX-2026-05-29",
@@ -10094,11 +10357,17 @@
           "date": "2026-06-05",
           "underlying_close": 81.895,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 82.6928,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "MSTR-2026-05-29",
@@ -10148,11 +10417,17 @@
           "date": "2026-06-05",
           "underlying_close": 117.89,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 126.01,
+          "breached_short": true
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "MARA-2026-05-29",
@@ -10202,11 +10477,17 @@
           "date": "2026-06-05",
           "underlying_close": 12.51,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 12.89,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "IWM-2026-06-01",
@@ -10251,11 +10532,17 @@
           "date": "2026-06-05",
           "underlying_close": 286.46,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 285.29,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "NVDA-2026-06-01",
@@ -10300,11 +10587,17 @@
           "date": "2026-06-05",
           "underlying_close": 211.23,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 207.77,
+          "breached_short": true
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "AVGO-2026-06-01",
@@ -10349,11 +10642,17 @@
           "date": "2026-06-05",
           "underlying_close": 399.4,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 395.149,
+          "breached_short": true
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "AAPL-2026-06-01",
@@ -10398,11 +10697,17 @@
           "date": "2026-06-05",
           "underlying_close": 313.485,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 311.865,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "MSFT-2026-06-01",
@@ -10447,11 +10752,17 @@
           "date": "2026-06-05",
           "underlying_close": 423.03,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 412.6,
+          "breached_short": true
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "GOOGL-2026-06-01",
@@ -10496,11 +10807,17 @@
           "date": "2026-06-05",
           "underlying_close": 370.3078,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 361.5,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "META-2026-06-01",
@@ -10545,11 +10862,17 @@
           "date": "2026-06-05",
           "underlying_close": 618.74,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 588.17,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "AMZN-2026-06-01",
@@ -10594,11 +10917,17 @@
           "date": "2026-06-05",
           "underlying_close": 253.95,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 246.91,
+          "breached_short": true
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "TSLA-2026-06-01",
@@ -10643,11 +10972,17 @@
           "date": "2026-06-05",
           "underlying_close": 407.12,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 402.7,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.0,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "SPY-2026-06-02",
@@ -10687,11 +11022,17 @@
           "date": "2026-06-05",
           "underlying_close": 749.2064,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 742.43,
+          "breached_short": true
         }
       ],
       "settlement": null,
       "atr60_at_open": 8.4027,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "QQQ-2026-06-02",
@@ -10731,11 +11072,17 @@
           "date": "2026-06-05",
           "underlying_close": 725.02,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 717.48,
+          "breached_short": true
         }
       ],
       "settlement": null,
       "atr60_at_open": 10.5709,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "IWM-2026-06-02",
@@ -10775,11 +11122,17 @@
           "date": "2026-06-05",
           "underlying_close": 286.51,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 285.29,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 5.1719,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "SMH-2026-06-02",
@@ -10819,11 +11172,17 @@
           "date": "2026-06-05",
           "underlying_close": 596.48,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 595.585,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 15.1778,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "NFLX-2026-06-02",
@@ -10863,11 +11222,17 @@
           "date": "2026-06-05",
           "underlying_close": 81.89,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 82.6928,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 2.5977,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "COIN-2026-06-02",
@@ -10907,11 +11272,17 @@
           "date": "2026-06-05",
           "underlying_close": 152.33,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 159.71,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 12.2372,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "MSTR-2026-06-02",
@@ -10951,11 +11322,17 @@
           "date": "2026-06-05",
           "underlying_close": 117.96,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 126.01,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 9.5379,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "MARA-2026-06-02",
@@ -10995,11 +11372,17 @@
           "date": "2026-06-05",
           "underlying_close": 12.51,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 12.89,
+          "breached_short": true
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.8287,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "SPY-2026-06-03",
@@ -11034,11 +11417,17 @@
           "date": "2026-06-05",
           "underlying_close": 749.32,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 742.43,
+          "breached_short": true
         }
       ],
       "settlement": null,
       "atr60_at_open": 8.4027,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "QQQ-2026-06-03",
@@ -11073,11 +11462,17 @@
           "date": "2026-06-05",
           "underlying_close": 724.99,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 717.48,
+          "breached_short": true
         }
       ],
       "settlement": null,
       "atr60_at_open": 10.5709,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "IWM-2026-06-03",
@@ -11112,11 +11507,17 @@
           "date": "2026-06-05",
           "underlying_close": 286.48,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 285.29,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 5.1719,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "TSM-2026-06-03",
@@ -11151,11 +11552,17 @@
           "date": "2026-06-05",
           "underlying_close": 439.46,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 428.305,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 13.7849,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "AAPL-2026-06-03",
@@ -11190,11 +11597,17 @@
           "date": "2026-06-05",
           "underlying_close": 308.03,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 311.865,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 5.7647,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "META-2026-06-03",
@@ -11229,11 +11642,17 @@
           "date": "2026-06-05",
           "underlying_close": 611.535,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 588.17,
+          "breached_short": true
         }
       ],
       "settlement": null,
       "atr60_at_open": 18.2497,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "AMZN-2026-06-03",
@@ -11268,11 +11687,17 @@
           "date": "2026-06-05",
           "underlying_close": 264.38,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 246.91,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 6.5225,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "NFLX-2026-06-03",
@@ -11307,11 +11732,17 @@
           "date": "2026-06-05",
           "underlying_close": 85.4698,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 82.6928,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 2.5977,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "COIN-2026-06-03",
@@ -11346,11 +11777,17 @@
           "date": "2026-06-05",
           "underlying_close": 178.17,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 159.71,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 12.2372,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "MSTR-2026-06-03",
@@ -11385,11 +11822,17 @@
           "date": "2026-06-05",
           "underlying_close": 149.725,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 126.01,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 9.5379,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "MARA-2026-06-03",
@@ -11424,11 +11867,17 @@
           "date": "2026-06-05",
           "underlying_close": 14.69,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 12.89,
+          "breached_short": true
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.8287,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "SPY-2026-06-04",
@@ -11458,11 +11907,17 @@
           "date": "2026-06-05",
           "underlying_close": 755.85,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 742.43,
+          "breached_short": true
         }
       ],
       "settlement": null,
       "atr60_at_open": 7.6049,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "QQQ-2026-06-04",
@@ -11492,11 +11947,17 @@
           "date": "2026-06-05",
           "underlying_close": 738.02,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 717.48,
+          "breached_short": true
         }
       ],
       "settlement": null,
       "atr60_at_open": 9.9091,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "IWM-2026-06-04",
@@ -11526,11 +11987,17 @@
           "date": "2026-06-05",
           "underlying_close": 287.0,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 285.29,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 4.767,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "NVDA-2026-06-04",
@@ -11560,11 +12027,17 @@
           "date": "2026-06-05",
           "underlying_close": 221.3401,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 207.77,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 6.405,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "AMD-2026-06-04",
@@ -11594,11 +12067,17 @@
           "date": "2026-06-05",
           "underlying_close": 501.3074,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 487.17,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 17.1182,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "AVGO-2026-06-04",
@@ -11628,11 +12107,17 @@
           "date": "2026-06-05",
           "underlying_close": 451.255,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 395.149,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 14.2041,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "TSM-2026-06-04",
@@ -11662,11 +12147,17 @@
           "date": "2026-06-05",
           "underlying_close": 439.46,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 428.305,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 12.7153,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "AAPL-2026-06-04",
@@ -11696,11 +12187,17 @@
           "date": "2026-06-05",
           "underlying_close": 308.03,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 311.865,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 5.6542,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "MSFT-2026-06-04",
@@ -11730,11 +12227,17 @@
           "date": "2026-06-05",
           "underlying_close": 461.475,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 412.6,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 10.5358,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "GOOGL-2026-06-04",
@@ -11764,11 +12267,17 @@
           "date": "2026-06-05",
           "underlying_close": 375.87,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 361.5,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 8.6797,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "META-2026-06-04",
@@ -11798,11 +12307,17 @@
           "date": "2026-06-05",
           "underlying_close": 611.535,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 588.17,
+          "breached_short": true
         }
       ],
       "settlement": null,
       "atr60_at_open": 18.214,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "AMZN-2026-06-04",
@@ -11832,11 +12347,17 @@
           "date": "2026-06-05",
           "underlying_close": 264.38,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 246.91,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 6.4516,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "TSLA-2026-06-04",
@@ -11866,11 +12387,17 @@
           "date": "2026-06-05",
           "underlying_close": 421.613,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 402.7,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 15.7348,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "NFLX-2026-06-04",
@@ -11900,11 +12427,17 @@
           "date": "2026-06-05",
           "underlying_close": 85.4698,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 82.6928,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 2.7019,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "COIN-2026-06-04",
@@ -11934,11 +12467,17 @@
           "date": "2026-06-05",
           "underlying_close": 178.17,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 159.71,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 13.0338,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "MSTR-2026-06-04",
@@ -11968,11 +12507,17 @@
           "date": "2026-06-05",
           "underlying_close": 149.725,
           "breached_short": true
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 126.01,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 11.0639,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "MARA-2026-06-04",
@@ -12002,11 +12547,17 @@
           "date": "2026-06-05",
           "underlying_close": 14.69,
           "breached_short": false
+        },
+        {
+          "date": "2026-06-08",
+          "underlying_close": 12.89,
+          "breached_short": false
         }
       ],
       "settlement": null,
       "atr60_at_open": 0.89,
-      "analytics_at_open": null
+      "analytics_at_open": null,
+      "quote_audit": null
     },
     {
       "id": "SPY-2026-06-05",
@@ -12031,7 +12582,13 @@
       "break_even_upper": 767.87,
       "break_even_lower": 744.13,
       "status": "open",
-      "daily_marks": [],
+      "daily_marks": [
+        {
+          "date": "2026-06-08",
+          "underlying_close": 742.43,
+          "breached_short": true
+        }
+      ],
       "settlement": null,
       "atr60_at_open": 7.6148,
       "analytics_at_open": {
@@ -12042,7 +12599,8 @@
         "short_call_hv": 9.73,
         "vol_premium": 1.28,
         "iv_gt_hv": true
-      }
+      },
+      "quote_audit": null
     },
     {
       "id": "QQQ-2026-06-05",
@@ -12067,7 +12625,13 @@
       "break_even_upper": 742.69,
       "break_even_lower": 708.31,
       "status": "open",
-      "daily_marks": [],
+      "daily_marks": [
+        {
+          "date": "2026-06-08",
+          "underlying_close": 717.48,
+          "breached_short": false
+        }
+      ],
       "settlement": null,
       "atr60_at_open": 9.916,
       "analytics_at_open": {
@@ -12078,7 +12642,8 @@
         "short_call_hv": 16.46,
         "vol_premium": 4.55,
         "iv_gt_hv": true
-      }
+      },
+      "quote_audit": null
     },
     {
       "id": "IWM-2026-06-05",
@@ -12103,7 +12668,13 @@
       "break_even_upper": 295.36,
       "break_even_lower": 278.64,
       "status": "open",
-      "daily_marks": [],
+      "daily_marks": [
+        {
+          "date": "2026-06-08",
+          "underlying_close": 285.29,
+          "breached_short": false
+        }
+      ],
       "settlement": null,
       "atr60_at_open": 4.7723,
       "analytics_at_open": {
@@ -12114,7 +12685,8 @@
         "short_call_hv": 19.49,
         "vol_premium": 0.99,
         "iv_gt_hv": true
-      }
+      },
+      "quote_audit": null
     },
     {
       "id": "SMH-2026-06-05",
@@ -12139,7 +12711,13 @@
       "break_even_upper": 628.65,
       "break_even_lower": 566.35,
       "status": "open",
-      "daily_marks": [],
+      "daily_marks": [
+        {
+          "date": "2026-06-08",
+          "underlying_close": 595.585,
+          "breached_short": false
+        }
+      ],
       "settlement": null,
       "atr60_at_open": 13.8368,
       "analytics_at_open": {
@@ -12150,7 +12728,8 @@
         "short_call_hv": 41.58,
         "vol_premium": 8.95,
         "iv_gt_hv": true
-      }
+      },
+      "quote_audit": null
     },
     {
       "id": "NVDA-2026-06-05",
@@ -12175,7 +12754,13 @@
       "break_even_upper": 224.06,
       "break_even_lower": 198.44,
       "status": "open",
-      "daily_marks": [],
+      "daily_marks": [
+        {
+          "date": "2026-06-08",
+          "underlying_close": 207.77,
+          "breached_short": false
+        }
+      ],
       "settlement": null,
       "atr60_at_open": 6.4232,
       "analytics_at_open": {
@@ -12186,7 +12771,8 @@
         "short_call_hv": 44.32,
         "vol_premium": -4.19,
         "iv_gt_hv": false
-      }
+      },
+      "quote_audit": null
     },
     {
       "id": "AMD-2026-06-05",
@@ -12211,7 +12797,13 @@
       "break_even_upper": 535.35,
       "break_even_lower": 444.65,
       "status": "open",
-      "daily_marks": [],
+      "daily_marks": [
+        {
+          "date": "2026-06-08",
+          "underlying_close": 487.17,
+          "breached_short": false
+        }
+      ],
       "settlement": null,
       "atr60_at_open": 17.1045,
       "analytics_at_open": {
@@ -12222,7 +12814,8 @@
         "short_call_hv": 88.43,
         "vol_premium": -18.99,
         "iv_gt_hv": false
-      }
+      },
+      "quote_audit": null
     },
     {
       "id": "AVGO-2026-06-05",
@@ -12247,7 +12840,13 @@
       "break_even_upper": 425.85,
       "break_even_lower": 371.65,
       "status": "open",
-      "daily_marks": [],
+      "daily_marks": [
+        {
+          "date": "2026-06-08",
+          "underlying_close": 395.149,
+          "breached_short": false
+        }
+      ],
       "settlement": null,
       "atr60_at_open": 14.2781,
       "analytics_at_open": {
@@ -12258,7 +12857,8 @@
         "short_call_hv": 57.33,
         "vol_premium": -3.07,
         "iv_gt_hv": false
-      }
+      },
+      "quote_audit": null
     },
     {
       "id": "TSM-2026-06-05",
@@ -12283,7 +12883,13 @@
       "break_even_upper": 451.9,
       "break_even_lower": 405.6,
       "status": "open",
-      "daily_marks": [],
+      "daily_marks": [
+        {
+          "date": "2026-06-08",
+          "underlying_close": 428.305,
+          "breached_short": false
+        }
+      ],
       "settlement": null,
       "atr60_at_open": 12.7154,
       "analytics_at_open": {
@@ -12294,7 +12900,8 @@
         "short_call_hv": 39.48,
         "vol_premium": 5.25,
         "iv_gt_hv": true
-      }
+      },
+      "quote_audit": null
     },
     {
       "id": "AAPL-2026-06-05",
@@ -12319,7 +12926,13 @@
       "break_even_upper": 324.87,
       "break_even_lower": 302.63,
       "status": "open",
-      "daily_marks": [],
+      "daily_marks": [
+        {
+          "date": "2026-06-08",
+          "underlying_close": 311.865,
+          "breached_short": false
+        }
+      ],
       "settlement": null,
       "atr60_at_open": 5.6571,
       "analytics_at_open": {
@@ -12330,7 +12943,8 @@
         "short_call_hv": 19.59,
         "vol_premium": 6.36,
         "iv_gt_hv": true
-      }
+      },
+      "quote_audit": null
     },
     {
       "id": "MSFT-2026-06-05",
@@ -12355,7 +12969,13 @@
       "break_even_upper": 442.55,
       "break_even_lower": 402.45,
       "status": "open",
-      "daily_marks": [],
+      "daily_marks": [
+        {
+          "date": "2026-06-08",
+          "underlying_close": 412.6,
+          "breached_short": false
+        }
+      ],
       "settlement": null,
       "atr60_at_open": 10.4977,
       "analytics_at_open": {
@@ -12366,7 +12986,8 @@
         "short_call_hv": 32.4,
         "vol_premium": -2.47,
         "iv_gt_hv": false
-      }
+      },
+      "quote_audit": null
     },
     {
       "id": "GOOGL-2026-06-05",
@@ -12391,7 +13012,13 @@
       "break_even_upper": 386.55,
       "break_even_lower": 353.45,
       "status": "open",
-      "daily_marks": [],
+      "daily_marks": [
+        {
+          "date": "2026-06-08",
+          "underlying_close": 361.5,
+          "breached_short": false
+        }
+      ],
       "settlement": null,
       "atr60_at_open": 8.6885,
       "analytics_at_open": {
@@ -12402,7 +13029,8 @@
         "short_call_hv": 38.77,
         "vol_premium": -6.07,
         "iv_gt_hv": false
-      }
+      },
+      "quote_audit": null
     },
     {
       "id": "META-2026-06-05",
@@ -12427,7 +13055,13 @@
       "break_even_upper": 648.45,
       "break_even_lower": 591.55,
       "status": "open",
-      "daily_marks": [],
+      "daily_marks": [
+        {
+          "date": "2026-06-08",
+          "underlying_close": 588.17,
+          "breached_short": true
+        }
+      ],
       "settlement": null,
       "atr60_at_open": 18.1685,
       "analytics_at_open": {
@@ -12438,7 +13072,8 @@
         "short_call_hv": 37.56,
         "vol_premium": -3.36,
         "iv_gt_hv": false
-      }
+      },
+      "quote_audit": null
     },
     {
       "id": "AMZN-2026-06-05",
@@ -12463,7 +13098,13 @@
       "break_even_upper": 266.74,
       "break_even_lower": 240.76,
       "status": "open",
-      "daily_marks": [],
+      "daily_marks": [
+        {
+          "date": "2026-06-08",
+          "underlying_close": 246.91,
+          "breached_short": false
+        }
+      ],
       "settlement": null,
       "atr60_at_open": 6.4347,
       "analytics_at_open": {
@@ -12474,7 +13115,8 @@
         "short_call_hv": 25.34,
         "vol_premium": 5.39,
         "iv_gt_hv": true
-      }
+      },
+      "quote_audit": null
     },
     {
       "id": "TSLA-2026-06-05",
@@ -12499,7 +13141,13 @@
       "break_even_upper": 432.95,
       "break_even_lower": 382.05,
       "status": "open",
-      "daily_marks": [],
+      "daily_marks": [
+        {
+          "date": "2026-06-08",
+          "underlying_close": 402.7,
+          "breached_short": false
+        }
+      ],
       "settlement": null,
       "atr60_at_open": 15.6995,
       "analytics_at_open": {
@@ -12510,7 +13158,8 @@
         "short_call_hv": 37.33,
         "vol_premium": 13.46,
         "iv_gt_hv": true
-      }
+      },
+      "quote_audit": null
     },
     {
       "id": "NFLX-2026-06-05",
@@ -12535,7 +13184,13 @@
       "break_even_upper": 85.61,
       "break_even_lower": 77.39,
       "status": "open",
-      "daily_marks": [],
+      "daily_marks": [
+        {
+          "date": "2026-06-08",
+          "underlying_close": 82.6928,
+          "breached_short": false
+        }
+      ],
       "settlement": null,
       "atr60_at_open": 2.7002,
       "analytics_at_open": {
@@ -12546,7 +13201,8 @@
         "short_call_hv": 22.68,
         "vol_premium": 8.62,
         "iv_gt_hv": true
-      }
+      },
+      "quote_audit": null
     },
     {
       "id": "COIN-2026-06-05",
@@ -12571,7 +13227,13 @@
       "break_even_upper": 172.08,
       "break_even_lower": 132.92,
       "status": "open",
-      "daily_marks": [],
+      "daily_marks": [
+        {
+          "date": "2026-06-08",
+          "underlying_close": 159.71,
+          "breached_short": false
+        }
+      ],
       "settlement": null,
       "atr60_at_open": 13.0165,
       "analytics_at_open": {
@@ -12582,7 +13244,8 @@
         "short_call_hv": 65.76,
         "vol_premium": 9.47,
         "iv_gt_hv": true
-      }
+      },
+      "quote_audit": null
     },
     {
       "id": "MSTR-2026-06-05",
@@ -12607,7 +13270,13 @@
       "break_even_upper": 135.63,
       "break_even_lower": 100.37,
       "status": "open",
-      "daily_marks": [],
+      "daily_marks": [
+        {
+          "date": "2026-06-08",
+          "underlying_close": 126.01,
+          "breached_short": false
+        }
+      ],
       "settlement": null,
       "atr60_at_open": 11.0307,
       "analytics_at_open": {
@@ -12618,7 +13287,8 @@
         "short_call_hv": 70.45,
         "vol_premium": 17.86,
         "iv_gt_hv": true
-      }
+      },
+      "quote_audit": null
     },
     {
       "id": "MARA-2026-06-05",
@@ -12643,7 +13313,13 @@
       "break_even_upper": 14.15,
       "break_even_lower": 10.85,
       "status": "open",
-      "daily_marks": [],
+      "daily_marks": [
+        {
+          "date": "2026-06-08",
+          "underlying_close": 12.89,
+          "breached_short": false
+        }
+      ],
       "settlement": null,
       "atr60_at_open": 0.8903,
       "analytics_at_open": {
@@ -12654,6 +13330,2359 @@
         "short_call_hv": 69.03,
         "vol_premium": 16.76,
         "iv_gt_hv": true
+      },
+      "quote_audit": null
+    },
+    {
+      "id": "SPY-2026-06-08",
+      "ticker": "SPY",
+      "sector": "Broad ETF",
+      "start_date": "2026-06-08",
+      "target_exit_date": "2026-06-22",
+      "expiry_used": "2026-06-22",
+      "underlying_at_open": 742.46,
+      "atr14_at_open": 6.5279,
+      "sma20_at_open": 741.0955,
+      "vol_percentile_at_open": 25,
+      "trend_bias": "neutral",
+      "short_call_strike": 750.0,
+      "long_call_strike": 755.0,
+      "short_put_strike": 735.0,
+      "long_put_strike": 730.0,
+      "net_credit_at_open": 3.14,
+      "wing_width": 5.0,
+      "max_profit": 3.14,
+      "max_loss": 1.86,
+      "break_even_upper": 753.14,
+      "break_even_lower": 731.86,
+      "status": "open",
+      "daily_marks": [],
+      "settlement": null,
+      "atr60_at_open": 7.5953,
+      "analytics_at_open": {
+        "short_call_exercise_prob": 36.12,
+        "short_put_exercise_prob": 37.64,
+        "implied_pop": 26.24,
+        "short_call_iv": 13.38,
+        "short_call_hv": 12.19,
+        "vol_premium": 1.19,
+        "iv_gt_hv": true
+      },
+      "quote_audit": {
+        "legs": {
+          "short_call": {
+            "bid_price": 4.82,
+            "ask_price": 4.88,
+            "bid_vol": 46.0,
+            "ask_vol": 58.0,
+            "last_price": 4.95,
+            "prev_close_price": 5.78,
+            "price_spread": 0.01,
+            "high_price": 5.78,
+            "low_price": 4.47,
+            "open_price": 5.78,
+            "turnover": 61719.0,
+            "volume": 118.0,
+            "option_strike_price": 750.0,
+            "option_open_interest": 0.0,
+            "option_premium": 1.682,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 12.808,
+            "option_delta": 0.376817072,
+            "option_gamma": 0.020209145,
+            "option_vega": 0.556996052,
+            "option_theta": -0.282044534,
+            "option_rho": 0.107310071,
+            "option_type": "CALL",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:27:31",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 4.82,
+            "raw_ask": 4.88,
+            "bid": 4.82,
+            "ask": 4.88,
+            "collapsed": false
+          },
+          "long_call": {
+            "bid_price": 2.95,
+            "ask_price": 3.0,
+            "bid_vol": 51.0,
+            "ask_vol": 66.0,
+            "last_price": 2.73,
+            "prev_close_price": 3.62,
+            "price_spread": 0.01,
+            "high_price": 3.7,
+            "low_price": 2.73,
+            "open_price": 3.62,
+            "turnover": 62863.0,
+            "volume": 207.0,
+            "option_strike_price": 755.0,
+            "option_open_interest": 0.0,
+            "option_premium": 2.056,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 12.115,
+            "option_delta": 0.27064751,
+            "option_gamma": 0.018623583,
+            "option_vega": 0.485119783,
+            "option_theta": -0.228276368,
+            "option_rho": 0.077299012,
+            "option_type": "CALL",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:15:54",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 2.95,
+            "raw_ask": 3.0,
+            "bid": 2.95,
+            "ask": 3.0,
+            "collapsed": false
+          },
+          "short_put": {
+            "bid_price": 6.46,
+            "ask_price": 6.49,
+            "bid_vol": 106.0,
+            "ask_vol": 15.0,
+            "last_price": 6.64,
+            "prev_close_price": 6.76,
+            "price_spread": 0.01,
+            "high_price": 7.37,
+            "low_price": 6.22,
+            "open_price": 6.76,
+            "turnover": 147314.0,
+            "volume": 216.0,
+            "option_strike_price": 735.0,
+            "option_open_interest": 0.0,
+            "option_premium": 1.899,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 17.579,
+            "option_delta": -0.360745328,
+            "option_gamma": 0.014594193,
+            "option_vega": 0.548339682,
+            "option_theta": -0.319825451,
+            "option_rho": -0.094095635,
+            "option_type": "PUT",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:24:32",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 6.46,
+            "raw_ask": 6.49,
+            "bid": 6.46,
+            "ask": 6.49,
+            "collapsed": false
+          },
+          "long_put": {
+            "bid_price": 5.1,
+            "ask_price": 5.14,
+            "bid_vol": 180.0,
+            "ask_vol": 202.0,
+            "last_price": 5.08,
+            "prev_close_price": 4.73,
+            "price_spread": 0.01,
+            "high_price": 5.81,
+            "low_price": 4.66,
+            "open_price": 4.73,
+            "turnover": 183473.0,
+            "volume": 345.0,
+            "option_strike_price": 730.0,
+            "option_open_interest": 0.0,
+            "option_premium": 2.362,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 18.291,
+            "option_delta": -0.296770588,
+            "option_gamma": 0.012938044,
+            "option_vega": 0.506829589,
+            "option_theta": -0.310067057,
+            "option_rho": -0.078223634,
+            "option_type": "PUT",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:25:59",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 5.1,
+            "raw_ask": 5.14,
+            "bid": 5.1,
+            "ask": 5.14,
+            "collapsed": false
+          }
+        },
+        "net_credit_published": 3.14,
+        "net_credit_conservative": 3.14,
+        "credit_deviation": 0.0,
+        "any_collapsed": false
+      }
+    },
+    {
+      "id": "QQQ-2026-06-08",
+      "ticker": "QQQ",
+      "sector": "Broad ETF",
+      "start_date": "2026-06-08",
+      "target_exit_date": "2026-06-22",
+      "expiry_used": "2026-06-22",
+      "underlying_at_open": 717.51,
+      "atr14_at_open": 9.9062,
+      "sma20_at_open": 712.233,
+      "vol_percentile_at_open": 53,
+      "trend_bias": "bullish",
+      "short_call_strike": 730.0,
+      "long_call_strike": 735.0,
+      "short_put_strike": 705.0,
+      "long_put_strike": 700.0,
+      "net_credit_at_open": 3.1,
+      "wing_width": 5.0,
+      "max_profit": 3.1,
+      "max_loss": 1.9,
+      "break_even_upper": 733.1,
+      "break_even_lower": 701.9,
+      "status": "open",
+      "daily_marks": [],
+      "settlement": null,
+      "atr60_at_open": 9.8941,
+      "analytics_at_open": {
+        "short_call_exercise_prob": 35.22,
+        "short_put_exercise_prob": 36.42,
+        "implied_pop": 28.36,
+        "short_call_iv": 22.04,
+        "short_call_hv": 21.33,
+        "vol_premium": 0.71,
+        "iv_gt_hv": true
+      },
+      "quote_audit": {
+        "legs": {
+          "short_call": {
+            "bid_price": 7.68,
+            "ask_price": 7.76,
+            "bid_vol": 30.0,
+            "ask_vol": 4.0,
+            "last_price": 7.75,
+            "prev_close_price": 8.4,
+            "price_spread": 0.01,
+            "high_price": 8.4,
+            "low_price": 6.57,
+            "open_price": 8.4,
+            "turnover": 34683.0,
+            "volume": 45.0,
+            "option_strike_price": 730.0,
+            "option_open_interest": 0.0,
+            "option_premium": 2.82,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 22.426,
+            "option_delta": 0.364924672,
+            "option_gamma": 0.011830725,
+            "option_vega": 0.532349254,
+            "option_theta": -0.451118388,
+            "option_rho": 0.099084404,
+            "option_type": "CALL",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:27:28",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 7.68,
+            "raw_ask": 7.76,
+            "bid": 7.68,
+            "ask": 7.76,
+            "collapsed": false
+          },
+          "long_call": {
+            "bid_price": 5.81,
+            "ask_price": 5.87,
+            "bid_vol": 32.0,
+            "ask_vol": 9.0,
+            "last_price": 5.2,
+            "prev_close_price": 6.44,
+            "price_spread": 0.01,
+            "high_price": 6.49,
+            "low_price": 4.89,
+            "open_price": 6.44,
+            "turnover": 29489.0,
+            "volume": 53.0,
+            "option_strike_price": 735.0,
+            "option_open_interest": 0.0,
+            "option_premium": 3.162,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 21.823,
+            "option_delta": 0.303474765,
+            "option_gamma": 0.011305272,
+            "option_vega": 0.49495136,
+            "option_theta": -0.40513217,
+            "option_rho": 0.082632252,
+            "option_type": "CALL",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:06:05",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 5.81,
+            "raw_ask": 5.87,
+            "bid": 5.81,
+            "ask": 5.87,
+            "collapsed": false
+          },
+          "short_put": {
+            "bid_price": 8.83,
+            "ask_price": 8.91,
+            "bid_vol": 10.0,
+            "ask_vol": 5.0,
+            "last_price": 8.75,
+            "prev_close_price": 9.03,
+            "price_spread": 0.01,
+            "high_price": 10.24,
+            "low_price": 8.58,
+            "open_price": 9.03,
+            "turnover": 145303.0,
+            "volume": 156.0,
+            "option_strike_price": 705.0,
+            "option_open_interest": 0.0,
+            "option_premium": 2.963,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 25.844,
+            "option_delta": -0.349534967,
+            "option_gamma": 0.010141663,
+            "option_vega": 0.523972818,
+            "option_theta": -0.459747066,
+            "option_rho": -0.091023349,
+            "option_type": "PUT",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:27:48",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 8.83,
+            "raw_ask": 8.91,
+            "bid": 8.83,
+            "ask": 8.91,
+            "collapsed": false
+          },
+          "long_put": {
+            "bid_price": 7.46,
+            "ask_price": 7.54,
+            "bid_vol": 21.0,
+            "ask_vol": 29.0,
+            "last_price": 7.45,
+            "prev_close_price": 7.98,
+            "price_spread": 0.01,
+            "high_price": 8.92,
+            "low_price": 7.28,
+            "open_price": 7.98,
+            "turnover": 169276.0,
+            "volume": 206.0,
+            "option_strike_price": 700.0,
+            "option_open_interest": 0.0,
+            "option_premium": 3.478,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 26.567,
+            "option_delta": -0.30381858,
+            "option_gamma": 0.009311567,
+            "option_vega": 0.49493228,
+            "option_theta": -0.447895262,
+            "option_rho": -0.079547923,
+            "option_type": "PUT",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:26:27",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 7.46,
+            "raw_ask": 7.54,
+            "bid": 7.46,
+            "ask": 7.54,
+            "collapsed": false
+          }
+        },
+        "net_credit_published": 3.1,
+        "net_credit_conservative": 3.1,
+        "credit_deviation": 0.0,
+        "any_collapsed": false
+      }
+    },
+    {
+      "id": "IWM-2026-06-08",
+      "ticker": "IWM",
+      "sector": "Broad ETF",
+      "start_date": "2026-06-08",
+      "target_exit_date": "2026-06-22",
+      "expiry_used": "2026-06-22",
+      "underlying_at_open": 285.34,
+      "atr14_at_open": 4.7057,
+      "sma20_at_open": 283.654,
+      "vol_percentile_at_open": 57,
+      "trend_bias": "bullish",
+      "short_call_strike": 292.0,
+      "long_call_strike": 295.0,
+      "short_put_strike": 278.0,
+      "long_put_strike": 270.0,
+      "net_credit_at_open": 2.33,
+      "wing_width": 8.0,
+      "max_profit": 2.33,
+      "max_loss": 5.67,
+      "break_even_upper": 294.33,
+      "break_even_lower": 275.67,
+      "status": "open",
+      "daily_marks": [],
+      "settlement": null,
+      "atr60_at_open": 4.7735,
+      "analytics_at_open": {
+        "short_call_exercise_prob": 28.76,
+        "short_put_exercise_prob": 31.21,
+        "implied_pop": 40.03,
+        "short_call_iv": 20.23,
+        "short_call_hv": 21.89,
+        "vol_premium": -1.66,
+        "iv_gt_hv": false
+      },
+      "quote_audit": {
+        "legs": {
+          "short_call": {
+            "bid_price": 2.14,
+            "ask_price": 2.18,
+            "bid_vol": 27.0,
+            "ask_vol": 33.0,
+            "last_price": 2.16,
+            "prev_close_price": 2.06,
+            "price_spread": 0.01,
+            "high_price": 2.16,
+            "low_price": 2.06,
+            "open_price": 2.06,
+            "turnover": 20333.0,
+            "volume": 98.0,
+            "option_strike_price": 292.0,
+            "option_open_interest": 0.0,
+            "option_premium": 3.087,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 20.235,
+            "option_delta": 0.298357011,
+            "option_gamma": 0.030419681,
+            "option_vega": 0.195350898,
+            "option_theta": -0.148760792,
+            "option_rho": 0.032382085,
+            "option_type": "CALL",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:29:49",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 2.14,
+            "raw_ask": 2.18,
+            "bid": 2.14,
+            "ask": 2.18,
+            "collapsed": false
+          },
+          "long_call": {
+            "bid_price": 1.32,
+            "ask_price": 1.36,
+            "bid_vol": 79.0,
+            "ask_vol": 39.0,
+            "last_price": 1.23,
+            "prev_close_price": 1.19,
+            "price_spread": 0.01,
+            "high_price": 1.28,
+            "low_price": 1.19,
+            "open_price": 1.19,
+            "turnover": 2966.0,
+            "volume": 24.0,
+            "option_strike_price": 295.0,
+            "option_open_interest": 0.0,
+            "option_premium": 3.812,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 19.865,
+            "option_delta": 0.211792855,
+            "option_gamma": 0.025877071,
+            "option_vega": 0.163087182,
+            "option_theta": -0.120185117,
+            "option_rho": 0.023056438,
+            "option_type": "CALL",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 09:50:01",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 1.32,
+            "raw_ask": 1.36,
+            "bid": 1.32,
+            "ask": 1.36,
+            "collapsed": false
+          },
+          "short_put": {
+            "bid_price": 2.84,
+            "ask_price": 2.89,
+            "bid_vol": 45.0,
+            "ask_vol": 42.0,
+            "last_price": 2.87,
+            "prev_close_price": 3.12,
+            "price_spread": 0.01,
+            "high_price": 3.13,
+            "low_price": 2.87,
+            "open_price": 3.12,
+            "turnover": 31598.0,
+            "volume": 102.0,
+            "option_strike_price": 278.0,
+            "option_open_interest": 0.0,
+            "option_premium": 3.581,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 26.993,
+            "option_delta": -0.296559743,
+            "option_gamma": 0.022787164,
+            "option_vega": 0.194722761,
+            "option_theta": -0.179195289,
+            "option_rho": -0.03093509,
+            "option_type": "PUT",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:29:49",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 2.84,
+            "raw_ask": 2.89,
+            "bid": 2.84,
+            "ask": 2.89,
+            "collapsed": false
+          },
+          "long_put": {
+            "bid_price": 1.27,
+            "ask_price": 1.29,
+            "bid_vol": 85.0,
+            "ask_vol": 35.0,
+            "last_price": 1.35,
+            "prev_close_price": 1.37,
+            "price_spread": 0.01,
+            "high_price": 1.63,
+            "low_price": 1.32,
+            "open_price": 1.37,
+            "turnover": 31030.0,
+            "volume": 223.0,
+            "option_strike_price": 270.0,
+            "option_open_interest": 0.0,
+            "option_premium": 5.852,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 28.535,
+            "option_delta": -0.152191021,
+            "option_gamma": 0.014651673,
+            "option_vega": 0.132538956,
+            "option_theta": -0.128890746,
+            "option_rho": -0.01593311,
+            "option_type": "PUT",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:24:56",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 1.27,
+            "raw_ask": 1.29,
+            "bid": 1.27,
+            "ask": 1.29,
+            "collapsed": false
+          }
+        },
+        "net_credit_published": 2.33,
+        "net_credit_conservative": 2.33,
+        "credit_deviation": 0.0,
+        "any_collapsed": false
+      }
+    },
+    {
+      "id": "NVDA-2026-06-08",
+      "ticker": "NVDA",
+      "sector": "Semiconductors",
+      "start_date": "2026-06-08",
+      "target_exit_date": "2026-06-22",
+      "expiry_used": "2026-06-22",
+      "underlying_at_open": 207.7735,
+      "atr14_at_open": 7.4137,
+      "sma20_at_open": 216.6025,
+      "vol_percentile_at_open": 80,
+      "trend_bias": "bearish",
+      "short_call_strike": 220.0,
+      "long_call_strike": 225.0,
+      "short_put_strike": 195.0,
+      "long_put_strike": 190.0,
+      "net_credit_at_open": 1.46,
+      "wing_width": 5.0,
+      "max_profit": 1.46,
+      "max_loss": 3.54,
+      "break_even_upper": 221.46,
+      "break_even_lower": 193.54,
+      "status": "open",
+      "daily_marks": [],
+      "settlement": null,
+      "atr60_at_open": 6.4204,
+      "analytics_at_open": {
+        "short_call_exercise_prob": 22.44,
+        "short_put_exercise_prob": 22.24,
+        "implied_pop": 55.31,
+        "short_call_iv": 39.31,
+        "short_call_hv": 45.77,
+        "vol_premium": -6.46,
+        "iv_gt_hv": false
+      },
+      "quote_audit": {
+        "legs": {
+          "short_call": {
+            "bid_price": 2.11,
+            "ask_price": 2.42,
+            "bid_vol": 30.0,
+            "ask_vol": 12.0,
+            "last_price": 2.31,
+            "prev_close_price": 3.3,
+            "price_spread": 0.01,
+            "high_price": 3.95,
+            "low_price": 1.95,
+            "open_price": 3.3,
+            "turnover": 26564.0,
+            "volume": 105.0,
+            "option_strike_price": 220.0,
+            "option_open_interest": 0.0,
+            "option_premium": 6.998,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 39.306,
+            "option_delta": 0.249158681,
+            "option_gamma": 0.019667886,
+            "option_vega": 0.130137705,
+            "option_theta": -0.186144728,
+            "option_rho": 0.019287313,
+            "option_type": "CALL",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:29:36",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 2.11,
+            "raw_ask": 2.42,
+            "bid": 2.11,
+            "ask": 2.42,
+            "collapsed": false
+          },
+          "long_call": {
+            "bid_price": 1.29,
+            "ask_price": 1.52,
+            "bid_vol": 12.0,
+            "ask_vol": 30.0,
+            "last_price": 1.4,
+            "prev_close_price": 2.74,
+            "price_spread": 0.01,
+            "high_price": 2.74,
+            "low_price": 1.23,
+            "open_price": 2.74,
+            "turnover": 20533.0,
+            "volume": 132.0,
+            "option_strike_price": 225.0,
+            "option_open_interest": 0.0,
+            "option_premium": 8.966,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 39.433,
+            "option_delta": 0.167689251,
+            "option_gamma": 0.015502674,
+            "option_vega": 0.102900838,
+            "option_theta": -0.145733177,
+            "option_rho": 0.013041757,
+            "option_type": "CALL",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:29:19",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 1.29,
+            "raw_ask": 1.52,
+            "bid": 1.29,
+            "ask": 1.52,
+            "collapsed": false
+          },
+          "short_put": {
+            "bid_price": 1.6,
+            "ask_price": 2.26,
+            "bid_vol": 44.0,
+            "ask_vol": 17.0,
+            "last_price": 2.26,
+            "prev_close_price": 2.17,
+            "price_spread": 0.01,
+            "high_price": 2.26,
+            "low_price": 2.01,
+            "open_price": 2.17,
+            "turnover": 1306.0,
+            "volume": 6.0,
+            "option_strike_price": 195.0,
+            "option_open_interest": 0.0,
+            "option_premium": 7.233,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 40.85,
+            "option_delta": -0.198776321,
+            "option_gamma": 0.016650951,
+            "option_vega": 0.114404371,
+            "option_theta": -0.161362288,
+            "option_rho": -0.015581024,
+            "option_type": "PUT",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:06:52",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 1.6,
+            "raw_ask": 2.26,
+            "bid": 1.93,
+            "ask": 1.93,
+            "collapsed": true
+          },
+          "long_put": {
+            "bid_price": 0.79,
+            "ask_price": 1.34,
+            "bid_vol": 91.0,
+            "ask_vol": 21.0,
+            "last_price": 1.27,
+            "prev_close_price": 1.32,
+            "price_spread": 0.01,
+            "high_price": 1.33,
+            "low_price": 1.25,
+            "open_price": 1.32,
+            "turnover": 1049.0,
+            "volume": 8.0,
+            "option_strike_price": 190.0,
+            "option_open_interest": 0.0,
+            "option_premium": 9.163,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 41.156,
+            "option_delta": -0.123005133,
+            "option_gamma": 0.012056516,
+            "option_vega": 0.083485321,
+            "option_theta": -0.117826515,
+            "option_rho": -0.00958255,
+            "option_type": "PUT",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:24:18",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 0.79,
+            "raw_ask": 1.34,
+            "bid": 1.06,
+            "ask": 1.06,
+            "collapsed": true
+          }
+        },
+        "net_credit_published": 1.46,
+        "net_credit_conservative": 0.85,
+        "credit_deviation": 0.61,
+        "any_collapsed": true
+      }
+    },
+    {
+      "id": "AVGO-2026-06-08",
+      "ticker": "AVGO",
+      "sector": "Semiconductors",
+      "start_date": "2026-06-08",
+      "target_exit_date": "2026-06-22",
+      "expiry_used": "2026-06-22",
+      "underlying_at_open": 395.095,
+      "atr14_at_open": 15.6571,
+      "sma20_at_open": 424.4042,
+      "vol_percentile_at_open": 41,
+      "trend_bias": "bearish",
+      "short_call_strike": 420.0,
+      "long_call_strike": 430.0,
+      "short_put_strike": 370.0,
+      "long_put_strike": 360.0,
+      "net_credit_at_open": 3.67,
+      "wing_width": 10.0,
+      "max_profit": 3.67,
+      "max_loss": 6.33,
+      "break_even_upper": 423.67,
+      "break_even_lower": 366.33,
+      "status": "open",
+      "daily_marks": [],
+      "settlement": null,
+      "atr60_at_open": 14.2415,
+      "analytics_at_open": {
+        "short_call_exercise_prob": 25.56,
+        "short_put_exercise_prob": 27.52,
+        "implied_pop": 46.92,
+        "short_call_iv": 50.27,
+        "short_call_hv": 61.01,
+        "vol_premium": -10.74,
+        "iv_gt_hv": false
+      },
+      "quote_audit": {
+        "legs": {
+          "short_call": {
+            "bid_price": 4.9,
+            "ask_price": 7.65,
+            "bid_vol": 38.0,
+            "ask_vol": 78.0,
+            "last_price": 6.5,
+            "prev_close_price": 7.5,
+            "price_spread": 0.05,
+            "high_price": 7.5,
+            "low_price": 6.5,
+            "open_price": 7.5,
+            "turnover": 3494.0,
+            "volume": 5.0,
+            "option_strike_price": 420.0,
+            "option_open_interest": 0.0,
+            "option_premium": 7.92,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 49.5,
+            "option_delta": 0.284330915,
+            "option_gamma": 0.008789138,
+            "option_vega": 0.264316627,
+            "option_theta": -0.475257284,
+            "option_rho": 0.041225453,
+            "option_type": "CALL",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:02:35",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 4.9,
+            "raw_ask": 7.65,
+            "bid": 6.28,
+            "ask": 6.28,
+            "collapsed": true
+          },
+          "long_call": {
+            "bid_price": 3.9,
+            "ask_price": 5.0,
+            "bid_vol": 1.0,
+            "ask_vol": 1.0,
+            "last_price": 4.5,
+            "prev_close_price": 5.05,
+            "price_spread": 0.05,
+            "high_price": 5.05,
+            "low_price": 4.5,
+            "open_price": 5.05,
+            "turnover": 2445.0,
+            "volume": 5.0,
+            "option_strike_price": 430.0,
+            "option_open_interest": 0.0,
+            "option_premium": 9.944,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 49.963,
+            "option_delta": 0.211176908,
+            "option_gamma": 0.00742444,
+            "option_vega": 0.225358119,
+            "option_theta": -0.405180615,
+            "option_rho": 0.030766029,
+            "option_type": "CALL",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 09:57:33",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 3.9,
+            "raw_ask": 5.0,
+            "bid": 3.9,
+            "ask": 5.0,
+            "collapsed": false
+          },
+          "short_put": {
+            "bid_price": 4.7,
+            "ask_price": 7.65,
+            "bid_vol": 87.0,
+            "ask_vol": 131.0,
+            "last_price": 5.5,
+            "prev_close_price": 5.38,
+            "price_spread": 0.05,
+            "high_price": 6.19,
+            "low_price": 5.34,
+            "open_price": 5.38,
+            "turnover": 65658.0,
+            "volume": 107.0,
+            "option_strike_price": 370.0,
+            "option_open_interest": 0.0,
+            "option_premium": 7.767,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 52.544,
+            "option_delta": -0.245158521,
+            "option_gamma": 0.007682918,
+            "option_vega": 0.245064951,
+            "option_theta": -0.44790694,
+            "option_rho": -0.037333664,
+            "option_type": "PUT",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:24:08",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 4.7,
+            "raw_ask": 7.65,
+            "bid": 6.18,
+            "ask": 6.18,
+            "collapsed": true
+          },
+          "long_put": {
+            "bid_price": 2.69,
+            "ask_price": 4.9,
+            "bid_vol": 55.0,
+            "ask_vol": 63.0,
+            "last_price": 3.79,
+            "prev_close_price": 3.76,
+            "price_spread": 0.05,
+            "high_price": 3.8,
+            "low_price": 3.76,
+            "open_price": 3.76,
+            "turnover": 1135.0,
+            "volume": 3.0,
+            "option_strike_price": 360.0,
+            "option_open_interest": 0.0,
+            "option_premium": 9.865,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 52.51,
+            "option_delta": -0.169895757,
+            "option_gamma": 0.006182245,
+            "option_vega": 0.19712179,
+            "option_theta": -0.358499646,
+            "option_rho": -0.025751326,
+            "option_type": "PUT",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:25:12",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 2.69,
+            "raw_ask": 4.9,
+            "bid": 3.79,
+            "ask": 3.79,
+            "collapsed": true
+          }
+        },
+        "net_credit_published": 3.67,
+        "net_credit_conservative": -0.3,
+        "credit_deviation": 3.97,
+        "any_collapsed": true
+      }
+    },
+    {
+      "id": "AAPL-2026-06-08",
+      "ticker": "AAPL",
+      "sector": "Mega-Cap Tech",
+      "start_date": "2026-06-08",
+      "target_exit_date": "2026-06-22",
+      "expiry_used": "2026-06-22",
+      "underlying_at_open": 311.83,
+      "atr14_at_open": 5.477,
+      "sma20_at_open": 298.8702,
+      "vol_percentile_at_open": 20,
+      "trend_bias": "bullish",
+      "short_call_strike": 320.0,
+      "long_call_strike": 325.0,
+      "short_put_strike": 305.0,
+      "long_put_strike": 300.0,
+      "net_credit_at_open": 2.45,
+      "wing_width": 5.0,
+      "max_profit": 2.45,
+      "max_loss": 2.55,
+      "break_even_upper": 322.45,
+      "break_even_lower": 302.55,
+      "status": "open",
+      "daily_marks": [],
+      "settlement": null,
+      "atr60_at_open": 5.6399,
+      "analytics_at_open": {
+        "short_call_exercise_prob": 30.19,
+        "short_put_exercise_prob": 34.81,
+        "implied_pop": 34.99,
+        "short_call_iv": 26.2,
+        "short_call_hv": 20.06,
+        "vol_premium": 6.14,
+        "iv_gt_hv": true
+      },
+      "quote_audit": {
+        "legs": {
+          "short_call": {
+            "bid_price": 2.85,
+            "ask_price": 3.9,
+            "bid_vol": 48.0,
+            "ask_vol": 86.0,
+            "last_price": 3.2,
+            "prev_close_price": 4.1,
+            "price_spread": 0.05,
+            "high_price": 4.4,
+            "low_price": 3.11,
+            "open_price": 4.1,
+            "turnover": 13373.0,
+            "volume": 40.0,
+            "option_strike_price": 320.0,
+            "option_open_interest": 0.0,
+            "option_premium": 3.646,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 25.031,
+            "option_delta": 0.323088404,
+            "option_gamma": 0.023284144,
+            "option_vega": 0.221136808,
+            "option_theta": -0.206894039,
+            "option_rho": 0.03806355,
+            "option_type": "CALL",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:13:56",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 2.85,
+            "raw_ask": 3.9,
+            "bid": 3.38,
+            "ask": 3.38,
+            "collapsed": true
+          },
+          "long_call": {
+            "bid_price": 1.86,
+            "ask_price": 2.25,
+            "bid_vol": 14.0,
+            "ask_vol": 20.0,
+            "last_price": 1.75,
+            "prev_close_price": 2.9,
+            "price_spread": 0.01,
+            "high_price": 2.9,
+            "low_price": 1.75,
+            "open_price": 2.9,
+            "turnover": 27552.0,
+            "volume": 129.0,
+            "option_strike_price": 325.0,
+            "option_open_interest": 0.0,
+            "option_premium": 4.784,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 24.792,
+            "option_delta": 0.217484563,
+            "option_gamma": 0.019259583,
+            "option_vega": 0.181119659,
+            "option_theta": -0.165204347,
+            "option_rho": 0.025729749,
+            "option_type": "CALL",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:29:52",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 1.86,
+            "raw_ask": 2.25,
+            "bid": 1.86,
+            "ask": 2.25,
+            "collapsed": false
+          },
+          "short_put": {
+            "bid_price": 3.25,
+            "ask_price": 4.5,
+            "bid_vol": 104.0,
+            "ask_vol": 86.0,
+            "last_price": 3.7,
+            "prev_close_price": 2.97,
+            "price_spread": 0.05,
+            "high_price": 3.9,
+            "low_price": 2.83,
+            "open_price": 2.97,
+            "turnover": 17309.0,
+            "volume": 49.0,
+            "option_strike_price": 305.0,
+            "option_open_interest": 0.0,
+            "option_premium": 3.376,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 28.544,
+            "option_delta": -0.325073419,
+            "option_gamma": 0.020515411,
+            "option_vega": 0.221569937,
+            "option_theta": -0.216073859,
+            "option_rho": -0.037163695,
+            "option_type": "PUT",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:03:25",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 3.25,
+            "raw_ask": 4.5,
+            "bid": 3.88,
+            "ask": 3.88,
+            "collapsed": true
+          },
+          "long_put": {
+            "bid_price": 1.92,
+            "ask_price": 2.56,
+            "bid_vol": 63.0,
+            "ask_vol": 18.0,
+            "last_price": 2.46,
+            "prev_close_price": 2.14,
+            "price_spread": 0.01,
+            "high_price": 2.61,
+            "low_price": 1.98,
+            "open_price": 2.14,
+            "turnover": 85519.0,
+            "volume": 378.0,
+            "option_strike_price": 300.0,
+            "option_open_interest": 0.0,
+            "option_premium": 4.582,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 27.775,
+            "option_delta": -0.221689417,
+            "option_gamma": 0.017402517,
+            "option_vega": 0.183056737,
+            "option_theta": -0.173783936,
+            "option_rho": -0.025376948,
+            "option_type": "PUT",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:23:26",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 1.92,
+            "raw_ask": 2.56,
+            "bid": 1.92,
+            "ask": 2.56,
+            "collapsed": false
+          }
+        },
+        "net_credit_published": 2.45,
+        "net_credit_conservative": 1.29,
+        "credit_deviation": 1.16,
+        "any_collapsed": true
+      }
+    },
+    {
+      "id": "MSFT-2026-06-08",
+      "ticker": "MSFT",
+      "sector": "Mega-Cap Tech",
+      "start_date": "2026-06-08",
+      "target_exit_date": "2026-06-22",
+      "expiry_used": "2026-06-22",
+      "underlying_at_open": 412.97,
+      "atr14_at_open": 12.0547,
+      "sma20_at_open": 419.3634,
+      "vol_percentile_at_open": 82,
+      "trend_bias": "bearish",
+      "short_call_strike": 430.0,
+      "long_call_strike": 440.0,
+      "short_put_strike": 395.0,
+      "long_put_strike": 385.0,
+      "net_credit_at_open": 1.98,
+      "wing_width": 10.0,
+      "max_profit": 1.98,
+      "max_loss": 8.02,
+      "break_even_upper": 431.98,
+      "break_even_lower": 393.02,
+      "status": "open",
+      "daily_marks": [],
+      "settlement": null,
+      "atr60_at_open": 10.4587,
+      "analytics_at_open": {
+        "short_call_exercise_prob": 23.15,
+        "short_put_exercise_prob": 23.7,
+        "implied_pop": 53.15,
+        "short_call_iv": 28.05,
+        "short_call_hv": 32.67,
+        "vol_premium": -4.63,
+        "iv_gt_hv": false
+      },
+      "quote_audit": {
+        "legs": {
+          "short_call": {
+            "bid_price": 2.75,
+            "ask_price": 3.85,
+            "bid_vol": 5.0,
+            "ask_vol": 1.0,
+            "last_price": 3.5,
+            "prev_close_price": 3.7,
+            "price_spread": 0.05,
+            "high_price": 4.1,
+            "low_price": 3.25,
+            "open_price": 3.7,
+            "turnover": 14658.0,
+            "volume": 41.0,
+            "option_strike_price": 430.0,
+            "option_open_interest": 0.0,
+            "option_premium": 4.964,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 27.901,
+            "option_delta": 0.252344113,
+            "option_gamma": 0.014027139,
+            "option_vega": 0.260507968,
+            "option_theta": -0.267681852,
+            "option_rho": 0.039350592,
+            "option_type": "CALL",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:15:10",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 2.75,
+            "raw_ask": 3.85,
+            "bid": 3.3,
+            "ask": 3.3,
+            "collapsed": true
+          },
+          "long_call": {
+            "bid_price": 1.61,
+            "ask_price": 2.3,
+            "bid_vol": 53.0,
+            "ask_vol": 1.0,
+            "last_price": 1.72,
+            "prev_close_price": 2.18,
+            "price_spread": 0.01,
+            "high_price": 2.18,
+            "low_price": 1.72,
+            "open_price": 2.18,
+            "turnover": 1765.0,
+            "volume": 9.0,
+            "option_strike_price": 440.0,
+            "option_open_interest": 0.0,
+            "option_premium": 6.954,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 29.878,
+            "option_delta": 0.156504518,
+            "option_gamma": 0.009836661,
+            "option_vega": 0.195599775,
+            "option_theta": -0.211017017,
+            "option_rho": 0.024455966,
+            "option_type": "CALL",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:08:27",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 1.61,
+            "raw_ask": 2.3,
+            "bid": 1.96,
+            "ask": 1.96,
+            "collapsed": true
+          },
+          "short_put": {
+            "bid_price": 2.75,
+            "ask_price": 3.65,
+            "bid_vol": 28.0,
+            "ask_vol": 2.0,
+            "last_price": 3.19,
+            "prev_close_price": 3.35,
+            "price_spread": 0.05,
+            "high_price": 3.35,
+            "low_price": 3.12,
+            "open_price": 3.35,
+            "turnover": 2265.0,
+            "volume": 7.0,
+            "option_strike_price": 395.0,
+            "option_open_interest": 0.0,
+            "option_premium": 5.13,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 31.199,
+            "option_delta": -0.21584494,
+            "option_gamma": 0.01151524,
+            "option_vega": 0.2388074,
+            "option_theta": -0.255591207,
+            "option_rho": -0.032999498,
+            "option_type": "PUT",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:04:35",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 2.75,
+            "raw_ask": 3.65,
+            "bid": 2.75,
+            "ask": 3.65,
+            "collapsed": false
+          },
+          "long_put": {
+            "bid_price": 1.47,
+            "ask_price": 2.75,
+            "bid_vol": 14.0,
+            "ask_vol": 1.0,
+            "last_price": 1.65,
+            "prev_close_price": 2.14,
+            "price_spread": 0.01,
+            "high_price": 2.14,
+            "low_price": 1.63,
+            "open_price": 2.14,
+            "turnover": 4862.0,
+            "volume": 27.0,
+            "option_strike_price": 385.0,
+            "option_open_interest": 0.0,
+            "option_premium": 7.178,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 35.024,
+            "option_delta": -0.140380546,
+            "option_gamma": 0.007805924,
+            "option_vega": 0.181848707,
+            "option_theta": -0.218143241,
+            "option_rho": -0.021550397,
+            "option_type": "PUT",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:21:07",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 1.47,
+            "raw_ask": 2.75,
+            "bid": 2.11,
+            "ask": 2.11,
+            "collapsed": true
+          }
+        },
+        "net_credit_published": 1.98,
+        "net_credit_conservative": 0.45,
+        "credit_deviation": 1.53,
+        "any_collapsed": true
+      }
+    },
+    {
+      "id": "GOOGL-2026-06-08",
+      "ticker": "GOOGL",
+      "sector": "Mega-Cap Tech",
+      "start_date": "2026-06-08",
+      "target_exit_date": "2026-06-22",
+      "expiry_used": "2026-06-22",
+      "underlying_at_open": 361.6568,
+      "atr14_at_open": 9.3065,
+      "sma20_at_open": 390.658,
+      "vol_percentile_at_open": 52,
+      "trend_bias": "bearish",
+      "short_call_strike": 375.0,
+      "long_call_strike": 380.0,
+      "short_put_strike": 350.0,
+      "long_put_strike": 345.0,
+      "net_credit_at_open": 1.0,
+      "wing_width": 5.0,
+      "max_profit": 1.0,
+      "max_loss": 4.0,
+      "break_even_upper": 376.0,
+      "break_even_lower": 349.0,
+      "status": "open",
+      "daily_marks": [],
+      "settlement": null,
+      "atr60_at_open": 8.6513,
+      "analytics_at_open": {
+        "short_call_exercise_prob": 28.08,
+        "short_put_exercise_prob": 30.47,
+        "implied_pop": 41.45,
+        "short_call_iv": 33.19,
+        "short_call_hv": 39.13,
+        "vol_premium": -5.94,
+        "iv_gt_hv": false
+      },
+      "quote_audit": {
+        "legs": {
+          "short_call": {
+            "bid_price": 3.65,
+            "ask_price": 4.75,
+            "bid_vol": 52.0,
+            "ask_vol": 52.0,
+            "last_price": 4.0,
+            "prev_close_price": 5.3,
+            "price_spread": 0.05,
+            "high_price": 5.86,
+            "low_price": 3.95,
+            "open_price": 5.3,
+            "turnover": 7161.0,
+            "volume": 16.0,
+            "option_strike_price": 375.0,
+            "option_open_interest": 0.0,
+            "option_premium": 4.803,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 32.141,
+            "option_delta": 0.298705607,
+            "option_gamma": 0.015130481,
+            "option_vega": 0.247573736,
+            "option_theta": -0.29333694,
+            "option_rho": 0.040445859,
+            "option_type": "CALL",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:18:32",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 3.65,
+            "raw_ask": 4.75,
+            "bid": 3.65,
+            "ask": 4.75,
+            "collapsed": false
+          },
+          "long_call": {
+            "bid_price": 2.6,
+            "ask_price": 3.4,
+            "bid_vol": 34.0,
+            "ask_vol": 13.0,
+            "last_price": 2.84,
+            "prev_close_price": 5.5,
+            "price_spread": 0.01,
+            "high_price": 5.5,
+            "low_price": 2.84,
+            "open_price": 5.5,
+            "turnover": 8975.0,
+            "volume": 24.0,
+            "option_strike_price": 380.0,
+            "option_open_interest": 0.0,
+            "option_premium": 5.865,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 32.215,
+            "option_delta": 0.231168212,
+            "option_gamma": 0.013246879,
+            "option_vega": 0.21723056,
+            "option_theta": -0.255572417,
+            "option_rho": 0.031398723,
+            "option_type": "CALL",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:11:30",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 2.6,
+            "raw_ask": 3.4,
+            "bid": 2.6,
+            "ask": 3.4,
+            "collapsed": false
+          },
+          "short_put": {
+            "bid_price": 3.55,
+            "ask_price": 4.85,
+            "bid_vol": 34.0,
+            "ask_vol": 26.0,
+            "last_price": 4.06,
+            "prev_close_price": 3.95,
+            "price_spread": 0.05,
+            "high_price": 4.2,
+            "low_price": 3.69,
+            "open_price": 3.95,
+            "turnover": 2415.0,
+            "volume": 6.0,
+            "option_strike_price": 350.0,
+            "option_open_interest": 0.0,
+            "option_premium": 4.338,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 31.906,
+            "option_delta": -0.287400183,
+            "option_gamma": 0.01499487,
+            "option_vega": 0.243070377,
+            "option_theta": -0.266328516,
+            "option_rho": -0.038460535,
+            "option_type": "PUT",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:20:46",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 3.55,
+            "raw_ask": 4.85,
+            "bid": 4.2,
+            "ask": 4.2,
+            "collapsed": true
+          },
+          "long_put": {
+            "bid_price": 2.69,
+            "ask_price": 3.45,
+            "bid_vol": 14.0,
+            "ask_vol": 9.0,
+            "last_price": 0.0,
+            "prev_close_price": 0.0,
+            "price_spread": 0.01,
+            "high_price": 0.0,
+            "low_price": 0.0,
+            "open_price": 0.0,
+            "turnover": 0.0,
+            "volume": 0.0,
+            "option_strike_price": 345.0,
+            "option_open_interest": 0.0,
+            "option_premium": 4.598,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 32.959,
+            "option_delta": -0.221697371,
+            "option_gamma": 0.012657607,
+            "option_vega": 0.212086135,
+            "option_theta": -0.240231991,
+            "option_rho": -0.029760371,
+            "option_type": "PUT",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 09:30:00",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 2.69,
+            "raw_ask": 3.45,
+            "bid": 2.69,
+            "ask": 3.45,
+            "collapsed": false
+          }
+        },
+        "net_credit_published": 1.0,
+        "net_credit_conservative": 0.35,
+        "credit_deviation": 0.65,
+        "any_collapsed": true
+      }
+    },
+    {
+      "id": "META-2026-06-08",
+      "ticker": "META",
+      "sector": "Mega-Cap Tech",
+      "start_date": "2026-06-08",
+      "target_exit_date": "2026-06-22",
+      "expiry_used": "2026-06-22",
+      "underlying_at_open": 588.25,
+      "atr14_at_open": 16.2922,
+      "sma20_at_open": 613.4645,
+      "vol_percentile_at_open": 25,
+      "trend_bias": "bearish",
+      "short_call_strike": 615.0,
+      "long_call_strike": 625.0,
+      "short_put_strike": 565.0,
+      "long_put_strike": 555.0,
+      "net_credit_at_open": 4.33,
+      "wing_width": 10.0,
+      "max_profit": 4.33,
+      "max_loss": 5.67,
+      "break_even_upper": 619.33,
+      "break_even_lower": 560.67,
+      "status": "open",
+      "daily_marks": [],
+      "settlement": null,
+      "atr60_at_open": 18.0997,
+      "analytics_at_open": {
+        "short_call_exercise_prob": 25.21,
+        "short_put_exercise_prob": 30.46,
+        "implied_pop": 44.32,
+        "short_call_iv": 36.66,
+        "short_call_hv": 39.76,
+        "vol_premium": -3.09,
+        "iv_gt_hv": false
+      },
+      "quote_audit": {
+        "legs": {
+          "short_call": {
+            "bid_price": 2.58,
+            "ask_price": 10.65,
+            "bid_vol": 64.0,
+            "ask_vol": 24.0,
+            "last_price": 6.9,
+            "prev_close_price": 6.5,
+            "price_spread": 0.05,
+            "high_price": 6.9,
+            "low_price": 6.42,
+            "open_price": 6.5,
+            "turnover": 7327.0,
+            "volume": 11.0,
+            "option_strike_price": 615.0,
+            "option_open_interest": 0.0,
+            "option_premium": 5.719,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 34.377,
+            "option_delta": 0.279777824,
+            "option_gamma": 0.008417866,
+            "option_vega": 0.391215209,
+            "option_theta": -0.493401882,
+            "option_rho": 0.061626012,
+            "option_type": "CALL",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 09:47:29",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 2.58,
+            "raw_ask": 10.65,
+            "bid": 6.62,
+            "ask": 6.62,
+            "collapsed": true
+          },
+          "long_call": {
+            "bid_price": 0.63,
+            "ask_price": 7.5,
+            "bid_vol": 56.0,
+            "ask_vol": 22.0,
+            "last_price": 5.22,
+            "prev_close_price": 5.15,
+            "price_spread": 0.05,
+            "high_price": 5.22,
+            "low_price": 5.1,
+            "open_price": 5.15,
+            "turnover": 1547.0,
+            "volume": 3.0,
+            "option_strike_price": 625.0,
+            "option_open_interest": 0.0,
+            "option_premium": 7.133,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 33.097,
+            "option_delta": 0.196150929,
+            "option_gamma": 0.00718957,
+            "option_vega": 0.321652736,
+            "option_theta": -0.386217993,
+            "option_rho": 0.043449641,
+            "option_type": "CALL",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 09:45:02",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 0.63,
+            "raw_ask": 7.5,
+            "bid": 4.07,
+            "ask": 4.07,
+            "collapsed": true
+          },
+          "short_put": {
+            "bid_price": 5.85,
+            "ask_price": 8.95,
+            "bid_vol": 20.0,
+            "ask_vol": 17.0,
+            "last_price": 7.25,
+            "prev_close_price": 7.6,
+            "price_spread": 0.05,
+            "high_price": 7.6,
+            "low_price": 6.95,
+            "open_price": 7.6,
+            "turnover": 14965.0,
+            "volume": 20.0,
+            "option_strike_price": 565.0,
+            "option_open_interest": 0.0,
+            "option_premium": 5.185,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 38.457,
+            "option_delta": -0.273757539,
+            "option_gamma": 0.007453253,
+            "option_vega": 0.386957338,
+            "option_theta": -0.514030527,
+            "option_rho": -0.06060534,
+            "option_type": "PUT",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:29:07",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 5.85,
+            "raw_ask": 8.95,
+            "bid": 7.4,
+            "ask": 7.4,
+            "collapsed": true
+          },
+          "long_put": {
+            "bid_price": 4.4,
+            "ask_price": 6.85,
+            "bid_vol": 22.0,
+            "ask_vol": 19.0,
+            "last_price": 5.12,
+            "prev_close_price": 5.3,
+            "price_spread": 0.05,
+            "high_price": 5.3,
+            "low_price": 5.12,
+            "open_price": 5.3,
+            "turnover": 1042.0,
+            "volume": 2.0,
+            "option_strike_price": 555.0,
+            "option_open_interest": 0.0,
+            "option_premium": 6.523,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 42.978,
+            "option_delta": -0.224440479,
+            "option_gamma": 0.005996992,
+            "option_vega": 0.348119629,
+            "option_theta": -0.517777265,
+            "option_rho": -0.050101048,
+            "option_type": "PUT",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 09:52:39",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 4.4,
+            "raw_ask": 6.85,
+            "bid": 5.62,
+            "ask": 5.62,
+            "collapsed": true
+          }
+        },
+        "net_credit_published": 4.33,
+        "net_credit_conservative": -5.92,
+        "credit_deviation": 10.25,
+        "any_collapsed": true
+      }
+    },
+    {
+      "id": "AMZN-2026-06-08",
+      "ticker": "AMZN",
+      "sector": "Mega-Cap Tech",
+      "start_date": "2026-06-08",
+      "target_exit_date": "2026-06-22",
+      "expiry_used": "2026-06-22",
+      "underlying_at_open": 246.92,
+      "atr14_at_open": 6.7606,
+      "sma20_at_open": 268.5445,
+      "vol_percentile_at_open": 24,
+      "trend_bias": "bearish",
+      "short_call_strike": 255.0,
+      "long_call_strike": 260.0,
+      "short_put_strike": 235.0,
+      "long_put_strike": 230.0,
+      "net_credit_at_open": 1.93,
+      "wing_width": 5.0,
+      "max_profit": 1.93,
+      "max_loss": 3.07,
+      "break_even_upper": 256.93,
+      "break_even_lower": 233.07,
+      "status": "open",
+      "daily_marks": [],
+      "settlement": null,
+      "atr60_at_open": 6.4006,
+      "analytics_at_open": {
+        "short_call_exercise_prob": 29.79,
+        "short_put_exercise_prob": 24.8,
+        "implied_pop": 45.42,
+        "short_call_iv": 26.13,
+        "short_call_hv": 24.74,
+        "vol_premium": 1.39,
+        "iv_gt_hv": true
+      },
+      "quote_audit": {
+        "legs": {
+          "short_call": {
+            "bid_price": 1.56,
+            "ask_price": 4.45,
+            "bid_vol": 411.0,
+            "ask_vol": 187.0,
+            "last_price": 3.45,
+            "prev_close_price": 3.45,
+            "price_spread": 0.05,
+            "high_price": 3.45,
+            "low_price": 3.45,
+            "open_price": 3.45,
+            "turnover": 345.0,
+            "volume": 1.0,
+            "option_strike_price": 255.0,
+            "option_open_interest": 0.0,
+            "option_premium": 4.686,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 31.348,
+            "option_delta": 0.318498593,
+            "option_gamma": 0.023360522,
+            "option_vega": 0.173920397,
+            "option_theta": -0.201659143,
+            "option_rho": 0.029457405,
+            "option_type": "CALL",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 09:45:57",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 1.56,
+            "raw_ask": 4.45,
+            "bid": 3.0,
+            "ask": 3.0,
+            "collapsed": true
+          },
+          "long_call": {
+            "bid_price": 1.6,
+            "ask_price": 1.9,
+            "bid_vol": 1.0,
+            "ask_vol": 1.0,
+            "last_price": 1.9,
+            "prev_close_price": 2.09,
+            "price_spread": 0.01,
+            "high_price": 2.32,
+            "low_price": 0.11,
+            "open_price": 2.09,
+            "turnover": 1468.0,
+            "volume": 8.0,
+            "option_strike_price": 260.0,
+            "option_open_interest": 0.0,
+            "option_premium": 6.083,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 30.794,
+            "option_delta": 0.211607251,
+            "option_gamma": 0.01928915,
+            "option_vega": 0.141047182,
+            "option_theta": -0.158357734,
+            "option_rho": 0.019680326,
+            "option_type": "CALL",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:05:49",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 1.6,
+            "raw_ask": 1.9,
+            "bid": 1.6,
+            "ask": 1.9,
+            "collapsed": false
+          },
+          "short_put": {
+            "bid_price": 1.96,
+            "ask_price": 2.83,
+            "bid_vol": 56.0,
+            "ask_vol": 133.0,
+            "last_price": 2.15,
+            "prev_close_price": 2.08,
+            "price_spread": 0.01,
+            "high_price": 2.17,
+            "low_price": 2.05,
+            "open_price": 2.08,
+            "turnover": 4581.0,
+            "volume": 22.0,
+            "option_strike_price": 235.0,
+            "option_open_interest": 0.0,
+            "option_premium": 5.682,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 35.884,
+            "option_delta": -0.227325592,
+            "option_gamma": 0.017264473,
+            "option_vega": 0.146944963,
+            "option_theta": -0.181670929,
+            "option_rho": -0.020976408,
+            "option_type": "PUT",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:09:12",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 1.96,
+            "raw_ask": 2.83,
+            "bid": 2.4,
+            "ask": 2.4,
+            "collapsed": true
+          },
+          "long_put": {
+            "bid_price": 1.14,
+            "ask_price": 2.0,
+            "bid_vol": 78.0,
+            "ask_vol": 128.0,
+            "last_price": 1.38,
+            "prev_close_price": 1.39,
+            "price_spread": 0.01,
+            "high_price": 1.5,
+            "low_price": 1.38,
+            "open_price": 1.39,
+            "turnover": 708.0,
+            "volume": 5.0,
+            "option_strike_price": 230.0,
+            "option_open_interest": 0.0,
+            "option_premium": 7.396,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 37.69,
+            "option_delta": -0.157565657,
+            "option_gamma": 0.013119653,
+            "option_vega": 0.117338719,
+            "option_theta": -0.151980158,
+            "option_rho": -0.014545569,
+            "option_type": "PUT",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:26:59",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 1.14,
+            "raw_ask": 2.0,
+            "bid": 1.57,
+            "ask": 1.57,
+            "collapsed": true
+          }
+        },
+        "net_credit_published": 1.93,
+        "net_credit_conservative": -0.38,
+        "credit_deviation": 2.31,
+        "any_collapsed": true
+      }
+    },
+    {
+      "id": "SLV-2026-06-08",
+      "ticker": "SLV",
+      "sector": "Sector ETF",
+      "start_date": "2026-06-08",
+      "target_exit_date": "2026-06-22",
+      "expiry_used": "2026-06-22",
+      "underlying_at_open": 61.55,
+      "atr14_at_open": 2.8446,
+      "sma20_at_open": 68.774,
+      "vol_percentile_at_open": 56,
+      "trend_bias": "bearish",
+      "short_call_strike": 66.0,
+      "long_call_strike": 68.0,
+      "short_put_strike": 57.0,
+      "long_put_strike": 55.0,
+      "net_credit_at_open": 0.48,
+      "wing_width": 2.0,
+      "max_profit": 0.48,
+      "max_loss": 1.52,
+      "break_even_upper": 66.48,
+      "break_even_lower": 56.52,
+      "status": "open",
+      "daily_marks": [],
+      "settlement": null,
+      "atr60_at_open": 3.4635,
+      "analytics_at_open": {
+        "short_call_exercise_prob": 20.22,
+        "short_put_exercise_prob": 22.97,
+        "implied_pop": 56.81,
+        "short_call_iv": 44.18,
+        "short_call_hv": 55.85,
+        "vol_premium": -11.67,
+        "iv_gt_hv": false
+      },
+      "quote_audit": {
+        "legs": {
+          "short_call": {
+            "bid_price": 0.64,
+            "ask_price": 0.7,
+            "bid_vol": 681.0,
+            "ask_vol": 641.0,
+            "last_price": 0.63,
+            "prev_close_price": 0.74,
+            "price_spread": 0.01,
+            "high_price": 0.74,
+            "low_price": 0.63,
+            "open_price": 0.74,
+            "turnover": 1611.0,
+            "volume": 23.0,
+            "option_strike_price": 66.0,
+            "option_open_interest": 0.0,
+            "option_premium": 8.235,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 43.616,
+            "option_delta": 0.224788447,
+            "option_gamma": 0.056556058,
+            "option_vega": 0.036419982,
+            "option_theta": -0.057409595,
+            "option_rho": 0.005137948,
+            "option_type": "CALL",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:08:32",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 0.64,
+            "raw_ask": 0.7,
+            "bid": 0.64,
+            "ask": 0.7,
+            "collapsed": false
+          },
+          "long_call": {
+            "bid_price": 0.34,
+            "ask_price": 0.39,
+            "bid_vol": 1137.0,
+            "ask_vol": 215.0,
+            "last_price": 0.44,
+            "prev_close_price": 0.43,
+            "price_spread": 0.01,
+            "high_price": 0.44,
+            "low_price": 0.43,
+            "open_price": 0.43,
+            "turnover": 259.0,
+            "volume": 6.0,
+            "option_strike_price": 68.0,
+            "option_open_interest": 0.0,
+            "option_premium": 11.176,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 44.232,
+            "option_delta": 0.138724131,
+            "option_gamma": 0.041152852,
+            "option_vega": 0.026873685,
+            "option_theta": -0.04228587,
+            "option_rho": 0.003187304,
+            "option_type": "CALL",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 09:42:30",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 0.34,
+            "raw_ask": 0.39,
+            "bid": 0.34,
+            "ask": 0.39,
+            "collapsed": false
+          },
+          "short_put": {
+            "bid_price": 0.7,
+            "ask_price": 0.76,
+            "bid_vol": 196.0,
+            "ask_vol": 1158.0,
+            "last_price": 0.54,
+            "prev_close_price": 0.54,
+            "price_spread": 0.01,
+            "high_price": 0.54,
+            "low_price": 0.54,
+            "open_price": 0.54,
+            "turnover": 540.0,
+            "volume": 10.0,
+            "option_strike_price": 57.0,
+            "option_open_interest": 0.0,
+            "option_premium": 8.284,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 50.328,
+            "option_delta": -0.202954701,
+            "option_gamma": 0.04620628,
+            "option_vega": 0.03430947,
+            "option_theta": -0.059857848,
+            "option_rho": -0.004792266,
+            "option_type": "PUT",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 09:33:42",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 0.7,
+            "raw_ask": 0.76,
+            "bid": 0.7,
+            "ask": 0.76,
+            "collapsed": false
+          },
+          "long_put": {
+            "bid_price": 0.41,
+            "ask_price": 0.47,
+            "bid_vol": 932.0,
+            "ask_vol": 1500.0,
+            "last_price": 0.44,
+            "prev_close_price": 0.44,
+            "price_spread": 0.01,
+            "high_price": 0.44,
+            "low_price": 0.44,
+            "open_price": 0.44,
+            "turnover": 440.0,
+            "volume": 10.0,
+            "option_strike_price": 55.0,
+            "option_open_interest": 0.0,
+            "option_premium": 11.371,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 53.537,
+            "option_delta": -0.130235975,
+            "option_gamma": 0.032564624,
+            "option_vega": 0.025732125,
+            "option_theta": -0.047477911,
+            "option_rho": -0.003068975,
+            "option_type": "PUT",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:10:16",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 0.41,
+            "raw_ask": 0.47,
+            "bid": 0.41,
+            "ask": 0.47,
+            "collapsed": false
+          }
+        },
+        "net_credit_published": 0.48,
+        "net_credit_conservative": 0.48,
+        "credit_deviation": 0.0,
+        "any_collapsed": false
+      }
+    },
+    {
+      "id": "TLT-2026-06-08",
+      "ticker": "TLT",
+      "sector": "Sector ETF",
+      "start_date": "2026-06-08",
+      "target_exit_date": "2026-06-22",
+      "expiry_used": "2026-06-22",
+      "underlying_at_open": 84.965,
+      "atr14_at_open": 0.6586,
+      "sma20_at_open": 86.628,
+      "vol_percentile_at_open": 3,
+      "trend_bias": "bearish",
+      "short_call_strike": 86.0,
+      "long_call_strike": 87.0,
+      "short_put_strike": 84.0,
+      "long_put_strike": 83.0,
+      "net_credit_at_open": 0.3,
+      "wing_width": 1.0,
+      "max_profit": 0.3,
+      "max_loss": 0.7,
+      "break_even_upper": 86.3,
+      "break_even_lower": 83.7,
+      "status": "open",
+      "daily_marks": [],
+      "settlement": null,
+      "atr60_at_open": 0.6747,
+      "analytics_at_open": {
+        "short_call_exercise_prob": 28.03,
+        "short_put_exercise_prob": 25.99,
+        "implied_pop": 45.97,
+        "short_call_iv": 9.27,
+        "short_call_hv": 8.87,
+        "vol_premium": 0.39,
+        "iv_gt_hv": true
+      },
+      "quote_audit": {
+        "legs": {
+          "short_call": {
+            "bid_price": 0.27,
+            "ask_price": 0.28,
+            "bid_vol": 90.0,
+            "ask_vol": 122.0,
+            "last_price": 0.3,
+            "prev_close_price": 0.35,
+            "price_spread": 0.01,
+            "high_price": 0.35,
+            "low_price": 0.3,
+            "open_price": 0.35,
+            "turnover": 1605.0,
+            "volume": 46.0,
+            "option_strike_price": 86.0,
+            "option_open_interest": 0.0,
+            "option_premium": 1.571,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 9.434,
+            "option_delta": 0.282371787,
+            "option_gamma": 0.213525822,
+            "option_vega": 0.056611332,
+            "option_theta": -0.021335357,
+            "option_rho": 0.009250597,
+            "option_type": "CALL",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 09:59:33",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 0.27,
+            "raw_ask": 0.28,
+            "bid": 0.27,
+            "ask": 0.28,
+            "collapsed": false
+          },
+          "long_call": {
+            "bid_price": 0.1,
+            "ask_price": 0.11,
+            "bid_vol": 145.0,
+            "ask_vol": 87.0,
+            "last_price": 0.11,
+            "prev_close_price": 0.12,
+            "price_spread": 0.01,
+            "high_price": 0.12,
+            "low_price": 0.1,
+            "open_price": 0.12,
+            "turnover": 605.0,
+            "volume": 56.0,
+            "option_strike_price": 87.0,
+            "option_open_interest": 0.0,
+            "option_premium": 2.524,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 9.912,
+            "option_delta": 0.127643901,
+            "option_gamma": 0.125593364,
+            "option_vega": 0.034913697,
+            "option_theta": -0.01312905,
+            "option_rho": 0.004189471,
+            "option_type": "CALL",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:21:43",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 0.1,
+            "raw_ask": 0.11,
+            "bid": 0.1,
+            "ask": 0.11,
+            "collapsed": false
+          },
+          "short_put": {
+            "bid_price": 0.26,
+            "ask_price": 0.27,
+            "bid_vol": 97.0,
+            "ask_vol": 88.0,
+            "last_price": 0.26,
+            "prev_close_price": 0.19,
+            "price_spread": 0.01,
+            "high_price": 0.27,
+            "low_price": 0.19,
+            "open_price": 0.19,
+            "turnover": 15676.0,
+            "volume": 746.0,
+            "option_strike_price": 84.0,
+            "option_open_interest": 0.0,
+            "option_premium": 1.441,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 9.967,
+            "option_delta": -0.260183278,
+            "option_gamma": 0.195414508,
+            "option_vega": 0.054203953,
+            "option_theta": -0.017315642,
+            "option_rho": -0.00749554,
+            "option_type": "PUT",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 10:26:31",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 0.26,
+            "raw_ask": 0.27,
+            "bid": 0.26,
+            "ask": 0.27,
+            "collapsed": false
+          },
+          "long_put": {
+            "bid_price": 0.1,
+            "ask_price": 0.12,
+            "bid_vol": 1182.0,
+            "ask_vol": 1180.0,
+            "last_price": 0.0,
+            "prev_close_price": 0.0,
+            "price_spread": 0.01,
+            "high_price": 0.0,
+            "low_price": 0.0,
+            "open_price": 0.0,
+            "turnover": 0.0,
+            "volume": 0.0,
+            "option_strike_price": 83.0,
+            "option_open_interest": 0.0,
+            "option_premium": 2.312,
+            "option_contract_size": 100.0,
+            "option_contract_multiplier": 100.0,
+            "option_expiry_date_distance": 14.0,
+            "option_implied_volatility": 10.747,
+            "option_delta": -0.122203175,
+            "option_gamma": 0.112567503,
+            "option_vega": 0.033833457,
+            "option_theta": -0.011865435,
+            "option_rho": -0.003558864,
+            "option_type": "PUT",
+            "option_net_open_interest": "N/A",
+            "option_area_type": "AMERICAN",
+            "strike_time": "2026-06-22",
+            "update_time": "2026-06-08 09:30:00",
+            "suspension": false,
+            "option_valid": true,
+            "raw_bid": 0.1,
+            "raw_ask": 0.12,
+            "bid": 0.1,
+            "ask": 0.12,
+            "collapsed": false
+          }
+        },
+        "net_credit_published": 0.3,
+        "net_credit_conservative": 0.3,
+        "credit_deviation": 0.0,
+        "any_collapsed": false
       }
     }
   ],
@@ -14267,6 +17296,196 @@
       "ticker": "SMH",
       "date": "2026-06-04",
       "reason": "illiquid:long_call:low_oi"
+    },
+    {
+      "ticker": "SMH",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "AMD",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "TSM",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "TSLA",
+      "date": "2026-06-08",
+      "reason": "strike_pick_failed:no listed strike for long call wing above 417.48534771829185"
+    },
+    {
+      "ticker": "NFLX",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "COIN",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "MSTR",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "MARA",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "DIA",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "GLD",
+      "date": "2026-06-08",
+      "reason": "strike_pick_failed:no listed strike for long put wing below 381.46197270248933"
+    },
+    {
+      "ticker": "XLF",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "XLE",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "EEM",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "GDX",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "MU",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "INTC",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "QCOM",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "ARM",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "MRVL",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "SMCI",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "PLTR",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "CRM",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "ORCL",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "UBER",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "SHOP",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "SNOW",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "JPM",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "BAC",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "GS",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "V",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "DIS",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "BA",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "COST",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "NKE",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "XOM",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "OXY",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "HOOD",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
+    },
+    {
+      "ticker": "RIOT",
+      "date": "2026-06-08",
+      "reason": "no_expiration_in_window"
     }
   ]
 }
