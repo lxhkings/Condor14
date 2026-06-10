@@ -3,7 +3,6 @@
 Reject any leg that fails:
     - bid > 0
     - (ask - bid) / mid <= 0.30
-    - open_interest >= 100
 """
 
 from enum import Enum
@@ -14,7 +13,6 @@ from data_source.futu_client import OptionLeg
 class LiquidityRejection(Enum):
     ZERO_BID = "zero_bid"
     WIDE_SPREAD = "wide_spread"
-    LOW_OI = "low_oi"
 
 
 def leg_passes_liquidity(leg: OptionLeg) -> LiquidityRejection | None:
@@ -27,8 +25,4 @@ def leg_passes_liquidity(leg: OptionLeg) -> LiquidityRejection | None:
     spread_ratio = (leg.ask - leg.bid) / mid
     if spread_ratio > 0.30:
         return LiquidityRejection.WIDE_SPREAD
-    # OI=0 means data not available (e.g. pre-market Futu snapshot);
-    # only reject when OI is explicitly low but non-zero.
-    if leg.open_interest > 0 and leg.open_interest < 100:
-        return LiquidityRejection.LOW_OI
     return None

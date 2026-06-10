@@ -28,11 +28,6 @@ def test_wide_spread_rejected():
     assert rej == LiquidityRejection.WIDE_SPREAD
 
 
-def test_low_oi_rejected():
-    rej = leg_passes_liquidity(_leg(bid=2.10, ask=2.20, oi=50))
-    assert rej == LiquidityRejection.LOW_OI
-
-
 def test_spread_at_threshold_passes():
     # mid = 1.0, ask-bid = 0.30, ratio = 0.30 (boundary)
     assert leg_passes_liquidity(_leg(bid=0.85, ask=1.15, oi=1000)) is None
