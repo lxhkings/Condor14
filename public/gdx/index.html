@@ -7,7 +7,7 @@
 <script defer src="/_vercel/insights/script.js"></script>
 <script defer src="/_vercel/speed-insights/script.js"></script>
 <title>GDX 14-Day Iron Condor Tracker</title>
-<link rel="canonical" href="https://example.com/gdx/">
+<link rel="canonical" href="https://www.condor14.com/gdx/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#0d1117">
@@ -213,12 +213,156 @@
   tbody tr:nth-child(even) { background: rgba(255,255,255,0.015); }
   /* hover rule defined once in the Tables section above */
 </style>
-
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FinancialProduct","name":"GDX 14-Day Iron Condor Educational Tracker","category":"Options Strategy Educational Tool","additionalProperty":[{"@type":"PropertyValue","name":"Net Credit","value":1.07,"unitText":"USD"},{"@type":"PropertyValue","name":"Max Profit","value":1.07,"unitText":"USD"},{"@type":"PropertyValue","name":"Max Loss","value":3.93,"unitText":"USD"},{"@type":"PropertyValue","name":"Upper Break-even","value":84.57,"unitText":"USD"},{"@type":"PropertyValue","name":"Lower Break-even","value":68.93,"unitText":"USD"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.condor14.com/"},{"@type":"ListItem","position":2,"name":"Sector ETF"},{"@type":"ListItem","position":3,"name":"GDX"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"GDX 14-Day Iron Condor Tracker","author":{"@type":"Organization","name":"QuantOptions Data Lab"},"publisher":{"@type":"Organization","name":"QuantOptions Data Lab"},"datePublished":"2026-06-10","dateModified":"2026-06-10"}</script>
 </head>
 <body>
-<h1>GDX 14-Day Iron Condor Tracker -- June 10, 2026</h1>
-<p>No setup published for GDX today. The most common reasons are insufficient liquidity on the listed strikes, no expiration in the 13-16 day target window, or a non-positive net credit. Live tracking resumes the next trading day.</p>
-<h2>Related Tickers</h2>
+<h1>GDX 14-Day Iron Condor Tracker — June 10, 2026</h1>
+<p>GDX has declined to $76.19, trading below the 20-day simple moving average of $102.32. The daily chart reveals a downtrend characterized by expanding-range candles and elevated participation on selling days, consistent with a shift in market sentiment. Realized volatility registers at the 98th percentile of the trailing 52-week range, signaling above-average uncertainty and correspondingly rich option premiums. The elevated fear premium creates an environment where sellers are well compensated for providing liquidity, though the directional context demands respect for the downside tail.</p>
+<p>Volatility has expanded sharply over the past two weeks, with the 14-day ATR running well above its 60-day average — premiums are richer than usual but tail risk is also elevated. An Iron Condor seller in this environment collects substantial up-front credit, producing a wider breakeven range than would be available under normal volatility conditions. The elevated premium provides a cushion against moderate directional moves, but the asymmetric nature of downside tail events warrants attention when sizing the put side. The strategy remains defined-risk from entry, and the hold-to-expiration framework means interim price fluctuations only affect the outcome if they persist through final settlement.</p>
+<p>The 14-day ATR of $4.92 anchors the distance for strike selection. Placing the short put approximately 1.5 ATRs below the current level establishes a statistical boundary below which a move would register as exceptional on a two-week time frame. The call side targets a symmetric distance above to balance the structure, and the wings are sized to limit maximum loss to a predetermined level.</p>
+<div class="card">
+<h2>Today's Setup</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Underlying close</td>
+<td style="text-align:right">$76.19</td>
+</tr>
+<tr>
+<td style="text-align:left">20-day SMA</td>
+<td style="text-align:right">$102.32</td>
+</tr>
+<tr>
+<td style="text-align:left">14-day ATR</td>
+<td style="text-align:right">$4.92</td>
+</tr>
+<tr>
+<td style="text-align:left">Trend bias</td>
+<td style="text-align:right">Bearish</td>
+</tr>
+<tr>
+<td style="text-align:left">Target exit date</td>
+<td style="text-align:right">2026-06-24</td>
+</tr>
+<tr>
+<td style="text-align:left">Expiry used</td>
+<td style="text-align:right">2026-06-26</td>
+</tr>
+<tr>
+<td style="text-align:left">Short call strike</td>
+<td style="text-align:right">$83.50</td>
+</tr>
+<tr>
+<td style="text-align:left">Long call strike</td>
+<td style="text-align:right">$86.00</td>
+</tr>
+<tr>
+<td style="text-align:left">Short put strike</td>
+<td style="text-align:right">$70.00</td>
+</tr>
+<tr>
+<td style="text-align:left">Long put strike</td>
+<td style="text-align:right">$65.00</td>
+</tr>
+<tr>
+<td style="text-align:left">Net credit</td>
+<td style="text-align:right">$1.07</td>
+</tr>
+<tr>
+<td style="text-align:left">Max profit</td>
+<td style="text-align:right">$1.07</td>
+</tr>
+<tr>
+<td style="text-align:left">Max loss</td>
+<td style="text-align:right">$3.93</td>
+</tr>
+<tr>
+<td style="text-align:left">Upper break-even</td>
+<td style="text-align:right">$84.57</td>
+</tr>
+<tr>
+<td style="text-align:left">Lower break-even</td>
+<td style="text-align:right">$68.93</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="card">
+<h2>Risk Profile</h2>
+<ul>
+<li><strong>Max Profit:</strong> $1.07 per spread</li>
+<li><strong>Max Loss:</strong> $3.93 per spread</li>
+<li><strong>Risk-Reward:</strong> 1 : 3.67</li>
+</ul>
+</div>
+<h2>Probability at Open</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Metric</th>
+<th style="text-align:right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Implied probability of profit</td>
+<td style="text-align:right">57.2%</td>
+</tr>
+<tr>
+<td style="text-align:left">Chance of closing above short call</td>
+<td style="text-align:right">18.4%</td>
+</tr>
+<tr>
+<td style="text-align:left">Chance of closing below short put</td>
+<td style="text-align:right">24.3%</td>
+</tr>
+<tr>
+<td style="text-align:left">Short-call implied volatility</td>
+<td style="text-align:right">50.4%</td>
+</tr>
+<tr>
+<td style="text-align:left">Historical volatility</td>
+<td style="text-align:right">54.2%</td>
+</tr>
+<tr>
+<td style="text-align:left">Volatility premium</td>
+<td style="text-align:right">-3.8</td>
+</tr>
+</tbody>
+</table></div>
+<p>Probabilities are Futu-derived for the 14-day contracts in this setup.</p>
+<h2>Methodology Snapshot</h2>
+<p><a href="/methodology/">Full methodology →</a></p>
+<h2>Active Setups</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Open Date</th>
+<th style="text-align:right">Open Price</th>
+<th style="text-align:left">Target Date</th>
+<th style="text-align:right">Days In</th>
+<th style="text-align:left">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">2026-06-10</td>
+<td style="text-align:right">$76.19</td>
+<td style="text-align:left">2026-06-24</td>
+<td style="text-align:right">0</td>
+<td style="text-align:left">Open (Day 0)</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Related Sector ETF Tickers</h2>
 <ul>
 <li><a href="/eem/">EEM</a></li>
 <li><a href="/gld/">GLD</a></li>
