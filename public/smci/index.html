@@ -213,15 +213,15 @@
   tbody tr:nth-child(even) { background: rgba(255,255,255,0.015); }
   /* hover rule defined once in the Tables section above */
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FinancialProduct","name":"SMCI 14-Day Iron Condor Educational Tracker","category":"Options Strategy Educational Tool","additionalProperty":[{"@type":"PropertyValue","name":"Net Credit","value":0.3,"unitText":"USD"},{"@type":"PropertyValue","name":"Max Profit","value":0.3,"unitText":"USD"},{"@type":"PropertyValue","name":"Max Loss","value":0.7,"unitText":"USD"},{"@type":"PropertyValue","name":"Upper Break-even","value":37.8,"unitText":"USD"},{"@type":"PropertyValue","name":"Lower Break-even","value":31.7,"unitText":"USD"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FinancialProduct","name":"SMCI 14-Day Iron Condor Educational Tracker","category":"Options Strategy Educational Tool","additionalProperty":[{"@type":"PropertyValue","name":"Net Credit","value":0.28,"unitText":"USD"},{"@type":"PropertyValue","name":"Max Profit","value":0.28,"unitText":"USD"},{"@type":"PropertyValue","name":"Max Loss","value":0.72,"unitText":"USD"},{"@type":"PropertyValue","name":"Upper Break-even","value":32.28,"unitText":"USD"},{"@type":"PropertyValue","name":"Lower Break-even","value":26.72,"unitText":"USD"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.condor14.com/"},{"@type":"ListItem","position":2,"name":"Semiconductors"},{"@type":"ListItem","position":3,"name":"SMCI"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"SMCI 14-Day Iron Condor Tracker","author":{"@type":"Organization","name":"QuantOptions Data Lab"},"publisher":{"@type":"Organization","name":"QuantOptions Data Lab"},"datePublished":"2026-06-10","dateModified":"2026-06-10"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"SMCI 14-Day Iron Condor Tracker","author":{"@type":"Organization","name":"QuantOptions Data Lab"},"publisher":{"@type":"Organization","name":"QuantOptions Data Lab"},"datePublished":"2026-06-11","dateModified":"2026-06-11"}</script>
 </head>
 <body>
-<h1>SMCI 14-Day Iron Condor Tracker — June 10, 2026</h1>
-<p>SMCI closed at $34.79, sitting above its 20-day simple moving average of $31.34. The daily-chart structure remains constructive, with each pullback so far holding above prior swing lows. Realized volatility registers at the 87th percentile of its trailing 12-month range, which places premiums in unusually rich territory relative to recent realized moves. The combination of trend and volatility creates a setup where the seller receives elevated compensation for a structure that does not require continued directional momentum to succeed.</p>
-<p>For a 14-day Iron Condor, the math favors the seller in this configuration: time decay accelerates while implied volatility has historical pressure to revert lower. The structure thrives when the underlying drifts inside the short strikes, regardless of which direction it leans, and the rich premium translates directly into a wider breakeven envelope.</p>
-<p>The 14-day ATR of $1.91 provides the statistical anchor for strike selection. Anchoring the short call at roughly 1.5 ATRs above spot keeps it outside the typical two-week move while still capturing meaningful credit, and the symmetric put-side anchor balances the structure. Risk is bounded by wing width minus the credit received; the position is not directional in intent, only in selection bias when trend filters apply.</p>
+<h1>SMCI 14-Day Iron Condor Tracker — June 11, 2026</h1>
+<p>SMCI has declined to $29.36, trading below the 20-day simple moving average of $31.29. The daily chart reveals a downtrend characterized by expanding-range candles and elevated participation on selling days, consistent with a shift in market sentiment. Realized volatility registers at the 87th percentile of the trailing 52-week range, signaling above-average uncertainty and correspondingly rich option premiums. The elevated fear premium creates an environment where sellers are well compensated for providing liquidity, though the directional context demands respect for the downside tail.</p>
+<p>An Iron Condor seller in this environment collects substantial up-front credit, producing a wider breakeven range than would be available under normal volatility conditions. The elevated premium provides a cushion against moderate directional moves, but the asymmetric nature of downside tail events warrants attention when sizing the put side. The strategy remains defined-risk from entry, and the hold-to-expiration framework means interim price fluctuations only affect the outcome if they persist through final settlement.</p>
+<p>The 14-day ATR of $1.91 anchors the distance for strike selection. Placing the short put approximately 1.5 ATRs below the current level establishes a statistical boundary below which a move would register as exceptional on a two-week time frame. The call side targets a symmetric distance above to balance the structure, and the wings are sized to limit maximum loss to a predetermined level.</p>
 <div class="card">
 <h2>Today's Setup</h2>
 <div class="table-wrap"><table>
@@ -234,11 +234,11 @@
 <tbody>
 <tr>
 <td style="text-align:left">Underlying close</td>
-<td style="text-align:right">$34.79</td>
+<td style="text-align:right">$29.36</td>
 </tr>
 <tr>
 <td style="text-align:left">20-day SMA</td>
-<td style="text-align:right">$31.34</td>
+<td style="text-align:right">$31.29</td>
 </tr>
 <tr>
 <td style="text-align:left">14-day ATR</td>
@@ -246,11 +246,11 @@
 </tr>
 <tr>
 <td style="text-align:left">Trend bias</td>
-<td style="text-align:right">Bullish</td>
+<td style="text-align:right">Bearish</td>
 </tr>
 <tr>
 <td style="text-align:left">Target exit date</td>
-<td style="text-align:right">2026-06-24</td>
+<td style="text-align:right">2026-06-25</td>
 </tr>
 <tr>
 <td style="text-align:left">Expiry used</td>
@@ -258,39 +258,39 @@
 </tr>
 <tr>
 <td style="text-align:left">Short call strike</td>
-<td style="text-align:right">$37.50</td>
-</tr>
-<tr>
-<td style="text-align:left">Long call strike</td>
-<td style="text-align:right">$38.50</td>
-</tr>
-<tr>
-<td style="text-align:left">Short put strike</td>
 <td style="text-align:right">$32.00</td>
 </tr>
 <tr>
+<td style="text-align:left">Long call strike</td>
+<td style="text-align:right">$33.00</td>
+</tr>
+<tr>
+<td style="text-align:left">Short put strike</td>
+<td style="text-align:right">$27.00</td>
+</tr>
+<tr>
 <td style="text-align:left">Long put strike</td>
-<td style="text-align:right">$31.00</td>
+<td style="text-align:right">$26.00</td>
 </tr>
 <tr>
 <td style="text-align:left">Net credit</td>
-<td style="text-align:right">$0.30</td>
+<td style="text-align:right">$0.28</td>
 </tr>
 <tr>
 <td style="text-align:left">Max profit</td>
-<td style="text-align:right">$0.30</td>
+<td style="text-align:right">$0.28</td>
 </tr>
 <tr>
 <td style="text-align:left">Max loss</td>
-<td style="text-align:right">$0.70</td>
+<td style="text-align:right">$0.72</td>
 </tr>
 <tr>
 <td style="text-align:left">Upper break-even</td>
-<td style="text-align:right">$37.80</td>
+<td style="text-align:right">$32.28</td>
 </tr>
 <tr>
 <td style="text-align:left">Lower break-even</td>
-<td style="text-align:right">$31.70</td>
+<td style="text-align:right">$26.72</td>
 </tr>
 </tbody>
 </table></div>
@@ -298,9 +298,9 @@
 <div class="card">
 <h2>Risk Profile</h2>
 <ul>
-<li><strong>Max Profit:</strong> $0.30 per spread</li>
-<li><strong>Max Loss:</strong> $0.70 per spread</li>
-<li><strong>Risk-Reward:</strong> 1 : 2.33</li>
+<li><strong>Max Profit:</strong> $0.28 per spread</li>
+<li><strong>Max Loss:</strong> $0.72 per spread</li>
+<li><strong>Risk-Reward:</strong> 1 : 2.57</li>
 </ul>
 </div>
 <h2>Probability at Open</h2>
@@ -314,27 +314,27 @@
 <tbody>
 <tr>
 <td style="text-align:left">Implied probability of profit</td>
-<td style="text-align:right">31.4%</td>
+<td style="text-align:right">33.0%</td>
 </tr>
 <tr>
 <td style="text-align:left">Chance of closing above short call</td>
-<td style="text-align:right">31.7%</td>
+<td style="text-align:right">29.7%</td>
 </tr>
 <tr>
 <td style="text-align:left">Chance of closing below short put</td>
-<td style="text-align:right">36.9%</td>
+<td style="text-align:right">37.3%</td>
 </tr>
 <tr>
 <td style="text-align:left">Short-call implied volatility</td>
-<td style="text-align:right">89.8%</td>
+<td style="text-align:right">92.5%</td>
 </tr>
 <tr>
 <td style="text-align:left">Historical volatility</td>
-<td style="text-align:right">114.2%</td>
+<td style="text-align:right">142.3%</td>
 </tr>
 <tr>
 <td style="text-align:left">Volatility premium</td>
-<td style="text-align:right">-24.3</td>
+<td style="text-align:right">-49.8</td>
 </tr>
 </tbody>
 </table></div>
@@ -354,11 +354,18 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align:left">2026-06-11</td>
+<td style="text-align:right">$29.36</td>
+<td style="text-align:left">2026-06-25</td>
+<td style="text-align:right">0</td>
+<td style="text-align:left">Open (Day 0)</td>
+</tr>
+<tr>
 <td style="text-align:left">2026-06-10</td>
 <td style="text-align:right">$34.79</td>
 <td style="text-align:left">2026-06-24</td>
-<td style="text-align:right">0</td>
-<td style="text-align:left">Open (Day 0)</td>
+<td style="text-align:right">1</td>
+<td style="text-align:left">Open (Day 1)</td>
 </tr>
 </tbody>
 </table></div>
