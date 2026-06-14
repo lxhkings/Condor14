@@ -22,6 +22,21 @@
   </div>
 </div>
 
+## Featured Ticker Deep Dives
+
+{% if hot_cards %}
+<div class="hot-grid">
+{% for card in hot_cards %}
+<div class="hot-card">
+  <h3><a href="/{{ card.ticker|lower }}/">{{ card.ticker }} &middot; {{ card.company_name }}</a></h3>
+  <p>{{ card.blurb }}</p>
+</div>
+{% endfor %}
+</div>
+{% endif %}
+
+[&rarr; How we build iron condor setups: read the guide](/guide/)
+
 Each row reflects realized outcomes for the listed ticker over the past 30 days, computed under a strictly passive hold-to-expiration assumption. Sample size shown for transparency; tickers with fewer than 5 settled setups are listed but flagged as low-confidence.
 
 ## Performance Leaderboard

@@ -22,6 +22,21 @@
   </div>
 </div>
 
+## Featured Ticker Deep Dives
+
+{% if hot_cards %}
+<div class="hot-grid">
+{% for card in hot_cards %}
+<div class="hot-card">
+  <h3><a href="/{{ card.ticker|lower }}/">{{ card.ticker }} &middot; {{ card.company_name }}</a></h3>
+  <p>{{ card.blurb }}</p>
+</div>
+{% endfor %}
+</div>
+{% endif %}
+
+[&rarr; How we build iron condor setups: read the guide](/guide/)
+
 Live tracking initiated on **{{ site_launch_date.isoformat() }}**. Realized 30-day win-rate leaderboard unlocks once 200 settled setups accumulate (~44 trading days). Until then, the screener below shows today's setups ranked by premium structure and a per-sector volatility view.
 
 ## Top Realized P&L by Ticker
