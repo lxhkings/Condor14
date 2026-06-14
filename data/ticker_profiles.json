@@ -1,0 +1,42 @@
+{
+  "NVDA": {
+    "company_name": "NVIDIA Corporation",
+    "sector": "Semiconductors",
+    "description": "NVIDIA designs graphics processing units (GPUs) for gaming, data centers, and AI acceleration. As the dominant supplier of AI training hardware, NVDA's share price is sensitive to data-center CapEx cycles, chip export policy, and foundry capacity at TSMC. The stock exhibits above-average implied volatility, which translates into wider iron condor wings and richer net credits relative to broad-market ETFs."
+  },
+  "AAPL": {
+    "company_name": "Apple Inc.",
+    "sector": "Technology",
+    "description": "Apple designs consumer electronics, software, and services — led by the iPhone ecosystem, Mac, iPad, and growing Services revenue. AAPL is the most widely held US equity and its options market is among the deepest in the world. The stock tends toward moderate realized volatility with periodic bursts around product launch cycles and earnings, making 14-day iron condor structures viable when IV percentile is elevated and the daily chart shows a defined range."
+  },
+  "MSFT": {
+    "company_name": "Microsoft Corporation",
+    "sector": "Technology",
+    "description": "Microsoft is a diversified enterprise technology company spanning cloud infrastructure (Azure), productivity software (Office 365, LinkedIn), and AI platform services. MSFT's large market capitalization and deep option liquidity produce tight bid-ask spreads, which is favorable for iron condor net credit capture. The stock's realized volatility has historically run below the broad tech sector median, so elevated IV percentile readings on MSFT often signal premium-selling opportunity."
+  },
+  "TSLA": {
+    "company_name": "Tesla Inc.",
+    "sector": "Consumer Cyclical",
+    "description": "Tesla designs and manufactures electric vehicles, battery storage systems, and solar products. TSLA is known for high implied volatility relative to the broad market, driven by retail sentiment, production delivery numbers, and CEO-driven news flow. The elevated IV environment means iron condor wings are set wider in absolute strike terms and net credits are larger, but tail risk is also materially higher than on lower-volatility tickers — position sizing and strict hold-to-expiration discipline are essential."
+  },
+  "AMZN": {
+    "company_name": "Amazon.com Inc.",
+    "sector": "Consumer Cyclical",
+    "description": "Amazon operates the world's largest e-commerce marketplace and the leading public cloud platform (AWS). The stock trades with moderate to high implied volatility, influenced by retail spending cycles, Prime Day events, AWS growth rates, and broad tech sentiment. AMZN's deep option liquidity supports competitive bid-ask spreads across a wide strike range, making multi-leg strategies like iron condors executable with acceptable transaction cost assumptions."
+  },
+  "META": {
+    "company_name": "Meta Platforms Inc.",
+    "sector": "Communication Services",
+    "description": "Meta owns Facebook, Instagram, WhatsApp, and Messenger — the largest social media portfolio globally. Revenue is advertising-driven and sensitive to the macro cycle. META has historically exhibited elevated volatility relative to the S&P 500, with episodic drawdowns tied to regulatory headlines and earnings surprises. The stock's option chain is highly liquid, supporting clean execution of iron condor strikes, and the rich premium environment can produce favorable risk-reward ratios when IV is in the upper tercile of its trailing range."
+  },
+  "GOOGL": {
+    "company_name": "Alphabet Inc.",
+    "sector": "Communication Services",
+    "description": "Alphabet is the parent of Google, YouTube, and Google Cloud. Search advertising remains the dominant revenue driver, with cloud and subscription services growing. GOOGL tends toward moderate realized volatility and benefits from deep institutional option liquidity. Iron condor setups on GOOGL are most compelling when IV percentile is elevated — typically around earnings cycles or antitrust regulatory events — and the daily chart shows range-bound behavior between well-defined support and resistance levels."
+  },
+  "SPY": {
+    "company_name": "SPDR S&P 500 ETF Trust",
+    "sector": "Broad Market",
+    "description": "SPY is the most liquid US equity ETF, tracking the S&P 500 index of large-cap US companies. As a diversified basket, SPY exhibits lower realized volatility than individual equities, which means iron condor wings are narrower in percentage terms and net credits are smaller. However, the diversification benefit reduces the probability of large gap moves, and SPY's deep option market ensures tight execution across all strikes. SPY iron condors serve as a benchmark for comparing single-stock condor performance on this site."
+  }
+}
