@@ -1,0 +1,33 @@
+{# content_engine/templates/spintax/_faq_component.md.j2
+   Reusable FAQ component — embedded on all ticker pages and on the standalone /faq/ page.
+   Pure static markdown, no template variables. ~1000 words. #}
+
+## Frequently Asked Questions
+
+### What is an iron condor?
+
+An iron condor is a four-leg, market-neutral options strategy that combines a bull put spread and a bear call spread on the same underlying, both with the same expiration date. The structure profits when the underlying price closes between the two short strikes at expiration. Maximum profit is limited to the net credit received when opening the position; maximum loss is capped at the wing width minus that credit. The iron condor is a premium-selling strategy — the trader collects option premium upfront and keeps it if the underlying stays within the defined range.
+
+### What does ATR-14 measure?
+
+Average True Range (ATR) is a volatility indicator that measures the average range between a security's daily high and low over a specified period, adjusted for gaps. The "14" refers to the 14-day lookback window. On this site, ATR-14 is computed using Wilder's smoothing method: the initial value is the simple average of the first 14 true ranges, and each subsequent value is `(prior ATR × 13 + current TR) / 14`. ATR anchors every iron condor strike — the short call is placed at roughly 1.5 ATRs above the spot price, and the short put at roughly 1.5 ATRs below, providing a statistical buffer around the expected two-week price range.
+
+### How is implied volatility (IV) used in strike selection?
+
+Implied volatility represents the market's forward-looking expectation of price movement, derived from current option prices. Higher IV translates into wider expected ranges and richer option premiums. On this site, IV percentile — where current IV ranks within its trailing 12-month range — determines how strikes are framed. When IV percentile is high (above 70), premiums are rich relative to recent history, which favors premium-selling strategies. When IV percentile is low (below 30), premiums are compressed and iron condors become less attractive on a risk-reward basis. The system publishes setups regardless of IV percentile to maintain a consistent tracking methodology, but the IV context is included on every ticker page.
+
+### What does "hold to expiration" mean in this data?
+
+Every iron condor setup tracked on this site follows a strictly passive, hold-to-expiration rule. The position is opened at the algorithmically determined strikes and held until the target exit date — normally 14 calendar days after entry. No early exit, no stop-loss, no adjustment is applied. The win condition is simple: if the underlying's closing price on the target exit date falls between the short put strike and the short call strike (inclusive), the setup is recorded as "won." Otherwise it is recorded as "lost." This rule-based approach ensures that every setup is evaluated consistently, making the win-rate and P&L data comparable across tickers and over time.
+
+### What are the risks of iron condor strategies?
+
+Iron condors carry defined but real risk. While maximum loss is capped per spread, the probability of loss is not zero. Risks include: (1) **Gap risk** — the underlying can gap through a short strike overnight, resulting in a loss larger than the initial credit received. (2) **Pin risk** — the underlying may close exactly at a short strike at expiration, creating assignment uncertainty. (3) **Liquidity risk** — wide bid-ask spreads can erode the net credit and increase transaction costs beyond modeled assumptions. (4) **Volatility expansion** — a sudden spike in IV can widen losses on open positions even if the underlying has not breached a short strike. (5) **Early assignment** — American-style options can be exercised before expiration, which is not modeled in this backtest harness. This site's data reflects a passive research methodology; actual live trading involves additional considerations including margin requirements, position sizing, and active risk management.
+
+### How are option prices quoted on this site?
+
+All option prices are sourced from FutuOpenD, Futu's local market data gateway, connected to real-time US options quotes during market hours. Short legs are priced at the bid (the worst realistic fill when selling options to open), and long legs are priced at the ask (the worst realistic fill when buying options for protection). This conservative quoting approach means the net credit shown on each ticker page — `(short call bid + short put bid) - (long call ask + long put ask)` — represents a plausible execution level rather than an idealized mid-price. The actual fill a trader would receive depends on their broker, order routing, and market conditions at the time of execution.
+
+### Where does the data come from?
+
+All underlying price data, option chains, and IV analytics are sourced from FutuOpenD via the futu-api Python SDK. Daily OHLCV bars are cached in a local SQLite database for ATR and SMA computation. The site is updated automatically each US trading day after market close. Historical setups are never retroactively edited — the ledger is append-only and publicly viewable on the site. For full details on formulas, thresholds, and edge cases, see the [methodology page](/methodology/).

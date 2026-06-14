@@ -1,0 +1,59 @@
+{# content_engine/templates/guide.md.j2 #}
+{% extends "_base.md.j2" %}
+{% block body %}
+# Beginner's Guide: 14-Day Iron Condor Strategy
+
+This guide explains the core concepts behind the 14-day iron condor setups tracked on this site. It is written for readers who are familiar with basic options terminology but new to multi-leg strategies.
+
+## What Is an Iron Condor?
+
+An iron condor is a four-leg options strategy that combines two vertical spreads — a bull put spread and a bear call spread — on the same underlying, expiring on the same date. The trader sells an out-of-the-money put spread below the current price and an out-of-the-money call spread above it. The goal is for the underlying to stay between the two short strikes through expiration. If it does, both spreads expire worthless and the trader keeps the full net credit.
+
+## Why 14 Days?
+
+Fourteen calendar days is a deliberate sweet spot. Shorter durations (weekly options) amplify gamma risk — small price moves near expiration can swing P&L dramatically. Longer durations (30+ days) expose the position to more macro and earnings events. Two weeks balances these concerns: enough time for theta decay to work, short enough to limit event exposure. The expiration is selected from the nearest available option series in the 13–16 day window, preferring the one closest to 14 days.
+
+## How Strikes Are Selected
+
+Strikes are not picked by discretion. The system follows a fixed, repeatable formula:
+
+1. Compute the 14-day Average True Range (ATR-14) using Wilder's smoothing method.
+2. Set the short call anchor at `spot + 1.5 × ATR-14`, snapped to the nearest listed strike.
+3. Set the short put anchor at `spot - 1.5 × ATR-14`, snapped to the nearest listed strike.
+4. Set wing width to `max(0.5 × ATR-14, one strike increment)`, snapped outward for the long strikes.
+
+The 1.5× ATR multiplier is chosen so that, under normal distribution assumptions, the underlying is expected to stay inside the short strikes roughly 68–80% of the time over a two-week window. This is a statistical anchor, not a prediction.
+
+## Understanding the Profit and Loss Profile
+
+The iron condor's P&L is structured and bounded:
+
+- **Max Profit** = Net Credit received at open. Realized when the underlying closes between the short strikes at expiration.
+- **Max Loss** = Wing Width − Net Credit. Realized when the underlying closes beyond either long strike at expiration.
+- **Breakeven Points** = Short Call + Net Credit (upper) and Short Put − Net Credit (lower).
+
+Between the breakeven points, the position is profitable or at breakeven. Beyond them, losses accrue dollar-for-dollar up to the max loss cap.
+
+## What "Hold to Expiration" Means
+
+Every setup tracked on this site follows a single, non-discretionary rule: open at the algorithmically determined prices and hold until the target exit date. There is no early close, no adjustment, and no stop-loss. If the underlying closes between the two short strikes on the exit date, the setup is recorded as **won**. Otherwise it is recorded as **lost**. This consistent rule-set means the track record data published here is a clean statistical sample, not a curated set of favorable outcomes.
+
+## Risks to Understand
+
+Iron condors are defined-risk, but that risk is real. Key risks include:
+
+- **Gap moves** — The underlying can open beyond a breakeven point overnight.
+- **Volatility expansion** — If implied volatility spikes, the mark-to-market loss can be large even if the underlying is still inside the short strikes.
+- **Early assignment** — American-style options can be exercised before expiration, which is not simulated in this backtest harness.
+- **Liquidity** — Wide bid-ask spreads or low open interest can make fills worse than the conservative quotes shown here.
+
+No setup on this site should be interpreted as trading advice. The data is published for educational research purposes. See the disclaimer on every page and the full [methodology](/methodology/) for details.
+
+## How to Use This Site
+
+- **Homepage** — See today's highest-premium setups, sector volatility heatmap, and featured ticker deep dives.
+- **Ticker Pages** — Each tracked symbol has a dedicated page showing today's setup, all-time track record, active setups, and settlement history.
+- **Methodology** — Every formula, filter, and edge case is documented with no omissions.
+
+Start with the ticker pages linked under "Featured Ticker Deep Dives" on the homepage — those include extra company context alongside the data tables.
+{% endblock %}
