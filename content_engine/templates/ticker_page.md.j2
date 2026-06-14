@@ -5,6 +5,12 @@
 
 {{ prelude_md | safe }}
 
+{% if profile %}
+## About {{ profile.company_name }}
+
+{{ profile.description }}
+{% endif %}
+
 ## Today's Setup
 
 | Parameter | Value |
@@ -30,6 +36,10 @@
 - **Max Profit:** ${{ "%.2f"|format(setup.max_profit) }} per spread
 - **Max Loss:** ${{ "%.2f"|format(setup.max_loss) }} per spread
 - **Risk-Reward:** 1 : {{ "%.2f"|format(setup.max_loss / setup.max_profit) }}
+
+## Quick Read
+
+{{ ticker }} closed at ${{ "%.2f"|format(setup.underlying_at_open) }} with a 14-day ATR of ${{ "%.2f"|format(setup.atr14_at_open) }}. Implied volatility ranks at the {{ setup.vol_percentile_at_open }}th percentile of its trailing 12-month range. {% if setup.trend_bias == "bullish" %}Price remains above the 20-day SMA of ${{ "%.2f"|format(setup.sma20_at_open) }}, reflecting constructive daily-chart structure.{% elif setup.trend_bias == "bearish" %}Price has slipped below the 20-day SMA of ${{ "%.2f"|format(setup.sma20_at_open) }}, indicating defensive daily-chart posture.{% else %}Price hovers near the 20-day SMA of ${{ "%.2f"|format(setup.sma20_at_open) }} in a neutral daily-chart regime.{% endif %} The iron condor's upper breakeven of ${{ "%.2f"|format(setup.break_even_upper) }} sits {{ "%.1f"|format((setup.break_even_upper - setup.underlying_at_open) / setup.underlying_at_open * 100) }}% above spot; the lower breakeven of ${{ "%.2f"|format(setup.break_even_lower) }} is {{ "%.1f"|format((setup.underlying_at_open - setup.break_even_lower) / setup.underlying_at_open * 100) }}% below. Risk is capped at ${{ "%.2f"|format(setup.max_loss) }} per spread.
 
 {% if track_record and track_record.sample_size > 0 %}
 ## Track Record (All-Time Settled)
@@ -85,4 +95,6 @@ Probabilities are Futu-derived for the 14-day contracts in this setup.
 
 {% for peer in peers %}- [{{ peer }}](/{{ peer|lower }}/)
 {% endfor %}
+
+{% include 'spintax/_faq_component.md.j2' %}
 {% endblock %}
