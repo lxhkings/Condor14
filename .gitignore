@@ -6,6 +6,7 @@ __pycache__/
 CLAUDE.md
 *.tmp
 data/ledger.json.tmp
+data/last_indexed.json
 .env
 .worktrees/
 .DS_Store
