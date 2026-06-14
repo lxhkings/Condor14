@@ -114,3 +114,43 @@ def test_homepage_has_organization_jsonld(tmp_path):
     html = (public / "index.html").read_text()
     assert '"@type":"Organization"' in html
     assert PUBLISHER_EMAIL in html
+
+
+def test_faq_and_guide_pages_render(tmp_path):
+    public = _build(tmp_path)
+    for slug in ("faq", "guide"):
+        page = public / slug / "index.html"
+        assert page.is_file(), f"{slug} page missing"
+        content = page.read_text()
+        assert len(content) > 500, f"{slug} page too short: {len(content)} chars"
+
+
+def test_sitemap_includes_faq_and_guide(tmp_path):
+    public = _build(tmp_path)
+    sitemap = (public / "sitemap.xml").read_text()
+    assert "/faq/" in sitemap
+    assert "/guide/" in sitemap
+
+
+def test_ticker_page_has_quick_read_and_faq(tmp_path):
+    public = _build(tmp_path)
+    html = (public / "nvda" / "index.html").read_text()
+    assert "Quick Read" in html
+    assert "Frequently Asked Questions" in html
+    assert "What is an iron condor?" in html
+    assert "upper breakeven" in html.lower()
+
+
+def test_homepage_has_hot_analysis_section(tmp_path):
+    public = _build(tmp_path)
+    html = (public / "index.html").read_text()
+    assert "Featured Ticker Deep Dives" in html
+    assert "/guide/" in html
+
+
+def test_ticker_page_no_crash_without_profiles(tmp_path):
+    """Profile injection is best-effort; build must pass without profiles file."""
+    public = _build(tmp_path)
+    html = (public / "nvda" / "index.html").read_text()
+    assert "NVDA" in html
+    assert "Today's Setup" in html
