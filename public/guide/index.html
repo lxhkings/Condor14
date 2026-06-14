@@ -6,8 +6,8 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6718270775160916" crossorigin="anonymous"></script>
 <script defer src="/_vercel/insights/script.js"></script>
 <script defer src="/_vercel/speed-insights/script.js"></script>
-<title>QCOM 14-Day Iron Condor Tracker</title>
-<link rel="canonical" href="https://condor14.com/qcom/">
+<title>Beginner&#x27;s Guide: 14-Day Iron Condor Strategy -- Condor14</title>
+<link rel="canonical" href="https://condor14.com/guide/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#0d1117">
@@ -216,15 +216,47 @@
 
 </head>
 <body>
-<h1>QCOM 14-Day Iron Condor Tracker -- June 14, 2026</h1>
-<p>No setup published for QCOM today. The most common reasons are insufficient liquidity on the listed strikes, no expiration in the 13-16 day target window, or a non-positive net credit. Live tracking resumes the next trading day.</p>
-<h2>Related Tickers</h2>
+<h1>Beginner's Guide: 14-Day Iron Condor Strategy</h1>
+<p>This guide explains the core concepts behind the 14-day iron condor setups tracked on this site. It is written for readers who are familiar with basic options terminology but new to multi-leg strategies.</p>
+<h2>What Is an Iron Condor?</h2>
+<p>An iron condor is a four-leg options strategy that combines two vertical spreads — a bull put spread and a bear call spread — on the same underlying, expiring on the same date. The trader sells an out-of-the-money put spread below the current price and an out-of-the-money call spread above it. The goal is for the underlying to stay between the two short strikes through expiration. If it does, both spreads expire worthless and the trader keeps the full net credit.</p>
+<h2>Why 14 Days?</h2>
+<p>Fourteen calendar days is a deliberate sweet spot. Shorter durations (weekly options) amplify gamma risk — small price moves near expiration can swing P&amp;L dramatically. Longer durations (30+ days) expose the position to more macro and earnings events. Two weeks balances these concerns: enough time for theta decay to work, short enough to limit event exposure. The expiration is selected from the nearest available option series in the 13–16 day window, preferring the one closest to 14 days.</p>
+<h2>How Strikes Are Selected</h2>
+<p>Strikes are not picked by discretion. The system follows a fixed, repeatable formula:</p>
+<ol>
+<li>Compute the 14-day Average True Range (ATR-14) using Wilder's smoothing method.</li>
+<li>Set the short call anchor at <code>spot + 1.5 × ATR-14</code>, snapped to the nearest listed strike.</li>
+<li>Set the short put anchor at <code>spot - 1.5 × ATR-14</code>, snapped to the nearest listed strike.</li>
+<li>Set wing width to <code>max(0.5 × ATR-14, one strike increment)</code>, snapped outward for the long strikes.</li>
+</ol>
+<p>The 1.5× ATR multiplier is chosen so that, under normal distribution assumptions, the underlying is expected to stay inside the short strikes roughly 68–80% of the time over a two-week window. This is a statistical anchor, not a prediction.</p>
+<h2>Understanding the Profit and Loss Profile</h2>
+<p>The iron condor's P&amp;L is structured and bounded:</p>
 <ul>
-<li><a href="/amd/">AMD</a></li>
-<li><a href="/arm/">ARM</a></li>
-<li><a href="/avgo/">AVGO</a></li>
-<li><a href="/intc/">INTC</a></li>
+<li><strong>Max Profit</strong> = Net Credit received at open. Realized when the underlying closes between the short strikes at expiration.</li>
+<li><strong>Max Loss</strong> = Wing Width − Net Credit. Realized when the underlying closes beyond either long strike at expiration.</li>
+<li><strong>Breakeven Points</strong> = Short Call + Net Credit (upper) and Short Put − Net Credit (lower).</li>
 </ul>
+<p>Between the breakeven points, the position is profitable or at breakeven. Beyond them, losses accrue dollar-for-dollar up to the max loss cap.</p>
+<h2>What &quot;Hold to Expiration&quot; Means</h2>
+<p>Every setup tracked on this site follows a single, non-discretionary rule: open at the algorithmically determined prices and hold until the target exit date. There is no early close, no adjustment, and no stop-loss. If the underlying closes between the two short strikes on the exit date, the setup is recorded as <strong>won</strong>. Otherwise it is recorded as <strong>lost</strong>. This consistent rule-set means the track record data published here is a clean statistical sample, not a curated set of favorable outcomes.</p>
+<h2>Risks to Understand</h2>
+<p>Iron condors are defined-risk, but that risk is real. Key risks include:</p>
+<ul>
+<li><strong>Gap moves</strong> — The underlying can open beyond a breakeven point overnight.</li>
+<li><strong>Volatility expansion</strong> — If implied volatility spikes, the mark-to-market loss can be large even if the underlying is still inside the short strikes.</li>
+<li><strong>Early assignment</strong> — American-style options can be exercised before expiration, which is not simulated in this backtest harness.</li>
+<li><strong>Liquidity</strong> — Wide bid-ask spreads or low open interest can make fills worse than the conservative quotes shown here.</li>
+</ul>
+<p>No setup on this site should be interpreted as trading advice. The data is published for educational research purposes. See the disclaimer on every page and the full <a href="/methodology/">methodology</a> for details.</p>
+<h2>How to Use This Site</h2>
+<ul>
+<li><strong>Homepage</strong> — See today's highest-premium setups, sector volatility heatmap, and featured ticker deep dives.</li>
+<li><strong>Ticker Pages</strong> — Each tracked symbol has a dedicated page showing today's setup, all-time track record, active setups, and settlement history.</li>
+<li><strong>Methodology</strong> — Every formula, filter, and edge case is documented with no omissions.</li>
+</ul>
+<p>Start with the ticker pages linked under &quot;Featured Ticker Deep Dives&quot; on the homepage — those include extra company context alongside the data tables.</p>
 <nav class="sitenav">
 <p><a href="/">Home</a> · <a href="/methodology/">Methodology</a> · <a href="/about/">About</a> · <a href="/privacy/">Privacy Policy</a> · <a href="/contact/">Contact</a></p>
 </nav>
