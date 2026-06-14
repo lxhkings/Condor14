@@ -16,6 +16,7 @@ Step order:
 
 from __future__ import annotations
 
+import json
 import logging
 import os
 import sys
@@ -72,6 +73,17 @@ PUBLISHER_EMAIL = "lxhkings@gmail.com"
 ADSENSE_PUBLISHER_ID = "pub-6718270775160916"
 
 
+def _load_ticker_profiles() -> dict:
+    """Load ticker company profiles from data/ticker_profiles.json.
+    Returns empty dict on any failure — profile enrichment is best-effort."""
+    profiles_path = REPO_ROOT / "data" / "ticker_profiles.json"
+    try:
+        return json.loads(profiles_path.read_text())
+    except Exception:
+        log.warning("ticker_profiles.json not found or invalid; skipping profiles")
+        return {}
+
+
 def _env() -> Environment:
     return Environment(loader=FileSystemLoader(str(TEMPLATE_DIR)))
 
@@ -89,6 +101,7 @@ def _render_ticker(
     env: Environment,
     base_url: str,
     track_record: dict | None = None,
+    profile: dict | None = None,
 ) -> str:
     prelude_md = render_prelude(
         setup=setup, atr60=setup.atr60_at_open, jinja_env=env,
@@ -106,6 +119,7 @@ def _render_ticker(
         settled_rows=settled_rows,
         peers=peers,
         track_record=track_record,
+        profile=profile,
     )
     blocks = [
         financial_product_jsonld(setup),
@@ -173,6 +187,7 @@ def _render_index(
     today: date,
     env: Environment,
     base_url: str,
+    hot_cards: list[dict] | None = None,
 ) -> tuple[str, str, dict]:
     """Returns (markdown_source, page_title, screener_data).
     `screener_data` is reused by build() for ItemList JSON-LD to avoid
@@ -185,6 +200,7 @@ def _render_index(
             highest_premium_setups=screener["highest_premium_setups"],
             sector_heatmap=screener["sector_heatmap"],
             hero=screener["hero"],
+            hot_cards=hot_cards,
             )
         return md, "Live 30-Day Hold-to-Expiration Performance - Iron Condor Tracker", screener
     md = env.get_template("index_screener.md.j2").render(
@@ -194,6 +210,7 @@ def _render_index(
         sector_heatmap=screener["sector_heatmap"],
         newest_setups=screener["newest_setups"],
         hero=screener["hero"],
+        hot_cards=hot_cards,
     )
     return md, "Daily Iron Condor Volatility Screener", screener
 
@@ -258,10 +275,32 @@ def build(
 
     ledger = LedgerStore(ledger_path).load()
     alltime_stats = per_ticker_alltime_stats(ledger)
+    profiles = _load_ticker_profiles()
+    latest = _latest_setup_per_ticker(ledger)
+
+    # Hot cards for homepage: top 4 hero tickers that have profiles
+    hot_cards: list[dict] = []
+    _hero_order = ["NVDA", "AAPL", "MSFT", "TSLA", "AMZN", "META", "GOOGL", "SPY"]
+    for t in _hero_order:
+        if len(hot_cards) >= 4:
+            break
+        p = profiles.get(t)
+        if not p:
+            continue
+        blurb = p["description"].split(". ")[0] + "."
+        tr = alltime_stats.get(t)
+        if tr and tr.get("sample_size", 0) > 0:
+            blurb += f" {t}'s {tr['sample_size']} settled iron condor cycles on this site have closed at a {tr['win_rate']*100:.0f}% win rate to date."
+        hot_cards.append({
+            "ticker": t,
+            "company_name": p["company_name"],
+            "blurb": blurb,
+        })
 
     # Index page
     index_md, index_title, screener = _render_index(
         ledger=ledger, today=today, env=env, base_url=base_url,
+        hot_cards=hot_cards,
     )
     homepage_blocks = [
         website_schema(
@@ -321,8 +360,33 @@ def build(
         )
         _write(public_dir / slug / "index.html", page_html)
 
+    # FAQ page
+    faq_md = env.get_template("faq.md.j2").render()
+    faq_html = render_html_page(
+        markdown_source=faq_md,
+        page_title="Iron Condor & Options Trading FAQ -- Condor14",
+        canonical_url=f"{base_url}/faq/",
+        json_ld_blocks=[],
+        favicon_url="/favicon.svg",
+        apple_touch_icon_url="/apple-touch-icon.png",
+        theme_color=THEME_COLOR,
+    )
+    _write(public_dir / "faq" / "index.html", faq_html)
+
+    # Guide page
+    guide_md = env.get_template("guide.md.j2").render()
+    guide_html = render_html_page(
+        markdown_source=guide_md,
+        page_title="Beginner's Guide: 14-Day Iron Condor Strategy -- Condor14",
+        canonical_url=f"{base_url}/guide/",
+        json_ld_blocks=[],
+        favicon_url="/favicon.svg",
+        apple_touch_icon_url="/apple-touch-icon.png",
+        theme_color=THEME_COLOR,
+    )
+    _write(public_dir / "guide" / "index.html", guide_html)
+
     # Ticker pages (one per TICKERS member; placeholder if no setup found)
-    latest = _latest_setup_per_ticker(ledger)
     ticker_lastmods: list[tuple[str, date]] = []
     for ticker in TICKERS:
         path = public_dir / ticker.lower() / "index.html"
@@ -331,6 +395,7 @@ def build(
                 setup=latest[ticker], ledger=ledger, today=today,
                 env=env, base_url=base_url,
                 track_record=alltime_stats.get(ticker),
+                profile=profiles.get(ticker),
             )
             ticker_lastmods.append((ticker.lower(), latest[ticker].start_date))
         else:
@@ -350,6 +415,7 @@ def build(
         static_pages=[
             ("/", today), ("/methodology/", today),
             ("/about/", today), ("/privacy/", today), ("/contact/", today),
+            ("/faq/", today), ("/guide/", today),
         ],
     )
     _write(public_dir / "sitemap.xml", sitemap)
@@ -366,6 +432,7 @@ def build(
             [
                 f"{base_url}/", f"{base_url}/methodology/",
                 f"{base_url}/about/", f"{base_url}/privacy/", f"{base_url}/contact/",
+                f"{base_url}/faq/", f"{base_url}/guide/",
             ]
             + [f"{base_url}/{t.lower()}/" for t in TICKERS]
         )
