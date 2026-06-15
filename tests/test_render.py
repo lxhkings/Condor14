@@ -96,3 +96,72 @@ def test_card_wrapping():
     assert '<div class="card">\n<h2>Risk Profile</h2>' in html
     # Other Section should NOT be in a card
     assert '<h2>Other Section</h2>' in html
+
+
+def test_sidebar_html_renders_aside():
+    html = render_html_page(
+        markdown_source="# Hello",
+        page_title="Test",
+        canonical_url="https://example.com/",
+        json_ld_blocks=[],
+        sidebar_html='<div class="ad-unit">AD</div>',
+    )
+    assert '<aside class="sidebar">' in html
+    assert '<div class="ad-unit">AD</div>' in html
+
+
+def test_no_sidebar_html_omits_aside():
+    html = render_html_page(
+        markdown_source="# Hello",
+        page_title="Test",
+        canonical_url="https://example.com/",
+        json_ld_blocks=[],
+    )
+    assert '<aside class="sidebar">' not in html
+
+
+def test_page_layout_class_present():
+    html = render_html_page(
+        markdown_source="# Hello",
+        page_title="Test",
+        canonical_url="https://example.com/",
+        json_ld_blocks=[],
+    )
+    assert 'class="page-layout"' in html
+    assert 'class="main-content"' in html
+
+
+def test_sovrn_script_in_head():
+    html = render_html_page(
+        markdown_source="# Hello",
+        page_title="Test",
+        canonical_url="https://example.com/",
+        json_ld_blocks=[],
+    )
+    assert "ap.lijit.com/www/delivery/fpi.js?z=606193" in html
+
+
+def test_body_max_width_not_set():
+    html = render_html_page(
+        markdown_source="# Hello",
+        page_title="Test",
+        canonical_url="https://example.com/",
+        json_ld_blocks=[],
+    )
+    style_start = html.index("<style>")
+    style_end = html.index("</style>")
+    css = html[style_start:style_end]
+    body_rule = css.split("body {")[1].split("}")[0]
+    assert "max-width" not in body_rule
+
+
+def test_grid_css_present():
+    html = render_html_page(
+        markdown_source="# Hello",
+        page_title="Test",
+        canonical_url="https://example.com/",
+        json_ld_blocks=[],
+    )
+    assert "grid-template-columns: 1fr 300px" in html
+    assert "position: sticky" in html
+    assert "@media (max-width: 768px)" in html

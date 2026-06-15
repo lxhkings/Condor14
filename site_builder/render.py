@@ -29,8 +29,7 @@ CSS_STYLE = """\
     color: var(--text-primary);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     line-height: 1.6;
-    max-width: 960px;
-    margin: 0 auto;
+    margin: 0;
     padding: 2rem 1.5rem;
   }
 
@@ -210,6 +209,76 @@ CSS_STYLE = """\
 
   tbody tr:nth-child(even) { background: rgba(255,255,255,0.015); }
   /* hover rule defined once in the Tables section above */
+
+  /* ---- Two-column layout ---- */
+
+  .page-layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 2rem;
+    max-width: 1020px;
+    margin: 0 auto;
+  }
+
+  .main-content {
+    min-width: 0;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: sticky;
+    top: 1rem;
+    align-self: start;
+  }
+
+  .ad-unit {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+  }
+
+  .ad-banner {
+    min-height: 90px;
+    margin: 0 0 1.5rem;
+  }
+
+  .ad-incontent {
+    min-height: 100px;
+    margin: 2rem 0;
+  }
+
+  /* No sidebar: content fills width */
+  .page-layout:not(:has(.sidebar)) {
+    grid-template-columns: 1fr;
+    max-width: 960px;
+  }
+
+  /* Mobile: stack */
+  @media (max-width: 768px) {
+    .page-layout {
+      grid-template-columns: 1fr;
+      max-width: 960px;
+      gap: 1rem;
+    }
+
+    .sidebar {
+      position: static;
+      flex-direction: column;
+    }
+
+    .ad-sidebar-300 {
+      width: 100%;
+      max-width: 336px;
+      margin: 0 auto;
+    }
+  }
 </style>"""
 
 _CARD_SECTIONS = [
@@ -251,6 +320,7 @@ def render_html_page(
     theme_color: str | None = None,
     favicon_url: str | None = None,
     apple_touch_icon_url: str | None = None,
+    sidebar_html: str = "",
 ) -> str:
     body_html = _md.render(markdown_source)
     body_html = _wrap_tables(body_html)
@@ -299,6 +369,7 @@ def render_html_page(
         '<meta charset="utf-8">\n'
         '<meta name="viewport" content="width=device-width,initial-scale=1">\n'
         '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6718270775160916" crossorigin="anonymous"></script>\n'
+        '<script async src="https://ap.lijit.com/www/delivery/fpi.js?z=606193&width=300&height=250"></script>\n'
         '<script defer src="/_vercel/insights/script.js"></script>\n'
         '<script defer src="/_vercel/speed-insights/script.js"></script>\n'
         f'<title>{_esc(page_title)}</title>\n'
@@ -308,7 +379,12 @@ def render_html_page(
         f'{head_blocks}\n'
         '</head>\n'
         '<body>\n'
+        '<div class="page-layout">\n'
+        '  <main class="main-content">\n'
         f'{body_html}\n'
+        '  </main>\n'
+        + (f'  <aside class="sidebar">\n{sidebar_html}  </aside>\n' if sidebar_html else '') +
+        '</div>\n'
         '</body>\n'
         '</html>\n'
     )
