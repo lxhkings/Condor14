@@ -71,3 +71,31 @@ def test_ads_txt_contains_direct_publisher_record():
 
     txt = generate_ads_txt(publisher_id="pub-6718270775160916")
     assert txt == "google.com, pub-6718270775160916, DIRECT, f08c47fec0942fa0\n"
+
+
+def test_ads_txt_includes_sovrn_entries_when_passed():
+    from site_builder.sitemap import SOVRN_ADS_TXT_ENTRIES, generate_ads_txt
+
+    txt = generate_ads_txt(
+        publisher_id="pub-6718270775160916",
+        extra_entries=SOVRN_ADS_TXT_ENTRIES,
+    )
+    # Google line still first
+    assert txt.startswith("google.com, pub-6718270775160916, DIRECT, f08c47fec0942fa0\n")
+    # Sovrn comment line present
+    assert "# SOVRN" in txt
+    # Key Sovrn entries
+    assert "lijit.com, 606193, DIRECT, fafdf38b16bf6b2b #SOVRN" in txt
+    assert "openx.com, 538959099, RESELLER, 6a698e2ec38604c6" in txt
+    assert "pubmatic.com, 137711, RESELLER, 5d62403b186f2ace" in txt
+    assert "rubiconproject.com, 17960, RESELLER, 0bfd66d529a55807" in txt
+    assert "appnexus.com, 1019, RESELLER, f5ab79cb980f11d1" in txt
+    # 18 total lines (1 Google + 1 comment + 16 Sovrn entries)
+    assert len(txt.strip().split("\n")) == 18
+
+
+def test_ads_txt_no_extra_entries_still_works():
+    from site_builder.sitemap import generate_ads_txt
+
+    txt = generate_ads_txt(publisher_id="pub-6718270775160916")
+    assert txt == "google.com, pub-6718270775160916, DIRECT, f08c47fec0942fa0\n"

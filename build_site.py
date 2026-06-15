@@ -53,6 +53,7 @@ from site_builder.leaderboard import (
 from site_builder.render import render_html_page
 from site_builder.screener import build_screener_data
 from site_builder.sitemap import (
+    SOVRN_ADS_TXT_ENTRIES,
     generate_ads_txt,
     generate_robots_txt,
     generate_sitemap_xml,
@@ -420,7 +421,7 @@ def build(
     )
     _write(public_dir / "sitemap.xml", sitemap)
     _write(public_dir / "robots.txt", generate_robots_txt(host=host))
-    _write(public_dir / "ads.txt", generate_ads_txt(publisher_id=ADSENSE_PUBLISHER_ID))
+    _write(public_dir / "ads.txt", generate_ads_txt(publisher_id=ADSENSE_PUBLISHER_ID, extra_entries=SOVRN_ADS_TXT_ENTRIES))
 
     # IndexNow key file
     key = read_key(indexnow_key_path)
