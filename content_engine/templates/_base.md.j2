@@ -2,6 +2,8 @@
    The HTML <head>/<body> wrapper is added by site_builder.render. This template
    only emits Markdown content; child templates override the body block.
 #}
+{% from "_ads.md.j2" import ads_banner, ads_incontent with context %}
 {% block body %}{% endblock %}
 {% include "_footer_nav.md.j2" %}
+{{ ads_incontent() }}
 {% include "_disclaimer.md.j2" %}
