@@ -81,7 +81,9 @@ def test_build_writes_ads_txt(tmp_path):
     )
     assert rc == 0
     ads = (public / "ads.txt").read_text()
-    assert ads == "google.com, pub-6718270775160916, DIRECT, f08c47fec0942fa0\n"
+    assert "google.com, pub-6718270775160916, DIRECT, f08c47fec0942fa0" in ads
+    assert "# SOVRN" in ads
+    assert len(ads.strip().split("\n")) == 18
 
 
 def test_build_renders_setup_data_into_ticker_page(tmp_path):

@@ -73,6 +73,23 @@ THEME_COLOR = "#0d1117"
 PUBLISHER_EMAIL = "lxhkings@gmail.com"
 ADSENSE_PUBLISHER_ID = "pub-6718270775160916"
 
+ADS_SIDEBAR_HTML = """\
+<div class="ad-unit ad-sidebar-300">
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:300px;height:250px"
+       data-ad-client="ca-pub-6718270775160916"
+       data-ad-slot="SIDEBAR_SLOT_ID"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<div class="ad-unit ad-sidebar-300" style="margin-top:1.5rem;">
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:300px;height:600px"
+       data-ad-client="ca-pub-6718270775160916"
+       data-ad-slot="SIDEBAR_TALL_SLOT_ID"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+"""
+
 
 def _load_ticker_profiles() -> dict:
     """Load ticker company profiles from data/ticker_profiles.json.
@@ -143,6 +160,7 @@ def _render_ticker(
         favicon_url="/favicon.svg",
         apple_touch_icon_url="/apple-touch-icon.png",
         theme_color=THEME_COLOR,
+        sidebar_html=ADS_SIDEBAR_HTML,
     )
 
 
@@ -171,6 +189,7 @@ def _render_ticker_placeholder(
         favicon_url="/favicon.svg",
         apple_touch_icon_url="/apple-touch-icon.png",
         theme_color=THEME_COLOR,
+        sidebar_html=ADS_SIDEBAR_HTML,
     )
 
 
@@ -324,6 +343,7 @@ def build(
         favicon_url="/favicon.svg",
         apple_touch_icon_url="/apple-touch-icon.png",
         theme_color=THEME_COLOR,
+        sidebar_html=ADS_SIDEBAR_HTML,
     )
     _write(public_dir / "index.html", index_html)
 
@@ -338,6 +358,7 @@ def build(
         favicon_url="/favicon.svg",
         apple_touch_icon_url="/apple-touch-icon.png",
         theme_color=THEME_COLOR,
+        sidebar_html=ADS_SIDEBAR_HTML,
     )
     _write(public_dir / "methodology" / "index.html", methodology_html)
 
@@ -358,6 +379,7 @@ def build(
             favicon_url="/favicon.svg",
             apple_touch_icon_url="/apple-touch-icon.png",
             theme_color=THEME_COLOR,
+            sidebar_html=ADS_SIDEBAR_HTML,
         )
         _write(public_dir / slug / "index.html", page_html)
 
@@ -371,6 +393,7 @@ def build(
         favicon_url="/favicon.svg",
         apple_touch_icon_url="/apple-touch-icon.png",
         theme_color=THEME_COLOR,
+        sidebar_html=ADS_SIDEBAR_HTML,
     )
     _write(public_dir / "faq" / "index.html", faq_html)
 
@@ -384,6 +407,7 @@ def build(
         favicon_url="/favicon.svg",
         apple_touch_icon_url="/apple-touch-icon.png",
         theme_color=THEME_COLOR,
+        sidebar_html=ADS_SIDEBAR_HTML,
     )
     _write(public_dir / "guide" / "index.html", guide_html)
 
