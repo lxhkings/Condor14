@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6718270775160916" crossorigin="anonymous"></script>
+<script async src="https://ap.lijit.com/www/delivery/fpi.js?z=606193&width=300&height=250"></script>
 <script defer src="/_vercel/insights/script.js"></script>
 <script defer src="/_vercel/speed-insights/script.js"></script>
 <title>Beginner&#x27;s Guide: 14-Day Iron Condor Strategy -- Condor14</title>
@@ -31,8 +32,7 @@
     color: var(--text-primary);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     line-height: 1.6;
-    max-width: 960px;
-    margin: 0 auto;
+    margin: 0;
     padding: 2rem 1.5rem;
   }
 
@@ -212,10 +212,82 @@
 
   tbody tr:nth-child(even) { background: rgba(255,255,255,0.015); }
   /* hover rule defined once in the Tables section above */
+
+  /* ---- Two-column layout ---- */
+
+  .page-layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 2rem;
+    max-width: 1020px;
+    margin: 0 auto;
+  }
+
+  .main-content {
+    min-width: 0;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: sticky;
+    top: 1rem;
+    align-self: start;
+  }
+
+  .ad-unit {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+  }
+
+  .ad-banner {
+    min-height: 90px;
+    margin: 0 0 1.5rem;
+  }
+
+  .ad-incontent {
+    min-height: 100px;
+    margin: 2rem 0;
+  }
+
+  /* No sidebar: content fills width */
+  .page-layout:not(:has(.sidebar)) {
+    grid-template-columns: 1fr;
+    max-width: 960px;
+  }
+
+  /* Mobile: stack */
+  @media (max-width: 768px) {
+    .page-layout {
+      grid-template-columns: 1fr;
+      max-width: 960px;
+      gap: 1rem;
+    }
+
+    .sidebar {
+      position: static;
+      flex-direction: column;
+    }
+
+    .ad-sidebar-300 {
+      width: 100%;
+      max-width: 336px;
+      margin: 0 auto;
+    }
+  }
 </style>
 
 </head>
 <body>
+<div class="page-layout">
+  <main class="main-content">
 <h1>Beginner's Guide: 14-Day Iron Condor Strategy</h1>
 <p>This guide explains the core concepts behind the 14-day iron condor setups tracked on this site. It is written for readers who are familiar with basic options terminology but new to multi-leg strategies.</p>
 <h2>What Is an Iron Condor?</h2>
@@ -260,10 +332,37 @@
 <nav class="sitenav">
 <p><a href="/">Home</a> · <a href="/methodology/">Methodology</a> · <a href="/faq/">FAQ</a> · <a href="/guide/">Guide</a> · <a href="/about/">About</a> · <a href="/privacy/">Privacy Policy</a> · <a href="/contact/">Contact</a></p>
 </nav>
+<div class="ad-unit ad-incontent">
+  <ins class="adsbygoogle"
+       style="display:block;text-align:center"
+       data-ad-layout="in-article"
+       data-ad-format="fluid"
+       data-ad-client="ca-pub-6718270775160916"
+       data-ad-slot="INCONTENT_SLOT_ID"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
 <div class="disclaimer">
 <p><strong>DISCLAIMER</strong></p>
 <p>This content is published for <strong>educational purposes only</strong> and does not constitute financial advice, a solicitation, or a recommendation to buy or sell any security. Options trading involves substantial risk and is not suitable for all investors. Past performance — including win rates, drawdowns, and cumulative P&amp;L figures displayed on this site — does not guarantee future results.</p>
 <p>All setups shown are generated algorithmically and tracked live from their initiation date. Realized outcomes reflect a strictly passive <strong>hold-to-expiration</strong> assumption. The following risks are not modeled: early assignment, liquidity gaps, slippage, active stop-loss management, margin calls, and transaction costs. Actual trading results may differ materially.</p>
+</div>
+  </main>
+  <aside class="sidebar">
+<div class="ad-unit ad-sidebar-300">
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:300px;height:250px"
+       data-ad-client="ca-pub-6718270775160916"
+       data-ad-slot="SIDEBAR_SLOT_ID"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<div class="ad-unit ad-sidebar-300" style="margin-top:1.5rem;">
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:300px;height:600px"
+       data-ad-client="ca-pub-6718270775160916"
+       data-ad-slot="SIDEBAR_TALL_SLOT_ID"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+  </aside>
 </div>
 </body>
 </html>

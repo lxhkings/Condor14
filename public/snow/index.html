@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6718270775160916" crossorigin="anonymous"></script>
+<script async src="https://ap.lijit.com/www/delivery/fpi.js?z=606193&width=300&height=250"></script>
 <script defer src="/_vercel/insights/script.js"></script>
 <script defer src="/_vercel/speed-insights/script.js"></script>
 <title>SNOW 14-Day Iron Condor Tracker</title>
@@ -31,8 +32,7 @@
     color: var(--text-primary);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     line-height: 1.6;
-    max-width: 960px;
-    margin: 0 auto;
+    margin: 0;
     padding: 2rem 1.5rem;
   }
 
@@ -212,16 +212,97 @@
 
   tbody tr:nth-child(even) { background: rgba(255,255,255,0.015); }
   /* hover rule defined once in the Tables section above */
+
+  /* ---- Two-column layout ---- */
+
+  .page-layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 2rem;
+    max-width: 1020px;
+    margin: 0 auto;
+  }
+
+  .main-content {
+    min-width: 0;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: sticky;
+    top: 1rem;
+    align-self: start;
+  }
+
+  .ad-unit {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+  }
+
+  .ad-banner {
+    min-height: 90px;
+    margin: 0 0 1.5rem;
+  }
+
+  .ad-incontent {
+    min-height: 100px;
+    margin: 2rem 0;
+  }
+
+  /* No sidebar: content fills width */
+  .page-layout:not(:has(.sidebar)) {
+    grid-template-columns: 1fr;
+    max-width: 960px;
+  }
+
+  /* Mobile: stack */
+  @media (max-width: 768px) {
+    .page-layout {
+      grid-template-columns: 1fr;
+      max-width: 960px;
+      gap: 1rem;
+    }
+
+    .sidebar {
+      position: static;
+      flex-direction: column;
+    }
+
+    .ad-sidebar-300 {
+      width: 100%;
+      max-width: 336px;
+      margin: 0 auto;
+    }
+  }
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FinancialProduct","name":"SNOW 14-Day Iron Condor Educational Tracker","category":"Options Strategy Educational Tool","additionalProperty":[{"@type":"PropertyValue","name":"Net Credit","value":1.9,"unitText":"USD"},{"@type":"PropertyValue","name":"Max Profit","value":1.9,"unitText":"USD"},{"@type":"PropertyValue","name":"Max Loss","value":5.6,"unitText":"USD"},{"@type":"PropertyValue","name":"Upper Break-even","value":256.9,"unitText":"USD"},{"@type":"PropertyValue","name":"Lower Break-even","value":220.6,"unitText":"USD"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://condor14.com/"},{"@type":"ListItem","position":2,"name":"Software / Internet"},{"@type":"ListItem","position":3,"name":"SNOW"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"SNOW 14-Day Iron Condor Tracker","author":{"@type":"Organization","name":"QuantOptions Data Lab"},"publisher":{"@type":"Organization","name":"QuantOptions Data Lab"},"datePublished":"2026-06-12","dateModified":"2026-06-14"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"SNOW 14-Day Iron Condor Tracker","author":{"@type":"Organization","name":"QuantOptions Data Lab"},"publisher":{"@type":"Organization","name":"QuantOptions Data Lab"},"datePublished":"2026-06-12","dateModified":"2026-06-15"}</script>
 </head>
 <body>
-<h1>SNOW 14-Day Iron Condor Tracker — June 14, 2026</h1>
+<div class="page-layout">
+  <main class="main-content">
+<h1>SNOW 14-Day Iron Condor Tracker — June 15, 2026</h1>
 <p>SNOW closed at $238.11, sitting above its 20-day simple moving average of $179.56. The daily-chart structure remains constructive, with each pullback so far holding above prior swing lows. Realized volatility registers at the 97th percentile of its trailing 12-month range, which places premiums in unusually rich territory relative to recent realized moves. The combination of trend and volatility creates a setup where the seller receives elevated compensation for a structure that does not require continued directional momentum to succeed.</p>
 <p>For a 14-day Iron Condor, the math favors the seller in this configuration: time decay accelerates while implied volatility has historical pressure to revert lower. The structure thrives when the underlying drifts inside the short strikes, regardless of which direction it leans, and the rich premium translates directly into a wider breakeven envelope.</p>
 <p>The 14-day ATR of $10.61 provides the statistical anchor for strike selection. Anchoring the short call at roughly 1.5 ATRs above spot keeps it outside the typical two-week move while still capturing meaningful credit, and the symmetric put-side anchor balances the structure. Risk is bounded by wing width minus the credit received; the position is not directional in intent, only in selection bias when trend filters apply.</p>
+<div class="ad-unit ad-banner">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-6718270775160916"
+       data-ad-slot="BANNER_SLOT_ID"
+       data-ad-format="horizontal"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
 <div class="card">
 <h2>Today's Setup</h2>
 <div class="table-wrap"><table>
@@ -359,22 +440,22 @@
 <td style="text-align:left">2026-06-12</td>
 <td style="text-align:right">$238.11</td>
 <td style="text-align:left">2026-06-26</td>
-<td style="text-align:right">2</td>
-<td style="text-align:left">Open (Day 2)</td>
+<td style="text-align:right">3</td>
+<td style="text-align:left">Open (Day 3)</td>
 </tr>
 <tr>
 <td style="text-align:left">2026-06-11</td>
 <td style="text-align:right">$236.45</td>
 <td style="text-align:left">2026-06-25</td>
-<td style="text-align:right">3</td>
-<td style="text-align:left">Open (Day 3)</td>
+<td style="text-align:right">4</td>
+<td style="text-align:left">Open (Day 4)</td>
 </tr>
 <tr>
 <td style="text-align:left">2026-06-10</td>
 <td style="text-align:right">$245.04</td>
 <td style="text-align:left">2026-06-24</td>
-<td style="text-align:right">4</td>
-<td style="text-align:left">Open (Day 4)</td>
+<td style="text-align:right">5</td>
+<td style="text-align:left">Open (Day 5)</td>
 </tr>
 </tbody>
 </table></div>
@@ -403,10 +484,37 @@
 <nav class="sitenav">
 <p><a href="/">Home</a> · <a href="/methodology/">Methodology</a> · <a href="/faq/">FAQ</a> · <a href="/guide/">Guide</a> · <a href="/about/">About</a> · <a href="/privacy/">Privacy Policy</a> · <a href="/contact/">Contact</a></p>
 </nav>
+<div class="ad-unit ad-incontent">
+  <ins class="adsbygoogle"
+       style="display:block;text-align:center"
+       data-ad-layout="in-article"
+       data-ad-format="fluid"
+       data-ad-client="ca-pub-6718270775160916"
+       data-ad-slot="INCONTENT_SLOT_ID"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
 <div class="disclaimer">
 <p><strong>DISCLAIMER</strong></p>
 <p>This content is published for <strong>educational purposes only</strong> and does not constitute financial advice, a solicitation, or a recommendation to buy or sell any security. Options trading involves substantial risk and is not suitable for all investors. Past performance — including win rates, drawdowns, and cumulative P&amp;L figures displayed on this site — does not guarantee future results.</p>
 <p>All setups shown are generated algorithmically and tracked live from their initiation date. Realized outcomes reflect a strictly passive <strong>hold-to-expiration</strong> assumption. The following risks are not modeled: early assignment, liquidity gaps, slippage, active stop-loss management, margin calls, and transaction costs. Actual trading results may differ materially.</p>
+</div>
+  </main>
+  <aside class="sidebar">
+<div class="ad-unit ad-sidebar-300">
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:300px;height:250px"
+       data-ad-client="ca-pub-6718270775160916"
+       data-ad-slot="SIDEBAR_SLOT_ID"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<div class="ad-unit ad-sidebar-300" style="margin-top:1.5rem;">
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:300px;height:600px"
+       data-ad-client="ca-pub-6718270775160916"
+       data-ad-slot="SIDEBAR_TALL_SLOT_ID"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+  </aside>
 </div>
 </body>
 </html>
