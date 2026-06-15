@@ -1,0 +1,27 @@
+{# Ad unit macros for inline (markdown-flow) placement.
+   Sidebar ads are handled separately in build_site.py as raw HTML
+   passed to render_html_page(). #}
+
+{% macro ads_banner() %}
+<div class="ad-unit ad-banner">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-6718270775160916"
+       data-ad-slot="BANNER_SLOT_ID"
+       data-ad-format="horizontal"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+{% endmacro %}
+
+{% macro ads_incontent() %}
+<div class="ad-unit ad-incontent">
+  <ins class="adsbygoogle"
+       style="display:block;text-align:center"
+       data-ad-layout="in-article"
+       data-ad-format="fluid"
+       data-ad-client="ca-pub-6718270775160916"
+       data-ad-slot="INCONTENT_SLOT_ID"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+{% endmacro %}
